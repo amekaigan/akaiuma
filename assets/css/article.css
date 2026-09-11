@@ -103,24 +103,56 @@ a { color: var(--brand-dark); }
 
 .ak-article img { max-width: 100%; height: auto; border-radius: 6px; }
 
+/* ===== テーブル（横スクロール対応） ===== */
+.ak-article .ak-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 28px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* スクロール可能であることを示すヒント */
+.ak-article .ak-table-hint { display: none; }
+
+@media (max-width: 767px) {
+  .ak-article .ak-table-hint {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: right;
+    margin: 20px 0 -18px;
+  }
+}
+
 .ak-article table {
   width: 100%;
+  min-width: 560px;
   border-collapse: collapse;
-  margin: 0 0 1.9em;
-  font-size: 0.92rem;
-  display: block;
-  overflow-x: auto;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.ak-article th {
+  background: var(--dark);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-.ak-article th,
 .ak-article td {
-  border: 1px solid var(--line);
-  padding: 10px 13px;
-  text-align: left;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
 }
 
-.ak-article th { background: var(--bg-soft); font-weight: 700; }
+.ak-article tr:nth-child(even) td { background: var(--bg-soft); }
+.ak-article tr:hover td { background: var(--brand-bg); }
+
+.ak-article .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
 
 .ak-article blockquote {
   margin: 0 0 1.7em;

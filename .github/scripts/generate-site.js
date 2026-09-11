@@ -270,7 +270,7 @@ function headerHtml() {
   }
   @media (max-width: 680px) {
     label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
-    #siteNav { display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.darkSub}; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.darkSub}; }
     #navToggle:checked ~ #siteNav { display:flex; }
     #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid ${C.darkSub}; font-size:0.95em; }
     #siteNav a::after { content:"›"; color:#52525B; font-size:1.2em; }

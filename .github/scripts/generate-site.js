@@ -765,6 +765,14 @@ ${AD_SLOT.html}
 
 function applyInArticleBlocks(html, file) {
   let out = stripAutoBlock(stripAutoBlock(html, 'TOC'), 'AD');
+
+  // テーブルの横スクロール案内を入れ直す（毎回消してから挿入するので冪等）
+  out = out.replace(/[ \t]*<p class="ak-table-hint">[\s\S]*?<\/p>\s*\n?/g, '');
+  out = out.replace(
+    /(<div class="ak-table-wrap">)/g,
+    '<p class="ak-table-hint">← 横にスクロールできます →</p>\n$1'
+  );
+
   let h2s = findH2s(out);
   if (h2s.length === 0) return out;
   const noAd = NO_AD_PATH.test(file || '');

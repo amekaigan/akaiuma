@@ -41,7 +41,7 @@ EC・決済ツール比較」を検討したが、以下の理由で「物販で
 - [x] `blog/index.html`（記事一覧）
 - [x] `blog/_template/index.html`（記事テンプレート）
 - [x] `about/index.html`
-- [x] `knowledge/index.md`、`knowledge/inbox.md`、`knowledge/inventory.md`
+- [x] `knowledge/inbox.md`（`index.md` と `inventory.md` は未作成）
 - [x] 記事1本目 `blog/zaiko-awanai-riyu/index.html`
 
 ### ロゴ

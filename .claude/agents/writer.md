@@ -48,8 +48,12 @@ level: beginner | intermediate
 tags: 楽天市場, Amazon
 disclosure:
 thumb:
+thumbcopy: 記事の中身を一言で。18字以内
 -->
 ```
+
+`thumbcopy` はサムネイルのバナーに載る短いコピー。**タイトルの繰り返しにしない。**
+カードの下にはタイトルが並ぶので、同じ言葉を2度読ませることになる。
 
 `tags` に書けるのは CLAUDE.md 5節に載っている名前だけ。
 辞書にない名前は生成時に無視される。勝手にタグを増やさないこと。

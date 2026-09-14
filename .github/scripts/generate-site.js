@@ -99,6 +99,40 @@ const CATEGORY_TO_ID = {
   '業務効率化': 'efficiency',
 };
 
+// サムネイル（バナー）用。カテゴリごとの地色と、線で描くアイコン。
+// 骨格はすべて共通で、変わるのはここの色とアイコンと記事ごとの短いコピーだけ。
+// 小さく並んだときに、色と形で「何の話か」が分かるようにするための対応表。
+const CATEGORY_LOOK = {
+  'リサーチ':   { tint: '#F3F1FB', ink: '#4C3E8E', icon: 'search' },
+  '仕入れ':     { tint: '#FDF2EC', ink: '#9A4A18', icon: 'box' },
+  '販路・集客': { tint: '#FBF1F3', ink: '#A4243B', icon: 'cart' },
+  '在庫管理':   { tint: '#EFF4F2', ink: '#1F5D4C', icon: 'stack' },
+  '数字管理':   { tint: '#EEF3F9', ink: '#1F4E79', icon: 'chart' },
+  '業務効率化': { tint: '#F6F3EC', ink: '#6B5312', icon: 'gear' },
+};
+
+// アイコンは線だけで描く。塗りを使わないのは、小さく表示したときに潰れないため
+function iconPath(name, color) {
+  const g = (d) => `<g fill="none" stroke="${color}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">${d}</g>`;
+  switch (name) {
+    case 'search':
+      return g('<circle cx="46" cy="46" r="30"/><line x1="68" y1="68" x2="92" y2="92"/>');
+    case 'box':
+      return g('<path d="M12 34 50 14 88 34 88 76 50 96 12 76Z"/><path d="M12 34 50 54 88 34"/><line x1="50" y1="54" x2="50" y2="96"/>');
+    case 'cart':
+      return g('<path d="M10 16h16l12 50h48"/><path d="M30 30h62l-8 28H38"/><circle cx="44" cy="84" r="8"/><circle cx="80" cy="84" r="8"/>');
+    case 'stack':
+      return g('<rect x="14" y="16" width="72" height="22" rx="4"/><rect x="14" y="44" width="72" height="22" rx="4"/><rect x="14" y="72" width="72" height="22" rx="4"/>');
+    case 'chart':
+      return g('<line x1="14" y1="94" x2="94" y2="94"/><rect x="24" y="56" width="18" height="38"/><rect x="50" y="34" width="18" height="60"/><rect x="76" y="68" width="14" height="26"/>');
+    case 'gear':
+      // 歯は短くする。長いと太陽の絵に見えてしまう
+      return g('<circle cx="52" cy="52" r="26"/><circle cx="52" cy="52" r="9"/><path d="M79 52h13M12 52h13M52 79v13M52 12v13M71 71l9 9M24 24l9 9M71 33l9-9M24 80l9-9"/>');
+    default:
+      return '';
+  }
+}
+
 // タグ。左が表示名、右がURLになるID（/tag/rakuten/ という形）
 // ここにないタグが記事に書かれていた場合は、警告を出して無視します
 const TAG_TO_ID = {
@@ -152,6 +186,7 @@ function extractMeta(content) {
     level: get('level'),
     disclosure: get('disclosure'),
     thumb: get('thumb'),
+    thumbcopy: get('thumbcopy'),
     tags: get('tags'),
   };
 }
@@ -192,31 +227,39 @@ function thumbOf(article) {
   return buildAutoThumb(article, slug);
 }
 
-/* 記事ごとの手描き画像がないときは、タイトル入りのカードをSVGで自動生成する。
-   カテゴリ名だけの箱だと、同じカテゴリの記事が並んだときに全部同じ絵になるため。
-   手描きの図解を置きたい場合は assets/thumb/<slug>.svg に置けば、そちらが優先される。 */
+/* 記事ごとの手描き画像がないときは、バナー型のサムネイルをSVGで自動生成する。
+   骨格は全記事で共通。変わるのはカテゴリの色とアイコン、そして記事ごとの短いコピーだけ。
+   コピーはメタ情報の thumbcopy を使い、なければタイトルから作る。
+   手で用意した画像を使いたい場合は assets/thumb/<slug>.svg などに置けば、そちらが優先される。 */
 function buildAutoThumb(article, slug) {
   if (!slug) return null;
-  const title = shortTitle(article.title);
-  const lines = wrapForThumb(title, 13, 4);
-  const size = lines.length >= 4 ? 58 : lines.length === 3 ? 66 : 74;
-  const top = 250 - ((lines.length - 1) * (size * 1.45)) / 2;
+  const look = CATEGORY_LOOK[article.category] || { tint: C.bgSoft, ink: C.brand, icon: '' };
+  const copy = (article.thumbcopy || '').trim() || shortTitle(article.title);
+  const lines = wrapForThumb(copy, 9, 3);
+  const size = lines.length >= 3 ? 76 : lines.length === 2 ? 86 : 94;
+  const top = 340 - ((lines.length - 1) * (size * 1.4)) / 2;
   const text = lines
     .map((ln, i) =>
-      `    <text x="96" y="${Math.round(top + i * size * 1.45)}" font-size="${size}" font-weight="700" fill="${C.ink}">${escapeHtml(ln)}</text>`
+      `    <text x="104" y="${Math.round(top + i * size * 1.4)}" font-size="${size}" font-weight="700" fill="${C.ink}">${escapeHtml(ln)}</text>`
     )
     .join('\n');
+  const label = article.category || '';
+  const pillW = Math.max(140, label.length * 34 + 48);
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeHtml(title)}">
-  <rect width="1200" height="630" fill="#FFFFFF"/>
-  <rect x="0" y="0" width="16" height="630" fill="${C.brand}"/>
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeHtml(copy)}">
+  <rect width="1200" height="630" fill="${look.tint}"/>
+  <rect x="40" y="40" width="1120" height="550" rx="18" fill="#FFFFFF"/>
+  <rect x="40" y="40" width="10" height="550" rx="5" fill="${C.brand}"/>
+  <circle cx="1012" cy="196" r="96" fill="${look.tint}"/>
+  <g transform="translate(956 140) scale(1.12)">${iconPath(look.icon, look.ink)}</g>
   <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-    <text x="96" y="118" font-size="30" font-weight="700" fill="${C.brand}" letter-spacing="2">${escapeHtml(article.category || '')}</text>
+    <rect x="104" y="108" width="${pillW}" height="52" rx="26" fill="${look.tint}"/>
+    <text x="${104 + pillW / 2}" y="144" font-size="28" font-weight="700" fill="${look.ink}" text-anchor="middle">${escapeHtml(label)}</text>
 ${text}
-    <text x="96" y="548" font-size="30" font-weight="700" fill="${C.ink}" letter-spacing="3">${escapeHtml(SITE.name)}</text>
-    <text x="96" y="586" font-size="23" fill="${C.muted}">${escapeHtml(SITE.tagline || '')}</text>
+    <text x="104" y="534" font-size="28" font-weight="700" fill="${C.ink}" letter-spacing="3">${escapeHtml(SITE.name)}</text>
+    <text x="${104 + SITE.name.length * 31 + 24}" y="534" font-size="23" fill="${C.muted}">${escapeHtml(SITE.tagline || '')}</text>
   </g>
-  <rect x="96" y="500" width="72" height="4" fill="${C.brand}"/>
+  <rect x="104" y="474" width="64" height="4" fill="${C.brand}"/>
 </svg>
 `;
   const dir = path.join(THUMB_DIR, 'auto');

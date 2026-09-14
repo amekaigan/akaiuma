@@ -7,7 +7,7 @@ updated:
 verified: 2026-09-14
 category: 販路・集客
 level: beginner
-tags: 楽天市場, Amazon, 自社サイト
+tags: 楽天市場, Amazon, Yahoo!ショッピング, 自社サイト
 disclosure:
 thumb:
 thumbcopy: 最初の1店をどこに出すか
@@ -56,7 +56,7 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
       <a href="/blog/">記事一覧</a>
       <a href="/blog/#inventory">在庫管理</a>
       <a href="/about/">このサイトについて</a>
-
+      
       <label for="navToggle" class="nav-close">✕ 閉じる</label>
     </nav>
   </div>
@@ -168,9 +168,77 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
   upd();
 })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "販路の選び方：楽天・Amazon・自社サイトどれが先｜あかいうま",
+  "description": "楽天・Amazon・自社サイトを3チャネル同時運用する運営者が、初期費用と参入障壁から最初の一手を解説します。",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://akaiuma.com/blog/mall-erabikata/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "あかいうま"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あかいうま",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
+    }
+  },
+  "image": "https://akaiuma.com/assets/thumb/auto/mall-erabikata.svg"
+}
+</script>
 <!-- AUTO:HEADER:END -->
 
 <!-- AUTO:ARTICLEHEAD:START -->
+<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:#A4243B; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>
+<div class="article-header" data-level="beginner">
+  <div class="article-category">販路・集客<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
+  <h1>販路の選び方：楽天・Amazon・自社サイトどれが先</h1>
+  <div class="article-meta"><span>公開：2026年9月14日</span><span>料金・仕様の確認：2026年9月14日</span><span>読了：約9分</span></div>
+</div>
+<img class="article-thumb" src="/assets/thumb/auto/mall-erabikata.svg" alt="" width="1200" height="630">
+<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+    <li>楽天・Amazon・自社サイトの初期費用と参入障壁の違い</li>
+    <li>資金と商材から最初の1つを選ぶ判断基準</li>
+    <li>複数チャネルへ広げるタイミングの見極め方</li>
+  </ul>
+</div>
 
 <!-- AUTO:ARTICLEHEAD:END -->
 
@@ -204,8 +272,8 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
 
 <p>楽天市場の料金は「月額出店料 ＋ システムサービス利用料金 ＋ 楽天ペイ利用料」で組み立てられています。月額出店料はプランで変わります。</p>
 
+<p class="ak-table-hint">← 横にスクロールできます →</p>
 <div class="ak-table-wrap">
-<p class="ak-table-hint">横にスクロールできます</p>
 <table>
 <thead>
 <tr><th>プラン</th><th class="num">月額出店料</th><th class="num">システム利用料（PC）</th><th class="num">システム利用料（モバイル）</th></tr>
@@ -273,6 +341,9 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
 
 <p>では、最初から複数のチャネルに同時に出すのはどうでしょうか。答えは、資金や商材だけでは決まりません。</p>
 
+<!-- AUTO:AD:START -->
+
+<!-- AUTO:AD:END -->
 <h2 id="h2-3">最初は1つに絞るべきか、同時に始めるべきか</h2>
 
 <p class="ak-lead">絞るか広げるかは、伸びしろと管理の複雑さのトレードオフです。</p>
@@ -333,22 +404,61 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
 
 <p>販路選びに絶対の正解はありません。資金が少なければ固定費の軽いところから、型番商品なら比較されやすいモールから、独自商品なら世界観を作れる場所から選びます。まずは1つのチャネルで、商品ごとの売れ行きを自分の言葉で説明できるようになることを目標にしてください。そこまで来て初めて、次のチャネルに広げる判断ができます。</p>
 
-<p>なお、この記事では4つ目の選択肢であるYahoo!ショッピングを比較に含めていません。出店プランの費用体系が変更されるという報道があり、執筆時点で公式情報を確認できていないためです。検討する場合は、必ず公式の出店案内で現在の条件を確かめてください。</p>
+<p>なお、この記事では4つ目の選択肢であるYahoo!ショッピングを詳しく扱っていません。ただ、固定費の軽さでは選択肢に入ります。初期費用は0円、開店後の固定費は月額システム利用料の10,000円（税抜）のみで、あとは売れたときに発生する費用です。売上ロイヤリティは2.5%、ストアポイント原資は最低1%、アフィリエイトパートナー報酬は最低2〜4%が必須になります。</p>
+
+<p class="ak-source">出典：<a href="https://business-ec.yahoo.co.jp/shopping/cost/">Yahoo!ショッピング 出店案内「費用」</a>（確認日：2026年9月14日）</p>
+
+<div class="ak-note">
+  <span class="ak-note-label">運営者の見立て</span>
+  <p>実質的な負担は<strong>10〜12%程度</strong>というのが私の感覚です。楽天市場のスタンダードプランで見ている15%程度より軽い。ただし広告を出せば、そこにポイント原資の負担が乗ります。どちらも実測値ではなく、運用してきた中での見積もりです。</p>
+</div>
 
 </article>
 
 <!-- AUTO:BELOW:START -->
 <div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">この記事のタグ</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場</span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon</span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング</span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト</span>
+</div>
+</section>
+<section style="margin:0 0 40px; background:#fff; border:1px solid #E4E7EB; border-left:4px solid #A4243B; border-radius:0; padding:20px 22px;">
+  <p style="margin:0 0 4px; color:#1F2328; font-weight:bold; font-size:0.98em;">次に読むと、もう一段先に進めます</p>
+  <p style="margin:0 0 14px; color:#656C76; font-size:0.83em; line-height:1.7;">基本ができたあと、実際に詰まりやすいところを扱っています。</p>
+  <ul style="margin:0; padding:0 0 0 18px;">
+<li style="margin:0 0 10px;"><a href="/blog/zaiko-awanai-riyu/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">年間1万件出荷して分かった、在庫が合わない本当の理由</a></li>
+  </ul>
+</section>
 
-
-
-
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/zaiko-mochisugi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-mochisugi.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫を持ちすぎるのに欠品する理由</span>
+  </div>
+</a>
+<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
+  </div>
+</a>
+</div>
+</section>
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
 <div>
 <a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
 <a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
-<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">1</span></a>
 <a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">2</span></a>
 <a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">0</span></a>
 <a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
@@ -357,7 +467,10 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
 <div>
-<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場 <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon <span style="color:#656C76;">2</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト <span style="color:#656C76;">1</span></span>
 <span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用 <span style="color:#656C76;">1</span></span>
 </div>
 </section>
@@ -407,7 +520,7 @@ takeaways: 楽天・Amazon・自社サイトの初期費用と参入障壁の違
         <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
         <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
         <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
-
+        
       </div>
     </div>
 

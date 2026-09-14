@@ -90,6 +90,20 @@ const CATEGORY_TO_ID = {
   '業務効率化': 'efficiency',
 };
 
+// タグ。左が表示名、右がURLになるID（/tag/rakuten/ という形）
+// ここにないタグが記事に書かれていた場合は、警告を出して無視します
+const TAG_TO_ID = {
+  '楽天市場': 'rakuten',
+  'Amazon': 'amazon',
+  'Yahoo!ショッピング': 'yahoo',
+  '自社サイト': 'own-shop',
+  '複数チャネル運用': 'multi-channel',
+};
+
+// タグページを作る最低本数。これ未満のタグは記事下に表示するだけでページを作りません
+// （中身の薄いページを量産しないため）
+const TAG_MIN_ARTICLES = 3;
+
 /* =========================================================
    ▲▲▲ 書き換えるのはここまで ▲▲▲
    ========================================================= */
@@ -103,6 +117,11 @@ const THUMB_DIR = path.join(ROOT, 'assets', 'thumb');
 const SITE_URL = SITE.url;
 const VISIBLE_COUNT = 5;
 const CATEGORY_ORDER = Object.values(CATEGORY_TO_ID);
+const TAG_ORDER = Object.values(TAG_TO_ID);
+const TAG_DIR = path.join(ROOT, 'tag');
+const ROBOTS = path.join(ROOT, 'robots.txt');
+// ページを生成したタグのID。記事下のタグをリンクにするかの判断に使う
+let TAG_PAGE_IDS = new Set();
 const LEVEL_LABEL = { beginner: '初心者向け', intermediate: '中級者向け' };
 
 function extractMeta(content) {
@@ -124,7 +143,29 @@ function extractMeta(content) {
     level: get('level'),
     disclosure: get('disclosure'),
     thumb: get('thumb'),
+    tags: get('tags'),
   };
+}
+
+// tags: 楽天市場, Amazon → ['楽天市場', 'Amazon']
+// 辞書にない名前は警告して捨てる。表記ゆれでタグが分裂するのを防ぐため
+function parseTags(raw, permalink) {
+  if (!raw) return [];
+  const names = [];
+  for (const part of raw.split(/[,、]/)) {
+    const name = part.trim();
+    if (!name) continue;
+    if (!TAG_TO_ID[name]) {
+      console.warn(`未定義のタグ: ${name} (${permalink})`);
+      continue;
+    }
+    if (!names.includes(name)) names.push(name);
+  }
+  return names;
+}
+
+function articlesWithTag(articles, name) {
+  return articles.filter((a) => (a.tagList || []).includes(name));
 }
 
 function slugOf(permalink) {
@@ -156,6 +197,7 @@ function loadArticles() {
       continue;
     }
     if (!info.level) console.warn(`level がありません: ${info.permalink}`);
+    info.tagList = parseTags(info.tags, info.permalink);
     info.file = filePath;
     articles.push(info);
   }
@@ -178,7 +220,7 @@ function levelBadge(level) {
 function cardHtml(article) {
   return `<div style="border:1px solid ${C.line}; border-radius:8px; padding:20px; margin:20px 0;">
   <p style="font-size:0.8em; color:${C.brand}; font-weight:bold; margin:0 0 6px;">${escapeHtml(article.category)}${levelBadge(article.level)}</p>
-  <h3 style="margin:0 0 8px; font-size:1.1em;"><a href="${article.permalink}" style="color:${C.ink}; text-decoration:none;">${escapeHtml(article.title)}</a></h3>
+  <h3 style="margin:0 0 8px; font-size:1.1em;"><a href="${article.permalink}" style="color:${C.ink}; text-decoration:none;">${escapeHtml(shortTitle(article.title))}</a></h3>
   <p style="color:${C.muted}; margin:0;">${escapeHtml(article.meta)}</p>
 </div>`;
 }
@@ -312,7 +354,7 @@ function headerHtml() {
     var q=input.value.trim().toLowerCase();
     if(!q||!data){box.style.display='none';box.innerHTML='';return;}
     var hits=data.filter(function(a){
-      return (a.t+' '+a.m+' '+a.c).toLowerCase().indexOf(q)>-1;
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
     }).slice(0,8);
     if(hits.length===0){
       box.innerHTML='<p style="margin:0; padding:16px; color:${C.muted}; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
@@ -559,14 +601,56 @@ ${items}
 </section>`;
 }
 
+// 丸いチップ。href が null のときはリンクにしない（ページのないタグ用）
+function chipHtml(label, count, href) {
+  const inner = `${escapeHtml(label)}${count === null ? '' : ` <span style="color:${C.muted};">${count}</span>`}`;
+  const base = `display:inline-block; background:${C.chromeSoft}; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;`;
+  if (!href) return `<span style="${base} color:${C.muted};">${inner}</span>`;
+  return `<a href="${href}" style="${base} color:${C.ink}; text-decoration:none;">${inner}</a>`;
+}
+
 function tagsHtml(articles) {
   const items = CATEGORY_ORDER.map((id) => {
     const name = Object.keys(CATEGORY_TO_ID).find((k) => CATEGORY_TO_ID[k] === id);
     const count = articles.filter((a) => a.category === name).length;
-    return `<a href="/${SITE.articlesDir}/#${id}" style="display:inline-block; background:#F3F4F6; color:${C.ink}; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">${escapeHtml(name)} <span style="color:${C.muted};">${count}</span></a>`;
+    return chipHtml(name, count, `/${SITE.articlesDir}/#${id}`);
   }).join('\n');
   return `<section style="margin:0 0 40px;">
 ${sectionTitle('カテゴリから探す')}
+<div>
+${items}
+</div>
+</section>`;
+}
+
+// 「タグから探す」。記事が1本もないタグは出さない
+function tagIndexHtml(articles) {
+  const items = TAG_ORDER.map((id) => {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    const count = articlesWithTag(articles, name).length;
+    if (count === 0) return '';
+    return chipHtml(name, count, TAG_PAGE_IDS.has(id) ? `/tag/${id}/` : null);
+  }).filter(Boolean).join('\n');
+  if (!items) return '';
+  return `<section style="margin:0 0 40px;">
+${sectionTitle('タグから探す')}
+<div>
+${items}
+</div>
+</section>`;
+}
+
+// 記事についているタグ。記事下に出す
+function articleTagsHtml(article) {
+  if (!article || !article.tagList || article.tagList.length === 0) return '';
+  const items = article.tagList
+    .map((name) => {
+      const id = TAG_TO_ID[name];
+      return chipHtml(name, null, TAG_PAGE_IDS.has(id) ? `/tag/${id}/` : null);
+    })
+    .join('\n');
+  return `<section style="margin:0 0 40px;">
+${sectionTitle('この記事のタグ')}
 <div>
 ${items}
 </div>
@@ -634,10 +718,12 @@ ${sns}
 
 function belowHtml(articles, current) {
   return `<div style="background:${C.bgSoft}; border-top:1px solid ${C.line};"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+${articleTagsHtml(current)}
 ${stepUpHtml(articles, current)}
 ${ctaHtml()}
 ${relatedHtml(articles, current)}
 ${tagsHtml(articles)}
+${tagIndexHtml(articles)}
 ${latestHtml(articles, current)}
 </div></div>
 ${footerHtml(articles)}`;
@@ -888,14 +974,104 @@ function updateTopPage(articles) {
 
 function updateSearchIndex(articles) {
   const data = articles.map((a) => ({
-    t: a.title,
+    t: shortTitle(a.title),
     m: a.meta,
     c: a.category,
+    g: (a.tagList || []).join(' '),
     l: a.level || '',
     u: a.permalink,
   }));
   fs.writeFileSync(SEARCH_INDEX, JSON.stringify(data));
   console.log(`検索インデックス生成: ${data.length}件`);
+}
+
+// ページを作るタグを先に決める。記事下のタグをリンクにするかがこれで決まるため、
+// 実際にページを書き出す前に確定させておく必要がある
+function computeTagPageIds(articles) {
+  const ids = new Set();
+  for (const id of TAG_ORDER) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    if (articlesWithTag(articles, name).length >= TAG_MIN_ARTICLES) ids.add(id);
+  }
+  return ids;
+}
+
+function tagPageHtml(name, id, list, allArticles) {
+  const title = `${name}の記事一覧｜${SITE.name}`;
+  const desc = `「${name}」のタグがついた記事${list.length}件の一覧。${SITE.tagline}。`;
+  const url = `${SITE_URL}/tag/${id}/`;
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(desc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${SITE_URL}/og-default.png">
+<meta property="og:site_name" content="${SITE.name}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/article.css">
+</head>
+<body>
+
+${headerHtml()}
+
+<div class="hero">
+  <div class="hero-rule"></div>
+  <h1>${escapeHtml(name)}</h1>
+  <p>「${escapeHtml(name)}」のタグがついた記事${list.length}件です。</p>
+</div>
+
+<div class="section">
+${list.map(cardHtml).join('\n')}
+<p style="margin:24px 0 0;"><a href="/${SITE.articlesDir}/" style="color:${C.brand}; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</div>
+
+${footerHtml(allArticles)}
+
+</body>
+</html>
+`;
+}
+
+function writeTagPages(articles) {
+  const wanted = new Map();
+  for (const id of TAG_PAGE_IDS) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    wanted.set(id, articlesWithTag(articles, name));
+  }
+  if (wanted.size === 0) {
+    if (fs.existsSync(TAG_DIR)) fs.rmSync(TAG_DIR, { recursive: true });
+    console.log('タグページ生成: 0件');
+    return;
+  }
+  fs.mkdirSync(TAG_DIR, { recursive: true });
+  // 本数が減ってページを作らなくなったタグの残骸を消す
+  for (const d of fs.readdirSync(TAG_DIR, { withFileTypes: true })) {
+    if (d.isDirectory() && !wanted.has(d.name)) {
+      fs.rmSync(path.join(TAG_DIR, d.name), { recursive: true });
+    }
+  }
+  for (const [id, list] of wanted) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    const dir = path.join(TAG_DIR, id);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), tagPageHtml(name, id, list, articles));
+  }
+  console.log(`タグページ生成: ${wanted.size}件`);
+}
+
+function writeRobots() {
+  const body = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  fs.writeFileSync(ROBOTS, body);
 }
 
 function updateSitemap(articles) {
@@ -906,6 +1082,9 @@ function updateSitemap(articles) {
   urls.push({ loc: `${SITE_URL}/${SITE.articlesDir}/`, lastmod: today });
   for (const a of articles) {
     urls.push({ loc: `${SITE_URL}${a.permalink}`, lastmod: a.updated || a.published || today });
+  }
+  for (const id of TAG_PAGE_IDS) {
+    urls.push({ loc: `${SITE_URL}/tag/${id}/`, lastmod: today });
   }
   const body = urls
     .map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`)
@@ -924,11 +1103,14 @@ function reportLevels(articles) {
 
 function main() {
   const articles = loadArticles();
+  TAG_PAGE_IDS = computeTagPageIds(articles);
   updateArticlesIndex(articles);
   updateTopPage(articles);
   updateSearchIndex(articles);
   applyCommonBlocks(articles);
+  writeTagPages(articles);
   updateSitemap(articles);
+  writeRobots();
   reportLevels(articles);
   console.log(`サイト生成完了:記事${articles.length}件を反映しました`);
 }

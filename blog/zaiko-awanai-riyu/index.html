@@ -7,6 +7,7 @@ updated:
 verified:
 category: 在庫管理
 level: intermediate
+tags: Amazon, 複数チャネル運用
 disclosure:
 thumb:
 -->
@@ -129,7 +130,7 @@ thumb:
     var q=input.value.trim().toLowerCase();
     if(!q||!data){box.style.display='none';box.innerHTML='';return;}
     var hits=data.filter(function(a){
-      return (a.t+' '+a.m+' '+a.c).toLowerCase().indexOf(q)>-1;
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
     }).slice(0,8);
     if(hits.length===0){
       box.innerHTML='<p style="margin:0; padding:16px; color:#656C76; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
@@ -381,6 +382,13 @@ thumb:
 
 <!-- AUTO:BELOW:START -->
 <div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">この記事のタグ</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon</span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用</span>
+</div>
+</section>
 
 <div style="background:#FBF4F5; border:1px solid #EBD3D8; border-radius:12px; padding:28px 22px; margin:0 0 44px;">
   <img src="/assets/logo/logo-mark.svg" alt="あかいうま" style="height:38px; width:auto; display:block; margin:0 0 16px;">
@@ -394,12 +402,19 @@ thumb:
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
 <div>
-<a href="/blog/#research" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">リサーチ <span style="color:#656C76;">0</span></a>
-<a href="/blog/#sourcing" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">仕入れ <span style="color:#656C76;">0</span></a>
-<a href="/blog/#sales" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">販路・集客 <span style="color:#656C76;">0</span></a>
-<a href="/blog/#inventory" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">在庫管理 <span style="color:#656C76;">1</span></a>
-<a href="/blog/#numbers" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">数字管理 <span style="color:#656C76;">0</span></a>
-<a href="/blog/#efficiency" style="display:inline-block; background:#F3F4F6; color:#1F2328; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">業務効率化 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">1</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用 <span style="color:#656C76;">1</span></span>
 </div>
 </section>
 

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="総数は同じ100個でも、SKUごとに見ると売れ筋が欠品寸前で死に筋が積み上がっている図">
+<rect width="1200" height="630" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+
+  <text x="60" y="76" font-size="38" font-weight="700" fill="#1F2328">同じ「在庫100個」でも、中身は違う</text>
+  <rect x="60" y="98" width="72" height="4" fill="#A4243B"/>
+
+  <!-- 左：量で見る -->
+  <text x="60" y="168" font-size="27" font-weight="700" fill="#656C76">量で見ると</text>
+  <rect x="60" y="192" width="430" height="300" rx="10" fill="#F4F5F6" stroke="#E4E7EB"/>
+  <text x="275" y="330" font-size="76" font-weight="700" fill="#1F2328" text-anchor="middle">合計 100個</text>
+  <text x="275" y="388" font-size="27" fill="#656C76" text-anchor="middle">足りている、に見える</text>
+  <text x="60" y="540" font-size="25" fill="#656C76">総数だけでは、余りも不足も見えない</text>
+
+  <text x="530" y="350" font-size="46" fill="#A4243B">→</text>
+
+  <!-- 右：SKUで見る -->
+  <text x="600" y="168" font-size="27" font-weight="700" fill="#A4243B">SKUで見ると</text>
+  <rect x="600" y="192" width="540" height="300" rx="10" fill="#FFFFFF" stroke="#E4E7EB"/>
+
+  <text x="624" y="240" font-size="24" fill="#3D444D">売れ筋A</text>
+  <rect x="770" y="220" width="330" height="26" rx="4" fill="#F4F5F6"/>
+  <rect x="770" y="220" width="26" height="26" rx="4" fill="#A4243B"/>
+  <text x="1112" y="240" font-size="22" fill="#A4243B" text-anchor="end" font-weight="700">残り5個</text>
+
+  <text x="624" y="308" font-size="24" fill="#3D444D">売れ筋B</text>
+  <rect x="770" y="288" width="330" height="26" rx="4" fill="#F4F5F6"/>
+  <rect x="770" y="288" width="60" height="26" rx="4" fill="#A4243B"/>
+  <text x="1112" y="308" font-size="22" fill="#656C76" text-anchor="end">12個</text>
+
+  <text x="624" y="376" font-size="24" fill="#3D444D">死に筋C</text>
+  <rect x="770" y="356" width="330" height="26" rx="4" fill="#F4F5F6"/>
+  <rect x="770" y="356" width="250" height="26" rx="4" fill="#C9CDD3"/>
+  <text x="1112" y="376" font-size="22" fill="#656C76" text-anchor="end">48個</text>
+
+  <text x="624" y="444" font-size="24" fill="#3D444D">死に筋D</text>
+  <rect x="770" y="424" width="330" height="26" rx="4" fill="#F4F5F6"/>
+  <rect x="770" y="424" width="180" height="26" rx="4" fill="#C9CDD3"/>
+  <text x="1112" y="444" font-size="22" fill="#656C76" text-anchor="end">35個</text>
+
+  <text x="600" y="540" font-size="25" fill="#1F2328">Aは欠品寸前、CとDが場所と資金を占有している</text>
+  <text x="600" y="578" font-size="23" fill="#656C76">持ちすぎと欠品は、同じ在庫の中で同時に起きる</text>
+</g>
+</svg>

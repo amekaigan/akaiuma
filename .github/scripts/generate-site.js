@@ -184,8 +184,72 @@ function slugOf(permalink) {
 function thumbOf(article) {
   if (article.thumb) return article.thumb;
   const slug = slugOf(article.permalink);
-  const p = path.join(THUMB_DIR, `${slug}.png`);
-  return fs.existsSync(p) ? `/assets/thumb/${slug}.png` : null;
+  for (const ext of ['svg', 'png', 'webp', 'jpg']) {
+    if (fs.existsSync(path.join(THUMB_DIR, `${slug}.${ext}`))) {
+      return `/assets/thumb/${slug}.${ext}`;
+    }
+  }
+  return buildAutoThumb(article, slug);
+}
+
+/* 記事ごとの手描き画像がないときは、タイトル入りのカードをSVGで自動生成する。
+   カテゴリ名だけの箱だと、同じカテゴリの記事が並んだときに全部同じ絵になるため。
+   手描きの図解を置きたい場合は assets/thumb/<slug>.svg に置けば、そちらが優先される。 */
+function buildAutoThumb(article, slug) {
+  if (!slug) return null;
+  const title = shortTitle(article.title);
+  const lines = wrapForThumb(title, 13, 4);
+  const size = lines.length >= 4 ? 58 : lines.length === 3 ? 66 : 74;
+  const top = 250 - ((lines.length - 1) * (size * 1.45)) / 2;
+  const text = lines
+    .map((ln, i) =>
+      `    <text x="96" y="${Math.round(top + i * size * 1.45)}" font-size="${size}" font-weight="700" fill="${C.ink}">${escapeHtml(ln)}</text>`
+    )
+    .join('\n');
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeHtml(title)}">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="16" height="630" fill="${C.brand}"/>
+  <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+    <text x="96" y="118" font-size="30" font-weight="700" fill="${C.brand}" letter-spacing="2">${escapeHtml(article.category || '')}</text>
+${text}
+    <text x="96" y="548" font-size="30" font-weight="700" fill="${C.ink}" letter-spacing="3">${escapeHtml(SITE.name)}</text>
+    <text x="96" y="586" font-size="23" fill="${C.muted}">${escapeHtml(SITE.tagline || '')}</text>
+  </g>
+  <rect x="96" y="500" width="72" height="4" fill="${C.brand}"/>
+</svg>
+`;
+  const dir = path.join(THUMB_DIR, 'auto');
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${slug}.svg`);
+  const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
+  if (prev !== svg) fs.writeFileSync(file, svg);
+  return `/assets/thumb/auto/${slug}.svg`;
+}
+
+/* 日本語には単語の区切りがないので、句読点と助詞の後ろを優先して折り返す */
+function wrapForThumb(text, perLine, maxLines) {
+  const src = (text || '').trim();
+  const lines = [];
+  let rest = src;
+  while (rest.length > 0 && lines.length < maxLines) {
+    if (rest.length <= perLine) {
+      lines.push(rest);
+      break;
+    }
+    const window = rest.slice(0, perLine + 1);
+    let cut = -1;
+    for (const mark of ['、', '。', '，', 'は', 'が', 'に', 'を', 'で', 'と', 'も']) {
+      cut = Math.max(cut, window.lastIndexOf(mark));
+    }
+    const at = cut >= Math.ceil(perLine / 2) ? cut + 1 : perLine;
+    lines.push(rest.slice(0, at).replace(/[、，]$/, ''));
+    rest = rest.slice(at);
+  }
+  if (rest.length > 0 && lines.length === maxLines) {
+    lines[maxLines - 1] = lines[maxLines - 1].slice(0, perLine - 1) + '…';
+  }
+  return lines;
 }
 
 function loadArticles() {

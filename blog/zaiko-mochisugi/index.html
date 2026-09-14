@@ -9,7 +9,7 @@ category: 在庫管理
 level: beginner
 tags:
 disclosure:
-thumb:
+thumb: /assets/figure/zaiko-mochisugi-sku.svg
 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -189,7 +189,8 @@ thumb:
       "@type": "ImageObject",
       "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
     }
-  }
+  },
+  "image": "https://akaiuma.com/assets/figure/zaiko-mochisugi-sku.svg"
 }
 </script>
 <!-- AUTO:HEADER:END -->
@@ -307,6 +308,11 @@ thumb:
 
 <p>ここまでの内容をまとめると、原因は一つに絞られます。在庫を「総数がいくつあるか」だけで把握していると、どの商品が余っていて、どの商品が足りないのかが見えません。総数としては十分でも、中身の配分が崩れていれば、持ちすぎと欠品は同時に発生します。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-mochisugi-sku.svg" alt="総数は同じ100個でも、SKUごとに見ると売れ筋Aが残り5個、死に筋CとDが83個を占めている図" width="1200" height="630" loading="lazy">
+  <figcaption>総数では足りていても、中身の配分が崩れていれば、売れ筋は欠品し、死に筋が場所と資金を占有する。</figcaption>
+</figure>
+
 <h3>SKUごとに適正在庫を考えるという発想</h3>
 
 <p>この問題を避けるには、在庫を商品全体の合計ではなく、SKU（商品1つひとつの単位）ごとに見ます。SKUごとに「今どれくらい売れているか」と「今どれくらい持っているか」を対にして把握できれば、余っている商品と足りない商品を同時に見つけられます。</p>
@@ -324,6 +330,11 @@ thumb:
 <p>そのうえで、新規商品について私が必ず守っている順番があります。<strong>まず小ロットで仕入れ、売れ行きと利益率を確認し、そこから徐々にロット数を上げていく。</strong>最初から大きく張りません。</p>
 
 <p>カンで多めに在庫を積むのは、いちばんやってはいけないことです。思いつきで、データを持たないまま見切り発車をする。これを続けると、事業そのものが続きません。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-mochisugi-gyakusan.svg" alt="発注から納品までのリードタイムの間に売れる見込み数と、欠品を避ける余裕分を足して発注数の目安を出す図" width="1200" height="520" loading="lazy">
+  <figcaption>日数や在庫数に一律の正解はない。決まっているのは、起点を感覚ではなく記録された販売数に置くという順番だけ。</figcaption>
+</figure>
 
 <h3>目安はチャネルや商材によって変わる（断定しない）</h3>
 
@@ -379,7 +390,7 @@ thumb:
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
 <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
 <a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6; border:1px solid #E4E7EB; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid #A4243B;"><span style="color:#A4243B; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">在庫管理</span><span style="color:#656C76; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
   <div style="padding:11px 13px;">
     <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
     <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
@@ -409,7 +420,7 @@ thumb:
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
 <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
 <a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6; border:1px solid #E4E7EB; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid #A4243B;"><span style="color:#A4243B; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">在庫管理</span><span style="color:#656C76; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
   <div style="padding:11px 13px;">
     <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
     <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>

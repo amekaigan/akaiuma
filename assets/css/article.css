@@ -374,6 +374,27 @@ a { color: var(--brand-dark); }
 .ak-compare .ak-bad .ak-compare-label { color: var(--muted); }
 .ak-compare .ak-good .ak-compare-label { color: var(--brand-dark); }
 
+/* 図解。記事の中身を図にしたものだけを置く（雰囲気だけの写真は使わない） */
+.ak-article .ak-figure {
+  margin: 2.4em 0;
+}
+
+.ak-article .ak-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ak-article .ak-figure figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
 /* 場面が変わるところに入れる区切り */
 /* h2の直前には置かない。見出し自体が区切りなので意味が重複する */
 .ak-article .ak-sep {

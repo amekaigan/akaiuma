@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="発注から納品までのリードタイムの間に売れる数と、余裕分を足して発注数を決める図">
+<rect width="1200" height="520" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+
+  <text x="60" y="70" font-size="36" font-weight="700" fill="#1F2328">発注数は、過去の販売ペースから逆算する</text>
+  <rect x="60" y="92" width="72" height="4" fill="#A4243B"/>
+
+  <!-- 時間軸 -->
+  <line x1="60" y1="210" x2="1140" y2="210" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="120" cy="210" r="11" fill="#A4243B"/>
+  <circle cx="820" cy="210" r="11" fill="#A4243B"/>
+  <text x="120" y="182" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">発注</text>
+  <text x="820" y="182" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">納品</text>
+
+  <!-- リードタイム帯 -->
+  <rect x="120" y="234" width="700" height="66" rx="6" fill="#FBF4F5" stroke="#EBD3D8"/>
+  <text x="470" y="276" font-size="27" fill="#82182E" text-anchor="middle">リードタイム（この間は補充できない）</text>
+
+  <!-- 余裕分 -->
+  <rect x="820" y="234" width="320" height="66" rx="6" fill="#F4F5F6" stroke="#E4E7EB"/>
+  <text x="980" y="276" font-size="27" fill="#3D444D" text-anchor="middle">余裕分</text>
+
+  <!-- 計算式 -->
+  <text x="120" y="378" font-size="30" fill="#1F2328">この間に売れる見込み数</text>
+  <text x="600" y="378" font-size="30" fill="#A4243B" font-weight="700">＋</text>
+  <text x="650" y="378" font-size="30" fill="#1F2328">欠品を避ける余裕分</text>
+  <text x="1040" y="378" font-size="30" fill="#A4243B" font-weight="700">＝</text>
+  <text x="120" y="432" font-size="34" font-weight="700" fill="#A4243B">発注数の目安</text>
+
+  <text x="120" y="484" font-size="24" fill="#656C76">起点は「なんとなく」ではなく、記録された販売数。日数と在庫数は商材とチャネルで変わる</text>
+</g>
+</svg>

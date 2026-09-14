@@ -294,6 +294,10 @@ node .github/scripts/generate-site.js
 ヘッダー・フッター・記事一覧・トップ・タグページ・sitemap は、すべてこの
 スクリプトが生成している。**実行しなければ、記事を書いてもサイトには出ない。**
 
+main に push したときは GitHub Actions（`.github/workflows/build-site.yml`）が
+同じスクリプトを実行し、生成結果を自動でコミットする。ただし公開前の確認は
+手元で実行して行うこと。Actions は実行漏れの保険であって、確認の代わりではない。
+
 ---
 
 ## 9. エージェントの運用ルール

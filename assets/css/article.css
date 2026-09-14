@@ -244,15 +244,15 @@ a { color: var(--brand-dark); }
 /* 追加するときは必ずこの中のクラスを使う。記事側で style 属性を書かない */
 
 /* 見出し直後に置く一行要約。この節で何が分かるかを先に渡す */
+/* h2が左に赤罫を持つので、ここでは罫も背景も使わない。文字の格だけで見せる */
 .ak-article .ak-lead {
+  font-size: 1.08rem;
   font-weight: 500;
-  color: var(--ink);
-  background: var(--bg-soft);
-  border-left: 3px solid var(--brand);
-  border-radius: 0 6px 6px 0;
-  padding: 12px 16px;
+  color: var(--ink-sub);
+  line-height: 1.9;
   margin: 0 0 1.9em;
-  line-height: 1.8;
+  padding: 0 0 1em;
+  border-bottom: 1px solid var(--line);
 }
 
 /* 要点・結論のまとめ。実体験は ak-note のほうを使う */
@@ -375,6 +375,7 @@ a { color: var(--brand-dark); }
 .ak-compare .ak-good .ak-compare-label { color: var(--brand-dark); }
 
 /* 場面が変わるところに入れる区切り */
+/* h2の直前には置かない。見出し自体が区切りなので意味が重複する */
 .ak-article .ak-sep {
   border: 0;
   text-align: center;

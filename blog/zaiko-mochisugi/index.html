@@ -11,6 +11,7 @@ tags:
 disclosure:
 thumb:
 thumbcopy: 持ちすぎと欠品は同時に起きる
+takeaways: 持ちすぎと欠品が同時に起きる仕組み | 在庫をSKU単位で見る発想 | 過去の販売ペースから発注数を逆算する手順
 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -197,10 +198,46 @@ thumbcopy: 持ちすぎと欠品は同時に起きる
 <!-- AUTO:HEADER:END -->
 
 <!-- AUTO:ARTICLEHEAD:START -->
+<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:#A4243B; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>
 <div class="article-header" data-level="beginner">
   <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
   <h1>在庫を持ちすぎるのに欠品する理由</h1>
-  <div class="article-meta"><span>公開：2026年9月14日</span><span>料金・仕様の確認：2026年9月14日</span></div>
+  <div class="article-meta"><span>公開：2026年9月14日</span><span>料金・仕様の確認：2026年9月14日</span><span>読了：約8分</span></div>
+</div>
+<img class="article-thumb" src="/assets/thumb/auto/zaiko-mochisugi.svg" alt="" width="1200" height="630">
+<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+    <li>持ちすぎと欠品が同時に起きる仕組み</li>
+    <li>在庫をSKU単位で見る発想</li>
+    <li>過去の販売ペースから発注数を逆算する手順</li>
+  </ul>
 </div>
 
 <!-- AUTO:ARTICLEHEAD:END -->

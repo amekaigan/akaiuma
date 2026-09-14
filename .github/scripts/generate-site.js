@@ -187,6 +187,7 @@ function extractMeta(content) {
     disclosure: get('disclosure'),
     thumb: get('thumb'),
     thumbcopy: get('thumbcopy'),
+    takeaways: get('takeaways'),
     tags: get('tags'),
   };
 }
@@ -605,20 +606,92 @@ function formatJpDate(d) {
   return `${m[1]}年${Number(m[2])}月${Number(m[3])}日`;
 }
 
-function articleHeadHtml(article) {
+function articleHeadHtml(article, content) {
   if (!article) return '';
   const pub = formatJpDate(article.published);
   const upd = formatJpDate(article.updated);
   const ver = formatJpDate(article.verified);
+  const min = readingMinutes(content);
   let meta = `<span>公開：${pub}</span>`;
   if (upd && upd !== pub) meta += `<span>更新：${upd}</span>`;
   if (ver) meta += `<span>料金・仕様の確認：${ver}</span>`;
-  return `<div class="article-header" data-level="${escapeHtml(article.level || '')}">
+  if (min) meta += `<span>読了：約${min}分</span>`;
+  const img = thumbOf(article);
+  const banner = img
+    ? `<img class="article-thumb" src="${img}" alt="" width="1200" height="630">`
+    : '';
+  return `${readBarHtml()}
+<div class="article-header" data-level="${escapeHtml(article.level || '')}">
   <div class="article-category">${escapeHtml(article.category)}${levelBadge(article.level)}</div>
   <h1>${headlineHtml(article.title)}</h1>
   <div class="article-meta">${meta}</div>
 </div>
+${banner}
+${takeawaysHtml(article)}
 ${disclosureHtml(article)}`;
+}
+
+/* 「この記事で分かること」。メタ情報の takeaways を | 区切りで書く。
+   読む前に、読んで何が手に入るかを渡すためのブロック。 */
+function takeawaysHtml(article) {
+  const raw = (article.takeaways || '').trim();
+  if (!raw) return '';
+  const items = raw
+    .split(/[|｜]/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+  if (items.length === 0) return '';
+  return `<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+${items.map((x) => `    <li>${escapeHtml(x)}</li>`).join('\n')}
+  </ul>
+</div>`;
+}
+
+/* 読了時間。日本語は1分あたり600字を目安にする。
+   本文の文字数から出すので、書き手が数える必要はない。 */
+function readingMinutes(content) {
+  if (!content) return 0;
+  const m = content.match(/<article[^>]*class="[^"]*ak-article[^"]*"[^>]*>([\s\S]*?)<\/article>/);
+  if (!m) return 0;
+  const text = m[1]
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\s+/g, '');
+  if (!text) return 0;
+  return Math.max(1, Math.round(text.length / 600));
+}
+
+/* 読み進みを示す上部のバー。残りが見えると、読者は読み進めやすくなる */
+function readBarHtml() {
+  return `<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:${C.brand}; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>`;
 }
 
 /* ---------------- 記事下のブロック ---------------- */
@@ -1064,7 +1137,7 @@ function applyCommonBlocks(articles) {
       content = replaceBetweenMarkers(content, 'AD', adHtml(), true);
     }
     if (hasMarker(content, 'ARTICLEHEAD')) {
-      content = replaceBetweenMarkers(content, 'ARTICLEHEAD', articleHeadHtml(current), true);
+      content = replaceBetweenMarkers(content, 'ARTICLEHEAD', articleHeadHtml(current, content), true);
     }
     fs.writeFileSync(file, content);
     count++;

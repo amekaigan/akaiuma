@@ -65,6 +65,60 @@ a { color: var(--brand-dark); }
   border-top: 1px solid var(--line);
 }
 
+/* 記事冒頭のバナー。一覧と同じ絵を出して、文字だけで始まる圧を減らす */
+.article-thumb {
+  display: block;
+  width: min(720px, calc(100% - 32px));
+  height: auto;
+  margin: 0 auto 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* 「この記事で分かること」。読む前に、読んで何が手に入るかを渡す */
+.ak-takeaways {
+  box-sizing: border-box;
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto 32px;
+  padding: 18px 22px;
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: 10px;
+}
+
+.ak-takeaways-title {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.ak-takeaways ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ak-takeaways li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 8px;
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.ak-takeaways li:last-child { margin-bottom: 0; }
+
+.ak-takeaways li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand);
+  font-weight: 700;
+}
+
 /* ---------- 記事本文 ---------- */
 
 .ak-article {

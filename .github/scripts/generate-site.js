@@ -109,7 +109,7 @@ function extractMeta(content) {
   if (!m) return null;
   const block = m[1];
   const get = (key) => {
-    const mm = block.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+    const mm = block.match(new RegExp(`^${key}:[ \\t]*(.+)$`, 'm'));
     return mm ? mm[1].trim() : null;
   };
   return {

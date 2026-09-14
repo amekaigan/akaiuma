@@ -1,6 +1,6 @@
 ---
 name: writer
-description: research/ の素材とSEO担当の構成案をもとに、記事本文を articles/ に執筆する担当。新規記事の草稿作成、既存記事の加筆・リライトを行うときに使う。キーワード設計や公開前の最適化はSEO担当の仕事なので行わない。
+description: research/ の素材とSEO担当の構成案をもとに、記事本文を blog/<slug>/index.html に執筆する担当。新規記事の草稿作成、既存記事の加筆・リライトを行うときに使う。キーワード設計や公開前の最適化はSEO担当の仕事なので行わない。
 tools: Read, Write
 model: sonnet
 ---
@@ -18,20 +18,40 @@ model: sonnet
 
 ## 出力先
 
-`articles/YYYY-MM-DD-slug.md`
+`blog/<slug>/index.html`
 
-フロントマターは必須。`level` と `category` を省略してはならない。
+slug は英小文字とハイフン。日付はファイル名ではなくメタ情報の `published` で持つ。
 
-```yaml
----
-title: 
-description: 
-level: beginner | intermediate
+**`blog/_template/index.html` を複製して書くこと。**ゼロから組んではならない。
+ヘッダー・フッター・目次・記事下のブロックは生成スクリプトが後から差し込むので、
+テンプレートの `<!-- AUTO:～ -->` の行は消さず、そのまま残す。
+
+本文は `<article class="ak-article">` の中に書く。見出しは `<h2>` `<h3>`、
+段落は `<p>`、強調は `<strong>`。独自のクラスやスタイルを足さない。
+
+冒頭のメタ情報は必須。`level` と `category` を省略してはならない。
+
+```html
+<!--
+title: 記事タイトル｜あかいうま
+meta: 検索結果に出る説明文。70文字以内
+permalink: /blog/<slug>/
+published: YYYY-MM-DD
+updated:
+verified: YYYY-MM-DD
 category: リサーチ | 仕入れ | 販路・集客 | 在庫管理 | 数字管理 | 業務効率化
-published_at: YYYY-MM-DD
-verified_at: YYYY-MM-DD
----
+level: beginner | intermediate
+tags: 楽天市場, Amazon
+disclosure:
+thumb:
+-->
 ```
+
+`tags` に書けるのは CLAUDE.md 5節に載っている名前だけ。
+辞書にない名前は生成時に無視される。勝手にタグを増やさないこと。
+
+書き終えたら、ディレクターに「生成スクリプトの実行が必要」と報告する。
+実行しなければサイトには出ない。実行はディレクターが行う。
 
 ## 書き方の原則
 

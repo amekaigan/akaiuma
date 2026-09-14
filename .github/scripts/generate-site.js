@@ -44,6 +44,15 @@ const ANNOUNCE = {
 // トップページのスライダーに出す「おすすめ記事」の slug（表示順）
 const FEATURED_SLUGS = [];
 
+// 自社ツールへの導線を出すかどうか。
+// /tool/ ページができるまでは false にしておく。理由は2つある。
+//   1. /tool/ が存在しないので、出すと読者を404に送ることになる
+//   2. 販売していないものを宣伝する形になり、CLAUDE.md 3節の開示義務の
+//      扱いが曖昧になる（「開発・販売者です」と書くと事実と違う）
+// /tool/ を公開したら true に戻すこと。記事下CTA・本文中のPR枠・
+// ヘッダーのツールボタン・フッターのツールリンクが、まとめて復活する。
+const TOOL_PAGE_READY = false;
+
 // 記事下の大きめCTA
 const CTA = {
   heading: '在庫と発注の判断を、勘から数字に変える',
@@ -278,7 +287,7 @@ function headerHtml() {
       <a href="/${A}/">記事一覧</a>
       <a href="/${A}/#inventory">在庫管理</a>
       <a href="/about/">このサイトについて</a>
-      <a href="/tool/" class="nav-cta">ツール</a>
+      ${TOOL_PAGE_READY ? '<a href="/tool/" class="nav-cta">ツール</a>' : ''}
       <label for="navToggle" class="nav-close">✕ 閉じる</label>
     </nav>
   </div>
@@ -535,6 +544,7 @@ function sectionTitle(text) {
 }
 
 function ctaHtml() {
+  if (!TOOL_PAGE_READY) return '';
   const prev =
     CTA.previews && CTA.previews.length
       ? `<div style="display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 0 14px; -webkit-overflow-scrolling:touch;">
@@ -699,7 +709,7 @@ ${cats}
         <a href="/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
         <a href="/${A}/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
         <a href="/about/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
-        <a href="/tool/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ツール</a>
+        ${TOOL_PAGE_READY ? `<a href="/tool/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ツール</a>` : ''}
       </div>
     </div>
 
@@ -730,6 +740,7 @@ ${footerHtml(articles)}`;
 }
 
 function adHtml() {
+  if (!TOOL_PAGE_READY) return '';
   return `<div style="border:1px solid ${C.line}; border-radius:8px; padding:18px; margin:28px 0; background:${C.bgSoft};">
   <span style="display:inline-block; font-size:0.7em; color:${C.muted}; border:1px solid ${C.chromeLine}; border-radius:3px; padding:1px 6px; margin-bottom:10px;">${AD_SLOT.label}</span>
   ${AD_SLOT.html}

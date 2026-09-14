@@ -240,6 +240,155 @@ a { color: var(--brand-dark); }
   margin-bottom: 10px;
 }
 
+/* ---------- 記事内の装飾パーツ ---------- */
+/* 追加するときは必ずこの中のクラスを使う。記事側で style 属性を書かない */
+
+/* 見出し直後に置く一行要約。この節で何が分かるかを先に渡す */
+.ak-article .ak-lead {
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 0 0 1.9em;
+  line-height: 1.8;
+}
+
+/* 要点・結論のまとめ。実体験は ak-note のほうを使う */
+.ak-point {
+  background: var(--chrome-soft);
+  border: 1px solid var(--chrome-line);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 0 0 2em;
+}
+
+.ak-point p:last-child,
+.ak-point ul:last-child,
+.ak-point ol:last-child { margin-bottom: 0; }
+
+.ak-point-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink-sub);
+  margin-bottom: 8px;
+}
+
+/* 一文だけ抜き出して息を入れる。1記事に1〜2回まで */
+.ak-pull {
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--ink);
+  border-top: 2px solid var(--brand);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 2px;
+  margin: 2.4em 0;
+}
+
+/* 手順。順番に意味があるときだけ使う */
+.ak-article ol.ak-steps {
+  list-style: none;
+  counter-reset: ak-step;
+  padding-left: 0;
+  margin: 0 0 2em;
+}
+
+.ak-article ol.ak-steps > li {
+  counter-increment: ak-step;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 1.1em;
+}
+
+.ak-article ol.ak-steps > li::before {
+  content: counter(ak-step);
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+/* 今日やることのチェックリスト */
+.ak-article ul.ak-check {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 2em;
+}
+
+.ak-article ul.ak-check > li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 0.9em;
+}
+
+.ak-article ul.ak-check > li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* 悪い例と良い例の対比。並べると差が一目で伝わる */
+.ak-compare {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 2em;
+}
+
+@media (min-width: 681px) {
+  .ak-compare { grid-template-columns: 1fr 1fr; }
+}
+
+.ak-compare > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.ak-compare .ak-bad { border-top: 3px solid var(--muted); }
+.ak-compare .ak-good { border-top: 3px solid var(--brand); }
+
+.ak-compare p { margin: 0; font-size: 0.95rem; line-height: 1.8; }
+
+.ak-compare-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ak-compare .ak-bad .ak-compare-label { color: var(--muted); }
+.ak-compare .ak-good .ak-compare-label { color: var(--brand-dark); }
+
+/* 場面が変わるところに入れる区切り */
+.ak-article .ak-sep {
+  border: 0;
+  text-align: center;
+  margin: 3em 0;
+  overflow: visible;
+}
+
+.ak-article .ak-sep::before {
+  content: "•  •  •";
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+}
+
 /* ---------- トップページ ---------- */
 
 .hero {

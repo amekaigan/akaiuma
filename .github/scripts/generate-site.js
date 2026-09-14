@@ -20,18 +20,19 @@ const SITE = {
 
 // 配色。ここを変えるとサイト全体の色が変わります
 const C = {
-  brand: '#C8102E',      // ブランドの赤
-  brandDark: '#9E0C24',  // ホバー時の濃い赤
-  brandBg: '#FDF2F4',    // 赤の薄い背景
-  brandBorder: '#F5C6CE',
-  ink: '#1A1A1A',        // 見出し・本文の黒
-  inkSub: '#3A3A3A',
-  dark: '#1C1C1E',       // ヘッダー・フッターの地色
-  darkSub: '#2C2C2E',
-  textOnDark: '#E8E8E8',
-  muted: '#6B7280',
-  line: '#E5E7EB',
-  bgSoft: '#FAFAFA',
+  brand: '#A4243B',      // ブランドのえんじ
+  brandDark: '#82182E',  // ホバー時の濃いえんじ
+  brandBg: '#FBF4F5',    // えんじの薄い背景
+  brandBorder: '#EBD3D8',
+  ink: '#1F2328',        // 見出し・本文の黒
+  inkSub: '#3D444D',     // 補助的な本文
+  chrome: '#FFFFFF',     // ヘッダーの地色
+  chromeSoft: '#F4F5F6', // フッター・表の見出しの地色
+  chromeLine: '#E2E5E9', // ヘッダー・フッターの罫線
+  textOnChrome: '#3D444D', // ヘッダー・フッターの文字
+  muted: '#656C76',
+  line: '#E4E7EB',
+  bgSoft: '#F6F7F8',
 };
 
 // お知らせバー：text を空文字 '' にするとバー自体が非表示になります
@@ -42,6 +43,15 @@ const ANNOUNCE = {
 
 // トップページのスライダーに出す「おすすめ記事」の slug（表示順）
 const FEATURED_SLUGS = [];
+
+// 自社ツールへの導線を出すかどうか。
+// /tool/ ページができるまでは false にしておく。理由は2つある。
+//   1. /tool/ が存在しないので、出すと読者を404に送ることになる
+//   2. 販売していないものを宣伝する形になり、CLAUDE.md 3節の開示義務の
+//      扱いが曖昧になる（「開発・販売者です」と書くと事実と違う）
+// /tool/ を公開したら true に戻すこと。記事下CTA・本文中のPR枠・
+// ヘッダーのツールボタン・フッターのツールリンクが、まとめて復活する。
+const TOOL_PAGE_READY = false;
 
 // 記事下の大きめCTA
 const CTA = {
@@ -57,8 +67,8 @@ const CTA = {
 // 本文中の広告枠（AUTO:AD マーカーがある記事だけに挿入されます）
 const AD_SLOT = {
   label: 'PR',
-  html: `<p style="margin:0 0 10px; font-weight:bold; color:${'#1A1A1A'};">在庫の持ちすぎと欠品を、同時に減らす</p>
-<a href="/tool/" style="display:inline-block; background:#C8102E; color:#fff; text-decoration:none; font-weight:bold; padding:9px 20px; border-radius:6px; font-size:0.9em;">詳しく見る →</a>`,
+  html: `<p style="margin:0 0 10px; font-weight:bold; color:${C.ink};">在庫の持ちすぎと欠品を、同時に減らす</p>
+<a href="/tool/" style="display:inline-block; background:${C.brand}; color:#fff; text-decoration:none; font-weight:bold; padding:9px 20px; border-radius:6px; font-size:0.9em;">詳しく見る →</a>`,
 };
 
 // 開示ブロック（AUTO:DISCLOSURE マーカーがある記事に挿入されます）
@@ -89,6 +99,20 @@ const CATEGORY_TO_ID = {
   '業務効率化': 'efficiency',
 };
 
+// タグ。左が表示名、右がURLになるID（/tag/rakuten/ という形）
+// ここにないタグが記事に書かれていた場合は、警告を出して無視します
+const TAG_TO_ID = {
+  '楽天市場': 'rakuten',
+  'Amazon': 'amazon',
+  'Yahoo!ショッピング': 'yahoo',
+  '自社サイト': 'own-shop',
+  '複数チャネル運用': 'multi-channel',
+};
+
+// タグページを作る最低本数。これ未満のタグは記事下に表示するだけでページを作りません
+// （中身の薄いページを量産しないため）
+const TAG_MIN_ARTICLES = 3;
+
 /* =========================================================
    ▲▲▲ 書き換えるのはここまで ▲▲▲
    ========================================================= */
@@ -102,6 +126,11 @@ const THUMB_DIR = path.join(ROOT, 'assets', 'thumb');
 const SITE_URL = SITE.url;
 const VISIBLE_COUNT = 5;
 const CATEGORY_ORDER = Object.values(CATEGORY_TO_ID);
+const TAG_ORDER = Object.values(TAG_TO_ID);
+const TAG_DIR = path.join(ROOT, 'tag');
+const ROBOTS = path.join(ROOT, 'robots.txt');
+// ページを生成したタグのID。記事下のタグをリンクにするかの判断に使う
+let TAG_PAGE_IDS = new Set();
 const LEVEL_LABEL = { beginner: '初心者向け', intermediate: '中級者向け' };
 
 function extractMeta(content) {
@@ -109,7 +138,7 @@ function extractMeta(content) {
   if (!m) return null;
   const block = m[1];
   const get = (key) => {
-    const mm = block.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+    const mm = block.match(new RegExp(`^${key}:[ \\t]*(.+)$`, 'm'));
     return mm ? mm[1].trim() : null;
   };
   return {
@@ -123,7 +152,29 @@ function extractMeta(content) {
     level: get('level'),
     disclosure: get('disclosure'),
     thumb: get('thumb'),
+    tags: get('tags'),
   };
+}
+
+// tags: 楽天市場, Amazon → ['楽天市場', 'Amazon']
+// 辞書にない名前は警告して捨てる。表記ゆれでタグが分裂するのを防ぐため
+function parseTags(raw, permalink) {
+  if (!raw) return [];
+  const names = [];
+  for (const part of raw.split(/[,、]/)) {
+    const name = part.trim();
+    if (!name) continue;
+    if (!TAG_TO_ID[name]) {
+      console.warn(`未定義のタグ: ${name} (${permalink})`);
+      continue;
+    }
+    if (!names.includes(name)) names.push(name);
+  }
+  return names;
+}
+
+function articlesWithTag(articles, name) {
+  return articles.filter((a) => (a.tagList || []).includes(name));
 }
 
 function slugOf(permalink) {
@@ -155,6 +206,7 @@ function loadArticles() {
       continue;
     }
     if (!info.level) console.warn(`level がありません: ${info.permalink}`);
+    info.tagList = parseTags(info.tags, info.permalink);
     info.file = filePath;
     articles.push(info);
   }
@@ -177,7 +229,7 @@ function levelBadge(level) {
 function cardHtml(article) {
   return `<div style="border:1px solid ${C.line}; border-radius:8px; padding:20px; margin:20px 0;">
   <p style="font-size:0.8em; color:${C.brand}; font-weight:bold; margin:0 0 6px;">${escapeHtml(article.category)}${levelBadge(article.level)}</p>
-  <h3 style="margin:0 0 8px; font-size:1.1em;"><a href="${article.permalink}" style="color:${C.ink}; text-decoration:none;">${escapeHtml(article.title)}</a></h3>
+  <h3 style="margin:0 0 8px; font-size:1.1em;"><a href="${article.permalink}" style="color:${C.ink}; text-decoration:none;">${escapeHtml(shortTitle(article.title))}</a></h3>
   <p style="color:${C.muted}; margin:0;">${escapeHtml(article.meta)}</p>
 </div>`;
 }
@@ -217,13 +269,13 @@ function hasMarker(content, markerName) {
 
 function headerHtml() {
   const A = SITE.articlesDir;
-  return `<header style="background:${C.dark}; border-bottom:2px solid ${C.brand}; position:sticky; top:0; z-index:100; box-shadow:0 2px 16px rgba(0,0,0,.25);">
+  return `<header style="background:${C.chrome}; border-bottom:1px solid ${C.chromeLine}; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
   <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-    <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="${SITE.logoWhite}" alt="${SITE.name}" style="height:32px; width:auto; display:block;"><span style="font-size:0.62em; color:${C.muted}; white-space:nowrap;">${SITE.tagline}</span></a>
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="${SITE.logoColor}" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>${SITE.name}</strong><span class="brand-tagline">${SITE.tagline}</span></span></a>
     <input type="checkbox" id="navToggle">
     <label for="navToggle" id="navBtn" aria-label="メニュー">
-      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${C.inkSub}" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${C.inkSub}" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
     </label>
     <nav id="siteNav">
       <div id="searchWrap">
@@ -235,45 +287,49 @@ function headerHtml() {
       <a href="/${A}/">記事一覧</a>
       <a href="/${A}/#inventory">在庫管理</a>
       <a href="/about/">このサイトについて</a>
-      <a href="/tool/" class="nav-cta">ツール</a>
+      ${TOOL_PAGE_READY ? '<a href="/tool/" class="nav-cta">ツール</a>' : ''}
       <label for="navToggle" class="nav-close">✕ 閉じる</label>
     </nav>
   </div>
 </header>
 <style>
   body { margin:0; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .brand-text strong { font-size:1.05em; font-weight:700; color:${C.ink}; letter-spacing:.04em; }
+  .brand-tagline { font-size:0.68em; color:${C.muted}; white-space:nowrap; }
+  @media (max-width: 340px) { .brand-tagline { display:none; } }
   #navToggle { display:none; }
   #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
   #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:${C.muted}; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
-  #searchClear:hover { color:${C.textOnDark}; }
+  #searchClear:hover { color:${C.ink}; }
   #navBtn .ic-close { display:none; }
   #navToggle:checked ~ #navBtn .ic-open { display:none; }
   #navToggle:checked ~ #navBtn .ic-close { display:block; }
   .nav-close { display:none; }
-  #siteNav a { color:${C.textOnDark}; text-decoration:none; font-size:0.9em; }
+  #siteNav a { color:${C.textOnChrome}; text-decoration:none; font-size:0.9em; }
   #siteNav a.nav-cta { color:#fff; background:${C.brand}; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
   #searchWrap { position:relative; }
-  #siteSearch { box-sizing:border-box; max-width:100%; background:${C.darkSub}; border:1px solid #3F3F46; color:${C.textOnDark}; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%236B7280' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:${C.chromeSoft}; border:1px solid ${C.chromeLine}; color:${C.ink}; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
   #siteSearch::placeholder { color:${C.muted}; }
   #siteSearch:focus { border-color:${C.brand}; }
-  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.25); z-index:200; text-align:left; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
   @media (min-width: 681px) {
     label[for="navToggle"] { display:none; }
     #siteNav { display:flex; align-items:center; gap:22px; }
     #siteSearch { width:210px; }
     .nav-close { display:none !important; }
     #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
-    #siteNav a:not(.nav-cta):hover { color:#fff; }
+    #siteNav a:not(.nav-cta):hover { color:${C.brand}; }
     #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:${C.brand}; transform:scaleX(0); transition:transform .15s; }
     #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
     #siteNav a.nav-cta:hover { background:${C.brandDark}; }
   }
   @media (max-width: 680px) {
     label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
-    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.darkSub}; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.chromeLine}; }
     #navToggle:checked ~ #siteNav { display:flex; }
-    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid ${C.darkSub}; font-size:0.95em; }
-    #siteNav a::after { content:"›"; color:#52525B; font-size:1.2em; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid ${C.chromeLine}; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:${C.muted}; font-size:1.2em; }
     #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
     #siteNav a.nav-cta::after { content:""; }
     #searchWrap { margin:8px 0 10px; width:100%; }
@@ -282,8 +338,8 @@ function headerHtml() {
     #searchResults { width:100%; right:auto; left:0; top:50px; }
   }
   .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
-  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:${C.dark}; border:1px solid #3F3F46; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(0,0,0,.3); padding:0; }
-  #toTop:hover { background:${C.darkSub}; border-color:${C.brand}; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:${C.brand}; border:1px solid ${C.brand}; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:${C.brandDark}; border-color:${C.brandDark}; }
   #toTop.show { display:flex; }
   @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
 </style>
@@ -301,21 +357,21 @@ function headerHtml() {
     fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
   }
   function closeRow(){
-    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#FAFAFA; border:0; border-top:1px solid #E5E7EB; color:#6B7280; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:${C.bgSoft}; border:0; border-top:1px solid ${C.line}; color:${C.muted}; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
   }
   function render(){
     var q=input.value.trim().toLowerCase();
     if(!q||!data){box.style.display='none';box.innerHTML='';return;}
     var hits=data.filter(function(a){
-      return (a.t+' '+a.m+' '+a.c).toLowerCase().indexOf(q)>-1;
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
     }).slice(0,8);
     if(hits.length===0){
-      box.innerHTML='<p style="margin:0; padding:16px; color:#6B7280; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+      box.innerHTML='<p style="margin:0; padding:16px; color:${C.muted}; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
     }else{
       box.innerHTML=hits.map(function(a){
-        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #F3F4F6; text-decoration:none;">'+
-        '<span style="display:block; font-size:0.7em; color:#C8102E; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
-        '<span style="display:block; font-size:0.85em; color:#1A1A1A; line-height:1.45;">'+a.t+'</span></a>';
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid ${C.line}; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:${C.brand}; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:${C.ink}; line-height:1.45;">'+a.t+'</span></a>';
       }).join('')+closeRow();
     }
     box.style.display='block';
@@ -456,9 +512,9 @@ ${disclosureHtml(article)}`;
 function thumbBoxHtml(article) {
   const img = thumbOf(article);
   if (img) {
-    return `<div style="aspect-ratio:1200/630; background:${C.dark} url('${img}') center/cover no-repeat; border-radius:6px;"></div>`;
+    return `<div style="aspect-ratio:1200/630; background:${C.chromeSoft} url('${img}') center/cover no-repeat; border-radius:6px;"></div>`;
   }
-  return `<div style="aspect-ratio:1200/630; background:${C.dark}; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid ${C.brand};"><span style="color:${C.brand}; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">${escapeHtml(article.category)}</span><span style="color:${C.muted}; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>`;
+  return `<div style="aspect-ratio:1200/630; background:${C.chromeSoft}; border:1px solid ${C.line}; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid ${C.brand};"><span style="color:${C.brand}; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">${escapeHtml(article.category)}</span><span style="color:${C.muted}; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>`;
 }
 
 function shortTitle(title) {
@@ -488,6 +544,7 @@ function sectionTitle(text) {
 }
 
 function ctaHtml() {
+  if (!TOOL_PAGE_READY) return '';
   const prev =
     CTA.previews && CTA.previews.length
       ? `<div style="display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 0 14px; -webkit-overflow-scrolling:touch;">
@@ -554,14 +611,56 @@ ${items}
 </section>`;
 }
 
+// 丸いチップ。href が null のときはリンクにしない（ページのないタグ用）
+function chipHtml(label, count, href) {
+  const inner = `${escapeHtml(label)}${count === null ? '' : ` <span style="color:${C.muted};">${count}</span>`}`;
+  const base = `display:inline-block; background:${C.chromeSoft}; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;`;
+  if (!href) return `<span style="${base} color:${C.muted};">${inner}</span>`;
+  return `<a href="${href}" style="${base} color:${C.ink}; text-decoration:none;">${inner}</a>`;
+}
+
 function tagsHtml(articles) {
   const items = CATEGORY_ORDER.map((id) => {
     const name = Object.keys(CATEGORY_TO_ID).find((k) => CATEGORY_TO_ID[k] === id);
     const count = articles.filter((a) => a.category === name).length;
-    return `<a href="/${SITE.articlesDir}/#${id}" style="display:inline-block; background:#F3F4F6; color:${C.ink}; text-decoration:none; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0;">${escapeHtml(name)} <span style="color:${C.muted};">${count}</span></a>`;
+    return chipHtml(name, count, `/${SITE.articlesDir}/#${id}`);
   }).join('\n');
   return `<section style="margin:0 0 40px;">
 ${sectionTitle('カテゴリから探す')}
+<div>
+${items}
+</div>
+</section>`;
+}
+
+// 「タグから探す」。記事が1本もないタグは出さない
+function tagIndexHtml(articles) {
+  const items = TAG_ORDER.map((id) => {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    const count = articlesWithTag(articles, name).length;
+    if (count === 0) return '';
+    return chipHtml(name, count, TAG_PAGE_IDS.has(id) ? `/tag/${id}/` : null);
+  }).filter(Boolean).join('\n');
+  if (!items) return '';
+  return `<section style="margin:0 0 40px;">
+${sectionTitle('タグから探す')}
+<div>
+${items}
+</div>
+</section>`;
+}
+
+// 記事についているタグ。記事下に出す
+function articleTagsHtml(article) {
+  if (!article || !article.tagList || article.tagList.length === 0) return '';
+  const items = article.tagList
+    .map((name) => {
+      const id = TAG_TO_ID[name];
+      return chipHtml(name, null, TAG_PAGE_IDS.has(id) ? `/tag/${id}/` : null);
+    })
+    .join('\n');
+  return `<section style="margin:0 0 40px;">
+${sectionTitle('この記事のタグ')}
 <div>
 ${items}
 </div>
@@ -587,27 +686,30 @@ function footerHtml(articles) {
   const sns = [['X', 'https://x.com/']]
     .map(
       ([n, u]) =>
-        `<a href="${u}" style="color:${C.textOnDark}; text-decoration:none; font-size:0.8em; border:1px solid #3F3F46; border-radius:999px; padding:6px 16px;">${n}</a>`
+        `<a href="${u}" style="color:${C.textOnChrome}; text-decoration:none; font-size:0.8em; border:1px solid ${C.chromeLine}; border-radius:999px; padding:6px 16px;">${n}</a>`
     )
     .join('\n');
-  return `<footer style="background:${C.dark}; color:${C.muted};">
+  return `<footer style="background:${C.chromeSoft}; color:${C.muted}; border-top:1px solid ${C.chromeLine};">
   <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
 
     <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
       <div style="flex:1 1 200px; min-width:0;">
-        <img src="${SITE.logoWhite}" alt="${SITE.name}" style="height:30px; width:auto; display:block; margin:0 0 12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin:0 0 12px;">
+          <img src="${SITE.logoColor}" alt="" style="height:30px; width:auto; display:block; flex:0 0 auto;">
+          <strong style="font-size:1.05em; font-weight:700; color:${C.ink}; letter-spacing:.04em;">${SITE.name}</strong>
+        </div>
         <p style="margin:0; font-size:0.84em; line-height:1.85; color:${C.muted};">${escapeHtml(SITE.description)}</p>
       </div>
       <div style="flex:0 1 130px;">
-        <p style="margin:0 0 8px; color:#fff; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+        <p style="margin:0 0 8px; color:${C.ink}; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
 ${cats}
       </div>
       <div style="flex:0 1 130px;">
-        <p style="margin:0 0 8px; color:#fff; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <p style="margin:0 0 8px; color:${C.ink}; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
         <a href="/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
         <a href="/${A}/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
         <a href="/about/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
-        <a href="/tool/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ツール</a>
+        ${TOOL_PAGE_READY ? `<a href="/tool/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ツール</a>` : ''}
       </div>
     </div>
 
@@ -615,9 +717,9 @@ ${cats}
 ${sns}
     </div>
 
-    <div style="border-top:1px solid ${C.darkSub}; padding-top:20px;">
+    <div style="border-top:1px solid ${C.chromeLine}; padding-top:20px;">
       <p style="margin:0 0 10px; color:${C.muted}; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
-      <p style="margin:0; color:#52525B; font-size:0.78em;">&copy; ${new Date().getFullYear()} ${SITE.name}</p>
+      <p style="margin:0; color:${C.muted}; font-size:0.78em;">&copy; ${new Date().getFullYear()} ${SITE.name}</p>
     </div>
 
   </div>
@@ -626,18 +728,21 @@ ${sns}
 
 function belowHtml(articles, current) {
   return `<div style="background:${C.bgSoft}; border-top:1px solid ${C.line};"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+${articleTagsHtml(current)}
 ${stepUpHtml(articles, current)}
 ${ctaHtml()}
 ${relatedHtml(articles, current)}
 ${tagsHtml(articles)}
+${tagIndexHtml(articles)}
 ${latestHtml(articles, current)}
 </div></div>
 ${footerHtml(articles)}`;
 }
 
 function adHtml() {
+  if (!TOOL_PAGE_READY) return '';
   return `<div style="border:1px solid ${C.line}; border-radius:8px; padding:18px; margin:28px 0; background:${C.bgSoft};">
-  <span style="display:inline-block; font-size:0.7em; color:${C.muted}; border:1px solid #D1D5DB; border-radius:3px; padding:1px 6px; margin-bottom:10px;">${AD_SLOT.label}</span>
+  <span style="display:inline-block; font-size:0.7em; color:${C.muted}; border:1px solid ${C.chromeLine}; border-radius:3px; padding:1px 6px; margin-bottom:10px;">${AD_SLOT.label}</span>
   ${AD_SLOT.html}
 </div>`;
 }
@@ -880,14 +985,104 @@ function updateTopPage(articles) {
 
 function updateSearchIndex(articles) {
   const data = articles.map((a) => ({
-    t: a.title,
+    t: shortTitle(a.title),
     m: a.meta,
     c: a.category,
+    g: (a.tagList || []).join(' '),
     l: a.level || '',
     u: a.permalink,
   }));
   fs.writeFileSync(SEARCH_INDEX, JSON.stringify(data));
   console.log(`検索インデックス生成: ${data.length}件`);
+}
+
+// ページを作るタグを先に決める。記事下のタグをリンクにするかがこれで決まるため、
+// 実際にページを書き出す前に確定させておく必要がある
+function computeTagPageIds(articles) {
+  const ids = new Set();
+  for (const id of TAG_ORDER) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    if (articlesWithTag(articles, name).length >= TAG_MIN_ARTICLES) ids.add(id);
+  }
+  return ids;
+}
+
+function tagPageHtml(name, id, list, allArticles) {
+  const title = `${name}の記事一覧｜${SITE.name}`;
+  const desc = `「${name}」のタグがついた記事${list.length}件の一覧。${SITE.tagline}。`;
+  const url = `${SITE_URL}/tag/${id}/`;
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(desc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${SITE_URL}/og-default.png">
+<meta property="og:site_name" content="${SITE.name}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/article.css">
+</head>
+<body>
+
+${headerHtml()}
+
+<div class="hero">
+  <div class="hero-rule"></div>
+  <h1>${escapeHtml(name)}</h1>
+  <p>「${escapeHtml(name)}」のタグがついた記事${list.length}件です。</p>
+</div>
+
+<div class="section">
+${list.map(cardHtml).join('\n')}
+<p style="margin:24px 0 0;"><a href="/${SITE.articlesDir}/" style="color:${C.brand}; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</div>
+
+${footerHtml(allArticles)}
+
+</body>
+</html>
+`;
+}
+
+function writeTagPages(articles) {
+  const wanted = new Map();
+  for (const id of TAG_PAGE_IDS) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    wanted.set(id, articlesWithTag(articles, name));
+  }
+  if (wanted.size === 0) {
+    if (fs.existsSync(TAG_DIR)) fs.rmSync(TAG_DIR, { recursive: true });
+    console.log('タグページ生成: 0件');
+    return;
+  }
+  fs.mkdirSync(TAG_DIR, { recursive: true });
+  // 本数が減ってページを作らなくなったタグの残骸を消す
+  for (const d of fs.readdirSync(TAG_DIR, { withFileTypes: true })) {
+    if (d.isDirectory() && !wanted.has(d.name)) {
+      fs.rmSync(path.join(TAG_DIR, d.name), { recursive: true });
+    }
+  }
+  for (const [id, list] of wanted) {
+    const name = Object.keys(TAG_TO_ID).find((k) => TAG_TO_ID[k] === id);
+    const dir = path.join(TAG_DIR, id);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), tagPageHtml(name, id, list, articles));
+  }
+  console.log(`タグページ生成: ${wanted.size}件`);
+}
+
+function writeRobots() {
+  const body = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  fs.writeFileSync(ROBOTS, body);
 }
 
 function updateSitemap(articles) {
@@ -898,6 +1093,9 @@ function updateSitemap(articles) {
   urls.push({ loc: `${SITE_URL}/${SITE.articlesDir}/`, lastmod: today });
   for (const a of articles) {
     urls.push({ loc: `${SITE_URL}${a.permalink}`, lastmod: a.updated || a.published || today });
+  }
+  for (const id of TAG_PAGE_IDS) {
+    urls.push({ loc: `${SITE_URL}/tag/${id}/`, lastmod: today });
   }
   const body = urls
     .map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`)
@@ -916,11 +1114,14 @@ function reportLevels(articles) {
 
 function main() {
   const articles = loadArticles();
+  TAG_PAGE_IDS = computeTagPageIds(articles);
   updateArticlesIndex(articles);
   updateTopPage(articles);
   updateSearchIndex(articles);
   applyCommonBlocks(articles);
+  writeTagPages(articles);
   updateSitemap(articles);
+  writeRobots();
   reportLevels(articles);
   console.log(`サイト生成完了:記事${articles.length}件を反映しました`);
 }

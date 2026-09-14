@@ -1,6 +1,6 @@
 # あかいうま ロゴ一式
 
-ブランドカラー：`#C8102E`
+ブランドカラー：`#A4243B`（えんじ）
 
 ## ファイル
 
@@ -10,9 +10,9 @@
 | `logo-mark.svg` | マーク単体（赤） |
 | `logo-mono.svg` | `currentColor` 対応。CSSの `color` で色が変わる |
 | `favicon.svg` | ファビコン |
-| `favicon-32.png` | 旧ブラウザ用フォールバック |
-| `apple-touch-icon.png` | 180×180。iOSのホーム画面用 |
-| `og-default.png` | 1200×630。記事タイトルを乗せるベース |
+| `favicon-32.png` | 旧ブラウザ用フォールバック（※旧赤 `#C8102E` のまま。要再生成） |
+| `apple-touch-icon.png` | 180×180。iOSのホーム画面用（※旧赤のまま。要再生成） |
+| `og-default.png` | 1200×630。記事タイトルを乗せるベース（※旧赤のまま。要再生成） |
 
 ## HTMLへの設置
 
@@ -39,19 +39,19 @@
 ```
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2;
-  font-family: 'Zen Maru Gothic', sans-serif; }
-.brand-text strong { font-size: 24px; font-weight: 700; color: #1A1A1A; letter-spacing: .04em; }
-.brand-text small { font-size: 11px; font-weight: 500; color: #3A3A3A; }
+  font-family: 'Noto Sans JP', sans-serif; }
+.brand-text strong { font-size: 24px; font-weight: 700; color: #1F2328; letter-spacing: .04em; }
+.brand-text small { font-size: 11px; font-weight: 500; color: #3D444D; }
 ```
 
 ## 使用ルール
 
 - 余白はマークの高さの25%以上を四辺に確保する
 - ロゴに `akaiuma.com` を含めない（小サイズで読めず、変更時に作り直しになる）
-- 赤を変えない。モノクロが必要な場合は `logo-mono.svg` を使う
+- えんじ（`#A4243B`）を変えない。モノクロが必要な場合は `logo-mono.svg` を使う
 - マークを縦横比を変えて伸縮させない
 - マスコット（疾走している馬）はSNSアイコン・サムネイル専用。サイトのロゴとして使わない

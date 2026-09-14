@@ -1,0 +1,467 @@
+<!--
+title: 在庫を持ちすぎるのに欠品する理由｜あかいうま
+meta: 在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。
+permalink: /blog/zaiko-mochisugi/
+published: 2026-09-14
+updated:
+verified: 2026-09-14
+category: 在庫管理
+level: beginner
+tags:
+disclosure:
+thumb:
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在庫を持ちすぎるのに欠品する理由｜あかいうま</title>
+<meta name="description" content="在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。">
+<link rel="canonical" href="https://akaiuma.com/blog/zaiko-mochisugi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在庫を持ちすぎるのに欠品する理由">
+<meta property="og:description" content="在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。">
+<meta property="og:url" content="https://akaiuma.com/blog/zaiko-mochisugi/">
+<meta property="og:image" content="https://akaiuma.com/og-default.png">
+<meta property="og:site_name" content="あかいうま">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- AUTO:HEAD:START -->
+<link rel="stylesheet" href="/assets/css/article.css">
+<!-- AUTO:HEAD:END -->
+</head>
+<body>
+
+<!-- AUTO:HEADER:START -->
+<header style="background:#FFFFFF; border-bottom:1px solid #E2E5E9; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
+  <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="/assets/logo/logo-mark.svg" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>あかいうま</strong><span class="brand-tagline">物販の売上アップと業務効率化</span></span></a>
+    <input type="checkbox" id="navToggle">
+    <label for="navToggle" id="navBtn" aria-label="メニュー">
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </label>
+    <nav id="siteNav">
+      <div id="searchWrap">
+        <input id="siteSearch" type="search" placeholder="記事を検索" autocomplete="off">
+        <button id="searchClear" type="button" aria-label="検索をやめる">✕</button>
+        <div id="searchResults"></div>
+      </div>
+      <a href="/">ホーム</a>
+      <a href="/blog/">記事一覧</a>
+      <a href="/blog/#inventory">在庫管理</a>
+      <a href="/about/">このサイトについて</a>
+      
+      <label for="navToggle" class="nav-close">✕ 閉じる</label>
+    </nav>
+  </div>
+</header>
+<style>
+  body { margin:0; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .brand-text strong { font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em; }
+  .brand-tagline { font-size:0.68em; color:#656C76; white-space:nowrap; }
+  @media (max-width: 340px) { .brand-tagline { display:none; } }
+  #navToggle { display:none; }
+  #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
+  #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:#656C76; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
+  #searchClear:hover { color:#1F2328; }
+  #navBtn .ic-close { display:none; }
+  #navToggle:checked ~ #navBtn .ic-open { display:none; }
+  #navToggle:checked ~ #navBtn .ic-close { display:block; }
+  .nav-close { display:none; }
+  #siteNav a { color:#3D444D; text-decoration:none; font-size:0.9em; }
+  #siteNav a.nav-cta { color:#fff; background:#A4243B; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
+  #searchWrap { position:relative; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:#F4F5F6; border:1px solid #E2E5E9; color:#1F2328; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch::placeholder { color:#656C76; }
+  #siteSearch:focus { border-color:#A4243B; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
+  @media (min-width: 681px) {
+    label[for="navToggle"] { display:none; }
+    #siteNav { display:flex; align-items:center; gap:22px; }
+    #siteSearch { width:210px; }
+    .nav-close { display:none !important; }
+    #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
+    #siteNav a:not(.nav-cta):hover { color:#A4243B; }
+    #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:#A4243B; transform:scaleX(0); transition:transform .15s; }
+    #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
+    #siteNav a.nav-cta:hover { background:#82182E; }
+  }
+  @media (max-width: 680px) {
+    label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid #E2E5E9; }
+    #navToggle:checked ~ #siteNav { display:flex; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid #E2E5E9; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:#656C76; font-size:1.2em; }
+    #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
+    #siteNav a.nav-cta::after { content:""; }
+    #searchWrap { margin:8px 0 10px; width:100%; }
+    #siteSearch { width:100%; font-size:16px; padding-top:11px; padding-bottom:11px; }
+    .nav-close { display:block; text-align:center; color:#656C76; font-size:0.85em; padding:16px 0 4px; cursor:pointer; }
+    #searchResults { width:100%; right:auto; left:0; top:50px; }
+  }
+  .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:#A4243B; border:1px solid #A4243B; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:#82182E; border-color:#82182E; }
+  #toTop.show { display:flex; }
+  @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
+</style>
+<button id="toTop" type="button" aria-label="ページ上部へ戻る">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="5,13 12,6 19,13"/></svg>
+</button>
+<script>
+(function(){
+  var input=document.getElementById('siteSearch');
+  var box=document.getElementById('searchResults');
+  if(!input||!box)return;
+  var data=null,loading=false;
+  function load(){
+    if(data||loading)return;loading=true;
+    fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
+  }
+  function closeRow(){
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#F6F7F8; border:0; border-top:1px solid #E4E7EB; color:#656C76; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    if(!q||!data){box.style.display='none';box.innerHTML='';return;}
+    var hits=data.filter(function(a){
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
+    }).slice(0,8);
+    if(hits.length===0){
+      box.innerHTML='<p style="margin:0; padding:16px; color:#656C76; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+    }else{
+      box.innerHTML=hits.map(function(a){
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #E4E7EB; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:#A4243B; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:#1F2328; line-height:1.45;">'+a.t+'</span></a>';
+      }).join('')+closeRow();
+    }
+    box.style.display='block';
+  }
+  var clr=document.getElementById('searchClear');
+  function close(){box.style.display='none';}
+  function toggleClear(){if(clr)clr.style.display=input.value?'block':'none';}
+  input.addEventListener('focus',load);
+  input.addEventListener('input',function(){load();render();toggleClear();});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';close();toggleClear();input.blur();}});
+  if(clr)clr.addEventListener('click',function(){input.value='';close();toggleClear();input.focus();});
+  box.addEventListener('click',function(e){
+    if(e.target.id==='searchClose'){input.value='';close();toggleClear();}
+  });
+  document.addEventListener('click',function(e){
+    if(!document.getElementById('searchWrap').contains(e.target)){close();}
+  });
+})();
+(function(){
+  var btn=document.getElementById('toTop');
+  if(!btn)return;
+  function upd(){ if(window.scrollY>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
+  window.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  upd();
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "在庫を持ちすぎるのに欠品する理由｜あかいうま",
+  "description": "在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://akaiuma.com/blog/zaiko-mochisugi/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "あかいうま"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あかいうま",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
+    }
+  }
+}
+</script>
+<!-- AUTO:HEADER:END -->
+
+<!-- AUTO:ARTICLEHEAD:START -->
+<div class="article-header" data-level="beginner">
+  <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
+  <h1>在庫を持ちすぎるのに欠品する理由</h1>
+  <div class="article-meta"><span>公開：2026年9月14日</span><span>料金・仕様の確認：2026年9月14日</span></div>
+</div>
+
+<!-- AUTO:ARTICLEHEAD:END -->
+
+<article class="ak-article">
+
+<p>倉庫の隅に、半年前にまとめ買いした在庫が積まれている。段ボールを開けるたびに「これ、売り切れるのだろうか」と不安になる。その一方で、先月から急に動き始めた別の商品もある。注文が入るたびに在庫数を確認し、気づけば「在庫切れ」の表示が出ている。多く仕入れたはずなのに、足りない商品がある。この二つは同時に起きる。</p>
+
+<p>結論から言うと、「持ちすぎ」と「欠品」は別々の問題ではありません。<strong>在庫を個数の合計、つまり「量」でしか見ていないこと</strong>が、両方を同時に引き起こしています。原因が一つなら、直す場所も一つです。この記事では、その仕組みと、今日から見直せる考え方を順番に説明します。</p>
+
+<!-- AUTO:TOC:START -->
+<nav class="ak-toc" aria-label="目次">
+  <p class="ak-toc-title">目次</p>
+  <ol>
+    <li><a href="#h2-1">なぜ在庫を持ちすぎてしまうのか</a></li>
+    <li><a href="#h2-2">在庫があるのに欠品が起きる理由</a></li>
+    <li><a href="#h2-3">持ちすぎと欠品、原因は同じ</a></li>
+    <li><a href="#h2-4">適正在庫の目安をどう決めるか</a></li>
+    <li><a href="#h2-5">今日からできる在庫の見直し方</a></li>
+    <li><a href="#h2-6">在庫の見直しが効きにくいケース</a></li>
+    <li><a href="#h2-7">数字を数えられるようになった先にある問題</a></li>
+  </ol>
+</nav>
+<!-- AUTO:TOC:END -->
+<h2 id="h2-1">なぜ在庫を持ちすぎてしまうのか</h2>
+
+<p>持ちすぎには、必ずきっかけがあります。多くの場合、それは「お得な発注」です。</p>
+
+<h3>セール仕入れで見落とすコスト</h3>
+
+<p>仕入先から「まとめて買えば単価が下がる」というロット割引を提示されると、判断の軸が単価に寄りがちです。単価が下がっても、売れ残れば保管コストはかかり続けます。在庫は置いてあるだけで、家賃や物流費用の形でお金を消費し続ける存在だからです。値下げして処分すれば、割引で得た差額より損失のほうが大きくなることもあります。</p>
+
+<h3>滞留させたときの出口を、先に決めておく</h3>
+
+<p>私自身は、在庫を持ちすぎて大きな損失を出した経験はありません。ただし、それは運がよかったからではありません。<strong>動かなくなった在庫をどう現金に戻すかを、先に決めてあるから</strong>です。</p>
+
+<p>在庫は早く現金化しなければなりません。ここが滞ると、事業全体が重くなります。動かなくなった在庫に対して、私が実際に使っている出口は次のとおりです。</p>
+
+<ul>
+<li>売れ筋商品のオプションとして、安く付ける</li>
+<li>レビュー投稿のお礼として付ける</li>
+<li>アウトレットコーナーを作って並べる</li>
+<li>「〇〇円以上の注文すべてにプレゼント」という企画にする</li>
+<li>スーパーセールなどの半額目玉商品として出す</li>
+</ul>
+
+<p>ただしレビューのお礼については、モールによって扱いが違います。レビューの見返りに特典を提供することを規約で禁止しているモールがあるため、使う前に必ず各モールの現行規約を確認してください。</p>
+
+<p>これらに共通しているのは、<strong>現金に戻すか、レビューのような別の形の資産に替えるかを最優先にしている</strong>点です。値段を下げること自体が目的ではありません。</p>
+
+<p class="ak-pull">抱えたまま時間が過ぎることが一番損です。だから、形を変えてでも動かします。</p>
+
+<h3>「売れる気がする」で発注量を決めてしまう仕組み</h3>
+
+<p>発注数を決めるとき、根拠が「なんとなく売れそうだから」になっていませんか。この判断は、直近の印象に強く引っ張られます。SNSで話題になった、競合が値上げした、といった一時的な情報が、実際の販売ペースより優先されてしまう。結果として、感覚で決めた数量は、実際の需要と大きくずれます。</p>
+
+<h2 id="h2-2">在庫があるのに欠品が起きる理由</h2>
+
+<p>在庫の合計数が足りているのに、個別の商品では欠品する。この矛盾は、在庫を「まとめて見ている」ことから生まれます。</p>
+
+<h3>売れ筋と死に筋が同じ保管スペースを奪い合っている</h3>
+
+<p>保管スペースにも、発注や検品に使える時間にも限りがあります。よく売れる商品の追加発注が後回しになります。逆に死に筋、つまりほとんど動かなくなった商品のスペースだけが確保され続けます。売り場や倉庫の面積は増えないので、これは常にどちらかを犠牲にする配分の問題です。</p>
+
+<h3>欠品でいちばん痛いのは、売り逃した売上ではない</h3>
+
+<p>欠品の経験は何度もあります。原因はさまざまです。売れ行きの予測が甘く、見込みを外したこともあります。仕入先の都合で入荷しなかったり、納期が遅れたりしたこともあります。</p>
+
+<p>そのうえで、<strong>欠品の実害として一番きついのは、売り逃した分の売上ではありません。ランキングと検索順位の落ち込みです。</strong>売上そのものは次の入荷で取り返せますが、一度落ちた順位は戻すのに時間がかかります。</p>
+
+<p>ではランキングを守るために多めに持てばいいのか。そうはなりません。<strong>無理な仕入れ数の増加はしません。</strong>無理な仕入れで資金が回らなくなれば、事業そのものが続かなくなるからです。売れることが分かっている商品であっても、現在のデータから予測を立て、予測可能な範囲で仕入れます。</p>
+
+<p>さらに、自分の判断では動かせない要因もあります。Amazonであれば、商品ページの乗っ取り、規約に関するトラブル、類似商品による対抗といったことが起こり得ます。<strong>予測が当たっていても供給側や販売環境が崩れることがある以上、在庫を多めに積むことは欠品対策として万全ではありません。</strong></p>
+
+<h3>資金が動かない在庫に固定され、次の仕入れができない</h3>
+
+<p>仕入れに使ったお金は、商品が売れて入金されるまで戻ってきません。動かない在庫が増えるほど、この「戻ってこないお金」の割合が増えます。結果として、売れ筋商品を追加発注するための現金が手元になくなります。売れ筋の欠品は、在庫が足りないから起きるとは限りません。資金が動かない在庫に縛られて、発注できなくなっていることが原因の場合もあります。</p>
+
+<p>在庫は保有しているだけでコストが発生し続けます。保管スペースを占有し続けること自体が費用です。金額の大小にかかわらず、この構造は変わりません。</p>
+
+<h3>在庫に仕入日を持たせる</h3>
+
+<p>滞留は、ある日突然分かるものではありません。気づける形にしておかないと、気づけない。<strong>私はすべての在庫に仕入日を付与して、滞留在庫を管理しています。</strong></p>
+
+<p>在庫管理にはロジクラを使っていて、商品ごとの「ロット」の欄を仕入日として運用しています。機能や名称は変わることがあるので、導入を検討する場合は公式情報で確認してください。</p>
+
+<p>そのうえで、<strong>仕入日から1年、2年という経過期間に応じて、値引き幅をあらかじめ決めておきます。そうして在庫を吐かせるルールにします。</strong>都度悩むと判断が遅れます。先にルールにしてしまえば、悩む余地そのものがなくなります。</p>
+
+<p>Amazon FBAや楽天RSLのような外部倉庫に預けている在庫は、長期保管がそのまま保管料の増加として跳ね返ります。ここは実害が数字で出る場所です。一方で、外部倉庫は保管期間をレポートで把握できます。滞留を検知する仕組みとしては使えます。</p>
+
+<p>各社の長期保管に関する料率と条件は変更されるため、本記事では金額を扱いません。実際の料率は各社の公式情報で確認してください。</p>
+
+<div class="ak-point">
+  <span class="ak-point-label">この節の要点</span>
+  <p>欠品の実害は、売り逃した売上そのものより、ランキングと検索順位の下落です。だからといって在庫を多めに積むのは対策になりません。無理な仕入れは資金繰りを崩し、次の発注ができなくなる原因にもなります。</p>
+</div>
+
+<!-- AUTO:AD:START -->
+
+<!-- AUTO:AD:END -->
+<h2 id="h2-3">持ちすぎと欠品、原因は同じ</h2>
+
+<p class="ak-lead">在庫を「量」で見るか、「SKU」で見るかで、結果はまるで変わります。</p>
+
+<h3>在庫を「量」でしか見ていないと両方が同時に起きる</h3>
+
+<p>ここまでの内容をまとめると、原因は一つに絞られます。在庫を「総数がいくつあるか」だけで把握していると、どの商品が余っていて、どの商品が足りないのかが見えません。総数としては十分でも、中身の配分が崩れていれば、持ちすぎと欠品は同時に発生します。</p>
+
+<h3>SKUごとに適正在庫を考えるという発想</h3>
+
+<p>この問題を避けるには、在庫を商品全体の合計ではなく、SKU（商品1つひとつの単位）ごとに見ます。SKUごとに「今どれくらい売れているか」と「今どれくらい持っているか」を対にして把握できれば、余っている商品と足りない商品を同時に見つけられます。</p>
+
+<p>私の場合は、最初から色ごと・サイズごとのSKU単位で仕入れています。「この商品を100個」ではなく、「この色のこのサイズを何個」という単位で入れる。仕入れの時点でSKUに分かれていなければ、あとから分けて見ることはできません。</p>
+
+<p>そのうえで、SKUごとに売れ行きとセッションの推移をデータで見ます。<strong>反応のよいSKUは追加仕入れに回し、反応のよくないSKUは差し替えるか、追加仕入れを止める。</strong>これを繰り返していくと、在庫の中身が売れるものに寄っていきます。</p>
+
+<h2 id="h2-4">適正在庫の目安をどう決めるか</h2>
+
+<h3>過去の販売ペースから発注量を逆算する考え方</h3>
+
+<p>適正在庫を考えるときの起点は、過去の販売実績です。ある商品が1週間に何個売れているかが分かれば、発注数の目安を立てられます。仕入れから納品までにかかる日数、つまりリードタイムの間に売れる見込み数を出します。そこに欠品を避けるための余裕分を足せば、次の発注数が決まります。感覚ではなく、記録された数字を起点にするという順番が重要です。</p>
+
+<p>そのうえで、新規商品について私が必ず守っている順番があります。<strong>まず小ロットで仕入れ、売れ行きと利益率を確認し、そこから徐々にロット数を上げていく。</strong>最初から大きく張りません。</p>
+
+<p>カンで多めに在庫を積むのは、いちばんやってはいけないことです。思いつきで、データを持たないまま見切り発車をする。これを続けると、事業そのものが続きません。</p>
+
+<h3>目安はチャネルや商材によって変わる（断定しない）</h3>
+
+<p>この逆算の考え方には、一律の正解となる数値はありません。楽天市場・Amazon・自社サイトのどこで売るかによって、注文の波は異なります。季節性のある商材、賞味期限のある商材では、余裕を持たせる分の考え方も変わります。ここで書ける目安は、「過去の販売ペースを起点にする」という考え方までです。具体的な日数や在庫数は、自分の販売データを積み重ねながら調整していくものです。</p>
+
+<h2 id="h2-5">今日からできる在庫の見直し方</h2>
+
+<h3>「動いている在庫」と「止まっている在庫」</h3>
+
+<p>まず、今持っている在庫を2つに分けてみてください。直近で売れているものと、一定期間動いていないものです。分けるだけで、どの在庫が資金と保管スペースを占有しているかが見えてきます。動いていない在庫は、値下げして現金化するのか、今後も売れる見込みがあるのか。商品ごとに判断する材料になります。</p>
+
+<h3>発注のたびに根拠を1行メモする</h3>
+
+<p>次に発注するときから、「なぜこの数量にしたのか」を1行でいいので記録してください。「セールで安かったから」ではなく、「直近1週間の販売数が◯個で、リードタイムが◯日だから」という形です。この記録が積み重なると、自分の判断のクセに気づけるようになります。感覚で発注していた頃には見えなかったクセです。</p>
+
+<ul class="ak-check">
+<li>今の在庫を「動いているもの」と「止まっているもの」に分ける</li>
+<li>次の発注から、数量を決めた根拠を1行メモする</li>
+</ul>
+
+<p>これは在庫に限った話ではありません。小さく試して、数字を見てから広げる。思いつきで見切り発車をしない。<strong>この判断の仕方を続けられるかどうかが、つぶれないEC運営をつくります。</strong></p>
+
+<h2 id="h2-6">在庫の見直しが効きにくいケース</h2>
+
+<p>ここまでの考え方は、ある程度SKU数があり、販売実績のデータが蓄積されている場合に機能します。扱う商品が数点しかない、あるいは始めたばかりで販売実績がほとんどない段階では、逆算するための材料自体が足りません。この場合は、無理にSKUごとの管理を組み立てないほうがいいでしょう。まず一定期間販売して、データを貯めることを優先します。</p>
+
+<p>また、単価が極端に低く、1個あたりの保管コストの影響がほとんどない商材もあります。そうした商材では、持ちすぎによる損失より、欠品による機会損失のほうを重く見る判断もありえます。どちらを優先するかは、扱う商材の利益構造によって変わります。</p>
+
+<hr class="ak-sep">
+
+<h2 id="h2-7">数字を数えられるようになった先にある問題</h2>
+
+<p>SKUごとに在庫を把握し、発注に根拠を持たせられるようになると、「持ちすぎ」と「欠品」という量の問題はかなり減らせます。ただし、そこで終わりではありません。</p>
+
+<p>楽天市場・Amazon・自社サイトのように扱うチャネルが増えてくると、今度は<strong>別の壁</strong>にぶつかります。数字自体が、チャネル間で合わなくなるという壁です。</p>
+
+<p class="ak-pull">量を正しく数えられるようになった先に、その数字をどう共有し、判断に使うかという問題が待っています。</p>
+
+<p>この壁については、<a href="/blog/zaiko-awanai-riyu/">複数チャネルで在庫の数字が合わなくなる原因</a>で詳しく扱っています。</p>
+
+</article>
+
+<!-- AUTO:BELOW:START -->
+<div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+
+<section style="margin:0 0 40px; background:#fff; border:1px solid #E4E7EB; border-left:4px solid #A4243B; border-radius:0; padding:20px 22px;">
+  <p style="margin:0 0 4px; color:#1F2328; font-weight:bold; font-size:0.98em;">次に読むと、もう一段先に進めます</p>
+  <p style="margin:0 0 14px; color:#656C76; font-size:0.83em; line-height:1.7;">基本ができたあと、実際に詰まりやすいところを扱っています。</p>
+  <ul style="margin:0; padding:0 0 0 18px;">
+<li style="margin:0 0 10px;"><a href="/blog/zaiko-awanai-riyu/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">年間1万件出荷して分かった、在庫が合わない本当の理由</a></li>
+  </ul>
+</section>
+
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6; border:1px solid #E4E7EB; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid #A4243B;"><span style="color:#A4243B; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">在庫管理</span><span style="color:#656C76; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
+  </div>
+</a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
+<div>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">2</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Amazon <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用 <span style="color:#656C76;">1</span></span>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6; border:1px solid #E4E7EB; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid #A4243B;"><span style="color:#A4243B; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">在庫管理</span><span style="color:#656C76; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
+  </div>
+</a>
+</div>
+<p style="margin:18px 0 0;"><a href="/blog/" style="color:#A4243B; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</section>
+</div></div>
+<footer style="background:#F4F5F6; color:#656C76; border-top:1px solid #E2E5E9;">
+  <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
+      <div style="flex:1 1 200px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin:0 0 12px;">
+          <img src="/assets/logo/logo-mark.svg" alt="" style="height:30px; width:auto; display:block; flex:0 0 auto;">
+          <strong style="font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em;">あかいうま</strong>
+        </div>
+        <p style="margin:0; font-size:0.84em; line-height:1.85; color:#656C76;">物販の現場で実際に手を動かしている運営者が、売上と効率化の実務を書いています。</p>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+<a href="/blog/#research" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">リサーチ</a>
+<a href="/blog/#sourcing" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">仕入れ</a>
+<a href="/blog/#sales" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">販路・集客</a>
+<a href="/blog/#inventory" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">在庫管理</a>
+<a href="/blog/#numbers" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">数字管理</a>
+<a href="/blog/#efficiency" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">業務効率化</a>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
+        <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
+        <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
+        
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;">
+<a href="https://x.com/" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">X</a>
+    </div>
+
+    <div style="border-top:1px solid #E2E5E9; padding-top:20px;">
+      <p style="margin:0 0 10px; color:#656C76; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
+      <p style="margin:0; color:#656C76; font-size:0.78em;">&copy; 2026 あかいうま</p>
+    </div>
+
+  </div>
+</footer>
+<!-- AUTO:BELOW:END -->
+
+</body>
+</html>

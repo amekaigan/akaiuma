@@ -20,18 +20,19 @@ const SITE = {
 
 // 配色。ここを変えるとサイト全体の色が変わります
 const C = {
-  brand: '#C8102E',      // ブランドの赤
-  brandDark: '#9E0C24',  // ホバー時の濃い赤
-  brandBg: '#FDF2F4',    // 赤の薄い背景
-  brandBorder: '#F5C6CE',
-  ink: '#1A1A1A',        // 見出し・本文の黒
-  inkSub: '#3A3A3A',
-  dark: '#1C1C1E',       // ヘッダー・フッターの地色
-  darkSub: '#2C2C2E',
-  textOnDark: '#E8E8E8',
-  muted: '#6B7280',
-  line: '#E5E7EB',
-  bgSoft: '#FAFAFA',
+  brand: '#A4243B',      // ブランドのえんじ
+  brandDark: '#82182E',  // ホバー時の濃いえんじ
+  brandBg: '#FBF4F5',    // えんじの薄い背景
+  brandBorder: '#EBD3D8',
+  ink: '#1F2328',        // 見出し・本文の黒
+  inkSub: '#3D444D',     // 補助的な本文
+  chrome: '#FFFFFF',     // ヘッダーの地色
+  chromeSoft: '#F4F5F6', // フッター・表の見出しの地色
+  chromeLine: '#E2E5E9', // ヘッダー・フッターの罫線
+  textOnChrome: '#3D444D', // ヘッダー・フッターの文字
+  muted: '#656C76',
+  line: '#E4E7EB',
+  bgSoft: '#F6F7F8',
 };
 
 // お知らせバー：text を空文字 '' にするとバー自体が非表示になります
@@ -57,8 +58,8 @@ const CTA = {
 // 本文中の広告枠（AUTO:AD マーカーがある記事だけに挿入されます）
 const AD_SLOT = {
   label: 'PR',
-  html: `<p style="margin:0 0 10px; font-weight:bold; color:${'#1A1A1A'};">在庫の持ちすぎと欠品を、同時に減らす</p>
-<a href="/tool/" style="display:inline-block; background:#C8102E; color:#fff; text-decoration:none; font-weight:bold; padding:9px 20px; border-radius:6px; font-size:0.9em;">詳しく見る →</a>`,
+  html: `<p style="margin:0 0 10px; font-weight:bold; color:${C.ink};">在庫の持ちすぎと欠品を、同時に減らす</p>
+<a href="/tool/" style="display:inline-block; background:${C.brand}; color:#fff; text-decoration:none; font-weight:bold; padding:9px 20px; border-radius:6px; font-size:0.9em;">詳しく見る →</a>`,
 };
 
 // 開示ブロック（AUTO:DISCLOSURE マーカーがある記事に挿入されます）
@@ -217,13 +218,13 @@ function hasMarker(content, markerName) {
 
 function headerHtml() {
   const A = SITE.articlesDir;
-  return `<header style="background:${C.dark}; border-bottom:2px solid ${C.brand}; position:sticky; top:0; z-index:100; box-shadow:0 2px 16px rgba(0,0,0,.25);">
+  return `<header style="background:${C.chrome}; border-bottom:1px solid ${C.chromeLine}; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
   <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-    <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="${SITE.logoWhite}" alt="${SITE.name}" style="height:32px; width:auto; display:block;"><span style="font-size:0.62em; color:${C.muted}; white-space:nowrap;">${SITE.tagline}</span></a>
+    <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="${SITE.logoColor}" alt="${SITE.name}" style="height:32px; width:auto; display:block;"><span style="font-size:0.62em; color:${C.muted}; white-space:nowrap;">${SITE.tagline}</span></a>
     <input type="checkbox" id="navToggle">
     <label for="navToggle" id="navBtn" aria-label="メニュー">
-      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${C.inkSub}" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${C.inkSub}" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
     </label>
     <nav id="siteNav">
       <div id="searchWrap">
@@ -245,35 +246,35 @@ function headerHtml() {
   #navToggle { display:none; }
   #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
   #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:${C.muted}; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
-  #searchClear:hover { color:${C.textOnDark}; }
+  #searchClear:hover { color:${C.ink}; }
   #navBtn .ic-close { display:none; }
   #navToggle:checked ~ #navBtn .ic-open { display:none; }
   #navToggle:checked ~ #navBtn .ic-close { display:block; }
   .nav-close { display:none; }
-  #siteNav a { color:${C.textOnDark}; text-decoration:none; font-size:0.9em; }
+  #siteNav a { color:${C.textOnChrome}; text-decoration:none; font-size:0.9em; }
   #siteNav a.nav-cta { color:#fff; background:${C.brand}; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
   #searchWrap { position:relative; }
-  #siteSearch { box-sizing:border-box; max-width:100%; background:${C.darkSub}; border:1px solid #3F3F46; color:${C.textOnDark}; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%236B7280' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:${C.chromeSoft}; border:1px solid ${C.chromeLine}; color:${C.ink}; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
   #siteSearch::placeholder { color:${C.muted}; }
   #siteSearch:focus { border-color:${C.brand}; }
-  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.25); z-index:200; text-align:left; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
   @media (min-width: 681px) {
     label[for="navToggle"] { display:none; }
     #siteNav { display:flex; align-items:center; gap:22px; }
     #siteSearch { width:210px; }
     .nav-close { display:none !important; }
     #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
-    #siteNav a:not(.nav-cta):hover { color:#fff; }
+    #siteNav a:not(.nav-cta):hover { color:${C.brand}; }
     #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:${C.brand}; transform:scaleX(0); transition:transform .15s; }
     #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
     #siteNav a.nav-cta:hover { background:${C.brandDark}; }
   }
   @media (max-width: 680px) {
     label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
-    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.darkSub}; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid ${C.chromeLine}; }
     #navToggle:checked ~ #siteNav { display:flex; }
-    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid ${C.darkSub}; font-size:0.95em; }
-    #siteNav a::after { content:"›"; color:#52525B; font-size:1.2em; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid ${C.chromeLine}; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:${C.muted}; font-size:1.2em; }
     #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
     #siteNav a.nav-cta::after { content:""; }
     #searchWrap { margin:8px 0 10px; width:100%; }
@@ -282,8 +283,8 @@ function headerHtml() {
     #searchResults { width:100%; right:auto; left:0; top:50px; }
   }
   .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
-  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:${C.dark}; border:1px solid #3F3F46; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(0,0,0,.3); padding:0; }
-  #toTop:hover { background:${C.darkSub}; border-color:${C.brand}; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:${C.brand}; border:1px solid ${C.brand}; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:${C.brandDark}; border-color:${C.brandDark}; }
   #toTop.show { display:flex; }
   @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
 </style>
@@ -301,7 +302,7 @@ function headerHtml() {
     fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
   }
   function closeRow(){
-    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#FAFAFA; border:0; border-top:1px solid #E5E7EB; color:#6B7280; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:${C.bgSoft}; border:0; border-top:1px solid ${C.line}; color:${C.muted}; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
   }
   function render(){
     var q=input.value.trim().toLowerCase();
@@ -310,12 +311,12 @@ function headerHtml() {
       return (a.t+' '+a.m+' '+a.c).toLowerCase().indexOf(q)>-1;
     }).slice(0,8);
     if(hits.length===0){
-      box.innerHTML='<p style="margin:0; padding:16px; color:#6B7280; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+      box.innerHTML='<p style="margin:0; padding:16px; color:${C.muted}; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
     }else{
       box.innerHTML=hits.map(function(a){
-        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #F3F4F6; text-decoration:none;">'+
-        '<span style="display:block; font-size:0.7em; color:#C8102E; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
-        '<span style="display:block; font-size:0.85em; color:#1A1A1A; line-height:1.45;">'+a.t+'</span></a>';
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid ${C.line}; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:${C.brand}; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:${C.ink}; line-height:1.45;">'+a.t+'</span></a>';
       }).join('')+closeRow();
     }
     box.style.display='block';
@@ -456,9 +457,9 @@ ${disclosureHtml(article)}`;
 function thumbBoxHtml(article) {
   const img = thumbOf(article);
   if (img) {
-    return `<div style="aspect-ratio:1200/630; background:${C.dark} url('${img}') center/cover no-repeat; border-radius:6px;"></div>`;
+    return `<div style="aspect-ratio:1200/630; background:${C.chromeSoft} url('${img}') center/cover no-repeat; border-radius:6px;"></div>`;
   }
-  return `<div style="aspect-ratio:1200/630; background:${C.dark}; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid ${C.brand};"><span style="color:${C.brand}; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">${escapeHtml(article.category)}</span><span style="color:${C.muted}; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>`;
+  return `<div style="aspect-ratio:1200/630; background:${C.chromeSoft}; border:1px solid ${C.line}; border-radius:6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; border-bottom:3px solid ${C.brand};"><span style="color:${C.brand}; font-size:0.7em; font-weight:bold; letter-spacing:.1em;">${escapeHtml(article.category)}</span><span style="color:${C.muted}; font-size:0.6em; letter-spacing:.14em;">AKAIUMA</span></div>`;
 }
 
 function shortTitle(title) {
@@ -587,23 +588,23 @@ function footerHtml(articles) {
   const sns = [['X', 'https://x.com/']]
     .map(
       ([n, u]) =>
-        `<a href="${u}" style="color:${C.textOnDark}; text-decoration:none; font-size:0.8em; border:1px solid #3F3F46; border-radius:999px; padding:6px 16px;">${n}</a>`
+        `<a href="${u}" style="color:${C.textOnChrome}; text-decoration:none; font-size:0.8em; border:1px solid ${C.chromeLine}; border-radius:999px; padding:6px 16px;">${n}</a>`
     )
     .join('\n');
-  return `<footer style="background:${C.dark}; color:${C.muted};">
+  return `<footer style="background:${C.chromeSoft}; color:${C.muted}; border-top:1px solid ${C.chromeLine};">
   <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
 
     <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
       <div style="flex:1 1 200px; min-width:0;">
-        <img src="${SITE.logoWhite}" alt="${SITE.name}" style="height:30px; width:auto; display:block; margin:0 0 12px;">
+        <img src="${SITE.logoColor}" alt="${SITE.name}" style="height:30px; width:auto; display:block; margin:0 0 12px;">
         <p style="margin:0; font-size:0.84em; line-height:1.85; color:${C.muted};">${escapeHtml(SITE.description)}</p>
       </div>
       <div style="flex:0 1 130px;">
-        <p style="margin:0 0 8px; color:#fff; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+        <p style="margin:0 0 8px; color:${C.ink}; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
 ${cats}
       </div>
       <div style="flex:0 1 130px;">
-        <p style="margin:0 0 8px; color:#fff; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <p style="margin:0 0 8px; color:${C.ink}; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
         <a href="/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
         <a href="/${A}/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
         <a href="/about/" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
@@ -615,9 +616,9 @@ ${cats}
 ${sns}
     </div>
 
-    <div style="border-top:1px solid ${C.darkSub}; padding-top:20px;">
+    <div style="border-top:1px solid ${C.chromeLine}; padding-top:20px;">
       <p style="margin:0 0 10px; color:${C.muted}; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
-      <p style="margin:0; color:#52525B; font-size:0.78em;">&copy; ${new Date().getFullYear()} ${SITE.name}</p>
+      <p style="margin:0; color:${C.muted}; font-size:0.78em;">&copy; ${new Date().getFullYear()} ${SITE.name}</p>
     </div>
 
   </div>
@@ -637,7 +638,7 @@ ${footerHtml(articles)}`;
 
 function adHtml() {
   return `<div style="border:1px solid ${C.line}; border-radius:8px; padding:18px; margin:28px 0; background:${C.bgSoft};">
-  <span style="display:inline-block; font-size:0.7em; color:${C.muted}; border:1px solid #D1D5DB; border-radius:3px; padding:1px 6px; margin-bottom:10px;">${AD_SLOT.label}</span>
+  <span style="display:inline-block; font-size:0.7em; color:${C.muted}; border:1px solid ${C.chromeLine}; border-radius:3px; padding:1px 6px; margin-bottom:10px;">${AD_SLOT.label}</span>
   ${AD_SLOT.html}
 </div>`;
 }

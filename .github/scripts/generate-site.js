@@ -250,6 +250,13 @@ function buildAutoThumb(article, slug) {
   <rect width="1200" height="630" fill="${look.tint}"/>
   <rect x="40" y="40" width="1120" height="550" rx="18" fill="#FFFFFF"/>
   <rect x="40" y="40" width="10" height="550" rx="5" fill="${C.brand}"/>
+  <clipPath id="card"><rect x="40" y="40" width="1120" height="550" rx="18"/></clipPath>
+  <g clip-path="url(#card)" opacity="0.055">
+    <g transform="translate(640 92) scale(6.6)">
+      <path fill="${C.brand}" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
+      <circle cx="34" cy="44" r="3.8" fill="#FFFFFF"/>
+    </g>
+  </g>
   <circle cx="1012" cy="196" r="96" fill="${look.tint}"/>
   <g transform="translate(956 140) scale(1.12)">${iconPath(look.icon, look.ink)}</g>
   <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">

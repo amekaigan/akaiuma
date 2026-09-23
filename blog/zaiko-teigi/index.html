@@ -58,7 +58,7 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
       <a href="/blog/">記事一覧</a>
       <a href="/blog/#inventory">在庫管理</a>
       <a href="/about/">このサイトについて</a>
-
+      
       <label for="navToggle" class="nav-close">✕ 閉じる</label>
     </nav>
   </div>
@@ -170,9 +170,77 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
   upd();
 })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "在庫の数え方で最初に決めること｜あかいうま",
+  "description": "棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://akaiuma.com/blog/zaiko-teigi/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "あかいうま"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あかいうま",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
+    }
+  },
+  "image": "https://akaiuma.com/assets/thumb/auto/zaiko-teigi.svg"
+}
+</script>
 <!-- AUTO:HEADER:END -->
 
 <!-- AUTO:ARTICLEHEAD:START -->
+<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:#A4243B; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>
+<div class="article-header" data-level="beginner">
+  <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
+  <h1>在庫の数え方で最初に決めること</h1>
+  <div class="article-meta"><span>公開：2026年9月23日</span><span>読了：約6分</span></div>
+</div>
+<img class="article-thumb" src="/assets/thumb/auto/zaiko-teigi.svg" alt="" width="1200" height="630">
+<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+    <li>実在庫と帳簿在庫を分けて考える発想</li>
+    <li>棚卸しで数が合わなくなる主な原因</li>
+    <li>Excelで管理を始める前に決めておくルール</li>
+  </ul>
+</div>
 
 <!-- AUTO:ARTICLEHEAD:END -->
 
@@ -234,6 +302,9 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 
 <p>では、こうした食い違いに何も手を打たずに運用を始めると、実際にはどうなるのでしょうか。</p>
 
+<!-- AUTO:AD:START -->
+
+<!-- AUTO:AD:END -->
 <h2 id="h2-3">定義を決めずに運用を始めると、最初にどこで食い違うか</h2>
 
 <p>ここまでは、ズレの起きる場所についての一般的な説明です。実際に自分の運用で最初にどこがズレるかは、扱う商品や作業の癖によって変わってきます。</p>
@@ -315,16 +386,54 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 <!-- AUTO:BELOW:START -->
 <div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
 
+<section style="margin:0 0 40px; background:#fff; border:1px solid #E4E7EB; border-left:4px solid #A4243B; border-radius:0; padding:20px 22px;">
+  <p style="margin:0 0 4px; color:#1F2328; font-weight:bold; font-size:0.98em;">次に読むと、もう一段先に進めます</p>
+  <p style="margin:0 0 14px; color:#656C76; font-size:0.83em; line-height:1.7;">基本ができたあと、実際に詰まりやすいところを扱っています。</p>
+  <ul style="margin:0; padding:0 0 0 18px;">
+<li style="margin:0 0 10px;"><a href="/blog/zaiko-awanai-riyu/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">年間1万件出荷して分かった、在庫が合わない本当の理由</a></li>
+  </ul>
+</section>
 
-
-
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/zaiko-mochisugi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-mochisugi.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫を持ちすぎるのに欠品する理由</span>
+  </div>
+</a>
+<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
+  </div>
+</a>
+<a href="/blog/shohin-setsumei/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/shohin-setsumei.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">商品説明文の書き方：デメリットも書くと信頼される</span>
+  </div>
+</a>
+<a href="/blog/amazon-fba/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/amazon-fba.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAで一番楽になるのは在庫管理。ただし条件つき</span>
+  </div>
+</a>
+</div>
+</section>
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
 <div>
 <a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
 <a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
-<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">2</span></a>
-<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">2</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">3</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">3</span></a>
 <a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">0</span></a>
 <a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
 </div>
@@ -342,6 +451,13 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
 <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/shohin-setsumei/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/shohin-setsumei.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">商品説明文の書き方：デメリットも書くと信頼される</span>
+  </div>
+</a>
 <a href="/blog/amazon-fba/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
   <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/amazon-fba.svg') center/cover no-repeat; border-radius:6px;"></div>
   <div style="padding:11px 13px;">
@@ -361,13 +477,6 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
   <div style="padding:11px 13px;">
     <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
     <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫を持ちすぎるのに欠品する理由</span>
-  </div>
-</a>
-<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
-  <div style="padding:11px 13px;">
-    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
-    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
   </div>
 </a>
 </div>
@@ -399,7 +508,7 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
         <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
         <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
         <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
-
+        
       </div>
     </div>
 

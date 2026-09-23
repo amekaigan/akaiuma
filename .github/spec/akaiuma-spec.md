@@ -2,7 +2,7 @@
 
 あかいうま（akaiuma.com）の仕様書。
 方針・アーキテクチャ・運用ルールを記載する。安定した内容のみを置き、
-現在の作業状況や未解決の課題は `akaiuma-handoff-vN.md` に書く。
+現在の作業状況や未解決の課題は `.github/handoff/akaiuma-handoff-vN.md` に書く。
 
 最終更新：2026-09-11
 

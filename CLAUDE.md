@@ -394,18 +394,27 @@ title_reason:                        # なぜこのタイトルがその問い�
 ## 8. ディレクトリ構成
 
 ```
-CLAUDE.md              このファイル
+CLAUDE.md              このファイル（運用ルールの正本）
+README.md              リポジトリの案内図（人間向け）
 .claude/agents/        各担当エージェントの定義
+.claude/workflows/     Routine（自動実行）の手順書
 .github/scripts/       サイト生成スクリプト（generate-site.js）
+.github/workflows/     GitHub Actions
+.github/spec/          仕様書（akaiuma-spec.md）
+.github/handoff/       引き継ぎ資料。古い版は archive/ に移す
 blog/                  記事本文（HTML）。1記事につき1ディレクトリ
 blog/_template/        新規記事のひな形。これを複製して書く
 tag/                   タグページ（自動生成。手で触らない）
-assets/                CSS・ロゴ
+assets/                CSS・ロゴ・図解・サムネイル
+knowledge/             運営者の一次情報（体験バンク・質問キュー・inbox 等）
 research/              収集した一次情報・出典メモ
 keywords/              キーワード設計表
-sns/                   SNS投稿文のストック（日付別）
-scripts/               YouTube台本
+sns/                   SNS投稿文のストック（日付別。まだ無い）
+scripts/               YouTube台本（まだ無い）
 ```
+
+リポジトリの直下には、サイトとして公開するファイルと `CLAUDE.md`・`README.md` だけを置く。
+仕様書・引き継ぎ資料などの作業用の文書は `.github/` の下に置く。
 
 記事ファイルは `blog/<slug>/index.html` とする。slug は英小文字とハイフン。
 日付はファイル名ではなく、メタ情報の `published` で持つ。

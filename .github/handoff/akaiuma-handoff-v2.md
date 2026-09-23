@@ -1,7 +1,7 @@
 # akaiuma-handoff-v2.md
 
-2026年9月18日時点の作業状況。`akaiuma-handoff-v1.md`（9月11日）からの差分を書く。
-安定した仕様は `akaiuma-spec.md`、運用ルールの正本は `CLAUDE.md`。
+2026年9月18日時点の作業状況。`archive/akaiuma-handoff-v1.md`（9月11日）からの差分を書く。
+安定した仕様は `.github/spec/akaiuma-spec.md`、運用ルールの正本は `CLAUDE.md`。
 
 **このファイルは asiatopro との共有を前提に、隠さず書いている。**
 ただしリポジトリが public のため、契約条件（各モールで実際に適用されている料率など）は

@@ -1,0 +1,310 @@
+<!--
+title: 限界利益の計算方法と上限広告費の出し方｜あかいうま
+meta: モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。
+permalink: /blog/genkai-rieki/
+published: 2026-09-24
+updated:
+verified: 2026-09-14
+category: 数字管理
+level: intermediate
+tags: 楽天市場, Amazon, Yahoo!ショッピング, 自社サイト, 複数チャネル運用
+disclosure:
+thumb:
+thumbcopy: 感覚の値付けをやめる基準
+takeaways: モール手数料と送料を引いて限界利益を出す計算の手順 | 固定費から上限広告費を逆算する考え方 | チャネル別の手数料を差し替えて比較する視点
+search_intent: モール手数料と送料を引いたあと、商品1個あたりに実際いくら利益が残るのか、そしてそこから広告費はいくらまでかけていいのかを、自分の数字に当てはめて計算したい。
+title_reason: 読者が欲しいのは「限界利益とは何か」という定義の説明ではなく、自分の数字を入れれば上限広告費まで出せる計算の手順そのもの。タイトルを「限界利益→上限広告費」という計算の流れそのものにすることで、読めば手を動かせる記事だと分かるようにした。mall-erabikataは「どのチャネルから始めるか」という入口の問いに答える記事であり、この記事はその先にある「じゃあ1個売っていくら残るのか」という次の問いに答える本編と位置づける。あちらの終盤（値付けの前に1枚のシートを作る、の節）は要約に留め、計算の各ステップの中身と注意点はこちらだけで深掘りする。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>限界利益の計算方法と上限広告費の出し方｜あかいうま</title>
+<meta name="description" content="モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。">
+<link rel="canonical" href="https://akaiuma.com/blog/genkai-rieki/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="限界利益の計算方法と上限広告費の出し方">
+<meta property="og:description" content="モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。">
+<meta property="og:url" content="https://akaiuma.com/blog/genkai-rieki/">
+<meta property="og:image" content="https://akaiuma.com/og-default.png">
+<meta property="og:site_name" content="あかいうま">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- AUTO:HEAD:START -->
+<link rel="stylesheet" href="/assets/css/article.css">
+<!-- AUTO:HEAD:END -->
+</head>
+<body>
+
+<!-- AUTO:HEADER:START -->
+<header style="background:#FFFFFF; border-bottom:1px solid #E2E5E9; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
+  <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="/assets/logo/logo-mark.svg" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>あかいうま</strong><span class="brand-tagline">物販の売上アップと業務効率化</span></span></a>
+    <input type="checkbox" id="navToggle">
+    <label for="navToggle" id="navBtn" aria-label="メニュー">
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </label>
+    <nav id="siteNav">
+      <div id="searchWrap">
+        <input id="siteSearch" type="search" placeholder="記事を検索" autocomplete="off">
+        <button id="searchClear" type="button" aria-label="検索をやめる">✕</button>
+        <div id="searchResults"></div>
+      </div>
+      <a href="/">ホーム</a>
+      <a href="/blog/">記事一覧</a>
+      <a href="/blog/#inventory">在庫管理</a>
+      <a href="/about/">このサイトについて</a>
+
+      <label for="navToggle" class="nav-close">✕ 閉じる</label>
+    </nav>
+  </div>
+</header>
+<!-- AUTO:HEADER:END -->
+
+<!-- AUTO:ARTICLEHEAD:START -->
+
+<!-- AUTO:ARTICLEHEAD:END -->
+
+<article class="ak-article">
+
+<p>楽天、Amazon、Yahoo!ショッピング、自社サイト。複数のチャネルで同じ商品を売っていると、値段だけは決まっているのに、広告費をいくらまでかけていいのか分からなくなる瞬間があります。モール手数料も送料も頭には入っているものの、それぞれ別の数字のまま、1本の計算式にはつながっていない。結果として、広告費は「このくらいなら大丈夫だろう」という感覚で決めてしまいます。</p>
+
+<p>結論から言うと、税抜の売上からモール手数料と送料を順番に引けば「限界利益」が出ます。そこから固定費の割合をさらに引いた「営業利益率」が、そのまま広告費にかけられる上限になる。この記事では、この計算を1ステップずつ、つまずきやすい点とあわせて説明します。</p>
+
+<!-- AUTO:TOC:START -->
+<nav class="ak-toc" aria-label="目次">
+  <p class="ak-toc-title">目次</p>
+  <ol>
+    <li><a href="#h2-1">限界利益とは何か。粗利・営業利益と何が違うのか</a></li>
+    <li><a href="#h2-2">限界利益を出す計算の順番（モール手数料と送料を引く）</a></li>
+    <li><a href="#h2-3">固定費を引いて営業利益率を出す</a></li>
+    <li><a href="#h2-4">上限までは使わない。マージンの考え方</a></li>
+    <li><a href="#h2-5">チャネルが変わると、この数字はどう変わるか</a></li>
+    <li><a href="#h2-6">まとめ：1個あたりの利益を、感覚ではなく数字で決める</a></li>
+  </ol>
+</nav>
+<!-- AUTO:TOC:END -->
+<h2 id="h2-1">限界利益とは何か。粗利・営業利益と何が違うのか</h2>
+
+<p>「利益は出ていますか」と聞かれたとき、粗利で答える人もいれば、営業利益で答える人もいます。同じ「儲かっている」という感覚でも、指している段階が違えば判断は変わる。</p>
+
+<h3>「利益」という言葉が指す範囲は人によって違う</h3>
+
+<p>特に広告費を考えるときは、この違いが致命的になります。粗利の段階で「まだ余裕がある」と判断すると、実際には固定費を引いた時点で赤字だった、ということが起こります。どの段階の利益を指しているのか、まず自分の中で固定してください。</p>
+
+<h3>この記事で使う4つの利益の定義（粗利・限界利益・営業利益・上限広告費）</h3>
+
+<p>この記事では、次の4つの言葉を、次の意味で使います。以降の計算は、すべてこの定義に沿って進めます。</p>
+
+<ul>
+<li><strong>粗利</strong>：税抜の売上から、仕入れ原価だけを引いた金額</li>
+<li><strong>限界利益</strong>：粗利から、モール手数料と送料をさらに引いた金額</li>
+<li><strong>営業利益率</strong>：限界利益から、固定費の割合を引いた比率</li>
+<li><strong>上限広告費</strong>：営業利益をゼロにするまで使ってよい、理論上の広告費の上限</li>
+</ul>
+
+<p>粗利までしか見ていないと、モール手数料や送料の分だけ、手元に残る額を実際より多く見積もってしまいます。次の章では、この2つを引く具体的な順番を説明します。</p>
+
+<h2 id="h2-2">限界利益を出す計算の順番（モール手数料と送料を引く）</h2>
+
+<p>計算の順番を間違えると、同じ数字を使っても違う答えが出ます。ここでは仮に、税込3,300円で売る商品を例に、順を追って計算します。以下はあくまで計算の流れを示すための仮の数字であり、特定のチャネルや店舗の実数ではありません。</p>
+
+<h3>税込価格を税抜にしてから、仕入れ原価を引いて粗利を出す</h3>
+
+<ol>
+<li>税込3,300円を税抜にする：3,300円 ÷ 1.1 ＝ 3,000円</li>
+<li>仕入れ原価1,200円を引く：3,000円 − 1,200円 ＝ 1,800円（粗利）</li>
+</ol>
+
+<p>ここまでは、多くの人が普段から意識している計算です。問題は、この先にあります。</p>
+
+<h3>モール手数料（率）を引く。チャネルごとの見立ては後半で扱う</h3>
+
+<p>粗利からモール手数料を引きます。手数料は税抜の売上に対する率で決まるため、粗利ではなく売上に率をかけます。仮にモール手数料を15%とすると、3,000円 × 15% ＝ 450円になり、粗利1,800円からこれを引いて1,350円です。</p>
+
+<p>チャネルごとの手数料の見立ては、この記事の後半でまとめて扱います。ここでは「率で引く」という計算の形だけ押さえてください。</p>
+
+<h3>送料・梱包費・倉庫手数料（1個あたりの金額）を引くと限界利益が出る</h3>
+
+<p>次に、送料・梱包費・倉庫手数料を、1個あたりの金額として引きます。これらは率ではなく、商品のサイズや重量で決まる実額です。仮に1個あたり700円とすると、1,350円 − 700円 ＝ 650円になります。</p>
+
+<p>この650円が<strong>限界利益</strong>です。限界利益を税抜売上で割ると、650円 ÷ 3,000円 ＝ 約21.7%。これが<strong>限界利益率</strong>です。</p>
+
+<h3>つまずきやすい点：モール手数料に送料は含まれない</h3>
+
+<p>ここで見落としやすいのが、モール手数料の中に送料が含まれるという思い込みです。公式の手数料表に並ぶのは、決済手数料やシステム利用料など、率で表示される項目です。配送にかかる実費は、この一覧には含まれていません。</p>
+
+<p>特にAmazonのFBAのように配送を委託している場合、配送代行手数料はサイズ・重量の区分ごとに別建てで決まります。<a href="/blog/amazon-fba/">Amazonの手数料構造とFBA保管手数料が上がる時期</a>を先に押さえておくと、この項目を取りこぼしません。手数料と送料を混同すると、限界利益を実際より高く見積もることになります。</p>
+
+<!-- TODO:実体験 何を書くべきか：この計算をしていなかった頃、値付けや広告費をどう決めていて、何で失敗したか -->
+
+<h2 id="h2-3">固定費を引いて営業利益率を出す</h2>
+
+<p>限界利益が出たら、次は固定費です。ここを飛ばすと、広告費の上限を実際より多く見積もってしまいます。</p>
+
+<h3>固定費とは何を指すか（モールの固定費・人件費）</h3>
+
+<p>固定費とは、売れても売れなくても出ていく費用です。モールの月額出店料やシステム利用料の固定部分、梱包・発送を担当するスタッフの人件費、倉庫や事務所の賃料などが当てはまります。動かない在庫を長く抱えるほど、この固定費の重さも増えていく。</p>
+
+<p><a href="/blog/zaiko-mochisugi/">在庫を持ちすぎると固定費（倉庫コスト）が膨らむ理由</a>は、値付けの計算とも地続きです。固定費は1個の商品に直接ひもづく費用ではないため、月間の総売上に対する比率として按分します。月間の固定費合計を月間の総売上で割れば、1個あたりに乗せるべき固定費の比率が出ます。</p>
+
+<h3>営業利益率が、そのまま「削っていい広告費の上限」になる理由</h3>
+
+<p>限界利益率から固定費の比率を引いた残りが<strong>営業利益率</strong>です。先ほどの例で固定費の比率を仮に5%とすると、限界利益率21.7% − 5% ＝ 16.7%になります。売上3,000円の商品なら、営業利益はおよそ500円です。</p>
+
+<p>ここまでの計算で、仕入れ・モール手数料・送料・固定費は、すべて引き終えています。残った営業利益こそ、まだ削れる唯一の部分です。だからこの数字が、そのまま広告費にかけられる理論上の上限になります。</p>
+
+<h2 id="h2-4">上限までは使わない。マージンの考え方</h2>
+
+<p>営業利益率をそのまま広告費の上限として使うと、利益はゼロになります。実務では、ここに一段階手を加えます。</p>
+
+<h3>「必ず〇%は利益を残す」と決めてから広告費の上限を出す</h3>
+
+<p>先に「必ず〇%は利益として残す」というマージンを決め、その分を引いた残りを広告費の上限にします。仮にマージンを10%と決めると、3,000円の商品では300円を必ず手元に残すことになります。営業利益率16.7%からマージン10%を引いた6.7%、金額にしておよそ200円が、広告費に使ってよい上限です。</p>
+
+<p>この順番を守れば、広告を回しながらでも利益は必ず残ります。マージンを決めずに広告費を使うと、キャンペーンのたびに利益がゼロに近づき、何のために売っているのか分からなくなる。</p>
+
+<!-- TODO:実体験 何を書くべきか：マージンを何%に設定しているか、その根拠（過去に削りすぎて失敗した経験があるか） -->
+
+<h2 id="h2-5">チャネルが変わると、この数字はどう変わるか</h2>
+
+<p>モール手数料も送料も、チャネルによって構造が違います。同じ商品でも、どこで売るかによって限界利益は変わります。</p>
+
+<h3>モール手数料の見立て（楽天・Amazon・Yahoo・自社サイト）</h3>
+
+<p>以下は、複数チャネルを実際に運用してきた中での見立てであり、各社が公式に一律の実測値として公表している数字ではありません。<strong>確度は「経験からの推測」として扱ってください。</strong></p>
+
+<p>Amazonは15%程度、楽天市場（スタンダードプラン）も15%程度、Yahoo!ショッピングは10%程度というのが、運営者の見立てです。自社サイトは3〜10%程度と幅があります。各チャネルの費用構造の内訳と公式の出典は、<a href="/blog/mall-erabikata/">楽天・Amazonなど各チャネルの初期費用と参入障壁の比較</a>に整理しています。この記事では、その数字を計算式にどう当てはめるかに絞ります。</p>
+
+<p>チャネルを増やすときは、この記事の計算式のうち、モール手数料と送料の数字だけを差し替えれば、同じ商品でどこが一番利益を残せるかを比べられます。</p>
+
+<h3>自社サイトだけ手数料の幅が広い理由</h3>
+
+<p>自社サイトの手数料は、実質的に決済手数料です。これにカート側の手数料が、別に乗る場合もあります。決済代行会社との契約条件や、扱う決済方法の構成によって数字が変わるため、モールのように一律の料率にはなりません。</p>
+
+<p>自社サイトの限界利益を計算するときは、この記事の見立てをそのまま使わず、契約している決済代行・カートの料率を自分で確認してください。</p>
+
+<h3>この計算が向かないケース</h3>
+
+<p>セット販売や福袋のように、商品ごとに原価の配分が変わるものは、この計算をSKU単位でそのまま当てはめるのが難しくなります。原価の配分をどう決めるかによって、限界利益の数字自体が変わってしまうためです。</p>
+
+<p>送料込み価格を採用していて、モールごとに送料の出し方を変えている場合も注意が必要です。実際の負担額をそのつど確認しないと、限界利益が実態からずれていきます。この計算は値付けの土台にはなりますが、競合の価格や在庫の廃番リスクまでは織り込めません。最終的な価格は、この数字を土台にしたうえで判断してください。</p>
+
+<h2 id="h2-6">まとめ：1個あたりの利益を、感覚ではなく数字で決める</h2>
+
+<p>税抜価格から仕入れ原価、モール手数料、送料の順に引けば限界利益が出ます。そこから固定費を引いた営業利益率が、広告費にかけられる上限です。マージンを先に決めておけば、広告を回しながらでも利益は残ります。</p>
+
+<p>まずは今売っている商品のうち1つで、この5ステップを実際の数字に当てはめてみてください。チャネルを増やすときも、手数料と送料の数字を差し替えるだけで、同じ計算式のまま比較できます。感覚で決めていた広告費の上限が、数字として手元に残るようになります。</p>
+
+</article>
+
+<!-- AUTO:BELOW:START -->
+<div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+
+
+
+
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
+<div>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">3</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">2</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">0</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場 <span style="color:#656C76;">1</span></span>
+<a href="/tag/amazon/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">Amazon <span style="color:#656C76;">3</span></a>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト <span style="color:#656C76;">1</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用 <span style="color:#656C76;">1</span></span>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/shohin-setsumei/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/shohin-setsumei.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">商品説明文の書き方：デメリットも書くと信頼される</span>
+  </div>
+</a>
+<a href="/blog/amazon-fba/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/amazon-fba.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAで一番楽になるのは在庫管理。ただし条件つき</span>
+  </div>
+</a>
+<a href="/blog/mall-erabikata/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/mall-erabikata.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">販路の選び方：楽天・Amazon・自社サイトどれが先</span>
+  </div>
+</a>
+<a href="/blog/zaiko-mochisugi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-mochisugi.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫を持ちすぎるのに欠品する理由</span>
+  </div>
+</a>
+</div>
+<p style="margin:18px 0 0;"><a href="/blog/" style="color:#A4243B; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</section>
+</div></div>
+<footer style="background:#F4F5F6; color:#656C76; border-top:1px solid #E2E5E9;">
+  <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
+      <div style="flex:1 1 200px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin:0 0 12px;">
+          <img src="/assets/logo/logo-mark.svg" alt="" style="height:30px; width:auto; display:block; flex:0 0 auto;">
+          <strong style="font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em;">あかいうま</strong>
+        </div>
+        <p style="margin:0; font-size:0.84em; line-height:1.85; color:#656C76;">物販の現場で実際に手を動かしている運営者が、売上と効率化の実務を書いています。</p>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+<a href="/blog/#research" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">リサーチ</a>
+<a href="/blog/#sourcing" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">仕入れ</a>
+<a href="/blog/#sales" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">販路・集客</a>
+<a href="/blog/#inventory" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">在庫管理</a>
+<a href="/blog/#numbers" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">数字管理</a>
+<a href="/blog/#efficiency" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">業務効率化</a>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
+        <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
+        <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
+
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;">
+<a href="https://x.com/" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">X</a>
+    </div>
+
+    <div style="border-top:1px solid #E2E5E9; padding-top:20px;">
+      <p style="margin:0 0 10px; color:#656C76; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
+      <p style="margin:0; color:#656C76; font-size:0.78em;">&copy; 2026 あかいうま</p>
+    </div>
+
+  </div>
+</footer>
+<!-- AUTO:BELOW:END -->
+
+</body>
+</html>

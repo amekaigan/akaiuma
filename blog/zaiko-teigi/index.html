@@ -1,32 +1,32 @@
 <!--
-title: 限界利益の計算方法と上限広告費の出し方｜あかいうま
-meta: モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。
-permalink: /blog/genkai-rieki/
+title: 在庫の数え方で最初に決めること｜あかいうま
+meta: 棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。
+permalink: /blog/zaiko-teigi/
 published: 2026-09-25
 updated:
-verified: 2026-09-15
-category: 数字管理
-level: intermediate
-tags: 楽天市場, Amazon, Yahoo!ショッピング, 自社サイト, 複数チャネル運用
+verified:
+category: 在庫管理
+level: beginner
+tags:
 disclosure:
 thumb:
-thumbcopy: 感覚の値付けをやめる基準
-takeaways: モール手数料と送料を引いて限界利益を出す計算の手順 | 固定費から上限広告費を逆算する考え方 | チャネル別の手数料を差し替えて比較する視点
-search_intent: モール手数料と送料を引いたあと、商品1個あたりに実際いくら利益が残るのか、そしてそこから広告費はいくらまでかけていいのかを、自分の数字に当てはめて計算したい。
-title_reason: 読者が欲しいのは「限界利益とは何か」という定義の説明ではなく、自分の数字を入れれば上限広告費まで出せる計算の手順そのもの。タイトルを「限界利益→上限広告費」という計算の流れそのものにすることで、読めば手を動かせる記事だと分かるようにした。mall-erabikataは「どのチャネルから始めるか」という入口の問いに答える記事であり、この記事はその先にある「じゃあ1個売っていくら残るのか」という次の問いに答える本編と位置づける。あちらの終盤（値付けの前に1枚のシートを作る、の節）は要約に留め、計算の各ステップの中身と注意点はこちらだけで深掘りする。
+thumbcopy: 数える前に決めること
+takeaways: 実在庫と帳簿在庫を分けて考える発想 | 棚卸しで数が合わなくなる主な原因 | Excelで管理を始める前に決めておくルール
+search_intent: Excelなどで在庫を数え始めた初心者が、棚卸しで数字が合わないことに気づき、そもそも何を「在庫」として数え、何を先に決めておけばよかったのかを知りたい。
+title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミスなのか」という漠然とした不安の解消ではなく、「次に何を決めればズレなくなるのか」という具体的な行動である。実物の数（実在庫）とデータ上の数（帳簿在庫）は別物であり、それを分けて「何を1個と数えるか」を先に決める、という答えを「数える前に決めること」という形でタイトルに置くことで、読者は自分が今まさに迷っている段階の話だと分かる。
 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>限界利益の計算方法と上限広告費の出し方｜あかいうま</title>
-<meta name="description" content="モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。">
-<link rel="canonical" href="https://akaiuma.com/blog/genkai-rieki/">
+<title>在庫の数え方で最初に決めること｜あかいうま</title>
+<meta name="description" content="棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。">
+<link rel="canonical" href="https://akaiuma.com/blog/zaiko-teigi/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="限界利益の計算方法と上限広告費の出し方">
-<meta property="og:description" content="モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。">
-<meta property="og:url" content="https://akaiuma.com/blog/genkai-rieki/">
+<meta property="og:title" content="在庫の数え方で最初に決めること">
+<meta property="og:description" content="棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。">
+<meta property="og:url" content="https://akaiuma.com/blog/zaiko-teigi/">
 <meta property="og:image" content="https://akaiuma.com/og-default.png">
 <meta property="og:site_name" content="あかいうま">
 <meta name="twitter:card" content="summary_large_image">
@@ -174,13 +174,13 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "限界利益の計算方法と上限広告費の出し方｜あかいうま",
-  "description": "モール手数料と送料を引く順番、固定費から上限広告費を出す計算の手順を実務向けに解説します。",
+  "headline": "在庫の数え方で最初に決めること｜あかいうま",
+  "description": "棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。",
   "datePublished": "2026-09-25",
   "dateModified": "2026-09-25",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://akaiuma.com/blog/genkai-rieki/"
+    "@id": "https://akaiuma.com/blog/zaiko-teigi/"
   },
   "author": {
     "@type": "Organization",
@@ -194,7 +194,7 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
       "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
     }
   },
-  "image": "https://akaiuma.com/assets/thumb/auto/genkai-rieki.svg"
+  "image": "https://akaiuma.com/assets/thumb/auto/zaiko-teigi.svg"
 }
 </script>
 <!-- AUTO:HEADER:END -->
@@ -227,18 +227,18 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
   }
 })();
 </script>
-<div class="article-header" data-level="intermediate">
-  <div class="article-category">数字管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#82182E; background:#FBF4F5; border-radius:4px; padding:2px 8px; margin-left:8px;">中級者向け</span></div>
-  <h1>限界利益の計算方法と上限広告費の出し方</h1>
-  <div class="article-meta"><span>公開：2026年9月25日</span><span>料金・仕様の確認：2026年9月15日</span><span>読了：約7分</span></div>
+<div class="article-header" data-level="beginner">
+  <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
+  <h1>在庫の数え方で最初に決めること</h1>
+  <div class="article-meta"><span>公開：2026年9月25日</span><span>読了：約6分</span></div>
 </div>
-<img class="article-thumb" src="/assets/thumb/auto/genkai-rieki.svg" alt="" width="1200" height="630">
+<img class="article-thumb" src="/assets/thumb/auto/zaiko-teigi.svg" alt="" width="1200" height="630">
 <div class="ak-takeaways">
   <p class="ak-takeaways-title">この記事で分かること</p>
   <ul>
-    <li>モール手数料と送料を引いて限界利益を出す計算の手順</li>
-    <li>固定費から上限広告費を逆算する考え方</li>
-    <li>チャネル別の手数料を差し替えて比較する視点</li>
+    <li>実在庫と帳簿在庫を分けて考える発想</li>
+    <li>棚卸しで数が合わなくなる主な原因</li>
+    <li>Excelで管理を始める前に決めておくルール</li>
   </ul>
 </div>
 
@@ -246,183 +246,169 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
 
 <article class="ak-article">
 
-<p>楽天、Amazon、Yahoo!ショッピング、自社サイト。複数のチャネルで同じ商品を売っていると、値段だけは決まっています。それなのに、広告費をいくらまでかけていいのか分からなくなる瞬間があります。</p>
+<p>物販を始めて数か月。在庫はExcelの表に、入荷した数と出荷した数を書き足しながら数えている。先週、初めて棚卸しをしてみると、表の数字と実際に並んでいる数が一致しなかった。どこで何個ズレたのか、原因はまったく分からない。</p>
 
-<p>モール手数料も送料も頭には入っているものの、それぞれ別の数字のまま、1本の計算式にはつながっていない。結果として、広告費は「このくらいなら大丈夫だろう」という感覚で決めてしまいます。</p>
+<p>結論から言うと、在庫には「実物の数」と「データ上の数」という、性格の違う2つの数字があります。この2つを分けて考えることが出発点です。そのうえで、何を1個として数えるかを先に決めておかないと、Excelでもシステムでも必ずズレます。逆に言えば、ここさえ決めておけば、棚卸しのたびに原因探しで頭を抱える回数は大きく減ります。</p>
 
-<p>結論から言うと、税抜の売上からモール手数料と送料を順番に引けば「限界利益」が出ます。そこから固定費の割合をさらに引いた「営業利益率」が、そのまま広告費にかけられる上限になる。この記事では、この計算を1ステップずつ、つまずきやすい点とあわせて説明します。</p>
+<p>この記事では、「正確に数える」ための土台を扱います。数え方は合っているのに在庫を持ちすぎる、あるいは欠品するという場合は、原因が別のところにあります。その場合は、<a href="/blog/zaiko-mochisugi/">在庫を持ちすぎるのに欠品する理由</a>を先に読んだほうが早いはずです。</p>
 
 <!-- AUTO:TOC:START -->
 <nav class="ak-toc" aria-label="目次">
   <p class="ak-toc-title">目次</p>
   <ol>
-    <li><a href="#h2-1">限界利益とは何か。粗利・営業利益と何が違うのか</a></li>
-    <li><a href="#h2-2">限界利益を出す計算の順番（モール手数料と送料を引く）</a></li>
-    <li><a href="#h2-3">固定費を引いて営業利益率を出す</a></li>
-    <li><a href="#h2-4">上限までは使わない。マージンの考え方</a></li>
-    <li><a href="#h2-5">チャネルが変わると、この数字はどう変わるか</a></li>
-    <li><a href="#h2-6">まとめ：1個あたりの利益を、感覚ではなく数字で決める</a></li>
+    <li><a href="#h2-1">在庫には「実在庫」と「帳簿在庫」の2つの数字がある</a></li>
+    <li><a href="#h2-2">なぜこの2つはズレるのか（棚卸しで数が合わない原因）</a></li>
+    <li><a href="#h2-4">ズレを防ぐのは「気をつける」ことではなく「決め事」</a></li>
+    <li><a href="#h2-5">在庫は「資産」として扱われる、という感覚を持つ</a></li>
+    <li><a href="#h2-6">この基準が通用しないケースと、次に来る壁</a></li>
+    <li><a href="#h2-7">まとめ：数える前に決めておく1つのルール</a></li>
   </ol>
 </nav>
 <!-- AUTO:TOC:END -->
-<h2 id="h2-1">限界利益とは何か。粗利・営業利益と何が違うのか</h2>
+<h2 id="h2-1">在庫には「実在庫」と「帳簿在庫」の2つの数字がある</h2>
 
-<p class="ak-lead">粗利・限界利益・営業利益率・上限広告費。呼び方が違うと、広告費の判断も変わります。</p>
+<p class="ak-lead">実在庫と帳簿在庫、まず名前と役割の違いを押さえます。</p>
 
-<p>「利益は出ていますか」と聞かれたとき、粗利で答える人もいれば、営業利益で答える人もいます。同じ「儲かっている」という感覚でも、指している段階が違えば判断は変わる。</p>
+<p>在庫を数えるとき、実は2種類の数字を扱っています。1つは倉庫に実際に並んでいる「実在庫」、もう1つはExcelやシステムに記録された「帳簿在庫」です。この2つは、名前も違えば動くタイミングも違います。</p>
 
-<h3>「利益」という言葉が指す範囲は人によって違う</h3>
+<h3>実在庫＝倉庫に実際にある数</h3>
 
-<p>特に広告費を考えるときは、この違いが致命的になります。粗利の段階で「まだ余裕がある」と判断すると、実際には固定費を引いた時点で赤字だった、ということもあります。どの段階の利益を指しているのか、まず自分の中で固定してください。</p>
+<p>実在庫は、棚や箱の中に物として存在する数です。目で見て数えられますし、手で触っても数えられます。棚卸しで数えるのは、基本的にこちらの数字になります。</p>
 
-<h3>この記事で使う4つの利益の定義（粗利・限界利益・営業利益・上限広告費）</h3>
+<h3>帳簿在庫＝Excelやシステム上の数字</h3>
 
-<p>この記事では、次の4つの言葉を、次の意味で使います。以降の計算は、すべてこの定義に沿って進めます。</p>
+<p>帳簿在庫は、入荷や出荷を記録した結果として、表や画面に表示される数字です。人が入力した瞬間に更新されるので、実際の動きより早く変わることもあれば、入力を忘れて遅れることもあります。</p>
+
+<p>この2つが常に一致していれば、在庫管理で悩むことはありません。ですが多くの現場では、どこかのタイミングでこの2つが離れていきます。では、何がきっかけで離れていくのでしょうか。</p>
+
+<h2 id="h2-2">なぜこの2つはズレるのか（棚卸しで数が合わない原因）</h2>
+
+<p>実在庫と帳簿在庫がズレる原因は、特別な事故ではなく、日々の作業の中にあります。運営者が棚卸しのズレを追ったとき、候補に挙がったのは次のようなものでした。</p>
 
 <ul>
-<li><strong>粗利</strong>：税抜の売上から、仕入れ原価だけを引いた金額</li>
-<li><strong>限界利益</strong>：粗利から、モール手数料と送料をさらに引いた金額</li>
-<li><strong>営業利益率</strong>：限界利益から、固定費の割合を引いた比率</li>
-<li><strong>上限広告費</strong>：営業利益をゼロにするまで使ってよい、理論上の広告費の上限</li>
+<li>入荷したときに、似た商品と取り違えて登録した</li>
+<li>メーカー側の出荷数が、そもそも発注数と違っていた</li>
+<li>注文とは違う商品を、お客様に誤って発送してしまった</li>
+<li>1点の注文のはずが、うっかり2点送ってしまった</li>
+<li>撮影のために一時的に持ち出した商品を、棚に戻し忘れた</li>
 </ul>
 
-<p>粗利までしか見ていないと、モール手数料や送料の分だけ、手元に残る額を実際より多く見積もってしまいます。次の章では、この2つを引く具体的な順番を説明します。</p>
+<p>どれも、日々の作業の延長で起きたことです。</p>
 
-<h2 id="h2-2">限界利益を出す計算の順番（モール手数料と送料を引く）</h2>
+<p class="ak-pull">共通しているのは、「実際に動いた数」と「記録した数」が、どこか1点でずれているという点です。</p>
 
-<p>計算の順番を間違えると、同じ数字を使っても違う答えが出ます。ここでは仮に、税込3,300円で売る商品を例に、順を追って計算します。以下はあくまで計算の流れを示すための仮の数字であり、特定のチャネルや店舗の実数ではありません。</p>
+<p>このズレを実際にどう発見し、どう追いかけたかという具体的な経緯は、<a href="/blog/amazon-fba/">FBAで一番楽になるのは在庫管理。ただし条件つき</a>で詳しく書いています。ここでは、ズレが起きる仕組みそのものを押さえておきます。</p>
 
-<h3>税込価格を税抜にしてから、仕入れ原価を引いて粗利を出す</h3>
+<p>ズレの原因が日々の作業の中にあるなら、防ぎ方も作業の中で決められます。</p>
 
-<ol>
-<li>税込3,300円を税抜にする：3,300円 ÷ 1.1 ＝ 3,000円</li>
-<li>仕入れ原価1,200円を引く：3,000円 − 1,200円 ＝ 1,800円（粗利）</li>
-</ol>
-
-<p>ここまでは、多くの人が普段から意識している計算です。問題は、この先にあります。</p>
-
-<h3>モール手数料（率）を引く。チャネルごとの見立ては後半で扱う</h3>
-
-<p>粗利からモール手数料を引きます。手数料は税抜の売上に対する率で決まるため、粗利ではなく売上に率をかけます。仮にモール手数料を15%とすると、3,000円 × 15% ＝ 450円になり、粗利1,800円からこれを引いて1,350円です。</p>
-
-<p>チャネルごとの手数料の見立ては、この記事の後半でまとめて扱います。ここでは「率で引く」という計算の形だけ押さえてください。</p>
-
-<h3>送料・梱包費・倉庫手数料（1個あたりの金額）を引くと限界利益が出る</h3>
-
-<p>次に、送料・梱包費・倉庫手数料を、1個あたりの金額として引きます。これらは率ではなく、商品のサイズや重量で決まる実額です。仮に1個あたり700円とすると、1,350円 − 700円 ＝ 650円になります。</p>
-
-<p>この650円が<strong>限界利益</strong>です。限界利益を税抜売上で割ると、650円 ÷ 3,000円 ＝ 約21.7%。これが<strong>限界利益率</strong>です。</p>
-
-<h3>つまずきやすい点：モール手数料に送料は含まれない</h3>
-
-<p>ここで見落としやすいのが、モール手数料の中に送料が含まれるという思い込みです。公式の手数料表に並ぶのは、決済手数料やシステム利用料など、率で表示される項目です。配送にかかる実費は、この一覧には含まれていません。</p>
-
-<p>特にAmazonのFBAのように配送を委託している場合、配送代行手数料はサイズ・重量の区分ごとに別建てで決まります。<a href="/blog/amazon-fba/">Amazonの手数料構造とFBA保管手数料が上がる時期</a>を先に押さえておくと、この項目を取りこぼしません。手数料と送料を混同すると、限界利益を実際より高く見積もることになります。</p>
-
-<p class="ak-pull">モール手数料に、配送の実費は含まれていません。</p>
-
-<!-- TODO:実体験 何を書くべきか：この計算をしていなかった頃、値付けや広告費をどう決めていて、何で失敗したか -->
+<!-- TODO:実体験 何を書くべきか：在庫の定義を決めずに運用を始めて、最初にどの商品・どの場面で数字が食い違ったか（答えが届いたら、この位置に節を立てて追記する） -->
 
 <!-- AUTO:AD:START -->
 
 <!-- AUTO:AD:END -->
-<h2 id="h2-3">固定費を引いて営業利益率を出す</h2>
+<h2 id="h2-4">ズレを防ぐのは「気をつける」ことではなく「決め事」</h2>
 
-<p>限界利益が出たら、次は固定費です。ここを飛ばすと、広告費の上限を実際より多く見積もってしまいます。</p>
+<p>ズレを防ぐ方法として、多くの人がまず思いつくのは「気をつける」ことです。ですが、気をつけるだけでは、いずれ同じ間違いが起きます。実際に効くのは、判断の余地を残さない決め事のほうです。</p>
 
-<h3>固定費とは何を指すか（モールの固定費・人件費）</h3>
+<h3>人の判断や経験に頼るとズレる</h3>
 
-<p>固定費とは、売れても売れなくても出ていく費用です。モールの月額出店料やシステム利用料の固定部分、梱包・発送を担当するスタッフの人件費、倉庫や事務所の賃料などが当てはまります。動かない在庫を長く抱えるほど、この固定費の重さも増えていく。</p>
+<p>入荷の数を目で数える、注文と商品を目で照合する。こうした作業を人の判断に頼っている限り、確認漏れや思い込みによる間違いはゼロになりません。担当者が変わったり、忙しい日が続いたりすると、特に起こりやすくなります。</p>
 
-<p><a href="/blog/zaiko-mochisugi/">在庫を持ちすぎると固定費（倉庫コスト）が膨らむ理由</a>は、値付けの計算とも地続きです。固定費は1個の商品に直接ひもづく費用ではないため、月間の総売上に対する比率として按分します。月間の固定費合計を月間の総売上で割れば、1個あたりに乗せるべき固定費の比率が出ます。</p>
+<div class="ak-compare">
+  <div class="ak-bad"><span class="ak-compare-label">気をつける運用</span><p>入荷や照合を人の目と記憶に頼る。運営者の経験では、どこかで人の判断に頼ると、在庫は必ずずれる。</p></div>
+  <div class="ak-good"><span class="ak-compare-label">決め事にした運用</span><p>何を1個と数えるかを先に決め、誰が作業しても同じ答えになるようにする。</p></div>
+</div>
 
-<h3>営業利益率が、そのまま「削っていい広告費の上限」になる理由</h3>
+<h3>バーコードで統一するのが理想。ただし初期はExcelがほとんど</h3>
 
-<p>限界利益率から固定費の比率を引いた残りが<strong>営業利益率</strong>です。先ほどの例で固定費の比率を仮に5%とすると、限界利益率21.7% − 5% ＝ 16.7%になります。売上3,000円の商品なら、営業利益はおよそ500円です。</p>
+<p>運営者の経験では、入荷・ピッキング・出荷・棚卸しをすべてバーコードで行えば、ずれようがありません。ただし、事業を始めたばかりの段階では、Excelや手書きのノートで管理していることがほとんどでしょう。</p>
 
-<p>ここまでの計算で、仕入れ・モール手数料・送料・固定費は、すべて引き終えています。残った営業利益こそ、まだ削れる唯一の部分です。だからこの数字が、そのまま広告費にかけられる理論上の上限になります。</p>
+<p>バーコード運用は、いきなり全部を揃える必要はありません。まずは「何を1個として数えるか」を、紙の上でも決めておくことが先になります。</p>
+
+<h3>まずは「何を1個として数えるか」を1枚のルールにする</h3>
+
+<p>決めておきたいことは、実はそれほど多くありません。例えば、セット商品を1セットで1個と数えるのか、中身のパーツごとに数えるのか。色違いやサイズ違いを同じ商品として合算するのか、別の商品として分けて数えるのか。検品前の入荷品を、届いた時点で在庫に加えるのか、検品が終わってから加えるのか。</p>
+
+<p>これらは、どれが正解というものではありません。自分の商品構成や作業の流れに合わせて1つずつ答えを出し、紙1枚にまとめておけば十分です。</p>
+
+<!-- TODO:実体験 何を書くべきか：運営者が最初に決めた「数え方のルール」は、具体的にどんな内容だったか（引き当て済みの扱いなど、固有の項目があれば） -->
+
+<p>ルールが決まれば、数える作業自体はもう迷いません。次に押さえておきたいのは、その数字が何を意味するかという点です。</p>
+
+<h2 id="h2-5">在庫は「資産」として扱われる、という感覚を持つ</h2>
+
+<p>個人で数点を扱っているうちは、在庫が1個ズレても実害は小さく見えるかもしれません。ですが在庫は、帳簿の上では金額に換算される「資産」です。運営者の経験では、それなりの規模の会社になると、在庫はお金のように管理されます。</p>
+
+<p class="ak-pull">数量がズレるということは、資産の金額がズレているのと同じ意味を持ちます。</p>
+
+<p>規模が大きくなるほど、この感覚は重要になります。月末の棚卸しで数字が合わないという状態は、単なる作業ミスではなく、会計上の数字が正しくないという状態でもあります。</p>
+
+<h2 id="h2-6">この基準が通用しないケースと、次に来る壁</h2>
+
+<p>ここまでの内容は、倉庫が1つで、まだ数え方のルールを何も決めていない人に向けたものです。当てはまらないケースもあります。</p>
+
+<h3>扱う商品が数点なら、厳密な仕組みはまだ要らない</h3>
+
+<p>商品点数が数点程度で、担当者が自分しかいないなら、紙のメモ程度でも十分に回るでしょう。無理に仕組み化する時間を、仕入れや販売のほうに使ったほうがいい段階もあります。</p>
+
+<h3>定義を決めても、チャネルが増えると新しいズレが生まれる</h3>
+
+<p>倉庫が1つで完結している間は、これでいいのです。ですが楽天やAmazon、自社サイトなど複数のチャネルで売り始めると、話が変わってきます。倉庫間を移動中の在庫や、注文は入ったがまだ出荷していない在庫など、単一倉庫では存在しなかった「宙に浮く在庫」が生まれるからです。</p>
+
+<p>この壁は、数え方のルールを決めただけでは越えられません。複数の保管場所を運用したときに何が起きるかは、<a href="/blog/zaiko-awanai-riyu/">年間1万件出荷して分かった、在庫が合わない本当の理由</a>で具体的に扱っています。単一倉庫の運用に慣れてきたら、次はそちらを読んでおくと、先に起きる問題が見えてきます。</p>
 
 <div class="ak-point">
   <span class="ak-point-label">この節の要点</span>
-  <p>限界利益率21.7% − 固定費比率5% ＝ 営業利益率16.7%。売上3,000円の商品なら、営業利益はおよそ500円です。この営業利益こそ、広告費にかけられる理論上の上限になります。</p>
+  <p>数え方のルールが要らないのは、商品点数が数点で担当者が自分だけの段階です。逆に、複数チャネルで売り始めると、倉庫間を移動中の在庫や未出荷の在庫という新しいズレが生まれます。</p>
 </div>
 
-<h2 id="h2-4">上限までは使わない。マージンの考え方</h2>
+<h2 id="h2-7">まとめ：数える前に決めておく1つのルール</h2>
 
-<p class="ak-lead">営業利益率をそのまま広告費の上限として使うと、利益はゼロになります。実務では、ここに一段階手を加えます。</p>
+<p>在庫が合わない原因を、Excelやツールのせいにする前に、確認しておきたいことがあります。実在庫と帳簿在庫という、性格の違う2つの数字を分けて考えられているか。そして、何を1個として数えるかを、誰が見ても同じ答えになる形で決めているか。</p>
 
-<h3>「必ず〇%は利益を残す」と決めてから広告費の上限を出す</h3>
+<p>この2つさえ決まっていれば、棚卸しのたびに原因を探して頭を抱える時間は、大きく減らせます。まずは、自分の商品について次の3点を紙1枚に書き出すところから始めてください。</p>
 
-<p>先に「必ず〇%は利益として残す」というマージンを決め、その分を引いた残りを広告費の上限にします。仮にマージンを10%と決めると、3,000円の商品では300円を必ず手元に残します。営業利益率16.7%からマージン10%を引くと6.7%です。金額にしておよそ200円が、広告費に使ってよい上限です。</p>
-
-<p>この順番を守れば、想定どおりの価格・数量で売れているかぎり、広告を回しながらでも利益はゼロになりません。マージンを決めずに広告費を使うと、キャンペーンのたびに利益がゼロに近づきます。何のために売っているのか分からなくなる。</p>
-
-<!-- TODO:実体験 何を書くべきか：マージンを何%に設定しているか、その根拠（過去に削りすぎて失敗した経験があるか） -->
-
-<h2 id="h2-5">チャネルが変わると、この数字はどう変わるか</h2>
-
-<p>モール手数料も送料も、チャネルによって構造が違います。同じ商品でも、どこで売るかによって限界利益は変わります。</p>
-
-<h3>モール手数料の見立て（楽天・Amazon・Yahoo・自社サイト）</h3>
-
-<p>以下は、複数チャネルを実際に運用してきた中での見立てであり、各社が公式に一律の実測値として公表している数字ではありません。<strong>確度は「経験からの推測」として扱ってください。</strong></p>
-
-<p>運営者の見立てでは、Amazonと楽天市場（スタンダードプラン）はともに15%程度です。Amazonはカテゴリーによって手数料率が変わるため、この数字は目安として扱ってください。Yahoo!ショッピングは10%程度、自社サイトは3〜10%程度と幅があります。</p>
-
-<p>各チャネルの費用構造の内訳と公式の出典は、<a href="/blog/mall-erabikata/">楽天・Amazonなど各チャネルの初期費用と参入障壁の比較</a>に整理しています。この記事では、その数字を計算式にどう当てはめるかに絞ります。チャネルを増やすときも、考え方は同じです。モール手数料と送料の数字だけを差し替えれば、同じ商品でどこが一番利益を残せるかを比べられます。</p>
-
-<div class="ak-point">
-  <span class="ak-point-label">この節の要点</span>
-  <p>運営者の見立てでは、Amazon・楽天市場（スタンダードプラン）が15%程度、Yahoo!ショッピングが10%程度、自社サイトが3〜10%程度です。数値はあくまで経験からの推測であり、各社が公式に公表している実測値ではありません。</p>
-</div>
-
-<h3>自社サイトだけ手数料の幅が広い理由</h3>
-
-<p>自社サイトの手数料は、実質的に決済手数料です。これにカート側の手数料が、別に乗る場合もあります。決済代行会社との契約条件や、扱う決済方法の構成によって数字が変わるため、モールのように一律の料率にはなりません。</p>
-
-<p>自社サイトの限界利益を計算するときは、この記事の見立てをそのまま使わず、契約している決済代行・カートの料率を自分で確認してください。</p>
-
-<h3>この計算が向かないケース</h3>
-
-<p>セット販売や福袋は、商品ごとに原価の配分が変わります。そのため、この計算をSKU単位でそのまま当てはめるのが難しくなります。原価の配分をどう決めるかによって、限界利益の数字自体が変わってしまうためです。</p>
-
-<p>送料込み価格を採用していて、モールごとに送料の出し方を変えている場合も注意が必要です。実際の負担額をそのつど確認しないと、限界利益が実態からずれていきます。この計算は値付けの土台にはなりますが、競合の価格や在庫の廃番リスクまでは織り込めません。最終的な価格は、この数字を土台にしたうえで判断してください。</p>
-
-<h2 id="h2-6">まとめ：1個あたりの利益を、感覚ではなく数字で決める</h2>
-
-<p>税抜価格から仕入れ原価、モール手数料、送料の順に引けば限界利益が出ます。そこから固定費を引いた営業利益率が、広告費にかけられる上限です。マージンを先に決めておけば、広告を回しながらでも利益は残ります。</p>
-
-<div class="ak-point">
-  <span class="ak-point-label">この記事の要点</span>
-  <p>税抜売上 − 仕入れ原価 − モール手数料 − 送料 ＝ 限界利益。限界利益率 − 固定費比率 ＝ 営業利益率。この営業利益率が、広告費にかけられる上限です。</p>
-</div>
-
-<p>まずは今売っている商品のうち1つで、この5ステップを実際の数字に当てはめてみてください。チャネルを増やすときも、手数料と送料の数字を差し替えるだけで、同じ計算式のまま比較できます。感覚で決めていた広告費の上限が、数字として手元に残るようになります。</p>
+<ul class="ak-check">
+<li>セット商品を1セットで1個と数えるか、パーツごとに数えるか</li>
+<li>色違い・サイズ違いを同じ商品として合算するか、分けて数えるか</li>
+<li>検品前の入荷品を、届いた時点で在庫に加えるか、検品後に加えるか</li>
+</ul>
 
 </article>
 
 <!-- AUTO:BELOW:START -->
 <div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
-<section style="margin:0 0 40px;">
-<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">この記事のタグ</span></h2>
-<div>
-<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場</span>
-<a href="/tag/amazon/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">Amazon</a>
-<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング</span>
-<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト</span>
-<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用</span>
-</div>
-</section>
 
+<section style="margin:0 0 40px; background:#fff; border:1px solid #E4E7EB; border-left:4px solid #A4243B; border-radius:0; padding:20px 22px;">
+  <p style="margin:0 0 4px; color:#1F2328; font-weight:bold; font-size:0.98em;">次に読むと、もう一段先に進めます</p>
+  <p style="margin:0 0 14px; color:#656C76; font-size:0.83em; line-height:1.7;">基本ができたあと、実際に詰まりやすいところを扱っています。</p>
+  <ul style="margin:0; padding:0 0 0 18px;">
+<li style="margin:0 0 10px;"><a href="/blog/zaiko-awanai-riyu/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">年間1万件出荷して分かった、在庫が合わない本当の理由</a></li>
+  </ul>
+</section>
 
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
 <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
-<a href="/blog/zaiko-teigi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-teigi.svg') center/cover no-repeat; border-radius:6px;"></div>
+<a href="/blog/zaiko-mochisugi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-mochisugi.svg') center/cover no-repeat; border-radius:6px;"></div>
   <div style="padding:11px 13px;">
     <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
-    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫の数え方で最初に決めること</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫を持ちすぎるのに欠品する理由</span>
+  </div>
+</a>
+<a href="/blog/zaiko-awanai-riyu/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-awanai-riyu.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">年間1万件出荷して分かった、在庫が合わない本当の理由</span>
+  </div>
+</a>
+<a href="/blog/genkai-rieki/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/genkai-rieki.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">限界利益の計算方法と上限広告費の出し方</span>
   </div>
 </a>
 <a href="/blog/shohin-setsumei/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
@@ -430,20 +416,6 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
   <div style="padding:11px 13px;">
     <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
     <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">商品説明文の書き方：デメリットも書くと信頼される</span>
-  </div>
-</a>
-<a href="/blog/amazon-fba/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/amazon-fba.svg') center/cover no-repeat; border-radius:6px;"></div>
-  <div style="padding:11px 13px;">
-    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
-    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAで一番楽になるのは在庫管理。ただし条件つき</span>
-  </div>
-</a>
-<a href="/blog/mall-erabikata/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/mall-erabikata.svg') center/cover no-repeat; border-radius:6px;"></div>
-  <div style="padding:11px 13px;">
-    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">販路・集客</span>
-    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">販路の選び方：楽天・Amazon・自社サイトどれが先</span>
   </div>
 </a>
 </div>
@@ -472,11 +444,11 @@ title_reason: 読者が欲しいのは「限界利益とは何か」という定
 <section style="margin:0 0 40px;">
 <h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
 <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
-<a href="/blog/zaiko-teigi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
-  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/zaiko-teigi.svg') center/cover no-repeat; border-radius:6px;"></div>
+<a href="/blog/genkai-rieki/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/genkai-rieki.svg') center/cover no-repeat; border-radius:6px;"></div>
   <div style="padding:11px 13px;">
-    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
-    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">在庫の数え方で最初に決めること</span>
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">限界利益の計算方法と上限広告費の出し方</span>
   </div>
 </a>
 <a href="/blog/shohin-setsumei/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">

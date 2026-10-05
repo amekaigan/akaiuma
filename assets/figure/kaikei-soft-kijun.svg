@@ -1,51 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="会計ソフトを選ぶ3つの基準。口座・カード・決済サービスとの自動連携、青色申告とe-Taxへの対応、無料で試せること">
-<rect width="1200" height="630" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="770" viewBox="0 0 720 770" role="img" aria-label="会計ソフトを選ぶ3つの基準。口座・カード・決済サービスとの自動連携、青色申告とe-Taxへの対応、無料で試せること">
+<rect width="720" height="770" fill="#FFFFFF"/>
 <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-  <text x="60" y="80" font-size="42" font-weight="700" fill="#1F2328">会計ソフトを選ぶ3つの基準</text>
-  <rect x="60" y="104" width="72" height="4" fill="#A4243B"/>
-
-  <!-- 1 自動連携 -->
-  <rect x="60" y="146" width="340" height="440" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
-  <circle cx="230" cy="250" r="70" fill="#FBF4F5"/>
-  <g fill="none" stroke="#A4243B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="178" y="232" width="62" height="36" rx="18" transform="rotate(-35 209 250)"/>
-    <rect x="220" y="232" width="62" height="36" rx="18" transform="rotate(-35 251 250)"/>
-  </g>
-  <circle cx="98" cy="184" r="22" fill="#A4243B"/>
-  <text x="98" y="194" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-  <text x="230" y="384" font-size="36" font-weight="700" fill="#1F2328" text-anchor="middle">自動連携</text>
-  <text x="230" y="444" font-size="27" fill="#3D444D" text-anchor="middle">口座・カード・</text>
-  <text x="230" y="484" font-size="27" fill="#3D444D" text-anchor="middle">決済サービスの</text>
-  <text x="230" y="524" font-size="27" fill="#3D444D" text-anchor="middle">明細を取り込める</text>
-
-  <!-- 2 青色申告・e-Tax -->
-  <rect x="430" y="146" width="340" height="440" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
-  <circle cx="600" cy="250" r="70" fill="#FBF4F5"/>
-  <g fill="none" stroke="#A4243B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M568 204h46l18 18v74h-64Z"/>
-    <path d="M582 254l14 14 24-28"/>
-  </g>
-  <circle cx="468" cy="184" r="22" fill="#A4243B"/>
-  <text x="468" y="194" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
-  <text x="600" y="384" font-size="33" font-weight="700" fill="#1F2328" text-anchor="middle">青色申告・e-Tax</text>
-  <text x="600" y="444" font-size="27" fill="#3D444D" text-anchor="middle">青色申告と</text>
-  <text x="600" y="484" font-size="27" fill="#3D444D" text-anchor="middle">電子申告に</text>
-  <text x="600" y="524" font-size="27" fill="#3D444D" text-anchor="middle">対応している</text>
-
-  <!-- 3 無料で試せる -->
-  <rect x="800" y="146" width="340" height="440" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
-  <circle cx="970" cy="250" r="70" fill="#FBF4F5"/>
-  <g fill="none" stroke="#A4243B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="928" y="212" width="84" height="60" rx="6"/>
-    <line x1="950" y1="292" x2="990" y2="292"/>
-    <line x1="970" y1="272" x2="970" y2="292"/>
-    <path d="M960 232l20 10-20 10Z"/>
-  </g>
-  <circle cx="838" cy="184" r="22" fill="#A4243B"/>
-  <text x="838" y="194" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
-  <text x="970" y="384" font-size="36" font-weight="700" fill="#1F2328" text-anchor="middle">無料で試せる</text>
-  <text x="970" y="444" font-size="27" fill="#3D444D" text-anchor="middle">払う前に</text>
-  <text x="970" y="484" font-size="27" fill="#3D444D" text-anchor="middle">画面を触って</text>
-  <text x="970" y="524" font-size="27" fill="#3D444D" text-anchor="middle">確かめられる</text>
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">会計ソフトを選ぶ3つの基準</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="120" width="640" height="190" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="130" cy="215" r="58" fill="#FBF4F5"/>
+  <g transform="translate(130 215)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="-34" y="-14" width="40" height="28" rx="14" transform="rotate(-35 -14 0)"/><rect x="-6" y="-14" width="40" height="28" rx="14" transform="rotate(-35 14 0)"/></g></g>
+  <circle cx="74" cy="154" r="20" fill="#A4243B"/>
+  <text x="74" y="162.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="220" y="190" font-size="34" font-weight="700" fill="#1F2328">自動連携</text>
+  <text x="220" y="238" font-size="26" fill="#3D444D">口座・カード・決済サービスの</text>
+  <text x="220" y="276" font-size="26" fill="#3D444D">明細を自動で取り込める</text>
+  <rect x="40" y="330" width="640" height="190" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="130" cy="425" r="58" fill="#FBF4F5"/>
+  <g transform="translate(130 425)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M-24 -34h30l18 18v50h-48Z"/><path d="M-12 2l10 10 18-22"/></g></g>
+  <circle cx="74" cy="364" r="20" fill="#A4243B"/>
+  <text x="74" y="372.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="220" y="400" font-size="34" font-weight="700" fill="#1F2328">青色申告・e-Tax</text>
+  <text x="220" y="448" font-size="26" fill="#3D444D">青色申告と電子申告（e-Tax）に</text>
+  <text x="220" y="486" font-size="26" fill="#3D444D">対応している</text>
+  <rect x="40" y="540" width="640" height="190" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="130" cy="635" r="58" fill="#FBF4F5"/>
+  <g transform="translate(130 635)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="-30" y="-26" width="60" height="42" rx="5"/><line x1="-14" y1="32" x2="14" y2="32"/><line x1="0" y1="16" x2="0" y2="32"/><path d="M-6 -14l14 9-14 9Z"/></g></g>
+  <circle cx="74" cy="574" r="20" fill="#A4243B"/>
+  <text x="74" y="582.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="220" y="610" font-size="34" font-weight="700" fill="#1F2328">無料で試せる</text>
+  <text x="220" y="658" font-size="26" fill="#3D444D">お金を払う前に、</text>
+  <text x="220" y="696" font-size="26" fill="#3D444D">画面を触って確かめられる</text>
 </g>
 </svg>

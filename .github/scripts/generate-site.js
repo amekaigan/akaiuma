@@ -74,7 +74,8 @@ const AD_SLOT = {
 // 開示ブロック（AUTO:DISCLOSURE マーカーがある記事に挿入されます）
 // アフィリエイトリンクや自社ツールに触れる記事には必ず入れてください
 const DISCLOSURE = {
-  affiliate: '本記事にはアフィリエイトリンクを含みます。',
+  // ステマ規制への対応として、広告であることが一目で分かる文言にする
+  affiliate: '本記事はアフィリエイト広告を含みます。',
   owned: `本記事で紹介している自社ツールは、当サイト運営者が開発・販売しているものです。作っている側の立場であることを明示したうえで、向き不向きを書いています。`,
 };
 
@@ -564,8 +565,9 @@ function disclosureHtml(article) {
   if (kind === 'affiliate' || kind === 'both') parts.push(DISCLOSURE.affiliate);
   if (kind === 'owned' || kind === 'both') parts.push(DISCLOSURE.owned);
   if (parts.length === 0) return '';
-  return `<div style="background:${C.bgSoft}; border:1px solid ${C.line}; border-radius:6px; padding:12px 14px; margin:0 0 24px; font-size:0.82em; line-height:1.75; color:${C.inkSub};">
-${parts.map((p) => `  <p style="margin:0 0 4px;">${escapeHtml(p)}</p>`).join('\n')}
+  const label = `<strong style="display:inline-block; font-size:0.9em; color:${C.inkSub}; border:1px solid ${C.chromeLine}; border-radius:3px; padding:0 6px; margin-right:8px; background:#fff;">PR</strong>`;
+  return `<div style="box-sizing:border-box; width:min(720px, calc(100% - 32px)); background:${C.bgSoft}; border:1px solid ${C.line}; border-radius:6px; padding:12px 14px; margin:0 auto 24px; font-size:0.82em; line-height:1.75; color:${C.inkSub};">
+${parts.map((p, i) => `  <p style="margin:0 0 4px;">${i === 0 ? label : ''}${escapeHtml(p)}</p>`).join('\n')}
 </div>`;
 }
 
@@ -626,9 +628,9 @@ function articleHeadHtml(article, content) {
   <h1>${headlineHtml(article.title)}</h1>
   <div class="article-meta">${meta}</div>
 </div>
+${disclosureHtml(article)}
 ${banner}
-${takeawaysHtml(article)}
-${disclosureHtml(article)}`;
+${takeawaysHtml(article)}`;
 }
 
 /* 「この記事で分かること」。メタ情報の takeaways を | 区切りで書く。

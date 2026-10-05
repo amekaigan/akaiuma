@@ -100,8 +100,8 @@ const CATEGORY_TO_ID = {
   '業務効率化': 'efficiency',
 };
 
-// サムネイル（バナー）用。カテゴリごとの地色と、線で描くアイコン。
-// 骨格はすべて共通で、変わるのはここの色とアイコンと記事ごとの短いコピーだけ。
+// サムネイル（バナー）用。カテゴリごとの地色と、白い円の中に描く場面（sceneArt）。
+// 骨格はすべて共通で、変わるのはここの色と場面と記事ごとの短いコピーだけ。
 // 小さく並んだときに、色と形で「何の話か」が分かるようにするための対応表。
 const CATEGORY_LOOK = {
   'リサーチ':   { tint: '#F3F1FB', ink: '#4C3E8E', icon: 'search' },
@@ -112,23 +112,78 @@ const CATEGORY_LOOK = {
   '業務効率化': { tint: '#F6F3EC', ink: '#6B5312', icon: 'gear' },
 };
 
-// アイコンは線だけで描く。塗りを使わないのは、小さく表示したときに潰れないため
-function iconPath(name, color) {
-  const g = (d) => `<g fill="none" stroke="${color}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">${d}</g>`;
+// 一覧で「絵」として目に入るように、カテゴリごとの小さな場面を描く。
+// 座標は中心を (0,0) にした 360×360 の範囲。白い円の上に載せるので、地は描かない。
+// 色はカテゴリの濃い色（ink）と薄い色（tint）、差し色のえんじだけを使う。
+function sceneArt(name, ink, tint) {
+  const R = C.brand;
   switch (name) {
     case 'search':
-      return g('<circle cx="46" cy="46" r="30"/><line x1="68" y1="68" x2="92" y2="92"/>');
+      // 資料の上に虫眼鏡
+      return `<rect x="-130" y="-120" width="190" height="230" rx="14" fill="${tint}" stroke="${ink}" stroke-width="8"/>
+  <rect x="-100" y="-86" width="110" height="14" rx="7" fill="${ink}"/>
+  <rect x="-100" y="-54" width="130" height="12" rx="6" fill="${ink}" opacity=".35"/>
+  <rect x="-100" y="-28" width="96" height="12" rx="6" fill="${ink}" opacity=".35"/>
+  <rect x="-100" y="40" width="22" height="44" fill="${ink}" opacity=".5"/><rect x="-70" y="14" width="22" height="70" fill="${ink}" opacity=".7"/><rect x="-40" y="-2" width="22" height="86" fill="${ink}"/>
+  <circle cx="58" cy="22" r="70" fill="#FFFFFF" fill-opacity=".75" stroke="${ink}" stroke-width="16"/>
+  <circle cx="58" cy="22" r="40" fill="none" stroke="${R}" stroke-width="8" stroke-dasharray="60 200" stroke-linecap="round"/>
+  <line x1="110" y1="74" x2="150" y2="114" stroke="${ink}" stroke-width="26" stroke-linecap="round"/>`;
     case 'box':
-      return g('<path d="M12 34 50 14 88 34 88 76 50 96 12 76Z"/><path d="M12 34 50 54 88 34"/><line x1="50" y1="54" x2="50" y2="96"/>');
+      // 届いた段ボールの山と、入ってくる矢印
+      return `<g stroke="${ink}" stroke-width="7" stroke-linejoin="round">
+  <rect x="-130" y="10" width="120" height="100" rx="6" fill="${tint}"/>
+  <rect x="0" y="10" width="120" height="100" rx="6" fill="${tint}"/>
+  <rect x="-66" y="-92" width="120" height="100" rx="6" fill="${tint}"/>
+  </g>
+  <rect x="-82" y="10" width="24" height="40" fill="${ink}" opacity=".85"/>
+  <rect x="48" y="10" width="24" height="40" fill="${ink}" opacity=".85"/>
+  <rect x="-18" y="-92" width="24" height="40" fill="${R}"/>
+  <path d="M-160 -120 h70 M-112 -142 l24 22 -24 22" fill="none" stroke="${R}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`;
     case 'cart':
-      return g('<path d="M10 16h16l12 50h48"/><path d="M30 30h62l-8 28H38"/><circle cx="44" cy="84" r="8"/><circle cx="80" cy="84" r="8"/>');
+      // 縞の日よけの店先と、値札
+      return `<rect x="-130" y="-40" width="260" height="160" rx="8" fill="${tint}" stroke="${ink}" stroke-width="8"/>
+  <path d="M-150 -40 L-130 -110 H130 L150 -40 Z" fill="#FFFFFF" stroke="${ink}" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M-108 -110 L-118 -40 H-66 L-62 -110 Z M-16 -110 L-22 -40 H22 L16 -110 Z M62 -110 L66 -40 H118 L108 -110 Z" fill="${R}"/>
+  <path d="M-150 -40 h300" stroke="${ink}" stroke-width="8"/>
+  <rect x="-104" y="0" width="96" height="80" rx="6" fill="#FFFFFF" stroke="${ink}" stroke-width="7"/>
+  <rect x="26" y="0" width="70" height="120" rx="6" fill="${ink}"/>
+  <circle cx="82" cy="62" r="5" fill="#FFFFFF"/>
+  <g transform="translate(96 -150) rotate(18)"><path d="M0 0 h62 l20 26 -20 26 h-62 Z" fill="${R}"/><circle cx="62" cy="26" r="7" fill="#FFFFFF"/><rect x="12" y="20" width="34" height="12" rx="6" fill="#FFFFFF"/></g>`;
     case 'stack':
-      return g('<rect x="14" y="16" width="72" height="22" rx="4"/><rect x="14" y="44" width="72" height="22" rx="4"/><rect x="14" y="72" width="72" height="22" rx="4"/>');
+      // 棚に並んだ在庫。ひとつだけ数え終わった印
+      return `<g stroke="${ink}" stroke-width="8" stroke-linecap="round">
+  <line x1="-150" y1="-10" x2="150" y2="-10"/><line x1="-150" y1="120" x2="150" y2="120"/>
+  <line x1="-140" y1="-130" x2="-140" y2="140"/><line x1="140" y1="-130" x2="140" y2="140"/>
+  </g>
+  <g stroke="${ink}" stroke-width="6" stroke-linejoin="round" fill="${tint}">
+  <rect x="-122" y="-90" width="70" height="76"/><rect x="-44" y="-70" width="60" height="56"/><rect x="24" y="-96" width="96" height="82"/>
+  <rect x="-122" y="40" width="96" height="76"/><rect x="-18" y="56" width="60" height="60"/><rect x="50" y="30" width="72" height="86"/>
+  </g>
+  <rect x="58" y="-96" width="28" height="30" fill="${ink}" opacity=".85"/>
+  <rect x="-88" y="40" width="28" height="30" fill="${ink}" opacity=".85"/>
+  <circle cx="110" cy="-128" r="34" fill="${R}"/>
+  <path d="M94 -128 l12 12 22 -24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>`;
     case 'chart':
-      return g('<line x1="14" y1="94" x2="94" y2="94"/><rect x="24" y="56" width="18" height="38"/><rect x="50" y="34" width="18" height="60"/><rect x="76" y="68" width="14" height="26"/>');
+      // 棒グラフと、右肩の折れ線
+      return `<rect x="-150" y="-130" width="300" height="250" rx="16" fill="${tint}" stroke="${ink}" stroke-width="8"/>
+  <line x1="-118" y1="88" x2="118" y2="88" stroke="${ink}" stroke-width="6"/>
+  <rect x="-104" y="28" width="38" height="60" rx="4" fill="${ink}" opacity=".45"/>
+  <rect x="-48" y="-6" width="38" height="94" rx="4" fill="${ink}" opacity=".7"/>
+  <rect x="8" y="12" width="38" height="76" rx="4" fill="${ink}" opacity=".55"/>
+  <rect x="64" y="-50" width="38" height="138" rx="4" fill="${ink}"/>
+  <polyline points="-85,-10 -29,-46 27,-30 83,-96" fill="none" stroke="${R}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="-85" cy="-10" r="10" fill="#FFFFFF" stroke="${R}" stroke-width="7"/><circle cx="-29" cy="-46" r="10" fill="#FFFFFF" stroke="${R}" stroke-width="7"/>
+  <circle cx="27" cy="-30" r="10" fill="#FFFFFF" stroke="${R}" stroke-width="7"/><circle cx="83" cy="-96" r="10" fill="#FFFFFF" stroke="${R}" stroke-width="7"/>`;
     case 'gear':
-      // 歯は短くする。長いと太陽の絵に見えてしまう
-      return g('<circle cx="52" cy="52" r="26"/><circle cx="52" cy="52" r="9"/><path d="M79 52h13M12 52h13M52 79v13M52 12v13M71 71l9 9M24 24l9 9M71 33l9-9M24 80l9-9"/>');
+      // 噛み合う歯車と時計
+      return `<circle cx="-40" cy="20" r="78" fill="none" stroke="${ink}" stroke-width="30" stroke-dasharray="22 19"/>
+  <circle cx="-40" cy="20" r="72" fill="${tint}" stroke="${ink}" stroke-width="8"/>
+  <circle cx="-40" cy="20" r="24" fill="#FFFFFF" stroke="${ink}" stroke-width="8"/>
+  <circle cx="86" cy="-70" r="46" fill="none" stroke="${ink}" stroke-width="24" stroke-dasharray="16 14" opacity=".75"/>
+  <circle cx="86" cy="-70" r="42" fill="${tint}" stroke="${ink}" stroke-width="7" opacity=".9"/>
+  <circle cx="86" cy="-70" r="13" fill="#FFFFFF" stroke="${ink}" stroke-width="7"/>
+  <circle cx="96" cy="88" r="52" fill="#FFFFFF" stroke="${R}" stroke-width="10"/>
+  <path d="M96 58 V88 L118 102" fill="none" stroke="${R}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>`;
     default:
       return '';
   }
@@ -237,38 +292,45 @@ function buildAutoThumb(article, slug) {
   if (!slug) return null;
   const look = CATEGORY_LOOK[article.category] || { tint: C.bgSoft, ink: C.brand, icon: '' };
   const copy = (article.thumbcopy || '').trim() || shortTitle(article.title);
-  const lines = wrapForThumb(copy, 9, 3);
-  const size = lines.length >= 3 ? 76 : lines.length === 2 ? 86 : 94;
-  const top = 340 - ((lines.length - 1) * (size * 1.4)) / 2;
+  // 文字は左の半分に収める。右の半分は絵に使う
+  // 1行が長いときは、絵の円にかからないよう字を小さくする
+  const lines = wrapForThumb(copy, 8, 3);
+  const longest = Math.max(...lines.map((ln) => ln.length));
+  const size = Math.min(lines.length >= 3 ? 70 : lines.length === 2 ? 80 : 88, Math.floor(580 / longest));
+  const top = 330 - ((lines.length - 1) * (size * 1.32)) / 2;
   const text = lines
     .map((ln, i) =>
-      `    <text x="104" y="${Math.round(top + i * size * 1.4)}" font-size="${size}" font-weight="700" fill="${C.ink}">${escapeHtml(ln)}</text>`
+      `    <text x="80" y="${Math.round(top + i * size * 1.32)}" font-size="${size}" font-weight="700" fill="#FFFFFF">${escapeHtml(ln)}</text>`
     )
     .join('\n');
   const label = article.category || '';
-  const pillW = Math.max(140, label.length * 34 + 48);
 
+  // 地は濃い色で全面を塗る。白地に文字だけだと、一覧で文章の一部に見えてしまうため
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeHtml(copy)}">
-  <rect width="1200" height="630" fill="${look.tint}"/>
-  <rect x="40" y="40" width="1120" height="550" rx="18" fill="#FFFFFF"/>
-  <rect x="40" y="40" width="10" height="550" rx="5" fill="${C.brand}"/>
-  <clipPath id="card"><rect x="40" y="40" width="1120" height="550" rx="18"/></clipPath>
-  <g clip-path="url(#card)" opacity="0.055">
-    <g transform="translate(640 92) scale(6.6)">
-      <path fill="${C.brand}" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
-      <circle cx="34" cy="44" r="3.8" fill="#FFFFFF"/>
-    </g>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${look.ink}"/>
+      <stop offset="1" stop-color="${look.ink}" stop-opacity=".82"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3" fill="#FFFFFF" fill-opacity=".16"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#1F2328"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="300" height="120" fill="url(#dots)"/>
+  <g opacity="0.08" transform="translate(-40 300) scale(4.2)">
+    <path fill="#FFFFFF" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
   </g>
-  <circle cx="1012" cy="196" r="96" fill="${look.tint}"/>
-  <g transform="translate(956 140) scale(1.12)">${iconPath(look.icon, look.ink)}</g>
+  <circle cx="950" cy="315" r="244" fill="#FFFFFF" fill-opacity=".1"/>
+  <circle cx="950" cy="315" r="200" fill="#FFFFFF"/>
+  <g transform="translate(950 322) scale(0.8)">
+  ${sceneArt(look.icon, look.ink, look.tint)}
+  </g>
   <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-    <rect x="104" y="108" width="${pillW}" height="52" rx="26" fill="${look.tint}"/>
-    <text x="${104 + pillW / 2}" y="144" font-size="28" font-weight="700" fill="${look.ink}" text-anchor="middle">${escapeHtml(label)}</text>
+    <text x="80" y="112" font-size="34" font-weight="700" fill="#FFFFFF" fill-opacity=".85" letter-spacing="4">${escapeHtml(label)}</text>
 ${text}
-    <text x="104" y="534" font-size="28" font-weight="700" fill="${C.ink}" letter-spacing="3">${escapeHtml(SITE.name)}</text>
-    <text x="${104 + SITE.name.length * 31 + 24}" y="534" font-size="23" fill="${C.muted}">${escapeHtml(SITE.tagline || '')}</text>
+    <rect x="80" y="520" width="56" height="6" rx="3" fill="#FFFFFF"/>
+    <text x="152" y="534" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">${escapeHtml(SITE.name)}</text>
   </g>
-  <rect x="104" y="474" width="64" height="4" fill="${C.brand}"/>
 </svg>
 `;
   const dir = path.join(THUMB_DIR, 'auto');
@@ -279,9 +341,13 @@ ${text}
   return `/assets/thumb/auto/${slug}.svg`;
 }
 
-/* 日本語には単語の区切りがないので、句読点と助詞の後ろを優先して折り返す */
+/* 日本語には単語の区切りがないので、句読点・助詞の後ろと、ひらがなから漢字に変わる所で折り返す。
+   2行に収まる長さなら、行の長さがそろう位置を選ぶ（「最初の1店をどこに／出すか」のような偏りを避ける） */
 function wrapForThumb(text, perLine, maxLines) {
   const src = (text || '').trim();
+  const marks = ['、', '。', '，', 'は', 'が', 'に', 'を', 'で', 'と', 'も'];
+  const hira = /[\u3041-\u3096]/;
+  const kanji = /[\u4E00-\u9FFF々]/;
   const lines = [];
   let rest = src;
   while (rest.length > 0 && lines.length < maxLines) {
@@ -289,12 +355,18 @@ function wrapForThumb(text, perLine, maxLines) {
       lines.push(rest);
       break;
     }
-    const window = rest.slice(0, perLine + 1);
-    let cut = -1;
-    for (const mark of ['、', '。', '，', 'は', 'が', 'に', 'を', 'で', 'と', 'も']) {
-      cut = Math.max(cut, window.lastIndexOf(mark));
+    // cuts は「その文字の後ろで切る」位置（切った後の1行目の長さ）
+    const cuts = [];
+    for (let i = Math.floor(perLine * 0.4) - 1; i < Math.min(perLine + 1, rest.length - 1); i++) {
+      if (marks.includes(rest[i]) || (hira.test(rest[i]) && kanji.test(rest[i + 1]))) cuts.push(i + 1);
     }
-    const at = cut >= Math.ceil(perLine / 2) ? cut + 1 : perLine;
+    let at = perLine;
+    if (cuts.length > 0) {
+      const fitsTwo = cuts.filter((c) => rest.length - c <= perLine + 1);
+      at = rest.length <= perLine * 2 + 1 && fitsTwo.length > 0
+        ? fitsTwo.reduce((best, c) => (Math.abs(c - rest.length / 2) < Math.abs(best - rest.length / 2) ? c : best))
+        : cuts[cuts.length - 1];
+    }
     lines.push(rest.slice(0, at).replace(/[、，]$/, ''));
     rest = rest.slice(at);
   }
@@ -878,7 +950,7 @@ function footerHtml(articles) {
   ]
     .map(
       ([n, u]) =>
-        `<a href="${u}" style="color:${C.textOnChrome}; text-decoration:none; font-size:0.8em; border:1px solid ${C.chromeLine}; border-radius:999px; padding:6px 16px;">${n}</a>`
+        `<a href="${u}" target="_blank" rel="noopener" style="color:${C.textOnChrome}; text-decoration:none; font-size:0.8em; border:1px solid ${C.chromeLine}; border-radius:999px; padding:6px 16px;">${n}</a>`
     )
     .join('\n');
   return `<footer style="background:${C.chromeSoft}; color:${C.muted}; border-top:1px solid ${C.chromeLine};">

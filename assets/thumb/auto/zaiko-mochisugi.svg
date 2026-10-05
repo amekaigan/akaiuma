@@ -1,23 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="持ちすぎと欠品は同時に起きる">
-  <rect width="1200" height="630" fill="#EFF4F2"/>
-  <rect x="40" y="40" width="1120" height="550" rx="18" fill="#FFFFFF"/>
-  <rect x="40" y="40" width="10" height="550" rx="5" fill="#A4243B"/>
-  <clipPath id="card"><rect x="40" y="40" width="1120" height="550" rx="18"/></clipPath>
-  <g clip-path="url(#card)" opacity="0.055">
-    <g transform="translate(640 92) scale(6.6)">
-      <path fill="#A4243B" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
-      <circle cx="34" cy="44" r="3.8" fill="#FFFFFF"/>
-    </g>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1F5D4C"/>
+      <stop offset="1" stop-color="#1F5D4C" stop-opacity=".82"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3" fill="#FFFFFF" fill-opacity=".16"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#1F2328"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="300" height="120" fill="url(#dots)"/>
+  <g opacity="0.08" transform="translate(-40 300) scale(4.2)">
+    <path fill="#FFFFFF" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
   </g>
-  <circle cx="1012" cy="196" r="96" fill="#EFF4F2"/>
-  <g transform="translate(956 140) scale(1.12)"><g fill="none" stroke="#1F5D4C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="16" width="72" height="22" rx="4"/><rect x="14" y="44" width="72" height="22" rx="4"/><rect x="14" y="72" width="72" height="22" rx="4"/></g></g>
+  <circle cx="950" cy="315" r="244" fill="#FFFFFF" fill-opacity=".1"/>
+  <circle cx="950" cy="315" r="200" fill="#FFFFFF"/>
+  <g transform="translate(950 322) scale(0.8)">
+  <g stroke="#1F5D4C" stroke-width="8" stroke-linecap="round">
+  <line x1="-150" y1="-10" x2="150" y2="-10"/><line x1="-150" y1="120" x2="150" y2="120"/>
+  <line x1="-140" y1="-130" x2="-140" y2="140"/><line x1="140" y1="-130" x2="140" y2="140"/>
+  </g>
+  <g stroke="#1F5D4C" stroke-width="6" stroke-linejoin="round" fill="#EFF4F2">
+  <rect x="-122" y="-90" width="70" height="76"/><rect x="-44" y="-70" width="60" height="56"/><rect x="24" y="-96" width="96" height="82"/>
+  <rect x="-122" y="40" width="96" height="76"/><rect x="-18" y="56" width="60" height="60"/><rect x="50" y="30" width="72" height="86"/>
+  </g>
+  <rect x="58" y="-96" width="28" height="30" fill="#1F5D4C" opacity=".85"/>
+  <rect x="-88" y="40" width="28" height="30" fill="#1F5D4C" opacity=".85"/>
+  <circle cx="110" cy="-128" r="34" fill="#A4243B"/>
+  <path d="M94 -128 l12 12 22 -24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
   <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-    <rect x="104" y="108" width="184" height="52" rx="26" fill="#EFF4F2"/>
-    <text x="196" y="144" font-size="28" font-weight="700" fill="#1F5D4C" text-anchor="middle">在庫管理</text>
-    <text x="104" y="280" font-size="86" font-weight="700" fill="#1F2328">持ちすぎと欠品は</text>
-    <text x="104" y="400" font-size="86" font-weight="700" fill="#1F2328">同時に起きる</text>
-    <text x="104" y="534" font-size="28" font-weight="700" fill="#1F2328" letter-spacing="3">あかいうま</text>
-    <text x="283" y="534" font-size="23" fill="#656C76">物販の売上アップと業務効率化</text>
+    <text x="80" y="112" font-size="34" font-weight="700" fill="#FFFFFF" fill-opacity=".85" letter-spacing="4">在庫管理</text>
+    <text x="80" y="282" font-size="72" font-weight="700" fill="#FFFFFF">持ちすぎと欠品は</text>
+    <text x="80" y="378" font-size="72" font-weight="700" fill="#FFFFFF">同時に起きる</text>
+    <rect x="80" y="520" width="56" height="6" rx="3" fill="#FFFFFF"/>
+    <text x="152" y="534" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">あかいうま</text>
   </g>
-  <rect x="104" y="474" width="64" height="4" fill="#A4243B"/>
 </svg>

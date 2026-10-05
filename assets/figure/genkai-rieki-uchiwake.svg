@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="822" viewBox="0 0 720 822" role="img" aria-label="売上3,000円の内訳。仕入れ原価1,200円、モール手数料450円、送料・梱包費など700円、固定費5%、残りの営業利益約500円（16.7%）が広告費にかけられる上限。限界利益650円は固定費と営業利益を合わせたもの">
+<rect width="720" height="822" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">売上3,000円が、どこへ行くか</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="130.0" width="170" height="200.0" fill="#3D444D"/>
+  <rect x="40" y="330.0" width="170" height="75.0" fill="#656C76"/>
+  <rect x="40" y="405.0" width="170" height="116.7" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <rect x="40" y="521.7" width="170" height="25.0" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <rect x="40" y="546.7" width="170" height="83.3" fill="#A4243B"/>
+  <line x1="214" y1="230.0" x2="244" y2="221.0" stroke="#E4E7EB" stroke-width="3"/>
+  <text x="254" y="230.0" font-size="26" font-weight="700" fill="#3D444D">仕入れ原価 1,200円</text>
+  <line x1="214" y1="367.5" x2="244" y2="358.5" stroke="#E4E7EB" stroke-width="3"/>
+  <text x="254" y="367.5" font-size="26" font-weight="700" fill="#3D444D">モール手数料 450円</text>
+  <line x1="214" y1="463.3" x2="244" y2="448.3" stroke="#E4E7EB" stroke-width="3"/>
+  <text x="254" y="457.3333333333333" font-size="26" font-weight="700" fill="#3D444D">送料・梱包費など 700円</text>
+  <line x1="214" y1="534.2" x2="244" y2="529.2" stroke="#E4E7EB" stroke-width="3"/>
+  <text x="254" y="538.1666666666666" font-size="26" font-weight="700" fill="#3D444D">固定費（5%）</text>
+  <line x1="214" y1="588.3" x2="244" y2="597.3" stroke="#E4E7EB" stroke-width="3"/>
+  <text x="254" y="606.3333333333333" font-size="28" font-weight="700" fill="#A4243B">営業利益 約500円（16.7%）</text>
+  <text x="254" y="646.3333333333333" font-size="26" font-weight="700" fill="#A4243B">＝ 広告費にかけられる上限</text>
+  <line x1="40" y1="700.0" x2="680" y2="700.0" stroke="#E4E7EB" stroke-width="2"/>
+  <text x="40" y="748.0" font-size="26" font-weight="700" fill="#1F2328">限界利益 650円 ＝ 固定費 ＋ 営業利益</text>
+  <text x="40" y="788.0" font-size="24" font-weight="400" fill="#656C76">営業利益を使い切ると、利益はゼロになる</text>
+</g>
+</svg>

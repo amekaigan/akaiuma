@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="690" viewBox="0 0 720 690" role="img" aria-label="広告を続けるかはROASで決める。ROAS（広告経由の売上÷広告費）を確認し、効率が悪ければ広告は続けず、ページを改善するかセールで早めに現金に変える。効率がよければ露出を増やし、効率が落ちてきたらROASを保てる配信数とCPAで回す">
+<rect width="720" height="690" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">広告を続けるかは、ROASで決める</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="120" width="640" height="104" rx="12" fill="#3D444D"/>
+  <text x="360" y="166" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">ROASを確認する</text>
+  <text x="360" y="204" font-size="24" font-weight="400" fill="#FFFFFF" text-anchor="middle" fill-opacity=".85">広告経由の売上 ÷ 広告費</text>
+  <line x1="72" y1="224" x2="72" y2="512" stroke="#656C76" stroke-width="4"/>
+  <path d="M72 300 H102" stroke="#656C76" stroke-width="4"/><path d="M98 290 l14 10 -14 10" fill="#656C76"/>
+  <path d="M72 512 H102" stroke="#A4243B" stroke-width="4"/><path d="M98 502 l14 10 -14 10" fill="#A4243B"/>
+  <rect x="118" y="252" width="562" height="196" rx="12" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="146" y="300" font-size="28" font-weight="700" fill="#3D444D">効率が悪い</text>
+  <text x="146" y="348" font-size="26" font-weight="400" fill="#1F2328">・広告は続けない</text>
+  <text x="146" y="386" font-size="26" font-weight="400" fill="#1F2328">・ページを改善する</text>
+  <text x="146" y="424" font-size="26" font-weight="400" fill="#1F2328">・セールで早めに現金に変える</text>
+  <rect x="118" y="464" width="562" height="196" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <text x="146" y="512" font-size="28" font-weight="700" fill="#A4243B">効率がいい</text>
+  <text x="146" y="560" font-size="26" font-weight="400" fill="#1F2328">・露出を増やしていく</text>
+  <text x="146" y="598" font-size="26" font-weight="400" fill="#1F2328">・効率が落ちてきたら、ROASを</text>
+  <text x="146" y="636" font-size="26" font-weight="400" fill="#1F2328">　保てる配信数とCPAで回す</text>
+</g>
+</svg>

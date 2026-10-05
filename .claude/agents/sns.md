@@ -18,6 +18,8 @@ model: haiku
 
 ```
 X表示名：あかいうま｜物販の売上アップと業務効率化
+X：https://x.com/ec_midd
+note：https://note.com/ecmid
 ```
 
 投稿文中で屋号に触れる場合は `あかいうま` を使う。

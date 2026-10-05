@@ -872,7 +872,10 @@ function footerHtml(articles) {
     const name = Object.keys(CATEGORY_TO_ID).find((k) => CATEGORY_TO_ID[k] === id);
     return `<a href="/${A}/#${id}" style="color:${C.muted}; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">${escapeHtml(name)}</a>`;
   }).join('\n');
-  const sns = [['X', 'https://x.com/']]
+  const sns = [
+    ['X', 'https://x.com/ec_midd'],
+    ['note', 'https://note.com/ecmid'],
+  ]
     .map(
       ([n, u]) =>
         `<a href="${u}" style="color:${C.textOnChrome}; text-decoration:none; font-size:0.8em; border:1px solid ${C.chromeLine}; border-radius:999px; padding:6px 16px;">${n}</a>`

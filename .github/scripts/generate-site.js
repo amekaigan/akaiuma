@@ -305,21 +305,17 @@ function buildAutoThumb(article, slug) {
     .join('\n');
   const label = article.category || '';
 
-  // 地は濃い色で全面を塗る。白地に文字だけだと、一覧で文章の一部に見えてしまうため
+  // 地は濃い色で全面を塗る。白地に文字だけだと、一覧で文章の一部に見えてしまうため。
+  // グラデーションや影は使わず、同じ色の濃淡の面だけで組む（フラットデザイン）
+  const horse = 'M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z';
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeHtml(copy)}">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${look.ink}"/>
-      <stop offset="1" stop-color="${look.ink}" stop-opacity=".82"/>
-    </linearGradient>
     <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3" fill="#FFFFFF" fill-opacity=".16"/></pattern>
   </defs>
-  <rect width="1200" height="630" fill="#1F2328"/>
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="${look.ink}"/>
+  <polygon points="560,630 1200,150 1200,630" fill="#000000" fill-opacity=".14"/>
   <rect x="0" y="0" width="300" height="120" fill="url(#dots)"/>
-  <g opacity="0.08" transform="translate(-40 300) scale(4.2)">
-    <path fill="#FFFFFF" d="M4 64 L9 54 L26 38 L44 21 L45 9 L51 0 L59 15 L62 13 L72 1 L79 19 L85 34 L88 60 L84 96 L48 96 L40 86 L26 78 L12 70 Z"/>
-  </g>
+  <circle cx="1140" cy="58" r="16" fill="#FFFFFF" fill-opacity=".22"/>
   <circle cx="950" cy="315" r="244" fill="#FFFFFF" fill-opacity=".1"/>
   <circle cx="950" cy="315" r="200" fill="#FFFFFF"/>
   <g transform="translate(950 322) scale(0.8)">
@@ -328,8 +324,8 @@ function buildAutoThumb(article, slug) {
   <g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
     <text x="80" y="112" font-size="34" font-weight="700" fill="#FFFFFF" fill-opacity=".85" letter-spacing="4">${escapeHtml(label)}</text>
 ${text}
-    <rect x="80" y="520" width="56" height="6" rx="3" fill="#FFFFFF"/>
-    <text x="152" y="534" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">${escapeHtml(SITE.name)}</text>
+    <g transform="translate(80 490) scale(0.5)"><path fill="#FFFFFF" d="${horse}"/><circle cx="34" cy="44" r="3.8" fill="${look.ink}"/></g>
+    <text x="138" y="534" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">${escapeHtml(SITE.name)}</text>
   </g>
 </svg>
 `;

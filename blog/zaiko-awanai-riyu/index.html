@@ -3,7 +3,7 @@ title: 年間1万件出荷して分かった、在庫が合わない本当の理
 meta: 自社倉庫とFBAを併用すると在庫は必ずずれる。原因はExcelではなく、在庫の定義と情報共有にある。
 permalink: /blog/zaiko-awanai-riyu/
 published: 2026-09-11
-updated: 2026-09-27
+updated: 2026-10-06
 verified:
 category: 在庫管理
 level: intermediate
@@ -177,7 +177,7 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
   "headline": "年間1万件出荷して分かった、在庫が合わない本当の理由｜あかいうま",
   "description": "自社倉庫とFBAを併用すると在庫は必ずずれる。原因はExcelではなく、在庫の定義と情報共有にある。",
   "datePublished": "2026-09-11",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-10-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://akaiuma.com/blog/zaiko-awanai-riyu/"
@@ -230,7 +230,7 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 <div class="article-header" data-level="intermediate">
   <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#82182E; background:#FBF4F5; border-radius:4px; padding:2px 8px; margin-left:8px;">中級者向け</span></div>
   <h1>年間1万件出荷して分かった、在庫が合わない本当の理由</h1>
-  <div class="article-meta"><span>公開：2026年9月11日</span><span>更新：2026年9月27日</span><span>読了：約6分</span></div>
+  <div class="article-meta"><span>公開：2026年9月11日</span><span>更新：2026年10月6日</span><span>読了：約6分</span></div>
 </div>
 
 <img class="article-thumb" src="/assets/thumb/auto/zaiko-awanai-riyu.svg" alt="" width="1200" height="630">
@@ -283,6 +283,11 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 
 <p>問題は2階建てになっています。一つずつ見ていきます。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-awanai-nikai.svg" alt="在庫の問題は2階建て。1階は在庫の定義が決まっていないために数字がずれる問題、2階は情報が共有されていないために数字が合っていても判断できない問題" width="720" height="690" loading="lazy">
+  <figcaption>1階を直しても、2階の問題は残ります。どちらもExcelの問題ではありません。</figcaption>
+</figure>
+
 <h2 id="h2-2">1階：数字がずれる — 在庫の定義が決まっていない</h2>
 
 <p>自社倉庫だけで完結していれば、在庫の数え方に迷う場面は多くありません。棚にある数を数えれば済みます。</p>
@@ -308,6 +313,11 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 <p><strong>FBAの返品処理中</strong></p>
 
 <p>お客様から返品された商品は、FBA倉庫内で検品され、再販可能なら在庫に戻り、不可なら別の扱いになります。この動きを把握していないと、数が合いません。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-awanai-4chiten.svg" alt="在庫のずれが生まれる4つの地点。倉庫間の移動中、引き当て済み、梱包済み、FBAの返品処理中" width="720" height="740" loading="lazy">
+  <figcaption>4つとも、棚を数えるだけでは答えが出ない在庫です。</figcaption>
+</figure>
 
 <div class="ak-note">
   <span class="ak-note-label">実際にやってみて分かったこと</span>
@@ -340,6 +350,11 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 
 <p>来週100個入ってくるなら、FBAへは在庫のほとんどを送ってしまってかまいません。何も入ってこないなら、本社にもある程度残しておく必要があります。<strong>同じ在庫数でも、正解が正反対になります。</strong></p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-awanai-kotae.svg" alt="FBAの在庫が尽きそうなとき、来週100個入ってくるなら在庫のほとんどをFBAへ送ってよく、何も入ってこないなら本社にもある程度残しておく必要があることを示す図" width="720" height="724" loading="lazy">
+  <figcaption>在庫数が同じでも、入荷の予定によって正解が反対になります。</figcaption>
+</figure>
+
 <p>そのたびにAさんに確認することになり、Aさんが休みなら翌日まで止まります。これが日常的に起きるようになると、在庫の精度とは別の次元で業務が回らなくなります。</p>
 
 <h3>置き場所が記憶にある</h3>
@@ -363,6 +378,11 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 <p>それは在庫のずれの件数でも、出荷件数でもありません。<strong>「これ、Aさんに聞かないと分からない」という言葉が、業務中に出るようになったときです。</strong></p>
 
 <p>最初は月に何回かでしょう。それが週に何回かになり、やがて毎日になります。その頃には、Aさんは休めなくなっています。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-awanai-zencho.svg" alt="「Aさんに聞かないと分からない」という言葉が、月に何回か、週に何回か、毎日と増えていき、その頃にはAさんが休めなくなることを示す図" width="720" height="686" loading="lazy">
+  <figcaption>在庫のずれの件数より先に、この言葉の回数が増えていきます。</figcaption>
+</figure>
 
 <p>この段階で手を打てば、まだ間に合います。逆にここを放置したまま出荷件数だけ増やすと、精度も速度も同時に落ちていきます。</p>
 
@@ -402,6 +422,11 @@ title_reason: 読者はツールやExcelの精度を疑って検索するが、�
 <p>ただし、その時に導入するツールの効果は、ルールを決めてからのほうが圧倒的に高くなります。逆にルールが曖昧なまま導入すると、曖昧なデータが入るだけで、結局は人が見て判断することになります。</p>
 
 <p>順序を守ってください。<strong>定義を決める、共有する、それでも足りなければ道具を入れる。</strong>この順です。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-awanai-junban.svg" alt="在庫管理の順番。在庫の定義を決める、情報を共有する、それでも足りなければツールを入れる" width="720" height="710" loading="lazy">
+  <figcaption>ツールの効果は、ルールを決めてからのほうが高くなります。</figcaption>
+</figure>
 
 <h2 id="h2-7">向かないケース</h2>
 

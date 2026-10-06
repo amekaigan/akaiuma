@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="710" viewBox="0 0 720 710" role="img" aria-label="在庫管理の順番。1、在庫の定義を決める（移動中・引き当て・梱包・棚卸しの基準）。2、情報を共有する（発注の予定と置き場所の目印）。3、それでも足りなければツールを入れる。ルールが曖昧なままだと曖昧なデータが入るだけ">
+<rect width="720" height="710" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">ツールは最後に入れる</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="124" width="640" height="132" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <circle cx="98" cy="190" r="32" fill="#A4243B"/>
+  <text x="98" y="201" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="156" y="180" font-size="30" font-weight="700" fill="#1F2328">在庫の定義を決める</text>
+  <text x="156" y="222" font-size="24" font-weight="400" fill="#3D444D">移動中・引き当て・梱包・棚卸しの基準</text>
+  <path d="M98 256 V288" stroke="#656C76" stroke-width="4"/><path d="M88 280 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="296" width="640" height="132" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <circle cx="98" cy="362" r="32" fill="#A4243B"/>
+  <text x="98" y="373" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="156" y="352" font-size="30" font-weight="700" fill="#1F2328">情報を共有する</text>
+  <text x="156" y="394" font-size="24" font-weight="400" fill="#3D444D">発注の予定と、置き場所の目印</text>
+  <path d="M98 428 V460" stroke="#656C76" stroke-width="4"/><path d="M88 452 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="468" width="640" height="132" rx="12" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
+  <circle cx="98" cy="534" r="32" fill="#3D444D"/>
+  <text x="98" y="545" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="156" y="524" font-size="30" font-weight="700" fill="#1F2328">それでも足りなければ</text>
+  <text x="156" y="566" font-size="24" font-weight="400" fill="#3D444D">ツールを入れる</text>
+  <text x="40" y="676" font-size="24" font-weight="400" fill="#656C76">ルールが曖昧なままだと、曖昧なデータが入るだけ</text>
+</g>
+</svg>

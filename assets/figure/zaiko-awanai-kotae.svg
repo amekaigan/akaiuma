@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="724" viewBox="0 0 720 724" role="img" aria-label="FBAの在庫が尽きそうで本社倉庫に在庫がある場面。来週100個入ってくるなら在庫のほとんどをFBAへ送ってよい。何も入ってこないなら本社にもある程度残しておく。足りないのは在庫数ではなく入荷の予定">
+<rect width="720" height="724" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">同じ在庫数でも、答えが変わる</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="120" width="640" height="96" rx="12" fill="#3D444D"/>
+  <text x="360" y="162" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">FBAの在庫が尽きそう</text>
+  <text x="360" y="198" font-size="24" font-weight="400" fill="#FFFFFF" text-anchor="middle" fill-opacity=".85">本社倉庫には在庫がある</text>
+  <path d="M360 216 V250" stroke="#656C76" stroke-width="4"/><path d="M350 244 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="266" width="640" height="174" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <text x="72" y="316" font-size="28" font-weight="700" fill="#A4243B">来週100個入ってくるなら</text>
+  <path d="M72 352 h40" stroke="#A4243B" stroke-width="4"/><path d="M108 342 l14 10 -14 10" fill="#A4243B"/>
+  <text x="138" y="362" font-size="28" font-weight="700" fill="#1F2328">在庫のほとんどを</text>
+  <text x="138" y="404" font-size="28" font-weight="700" fill="#1F2328">FBAへ送ってよい</text>
+  <rect x="40" y="462" width="640" height="174" rx="12" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="72" y="512" font-size="28" font-weight="700" fill="#3D444D">何も入ってこないなら</text>
+  <path d="M72 548 h40" stroke="#3D444D" stroke-width="4"/><path d="M108 538 l14 10 -14 10" fill="#3D444D"/>
+  <text x="138" y="558" font-size="28" font-weight="700" fill="#1F2328">本社にもある程度</text>
+  <text x="138" y="600" font-size="28" font-weight="700" fill="#1F2328">残しておく</text>
+  <text x="40" y="690" font-size="26" font-weight="700" fill="#1F2328">足りないのは在庫数ではなく、入荷の予定</text>
+</g>
+</svg>

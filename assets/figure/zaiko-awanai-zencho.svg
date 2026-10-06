@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="686" viewBox="0 0 720 686" role="img" aria-label="破綻の前兆。「Aさんに聞かないと分からない」という言葉が、月に何回か、週に何回か、毎日と増えていき、その頃にはAさんは休めなくなっている。手を打つなら、この言葉が出始めたとき">
+<rect width="720" height="686" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">「Aさんに聞かないと分からない」</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <text x="40" y="140" font-size="26" font-weight="400" fill="#3D444D">この言葉が出る回数が、増えていく</text>
+  <text x="40" y="208" font-size="28" font-weight="700" fill="#3D444D">月に何回か</text>
+  <rect x="40" y="224" width="140" height="40" rx="6" fill="#656C76"/>
+  <text x="40" y="328" font-size="28" font-weight="700" fill="#3D444D">週に何回か</text>
+  <rect x="40" y="344" width="330" height="40" rx="6" fill="#3D444D"/>
+  <text x="40" y="448" font-size="28" font-weight="700" fill="#A4243B">毎日</text>
+  <rect x="40" y="464" width="640" height="40" rx="6" fill="#A4243B"/>
+  <rect x="40" y="548" width="640" height="104" rx="12" fill="#FBF4F5"/>
+  <text x="72" y="594" font-size="28" font-weight="700" fill="#A4243B">その頃には、Aさんは休めない</text>
+  <text x="72" y="632" font-size="24" font-weight="400" fill="#3D444D">手を打つなら、この言葉が出始めたとき</text>
+</g>
+</svg>

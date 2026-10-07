@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="794" viewBox="0 0 720 794" role="img" aria-label="FBA在庫保管手数料の小型・標準サイズの単価。1月から9月は5.676円、10月から12月は10.087円で、およそ1.8倍になる">
+<rect width="720" height="794" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">保管手数料の単価（小型・標準）</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="48" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="68" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">1</text>
+  <rect x="101" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="121" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">2</text>
+  <rect x="154" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="174" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">3</text>
+  <rect x="207" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="227" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">4</text>
+  <rect x="260" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="280" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">5</text>
+  <rect x="313" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="333" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">6</text>
+  <rect x="366" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="386" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">7</text>
+  <rect x="419" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="439" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">8</text>
+  <rect x="472" y="299.7" width="40" height="170.3" rx="4" fill="#656C76"/>
+  <text x="492" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">9</text>
+  <rect x="525" y="167.4" width="40" height="302.6" rx="4" fill="#A4243B"/>
+  <text x="545" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">10</text>
+  <rect x="578" y="167.4" width="40" height="302.6" rx="4" fill="#A4243B"/>
+  <text x="598" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">11</text>
+  <rect x="631" y="167.4" width="40" height="302.6" rx="4" fill="#A4243B"/>
+  <text x="651" y="504" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">12</text>
+  <line x1="40" y1="470" x2="680" y2="470" stroke="#3D444D" stroke-width="3"/>
+  <text x="48" y="279.72" font-size="26" font-weight="700" fill="#3D444D">1〜9月 5.676円</text>
+  <text x="680" y="147.39" font-size="26" font-weight="700" fill="#A4243B" text-anchor="end">10〜12月 10.087円</text>
+  <rect x="40" y="570" width="640" height="76" rx="12" fill="#FBF4F5"/>
+  <text x="360" y="620" font-size="30" font-weight="700" fill="#A4243B" text-anchor="middle">10〜12月は、およそ1.8倍</text>
+  <text x="40" y="694" font-size="24" font-weight="400" fill="#656C76">単価は1,000cm³・1か月あたり</text>
+  <text x="40" y="728" font-size="24" font-weight="400" fill="#656C76">出典：Amazon出品サービス「料金」</text>
+  <text x="40" y="762" font-size="24" font-weight="400" fill="#656C76">（確認日：2026年9月14日）</text>
+</g>
+</svg>

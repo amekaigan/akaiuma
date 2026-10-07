@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="808" viewBox="0 0 720 808" role="img" aria-label="FBAに送る順番。先に全量をFBAへ送ると、売れ残ったときに保管手数料と返却の費用を払うことになる。まず自社出荷で売り、売れると分かったものだけFBAへ送れば、売れなくても失うのは手間だけ">
+<rect width="720" height="808" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">FBAに送る順番</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <text x="40" y="150" font-size="28" font-weight="700" fill="#3D444D">先に全部FBAへ送ると</text>
+  <rect x="40" y="176" width="640" height="64" rx="10" fill="#F4F5F6"/>
+  <text x="68" y="218" font-size="26" font-weight="400" fill="#1F2328">全量をFBAへ送る</text>
+  <path d="M80 240 V258" stroke="#656C76" stroke-width="4"/><path d="M70 254 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="268" width="640" height="64" rx="10" fill="#F4F5F6"/>
+  <text x="68" y="310" font-size="26" font-weight="400" fill="#1F2328">売れ残る</text>
+  <path d="M80 332 V350" stroke="#656C76" stroke-width="4"/><path d="M70 346 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="360" width="640" height="64" rx="10" fill="#F4F5F6"/>
+  <text x="68" y="402" font-size="26" font-weight="700" fill="#1F2328">保管手数料と返却の費用を払う</text>
+  <text x="40" y="494" font-size="28" font-weight="700" fill="#A4243B">自社出荷で試してから送ると</text>
+  <rect x="40" y="520" width="640" height="64" rx="10" fill="#FBF4F5"/>
+  <text x="68" y="562" font-size="26" font-weight="400" fill="#1F2328">まず自社出荷で売る</text>
+  <path d="M80 584 V602" stroke="#A4243B" stroke-width="4"/><path d="M70 598 l10 14 10 -14" fill="#A4243B"/>
+  <rect x="40" y="612" width="640" height="64" rx="10" fill="#FBF4F5"/>
+  <text x="68" y="654" font-size="26" font-weight="400" fill="#1F2328">売れると分かったものだけFBAへ</text>
+  <path d="M80 676 V694" stroke="#A4243B" stroke-width="4"/><path d="M70 690 l10 14 10 -14" fill="#A4243B"/>
+  <rect x="40" y="704" width="640" height="64" rx="10" fill="#FBF4F5"/>
+  <text x="68" y="746" font-size="26" font-weight="700" fill="#A4243B">売れなくても、失うのは手間だけ</text>
+</g>
+</svg>

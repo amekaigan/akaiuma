@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="734" viewBox="0 0 720 734" role="img" aria-label="預けた在庫が合わないとき。先月末の在庫に今月の納品数を足し、今月の出荷数を引いた計算上の在庫と、預け先の月末在庫が、紛失など預け先の事情でも食い違う。紛失中をあると数えるかも先に決めておく">
+<rect width="720" height="734" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">預けた在庫が合わないとき</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="96" y="128" width="584" height="62" rx="10" fill="#F4F5F6"/>
+  <text x="120" y="170" font-size="28" font-weight="700" fill="#1F2328">先月末の在庫</text>
+  <rect x="96" y="206" width="584" height="62" rx="10" fill="#F4F5F6"/>
+  <text x="64" y="250" font-size="34" font-weight="700" fill="#3D444D" text-anchor="middle">＋</text>
+  <text x="120" y="248" font-size="28" font-weight="700" fill="#1F2328">今月の納品数</text>
+  <rect x="96" y="284" width="584" height="62" rx="10" fill="#F4F5F6"/>
+  <text x="64" y="328" font-size="34" font-weight="700" fill="#3D444D" text-anchor="middle">−</text>
+  <text x="120" y="326" font-size="28" font-weight="700" fill="#1F2328">今月の出荷数</text>
+  <line x1="40" y1="374" x2="680" y2="374" stroke="#3D444D" stroke-width="3"/>
+  <rect x="96" y="392" width="584" height="62" rx="10" fill="#3D444D"/>
+  <text x="64" y="436" font-size="34" font-weight="700" fill="#3D444D" text-anchor="middle">＝</text>
+  <text x="120" y="434" font-size="28" font-weight="700" fill="#FFFFFF">計算で出した在庫</text>
+  <text x="360" y="512" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle">≠</text>
+  <rect x="96" y="540" width="584" height="62" rx="10" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <text x="120" y="582" font-size="28" font-weight="700" fill="#A4243B">預け先の月末在庫</text>
+  <text x="40" y="660" font-size="26" font-weight="700" fill="#1F2328">預け先の事情（紛失など）でも食い違う</text>
+  <text x="40" y="700" font-size="24" font-weight="400" fill="#656C76">紛失中を「ある」と数えるかも、先に決めておく</text>
+</g>
+</svg>

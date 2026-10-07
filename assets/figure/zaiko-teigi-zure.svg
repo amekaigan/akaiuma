@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="836" viewBox="0 0 720 836" role="img" aria-label="在庫のズレは日々の作業の中で起きる。入荷では似た商品との取り違えやメーカーの出荷数の違い、保管では撮影で持ち出したままの戻し忘れ、出荷では違う商品の発送や1点の注文で2点送ってしまうこと。どれも実際に動いた数と記録した数が1点でずれている">
+<rect width="720" height="836" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">ズレは、日々の作業の中で起きる</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <line x1="100" y1="160" x2="100" y2="620" stroke="#E4E7EB" stroke-width="6"/>
+  <rect x="40" y="180" width="120" height="72" rx="36" fill="#A4243B"/>
+  <text x="100" y="227" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">入荷</text>
+  <rect x="190" y="144" width="490" height="60" rx="10" fill="#F4F5F6"/>
+  <text x="212" y="184" font-size="25" font-weight="400" fill="#1F2328">似た商品と取り違えて登録</text>
+  <rect x="190" y="216" width="490" height="60" rx="10" fill="#F4F5F6"/>
+  <text x="212" y="256" font-size="25" font-weight="400" fill="#1F2328">メーカーの出荷数が発注数と違う</text>
+  <rect x="40" y="356" width="120" height="72" rx="36" fill="#A4243B"/>
+  <text x="100" y="403" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">保管</text>
+  <rect x="190" y="356" width="490" height="60" rx="10" fill="#F4F5F6"/>
+  <text x="212" y="396" font-size="25" font-weight="400" fill="#1F2328">撮影で持ち出して、戻し忘れ</text>
+  <rect x="40" y="532" width="120" height="72" rx="36" fill="#A4243B"/>
+  <text x="100" y="579" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">出荷</text>
+  <rect x="190" y="496" width="490" height="60" rx="10" fill="#F4F5F6"/>
+  <text x="212" y="536" font-size="25" font-weight="400" fill="#1F2328">違う商品を発送してしまう</text>
+  <rect x="190" y="568" width="490" height="60" rx="10" fill="#F4F5F6"/>
+  <text x="212" y="608" font-size="25" font-weight="400" fill="#1F2328">1点の注文で2点送ってしまう</text>
+  <rect x="40" y="692" width="640" height="104" rx="12" fill="#FBF4F5"/>
+  <text x="72" y="736" font-size="28" font-weight="700" fill="#A4243B">どれも「実際に動いた数」と</text>
+  <text x="72" y="774" font-size="28" font-weight="700" fill="#A4243B">「記録した数」が1点でずれている</text>
+</g>
+</svg>

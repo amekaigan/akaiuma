@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="836" viewBox="0 0 720 836" role="img" aria-label="何を1個と数えるかを決めておく。セット商品は1セットで1個かパーツごとか。色違い・サイズ違いは合算するか分けて数えるか。検品前の入荷品は届いた時点で加えるか検品後に加えるか。預け先で紛失中の在庫はあると数えるかないと数えるか。正解はなく、決めて紙1枚に書く">
+<rect width="720" height="836" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">何を1個と数えるか、決めておく</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <text x="40" y="154" font-size="28" font-weight="700" fill="#1F2328">セット商品</text>
+  <rect x="40" y="172" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="180" y="217" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">1セットで1個</text>
+  <text x="360" y="217" font-size="26" font-weight="700" fill="#656C76" text-anchor="middle">か</text>
+  <rect x="400" y="172" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="540" y="217" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">パーツごと</text>
+  <text x="40" y="304" font-size="28" font-weight="700" fill="#1F2328">色違い・サイズ違い</text>
+  <rect x="40" y="322" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="180" y="367" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">合算する</text>
+  <text x="360" y="367" font-size="26" font-weight="700" fill="#656C76" text-anchor="middle">か</text>
+  <rect x="400" y="322" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="540" y="367" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">分けて数える</text>
+  <text x="40" y="454" font-size="28" font-weight="700" fill="#1F2328">検品前の入荷品</text>
+  <rect x="40" y="472" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="180" y="517" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">届いた時点で加える</text>
+  <text x="360" y="517" font-size="26" font-weight="700" fill="#656C76" text-anchor="middle">か</text>
+  <rect x="400" y="472" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="540" y="517" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">検品後に加える</text>
+  <text x="40" y="604" font-size="28" font-weight="700" fill="#1F2328">預け先で紛失中</text>
+  <rect x="40" y="622" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="180" y="667" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">あると数える</text>
+  <text x="360" y="667" font-size="26" font-weight="700" fill="#656C76" text-anchor="middle">か</text>
+  <rect x="400" y="622" width="280" height="70" rx="35" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="540" y="667" font-size="25" font-weight="700" fill="#3D444D" text-anchor="middle">ないと数える</text>
+  <rect x="40" y="726" width="640" height="76" rx="12" fill="#FBF4F5"/>
+  <text x="360" y="775" font-size="28" font-weight="700" fill="#A4243B" text-anchor="middle">正解はない。決めて、紙1枚に書く</text>
+</g>
+</svg>

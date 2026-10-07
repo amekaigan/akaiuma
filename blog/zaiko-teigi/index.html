@@ -3,7 +3,7 @@ title: 在庫の数え方で最初に決めること｜あかいうま
 meta: 棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。
 permalink: /blog/zaiko-teigi/
 published: 2026-09-25
-updated: 2026-10-02
+updated: 2026-10-07
 verified:
 category: 在庫管理
 level: beginner
@@ -177,7 +177,7 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
   "headline": "在庫の数え方で最初に決めること｜あかいうま",
   "description": "棚卸しで在庫の数が合わない原因と、Excelで管理を始める前に決める数え方のルールを解説します。",
   "datePublished": "2026-09-25",
-  "dateModified": "2026-10-02",
+  "dateModified": "2026-10-07",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://akaiuma.com/blog/zaiko-teigi/"
@@ -230,7 +230,7 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 <div class="article-header" data-level="beginner">
   <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
   <h1>在庫の数え方で最初に決めること</h1>
-  <div class="article-meta"><span>公開：2026年9月25日</span><span>更新：2026年10月2日</span><span>読了：約6分</span></div>
+  <div class="article-meta"><span>公開：2026年9月25日</span><span>更新：2026年10月7日</span><span>読了：約6分</span></div>
 </div>
 
 <img class="article-thumb" src="/assets/thumb/auto/zaiko-teigi.svg" alt="" width="1200" height="630">
@@ -282,6 +282,11 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 
 <p>この2つが常に一致していれば、在庫管理で悩むことはありません。ですが多くの現場では、どこかのタイミングでこの2つが離れていきます。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-teigi-futatsu.svg" alt="実在庫は倉庫に実際にある数、帳簿在庫はExcelやシステムの数字。動くタイミングが違うため、どこかで離れていくことを示す図" width="720" height="716" loading="lazy">
+  <figcaption>棚卸しで数えるのは実在庫、表に出ているのは帳簿在庫です。</figcaption>
+</figure>
+
 <h2 id="h2-2">なぜこの2つはズレるのか（棚卸しで数が合わない原因）</h2>
 
 <p>実在庫と帳簿在庫がズレる原因は、特別な事故ではなく、日々の作業の中にあります。筆者が棚卸しのズレを追ったとき、候補に挙がったのは次のようなものでした。</p>
@@ -296,6 +301,11 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 
 <p>どれも、日々の作業の延長で起きたことです。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-teigi-zure.svg" alt="在庫のズレが起きる場所。入荷では取り違えやメーカーの出荷数の違い、保管では撮影で持ち出したままの戻し忘れ、出荷では違う商品の発送や数の間違い" width="720" height="836" loading="lazy">
+  <figcaption>入荷・保管・出荷のどこでも、実際に動いた数と記録した数がずれることがあります。</figcaption>
+</figure>
+
 <p class="ak-pull">共通しているのは、「実際に動いた数」と「記録した数」が、どこか1点でずれているという点です。</p>
 
 <p>このズレを実際にどう発見し、どう追いかけたかという具体的な経緯は、<a href="/blog/amazon-fba/">FBAを使うと在庫管理がどう楽になるかをまとめた記事</a>で詳しく書いています。ここでは、ズレが起きる仕組みそのものを押さえておきます。</p>
@@ -306,6 +316,11 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 <h2 id="h2-3">預けた在庫は、預け先の事情でも合わなくなる</h2>
 
 <p>AmazonのFBAのように在庫を預けている場合は、こちらの作業とは別に、預け先の在庫の状態（紛失など）で数字が合わなくなることがあります。「先月末在庫＋今月の納品数－出荷数」で出した数と、預け先の月末在庫が食い違うのです。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-teigi-azuke.svg" alt="先月末の在庫に今月の納品数を足して出荷数を引いた計算上の在庫と、預け先の月末在庫が、紛失など預け先の事情で食い違うことを示す図" width="720" height="734" loading="lazy">
+  <figcaption>自分の作業が正しくても、預け先の事情で数字が合わないことがあります。</figcaption>
+</figure>
 
 <p>筆者の店では、Amazonで紛失になっている在庫を、補填などの処理が済むまでは「ある」と数えています。ただし、これは帳簿上の数の話です。売れる在庫として数えるか、会計上どう扱うかは、また別に考えます。紛失中をどう数えるかも、先に決めておく数え方のルールの1つです。</p>
 
@@ -342,6 +357,11 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 
 <p>これらは、どれが正解というものではありません。自分の商品構成や作業の流れに合わせて1つずつ答えを出し、紙1枚にまとめておけば十分です。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-teigi-rule.svg" alt="何を1個と数えるかの4つの決め事。セット商品、色違い・サイズ違い、検品前の入荷品、預け先で紛失中の在庫を、それぞれどちらで数えるか" width="720" height="836" loading="lazy">
+  <figcaption>どちらを選んでもかまいません。誰が数えても同じ答えになることが大切です。</figcaption>
+</figure>
+
 <!-- TODO:実体験 何を書くべきか：筆者が決めている数え方のルールのうち、引き当て済みの扱いや検品前の入荷品の扱いは、具体的にどうしているか（紛失中の扱いは2026-09-30の答えで本文に反映済み） -->
 
 <p>ルールが決まれば、数える作業自体はもう迷いません。次に押さえておきたいのは、その数字が何を意味するかという点です。</p>
@@ -365,6 +385,11 @@ title_reason: 読者が知りたいのは「Excelが悪いのか、自分のミ�
 <h3>定義を決めても、チャネルが増えると新しいズレが生まれる</h3>
 
 <p>預け先を使わず、倉庫が1つで完結している間は、これでいいのです。ですが楽天やAmazon、自社サイトなど複数のチャネルで売り始めると、話が変わってきます。倉庫間を移動中の在庫や、注文は入ったがまだ出荷していない在庫など、単一倉庫では存在しなかった「宙に浮く在庫」が生まれるからです。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-teigi-kabe.svg" alt="倉庫が1つのうちはルールを決めれば迷わないが、複数のチャネルや保管場所で売ると、移動中の在庫や未出荷の在庫といった宙に浮く在庫が生まれることを示す図" width="720" height="708" loading="lazy">
+  <figcaption>チャネルが増えたあとの壁は、在庫が合わない原因を書いた記事で扱っています。</figcaption>
+</figure>
 
 <p>この壁は、数え方のルールを決めただけでは越えられません。複数の保管場所を運用したときに何が起きるかは、<a href="/blog/zaiko-awanai-riyu/">年間1万件を出荷する中で分かった、在庫が合わない原因を書いた記事</a>で具体的に扱っています。単一倉庫の運用に慣れてきたら、次はそちらを読んでおくと、先に起きる問題が見えてきます。</p>
 

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="708" viewBox="0 0 720 708" role="img" aria-label="倉庫が1つのうちは、数え方のルールを決めれば数える作業で迷わない。複数のチャネル・保管場所で売ると、倉庫間を移動中の在庫や、注文は入ったがまだ出荷していない在庫といった宙に浮く在庫が生まれ、ルールだけでは越えられない">
+<rect width="720" height="708" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">チャネルが増えると、次の壁が来る</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="124" width="640" height="190" rx="12" fill="#F4F5F6" stroke="#656C76" stroke-width="3"/>
+  <text x="72" y="178" font-size="28" font-weight="700" fill="#3D444D">倉庫が1つのうち</text>
+  <text x="72" y="228" font-size="28" font-weight="700" fill="#1F2328">数え方のルールを決めれば、</text>
+  <text x="72" y="270" font-size="28" font-weight="700" fill="#1F2328">数える作業で迷わない</text>
+  <path d="M360 314 V350" stroke="#656C76" stroke-width="4"/><path d="M350 346 l10 14 10 -14" fill="#656C76"/>
+  <rect x="40" y="366" width="640" height="250" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <text x="72" y="420" font-size="28" font-weight="700" fill="#A4243B">複数のチャネル・保管場所で売ると</text>
+  <text x="72" y="470" font-size="28" font-weight="700" fill="#1F2328">「宙に浮く在庫」が生まれる</text>
+  <text x="72" y="520" font-size="26" font-weight="400" fill="#3D444D">・倉庫間を移動中の在庫</text>
+  <text x="72" y="562" font-size="26" font-weight="400" fill="#3D444D">・注文は入ったが、まだ出荷していない在庫</text>
+  <text x="40" y="674" font-size="26" font-weight="700" fill="#1F2328">ルールだけでは越えられない壁</text>
+</g>
+</svg>

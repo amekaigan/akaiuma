@@ -8,5 +8,5 @@
 
 新しい版を作ったら、それまでの版を `archive/` に移す。
 
-- ルールの正本 → `CLAUDE.md`
+- ルールの正本 → `.claude/CLAUDE.md`
 - 仕様書 → `.github/spec/akaiuma-spec.md`

@@ -418,7 +418,7 @@ title_reason:                        # なぜこのタイトルがその問い�
 ## 8. ディレクトリ構成
 
 ```
-CLAUDE.md              このファイル（運用ルールの正本）
+.claude/CLAUDE.md      このファイル（運用ルールの正本）。直下に置くと akaiuma.com/CLAUDE.md で公開されるため、ここに置く（2026-10-16）
 README.md              リポジトリの案内図（人間向け）
 .claude/agents/        各担当エージェントの定義
 .claude/workflows/     Routine（自動実行）の手順書
@@ -437,7 +437,7 @@ sns/                   SNS投稿文のストック（日付別。まだ無い）
 scripts/               YouTube台本（まだ無い）
 ```
 
-リポジトリの直下には、サイトとして公開するファイルと `CLAUDE.md`・`README.md` だけを置く。
+リポジトリの直下には、サイトとして公開するファイルと `README.md` だけを置く。
 仕様書・引き継ぎ資料などの作業用の文書は `.github/` の下に置く。
 
 記事ファイルは `blog/<slug>/index.html` とする。slug は英小文字とハイフン。

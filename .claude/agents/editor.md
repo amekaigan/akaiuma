@@ -12,7 +12,7 @@ model: sonnet
 
 ## 前提
 
-1. `CLAUDE.md` を最初に読む
+1. `.claude/CLAUDE.md` を最初に読む
 2. 対象記事 `blog/<slug>/index.html` を読む
 3. `assets/css/article.css` の「記事内の装飾パーツ」を読む（使えるクラスの一覧）
 

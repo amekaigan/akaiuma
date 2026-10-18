@@ -1,0 +1,341 @@
+<!--
+title: Amazon補充推奨は季節商品で外れる。信じるのは昨年の実績｜あかいうま
+meta: Amazonの補充推奨は季節の波を織り込まない、が筆者の理解。昨年の実績から仕入れ数を決める手順と、残す記録を解説します。
+permalink: /blog/amazon-hojuu-suishou/
+published: 2026-10-18
+updated:
+verified:
+category: 仕入れ
+level: intermediate
+tags: Amazon
+disclosure:
+thumb:
+thumbcopy: 季節の波は織り込まれない
+takeaways: 補充推奨と在庫日数が見ている期間と、見ていない季節の波 | 昨年の実績を起点に仕入れ数を決める手順と、来季のために残す記録 | 信じてよい商品と、自分で判断する商品の見分け方
+search_intent: Amazonが表示する「あと何個の納品が必要か」や在庫日数が、季節の変わり目で実態とずれそうなとき、仕入れ数を何を見て決めればよいのかを知りたい
+title_reason: 検索者が欲しいのは補充推奨の評価ではなく、外れるなら何を見て決めるのかという代わりの材料。運営者の答え（季節の波は入っていない、信じるのは主に昨年の実績）を、前半の条件と後半の答えに分けてタイトルに置く
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amazon補充推奨は季節商品で外れる。信じるのは昨年の実績｜あかいうま</title>
+<meta name="description" content="Amazonの補充推奨は季節の波を織り込まない、が筆者の理解。昨年の実績から仕入れ数を決める手順と、残す記録を解説します。">
+<link rel="canonical" href="https://akaiuma.com/blog/amazon-hojuu-suishou/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Amazon補充推奨は季節商品で外れる。信じるのは昨年の実績">
+<meta property="og:description" content="Amazonの補充推奨は季節の波を織り込まない、が筆者の理解。昨年の実績から仕入れ数を決める手順と、残す記録を解説します。">
+<meta property="og:url" content="https://akaiuma.com/blog/amazon-hojuu-suishou/">
+<meta property="og:image" content="https://akaiuma.com/og-default.png">
+<meta property="og:site_name" content="あかいうま">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- AUTO:HEAD:START -->
+<link rel="stylesheet" href="/assets/css/article.css">
+<!-- AUTO:HEAD:END -->
+</head>
+<body>
+
+<!-- AUTO:HEADER:START -->
+<header style="background:#FFFFFF; border-bottom:1px solid #E2E5E9; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
+  <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="/assets/logo/logo-mark.svg" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>あかいうま</strong><span class="brand-tagline">物販の売上アップと業務効率化</span></span></a>
+    <input type="checkbox" id="navToggle">
+    <label for="navToggle" id="navBtn" aria-label="メニュー">
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </label>
+    <nav id="siteNav">
+      <div id="searchWrap">
+        <input id="siteSearch" type="search" placeholder="記事を検索" autocomplete="off">
+        <button id="searchClear" type="button" aria-label="検索をやめる">✕</button>
+        <div id="searchResults"></div>
+      </div>
+      <a href="/">ホーム</a>
+      <a href="/blog/">記事一覧</a>
+      <a href="/blog/#inventory">在庫管理</a>
+      <a href="/about/">このサイトについて</a>
+
+      <label for="navToggle" class="nav-close">✕ 閉じる</label>
+    </nav>
+  </div>
+</header>
+<style>
+  body { margin:0; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .brand-text strong { font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em; }
+  .brand-tagline { font-size:0.68em; color:#656C76; white-space:nowrap; }
+  @media (max-width: 340px) { .brand-tagline { display:none; } }
+  #navToggle { display:none; }
+  #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
+  #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:#656C76; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
+  #searchClear:hover { color:#1F2328; }
+  #navBtn .ic-close { display:none; }
+  #navToggle:checked ~ #navBtn .ic-open { display:none; }
+  #navToggle:checked ~ #navBtn .ic-close { display:block; }
+  .nav-close { display:none; }
+  #siteNav a { color:#3D444D; text-decoration:none; font-size:0.9em; }
+  #siteNav a.nav-cta { color:#fff; background:#A4243B; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
+  #searchWrap { position:relative; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:#F4F5F6; border:1px solid #E2E5E9; color:#1F2328; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch::placeholder { color:#656C76; }
+  #siteSearch:focus { border-color:#A4243B; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
+  @media (min-width: 681px) {
+    label[for="navToggle"] { display:none; }
+    #siteNav { display:flex; align-items:center; gap:22px; }
+    #siteSearch { width:210px; }
+    .nav-close { display:none !important; }
+    #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
+    #siteNav a:not(.nav-cta):hover { color:#A4243B; }
+    #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:#A4243B; transform:scaleX(0); transition:transform .15s; }
+    #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
+    #siteNav a.nav-cta:hover { background:#82182E; }
+  }
+  @media (max-width: 680px) {
+    label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid #E2E5E9; }
+    #navToggle:checked ~ #siteNav { display:flex; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid #E2E5E9; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:#656C76; font-size:1.2em; }
+    #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
+    #siteNav a.nav-cta::after { content:""; }
+    #searchWrap { margin:8px 0 10px; width:100%; }
+    #siteSearch { width:100%; font-size:16px; padding-top:11px; padding-bottom:11px; }
+    .nav-close { display:block; text-align:center; color:#656C76; font-size:0.85em; padding:16px 0 4px; cursor:pointer; }
+    #searchResults { width:100%; right:auto; left:0; top:50px; }
+  }
+  .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:#A4243B; border:1px solid #A4243B; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:#82182E; border-color:#82182E; }
+  #toTop.show { display:flex; }
+  @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
+</style>
+<button id="toTop" type="button" aria-label="ページ上部へ戻る">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="5,13 12,6 19,13"/></svg>
+</button>
+<script>
+(function(){
+  var input=document.getElementById('siteSearch');
+  var box=document.getElementById('searchResults');
+  if(!input||!box)return;
+  var data=null,loading=false;
+  function load(){
+    if(data||loading)return;loading=true;
+    fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
+  }
+  function closeRow(){
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#F6F7F8; border:0; border-top:1px solid #E4E7EB; color:#656C76; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    if(!q||!data){box.style.display='none';box.innerHTML='';return;}
+    var hits=data.filter(function(a){
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
+    }).slice(0,8);
+    if(hits.length===0){
+      box.innerHTML='<p style="margin:0; padding:16px; color:#656C76; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+    }else{
+      box.innerHTML=hits.map(function(a){
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #E4E7EB; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:#A4243B; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:#1F2328; line-height:1.45;">'+a.t+'</span></a>';
+      }).join('')+closeRow();
+    }
+    box.style.display='block';
+  }
+  var clr=document.getElementById('searchClear');
+  function close(){box.style.display='none';}
+  function toggleClear(){if(clr)clr.style.display=input.value?'block':'none';}
+  input.addEventListener('focus',load);
+  input.addEventListener('input',function(){load();render();toggleClear();});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';close();toggleClear();input.blur();}});
+  if(clr)clr.addEventListener('click',function(){input.value='';close();toggleClear();input.focus();});
+  box.addEventListener('click',function(e){
+    if(e.target.id==='searchClose'){input.value='';close();toggleClear();}
+  });
+  document.addEventListener('click',function(e){
+    if(!document.getElementById('searchWrap').contains(e.target)){close();}
+  });
+})();
+(function(){
+  var btn=document.getElementById('toTop');
+  if(!btn)return;
+  function upd(){ if(window.scrollY>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
+  window.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  upd();
+})();
+</script>
+<!-- AUTO:HEADER:END -->
+
+<!-- AUTO:ARTICLEHEAD:START -->
+
+<!-- AUTO:ARTICLEHEAD:END -->
+
+<article class="ak-article">
+
+<p>9月に入ってAmazonの管理画面を開くと、夏物の商品に「あと何個の納品が必要」という大きな数字が出ています。その数を納品すれば在庫日数は伸びて欠品の心配は消えますが、夏が終わった倉庫にその数が届くことになります。</p>
+
+<p>数字そのものが間違っているわけではありません。ただ、何をもとに出た数字かを知らないまま納品数を決めると、季節の変わり目で外れます。</p>
+
+<p>結論から言うと、補充推奨と在庫日数は過去の売れ行きから計算され、季節の波には対応していない、というのが筆者の理解です。そのため季節商品は、主に昨年の実績で仕入れ数を決めます。季節が関係ない商品は、Amazonの数を信じてかまいません。これも筆者の判断です。</p>
+
+<!-- AUTO:TOC:START -->
+<nav class="ak-toc" aria-label="目次">
+  <p class="ak-toc-title">目次</p>
+  <ol>
+    <li><a href="#h2-1">Amazonの補充推奨と在庫日数は、何を見て出る数字か</a></li>
+    <li><a href="#h2-2">季節商品でそのまま信じると、在庫が翌シーズンまで寝る</a></li>
+    <li><a href="#h2-3">仕入れ数は、昨年の実績を起点に決める</a></li>
+    <li><a href="#h2-4">補充推奨を信じてよい商品と、自分で判断する商品</a></li>
+    <li><a href="#h2-5">補充推奨が外れる時期は、保管手数料が上がる時期と重なる</a></li>
+    <li><a href="#h2-6">来季の判断のために、毎月何を記録しておくか</a></li>
+    <li><a href="#h2-7">この方法が使えない場面と、外れたとき</a></li>
+    <li><a href="#h2-8">まとめ：信じる数字と、自分で決める数字を分ける</a></li>
+  </ol>
+</nav>
+<!-- AUTO:TOC:END -->
+<h2 id="h2-1">Amazonの補充推奨と在庫日数は、何を見て出る数字か</h2>
+
+<p class="ak-lead">過去の売れ行きから計算され、季節の波には対応していない、というのが筆者の理解です。</p>
+
+<p>Amazonには商品ごとに、あと何個の納品が必要かという数量と、今ある在庫が売り切れるまでの日数を示す在庫日数が表示されます。この記事では、前者を補充推奨と呼びます。筆者は仕入れのロットを上げるかどうかを決めるとき、この2つを見て、売れる商品か売れない商品かを判断する材料にしています。</p>
+
+<p>ただし、セラーセントラル上の表示名や算出方法は、公式ヘルプで確認していません。以下は筆者が使ってきて把握している挙動であり、公式の説明ではありません。</p>
+
+<p>筆者の理解では、この2つの数字は過去の売れ行きから計算されます。実際の売れ方には季節の波があって複雑ですが、計算はそこに対応していません。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/amazon-hojuu-suishou-kikan.svg" alt="水着を例にした図。補充推奨は7月と8月の売れ行きを見ているが、9月以降の落ち込みは入っていない" width="720" height="744" loading="lazy">
+  <figcaption>見ているのは過去の売れ行きで、これから季節が終わることは入っていません。</figcaption>
+</figure>
+
+<h2 id="h2-2">季節商品でそのまま信じると、在庫が翌シーズンまで寝る</h2>
+
+<p>例えば水着で、Amazonが「何日以内に300個の入庫が必要です」と表示したとします。7月と8月の売れ行きから出した数字なので、夏の実績は反映されています。ところが9月以降、水着はそれほど売れません。夏が終わろうとしているのに、これから先もこの数が売れるとは考えにくいはずです。</p>
+
+<p>浴衣でも同じことが起きます。表示された数をそのまま信じると、8月後半に大量の数を入荷させることになります。浴衣のシーズンは夏なので、来年の初夏まで、大量の在庫をAmazonの倉庫で寝かせることになります。どちらもあくまで例え話です。</p>
+
+<p class="ak-pull">季節の終わりに出る大きな数字は、盛りの時期の売れ行きから計算されたものです。</p>
+
+<p>寝てしまった在庫を現金に戻す出口については、<a href="/blog/zaiko-mochisugi/">動かなくなった在庫を現金に戻す出口を先に決めておく方法</a>に書いています。</p>
+
+<!-- TODO:実体験 何を書くべきか：補充推奨（あと何個の納品が必要か）と実際の需要がずれて困った具体例。どの時期の、どんな商品群だったか（商品名は伏せてよい） -->
+
+<h2 id="h2-3">仕入れ数は、昨年の実績を起点に決める</h2>
+
+<p>では何を見て決めるのか。筆者が主に信じるのは、昨年の実績です。昨年の同じ時期にその商品が何個売れたかを、仕入れ数の起点にします。</p>
+
+<div class="ak-note">
+  <span class="ak-note-label">筆者の経験則</span>
+  <p>昨年の数をもとに、プラス1〜2割くらいを足します。昨年1年分の実績が積んであるからです。</p>
+  <p>さらに、昨年に在庫切れなどの機会損失があり、それを記録できていれば、その分もう1〜2割増やしてもよいと考えています。</p>
+</div>
+
+<p>この割合は筆者の経験則であり、どの商品にも通用する決まりとしては書きません。商品や時期によって判断が変わります。</p>
+
+<p>また、機会損失の上乗せは、昨年の欠品を記録できていた場合に限ります。記録がなければ、昨年の販売数が欠品で押し下げられた数字なのかを見分けられず、上乗せの根拠がありません。</p>
+
+<!-- TODO:実体験 何を書くべきか：昨年の販売数を、実際にどの画面・レポートで、どの期間の区切りで見ているか -->
+
+<!-- TODO:実体験 何を書くべきか：欠品（機会損失）をどう記録しているか。いつ・何を・どこに残しているか -->
+
+<h2 id="h2-4">補充推奨を信じてよい商品と、自分で判断する商品</h2>
+
+<p>季節が関係ない商品では、Amazonの目安を信じてよいと筆者は判断しています。過去の売れ行きから計算される仕組みは、季節の波がない商品なら、これから先の売れ方とずれにくいと考えているからです。</p>
+
+<p>季節商品かどうか迷う商品は、昨年の月別の販売数を商品ごとに並べて、特定の月に偏っていないかを見ると分けられます。偏りがあれば昨年の実績で決める側、偏りが見当たらなければAmazonの数を信じる側です。</p>
+
+<div class="ak-point">
+  <span class="ak-point-label">この節の要点</span>
+  <p>季節が関係ない商品は、Amazonの数を信じます。季節商品は、主に昨年の実績で決めます。</p>
+</div>
+
+<h2 id="h2-5">補充推奨が外れる時期は、保管手数料が上がる時期と重なる</h2>
+
+<p>夏の終わりに入れた在庫が売れ残ると、保管手数料の単価が上がる時期を通ります。時期と単価は、<a href="/blog/amazon-fba/">FBAの保管手数料が年末に向けて上がる仕組みを扱った記事</a>に公式情報つきでまとめているので、ここでは繰り返しません。保管にかかる費用を含めて1個あたりの限界利益を出す計算の順番は、<a href="/blog/genkai-rieki/">保管手数料や送料を引いて1個あたりの利益を出す計算の順番</a>で扱っています。</p>
+
+<h2 id="h2-6">来季の判断のために、毎月何を記録しておくか</h2>
+
+<p>来季も同じ判断をするには、今季の数字が残っていなければなりません。毎月、商品ごとに次の4つを同じ表に残します。</p>
+
+<ul class="ak-check">
+<li>その月に表示された補充推奨の数（あと何個の納品が必要か）</li>
+<li>その月の在庫日数</li>
+<li>その月の実際の販売数</li>
+<li>欠品した日（あれば日数）</li>
+</ul>
+
+<p>比べるときは、同じ商品の同じ月どうしを並べます。昨年の7月と今年の7月、という具合です。補充推奨の数と実際の販売数が、どの月から離れ始めたかが分かれば、その商品が季節の波を受ける商品かどうかを見分ける材料になります。どこから離れたと見るかは、商品・モール・時期によってその都度判断するもので、基準の割合は作りません。</p>
+
+<p>上乗せの割合を変えたときは、変える前の数字を記録し、変えるのは割合だけにして、同じ長さの期間で比べます。</p>
+
+<p>判断に使う情報が担当者の頭の中にしかない状態の怖さは、<a href="/blog/zaiko-awanai-riyu/">発注の予定を担当者の頭の外に出す理由を書いた記事</a>で扱っています。</p>
+
+<h2 id="h2-7">この方法が使えない場面と、外れたとき</h2>
+
+<p>この記事の方法は、昨年の実績がある商品が前提です。昨年の実績がない商品の決め方は、この記事では扱いません。</p>
+
+<p>昨年から価格や広告の出し方、競合の状況を大きく変えた商品は、昨年の販売数がそのまま今年の見込みになるとは限りません。</p>
+
+<p>上乗せの割合は筆者の経験則なので、外れることがあります。上乗せしすぎた分は、そのまま寝る在庫になります。外れたときは、その月の数字を前の節の表に残して、次の判断に使います。</p>
+
+<h2 id="h2-8">まとめ：信じる数字と、自分で決める数字を分ける</h2>
+
+<p>次に納品する前に、次の順で進めます。</p>
+
+<ol class="ak-steps">
+<li>納品予定の商品を、季節の影響がある商品とない商品に分ける</li>
+<li>季節の影響がない商品は、Amazonの数を起点に決める</li>
+<li>季節の影響がある商品は、昨年の同じ月の販売数を出し、そこから上乗せを決める</li>
+<li>決めた数と、Amazonの表示数を並べて表に残す</li>
+</ol>
+
+</article>
+
+<!-- AUTO:BELOW:START -->
+<div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+
+
+
+
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
+<div>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">4</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">3</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">2</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">0</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場 <span style="color:#656C76;">2</span></span>
+<a href="/tag/amazon/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">Amazon <span style="color:#656C76;">5</span></a>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング <span style="color:#656C76;">2</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト <span style="color:#656C76;">2</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">複数チャネル運用 <span style="color:#656C76;">2</span></span>
+</div>
+</section>
+</div></div>
+<footer style="background:#F4F5F6; color:#656C76; border-top:1px solid #E2E5E9;">
+  <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
+
+    <div style="border-top:1px solid #E2E5E9; padding-top:20px;">
+      <p style="margin:0 0 10px; color:#656C76; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
+      <p style="margin:0; color:#656C76; font-size:0.78em;">&copy; 2026 あかいうま</p>
+    </div>
+
+  </div>
+</footer>
+<!-- AUTO:BELOW:END -->
+
+</body>
+</html>

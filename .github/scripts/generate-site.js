@@ -88,7 +88,7 @@ const AD_BEFORE_NTH_H2 = 3;
 const NO_AD_PATH = /(^|\/)(tool|about|privacy|law)\//;
 
 // Google Analytics 4 の測定ID（G-XXXXXXXXXX の形式）
-const GA4_ID = '';
+const GA4_ID = 'G-46K4RT2PMF';
 
 // カテゴリ。左が表示名、右がURLのアンカーになるID
 const CATEGORY_TO_ID = {
@@ -1289,7 +1289,7 @@ function tagPageHtml(name, id, list, allArticles) {
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/css/article.css">
+${headTagsHtml(null)}
 </head>
 <body>
 

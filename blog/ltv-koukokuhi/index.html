@@ -1,0 +1,593 @@
+<!--
+title: 広告費はどこまで出せる？LTVで上限を考える手順｜あかいうま
+meta: 広告費の上限を新規1回ではなくリピート込みで出す手順。限界利益×平均購入回数の計算例と、LTVの上限とROASのつなぎ方。
+permalink: /blog/ltv-koukokuhi/
+published: 2026-10-01
+updated:
+verified:
+category: 数字管理
+level: intermediate
+tags:
+disclosure:
+thumb:
+thumbcopy: リピート込みで上限を出す
+takeaways: 限界利益と平均購入回数から、1人のお客様がもたらす限界利益を出す計算 | 広告費の上限を、新規1回だけで見た場合とリピート込みで見た場合に並べて比べる見方 | LTVから出した上限と、広告のROASをつないで見る考え方
+search_intent: 限界利益から広告費を出す計算はできたが、全額使うと利益がゼロになるので、実際にはどこまで広告費に回してよいのか、リピート（LTV）を入れるとその上限がどう変わるのかを、自分の数字で出したい。
+title_reason: 読者の問いは「LTVとは何か」という定義ではなく「広告費はどこまで出していいのか」という上限の問いである。タイトルの前半に問いそのものを置き、後半に答えの手段（LTVで上限を考える）を手順の形で置いた。運営者の答えは、新規の1回目の売上だけで計算せず、リピートまで数に入れると余裕が出る、というもので、数字を当てはめれば自分の上限が出せる記事だと分かるようにしている。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>広告費はどこまで出せる？LTVで上限を考える手順｜あかいうま</title>
+<meta name="description" content="広告費の上限を新規1回ではなくリピート込みで出す手順。限界利益×平均購入回数の計算例と、LTVの上限とROASのつなぎ方。">
+<link rel="canonical" href="https://akaiuma.com/blog/ltv-koukokuhi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="広告費はどこまで出せる？LTVで上限を考える手順">
+<meta property="og:description" content="広告費の上限を新規1回ではなくリピート込みで出す手順。限界利益×平均購入回数の計算例と、LTVの上限とROASのつなぎ方。">
+<meta property="og:url" content="https://akaiuma.com/blog/ltv-koukokuhi/">
+<meta property="og:image" content="https://akaiuma.com/og-default.png">
+<meta property="og:site_name" content="あかいうま">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- AUTO:HEAD:START -->
+<link rel="stylesheet" href="/assets/css/article.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-46K4RT2PMF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('set', 'user_properties', {});
+  gtag('set', { article_level: 'intermediate', article_category: '数字管理' });
+  gtag('config', 'G-46K4RT2PMF');
+</script>
+<!-- AUTO:HEAD:END -->
+</head>
+<body>
+
+<!-- AUTO:HEADER:START -->
+<header style="background:#FFFFFF; border-bottom:1px solid #E2E5E9; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
+  <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="/assets/logo/logo-mark.svg" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>あかいうま</strong><span class="brand-tagline">物販の売上アップと業務効率化</span></span></a>
+    <input type="checkbox" id="navToggle">
+    <label for="navToggle" id="navBtn" aria-label="メニュー">
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </label>
+    <nav id="siteNav">
+      <div id="searchWrap">
+        <input id="siteSearch" type="search" placeholder="記事を検索" autocomplete="off">
+        <button id="searchClear" type="button" aria-label="検索をやめる">✕</button>
+        <div id="searchResults"></div>
+      </div>
+      <a href="/">ホーム</a>
+      <a href="/blog/">記事一覧</a>
+      <a href="/blog/#inventory">在庫管理</a>
+      <a href="/about/">このサイトについて</a>
+      
+      <label for="navToggle" class="nav-close">✕ 閉じる</label>
+    </nav>
+  </div>
+</header>
+<style>
+  body { margin:0; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .brand-text strong { font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em; }
+  .brand-tagline { font-size:0.68em; color:#656C76; white-space:nowrap; }
+  @media (max-width: 340px) { .brand-tagline { display:none; } }
+  #navToggle { display:none; }
+  #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
+  #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:#656C76; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
+  #searchClear:hover { color:#1F2328; }
+  #navBtn .ic-close { display:none; }
+  #navToggle:checked ~ #navBtn .ic-open { display:none; }
+  #navToggle:checked ~ #navBtn .ic-close { display:block; }
+  .nav-close { display:none; }
+  #siteNav a { color:#3D444D; text-decoration:none; font-size:0.9em; }
+  #siteNav a.nav-cta { color:#fff; background:#A4243B; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
+  #searchWrap { position:relative; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:#F4F5F6; border:1px solid #E2E5E9; color:#1F2328; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch::placeholder { color:#656C76; }
+  #siteSearch:focus { border-color:#A4243B; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
+  @media (min-width: 681px) {
+    label[for="navToggle"] { display:none; }
+    #siteNav { display:flex; align-items:center; gap:22px; }
+    #siteSearch { width:210px; }
+    .nav-close { display:none !important; }
+    #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
+    #siteNav a:not(.nav-cta):hover { color:#A4243B; }
+    #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:#A4243B; transform:scaleX(0); transition:transform .15s; }
+    #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
+    #siteNav a.nav-cta:hover { background:#82182E; }
+  }
+  @media (max-width: 680px) {
+    label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid #E2E5E9; }
+    #navToggle:checked ~ #siteNav { display:flex; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid #E2E5E9; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:#656C76; font-size:1.2em; }
+    #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
+    #siteNav a.nav-cta::after { content:""; }
+    #searchWrap { margin:8px 0 10px; width:100%; }
+    #siteSearch { width:100%; font-size:16px; padding-top:11px; padding-bottom:11px; }
+    .nav-close { display:block; text-align:center; color:#656C76; font-size:0.85em; padding:16px 0 4px; cursor:pointer; }
+    #searchResults { width:100%; right:auto; left:0; top:50px; }
+  }
+  .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:#A4243B; border:1px solid #A4243B; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:#82182E; border-color:#82182E; }
+  #toTop.show { display:flex; }
+  @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
+</style>
+<button id="toTop" type="button" aria-label="ページ上部へ戻る">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="5,13 12,6 19,13"/></svg>
+</button>
+<script>
+(function(){
+  var input=document.getElementById('siteSearch');
+  var box=document.getElementById('searchResults');
+  if(!input||!box)return;
+  var data=null,loading=false;
+  function load(){
+    if(data||loading)return;loading=true;
+    fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
+  }
+  function closeRow(){
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#F6F7F8; border:0; border-top:1px solid #E4E7EB; color:#656C76; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    if(!q||!data){box.style.display='none';box.innerHTML='';return;}
+    var hits=data.filter(function(a){
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
+    }).slice(0,8);
+    if(hits.length===0){
+      box.innerHTML='<p style="margin:0; padding:16px; color:#656C76; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+    }else{
+      box.innerHTML=hits.map(function(a){
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #E4E7EB; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:#A4243B; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:#1F2328; line-height:1.45;">'+a.t+'</span></a>';
+      }).join('')+closeRow();
+    }
+    box.style.display='block';
+  }
+  var clr=document.getElementById('searchClear');
+  function close(){box.style.display='none';}
+  function toggleClear(){if(clr)clr.style.display=input.value?'block':'none';}
+  input.addEventListener('focus',load);
+  input.addEventListener('input',function(){load();render();toggleClear();});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';close();toggleClear();input.blur();}});
+  if(clr)clr.addEventListener('click',function(){input.value='';close();toggleClear();input.focus();});
+  box.addEventListener('click',function(e){
+    if(e.target.id==='searchClose'){input.value='';close();toggleClear();}
+  });
+  document.addEventListener('click',function(e){
+    if(!document.getElementById('searchWrap').contains(e.target)){close();}
+  });
+})();
+(function(){
+  var btn=document.getElementById('toTop');
+  if(!btn)return;
+  function upd(){ if(window.scrollY>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
+  window.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  upd();
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "広告費はどこまで出せる？LTVで上限を考える手順｜あかいうま",
+  "description": "広告費の上限を新規1回ではなくリピート込みで出す手順。限界利益×平均購入回数の計算例と、LTVの上限とROASのつなぎ方。",
+  "datePublished": "2026-10-01",
+  "dateModified": "2026-10-01",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://akaiuma.com/blog/ltv-koukokuhi/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "あかいうま"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あかいうま",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
+    }
+  },
+  "image": "https://akaiuma.com/assets/thumb/auto/ltv-koukokuhi.svg"
+}
+</script>
+<!-- AUTO:HEADER:END -->
+
+<!-- AUTO:ARTICLEHEAD:START -->
+<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:#A4243B; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>
+<div class="article-header" data-level="intermediate">
+  <div class="article-category">数字管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#82182E; background:#FBF4F5; border-radius:4px; padding:2px 8px; margin-left:8px;">中級者向け</span></div>
+  <h1>広告費はどこまで出せる？LTVで上限を考える手順</h1>
+  <div class="article-meta"><span>公開：2026年10月1日</span><span>読了：約8分</span></div>
+</div>
+
+<img class="article-thumb" src="/assets/thumb/auto/ltv-koukokuhi.svg" alt="" width="1200" height="630">
+<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+    <li>限界利益と平均購入回数から、1人のお客様がもたらす限界利益を出す計算</li>
+    <li>広告費の上限を、新規1回だけで見た場合とリピート込みで見た場合に並べて比べる見方</li>
+    <li>LTVから出した上限と、広告のROASをつないで見る考え方</li>
+  </ul>
+</div>
+<!-- AUTO:ARTICLEHEAD:END -->
+
+<article class="ak-article">
+
+<p>前回の記事で、限界利益から上限広告費を出せるようになりました。ところがその上限まで広告費を使うと、手元に利益は残りません。</p>
+
+<p>結論から言うと、リピートが起きる商品なら、新規の1回目だけで計算した上限より、リピートまで数に入れたほうが、使える広告費には余裕が出ます。リピート率から「何人が何回買っているか」を出し、1人のお客様がもたらす限界利益で上限を考え直す、という手順です。ただしリピート分の利益は後から入るため、実際に広告を続けるかどうかは、筆者はROASを見て決めています。</p>
+
+<p>この記事では、<a href="/blog/genkai-rieki/">限界利益から上限広告費を出す手順を書いた前回の記事</a>の仮の例を引き継いで、計算の流れを示します。そのうえで、LTVから出した上限と広告のROASをどうつなぐかと、この計算を当てはめてはいけない場面を書きます。</p>
+
+<!-- AUTO:TOC:START -->
+<nav class="ak-toc" aria-label="目次">
+  <p class="ak-toc-title">目次</p>
+  <ol>
+    <li><a href="#h2-1">限界利益を全額広告費にすると、手元に利益は残らない</a></li>
+    <li><a href="#h2-2">LTVとは。この記事では限界利益で数える</a></li>
+    <li><a href="#h2-3">リピート率を「何人が何回」に分ける</a></li>
+    <li><a href="#h2-4">1人あたりの限界利益で上限を出す</a></li>
+    <li><a href="#h2-5">LTVの上限とROASをつなぐ</a></li>
+    <li><a href="#h2-6">この計算が使えない場面とリスク</a></li>
+    <li><a href="#h2-7">まとめ：今日やること</a></li>
+  </ol>
+</nav>
+<!-- AUTO:TOC:END -->
+<h2 id="h2-1">限界利益を全額広告費にすると、手元に利益は残らない</h2>
+
+<h3>前回の計算の続き。「上限」はどこか</h3>
+
+<p>限界利益をまるごと広告費に充てると、手元には何も残りません。前回の仮の例は、税抜3,000円の商品で、限界利益が650円、固定費が売上の5%（150円）でした。固定費まで引いた営業利益は約500円で、広告費がこの約500円に達した地点で、利益がゼロになります。</p>
+
+<p>限界利益650円を全額使えば、固定費150円の分は赤字です。計算の中身は前回の記事に書いたので、ここでは繰り返しません。この記事の数字はすべて同じ仮の例を使った説明用で、実際の店舗の数字ではありません。</p>
+
+<h3>新規1回の売上だけで見ると、上限が低く出る</h3>
+
+<p>この約500円は、1人のお客様が1回だけ買う前提の数字です。新規のお客様を1人連れてくるのに広告費を500円かけ、その人が1回しか買わなければ、利益はゼロです。同じお客様が2回目も買い、その注文が広告を経由しないなら、2回目には広告費がかかりません。そのぶん、1人あたりで見れば利益が残ります。</p>
+
+<div class="ak-note">
+  <span class="ak-note-label">筆者の考え</span>
+  <p>リピート率から、どのくらいのお客様が何回リピートしているかを算出してみてください。これまで新規の売上だけを考えて計算していたときより、使える広告費に余裕が出てきます。リピート率の向上は、結果的に広告費に回せる金額を増やすことにつながります。もしくは、商品の金額を多少下げてもいいという判断にもなります。</p>
+</div>
+
+<h2 id="h2-2">LTVとは。この記事では限界利益で数える</h2>
+
+<h3>LTVは、1人のお客様がもたらす金額</h3>
+
+<p>LTVは、1人のお客様が、買い続けるあいだにもたらす金額のことです。1回目の注文だけでなく、2回目以降の注文も数に入れます。</p>
+
+<h3>売上ではなく限界利益で数える</h3>
+
+<p>広告費の上限を考えるなら、売上ではなく限界利益で数えます。前回の仮の例で、1人が平均1.4回買うとすると（出し方は次の章で書きます）、売上で数えれば3,000円 × 1.4 ＝ 4,200円です。ところが手元に残るのは、限界利益650円 × 1.4 ＝ 910円で、残りは仕入れ原価・モール手数料・送料に消えています。4,200円を基準にすると、広告費の上限を大きく見積もってしまいます。</p>
+
+<p class="ak-pull">この記事では、LTVを「限界利益 × 平均購入回数」で数えます。</p>
+
+<!-- AUTO:AD:START -->
+
+<!-- AUTO:AD:END -->
+<h2 id="h2-3">リピート率を「何人が何回」に分ける</h2>
+
+<h3>割合だけでは、買い方の中身が見えない</h3>
+
+<p>この記事では、リピート率を、一定の期間に買ったお客様のうち、2回以上買った人の割合として扱います。ただし割合だけでは、2回買った人が多いのか、10回買った人がいるのかが分かりません。そこで「何人が何回買ったか」に分けます。</p>
+
+<p>仮に、ある期間の購入者が100人だったとします。</p>
+
+<ul>
+<li>1回だけ買った人：70人（注文70件）</li>
+<li>2回買った人：20人（注文40件）</li>
+<li>3回買った人：10人（注文30件）</li>
+</ul>
+
+<p>注文は合計140件なので、平均購入回数は140 ÷ 100 ＝ 1.4回です。リピート率は、2回以上買った30人を100人で割って30%になります。この人数・回数・割合はすべて説明用の仮の数字で、リピート率や購入回数の目安ではありません。</p>
+
+<h3>数える前に、4つを決めて記録する</h3>
+
+<p>数え方が変わると数字が変わり、前の数字と比べられなくなります。数える前に、次の4つを決めて記録しておきます。</p>
+
+<ul>
+<li>期間：何か月分の注文を見るか。期間が短いと、2回目の注文がまだ来ていない人が混ざるので、平均購入回数は低く出ます</li>
+<li>単位：お客様の数で数えるか、注文の数で数えるか</li>
+<li>同じお客様の見分け方：どの情報で同一人物と判定するか</li>
+<li>返品・キャンセルの扱い：数に入れるか、外すか</li>
+</ul>
+
+<p>楽天市場・Amazon・Yahoo!ショッピング・自社サイトのそれぞれで、同じお客様の注文をひもづけて見られるかどうかは、この記事では未確認です。お使いのモールの公式ヘルプで確かめてください。</p>
+
+<!-- TODO:数値 何を入れるか：各モール（楽天市場・Amazon・Yahoo!ショッピング・自社サイト）で、購入者ごとの注文回数・リピートを確認できる画面やレポートの有無／出典：各モールの公式ヘルプ（URL未確認）／確認日：（入れた日） -->
+
+<!-- TODO:実体験 何を書くべきか：リピート率を実際にどう出しているか。期間は何か月か、どの画面・データから見ているか、同じお客様をどう見分けているか、数えるときに実際につまずいた点（期間の区切り・返品・同一人物の判定など）はどこか -->
+
+<h3>店全体のリピート率は、広告経由の数字とは限らない</h3>
+
+<p>店全体のリピート率には、広告を使わなくても買いに来る常連が含まれます。広告で獲得した新規のお客様が、店全体と同じ回数だけ買うとは限りません。</p>
+
+<p>広告経由のお客様だけを分けて数えられるなら分けます。分けられない場合は、店全体の数字から出した上限が、広告で獲得する場面では高めに出ている可能性があります。ただし、広告経由のほうが少なくなるという方向は推測で、この記事では数字で確かめていません。</p>
+
+<h2 id="h2-4">1人あたりの限界利益で上限を出す</h2>
+
+<h3>計算の流れ：限界利益に平均購入回数をかける</h3>
+
+<p>前回の仮の例に、平均購入回数1.4回を当てはめます。</p>
+
+<ol class="ak-steps">
+<li>1回あたりの限界利益：650円</li>
+<li>1人あたりの限界利益：650円 × 1.4回 ＝ 910円</li>
+<li>固定費を引く：前回は売上に対する比率（5%）で按分したので、リピート分の売上にも同じ比率がかかります。150円 × 1.4回 ＝ 210円を引いて、910円 − 210円 ＝ 700円</li>
+</ol>
+
+<p>新規の1回目だけで見た上限は約500円でした。リピートを入れると約700円になり、差の200円分だけ、使える広告費に余裕が出ます。この700円も、前回の上限と同じく「利益がゼロになる地点」です。そこまで使うわけではないので、決め方を、次の見出しとROASの章で書きます。</p>
+
+<h3>どこまで回すかは、自分の数字で決める</h3>
+
+<p>上限の何割まで広告費に回すかは、この記事では決めません。ショップ・モール・商品・時期によって変わるためです。代わりに、次の3つの数字を見ます。</p>
+
+<ul>
+<li>獲得1人あたりの広告費：広告費 ÷ 広告経由の購入者数（購入者数が取れなければ、広告経由の注文件数）</li>
+<li>リピート率</li>
+<li>平均購入回数</li>
+</ul>
+
+<p>広告の出し方や値付けを変えるときは、変える前のこの3つを記録します。変えるのは1つだけにして、変える前と同じ長さの期間で比べます。</p>
+
+<h3>リピート率が上がると、広告費か値段に余裕が出る</h3>
+
+<p>平均購入回数が上がれば、1人あたりの限界利益が増え、広告費に回せる額が増えます。仮の例で平均購入回数が1.4回から1.5回になれば、650円 × 1.5回 ＝ 975円から固定費225円を引いて、上限は750円です。</p>
+
+<p>もう一つの使い道が、商品の値段を少し下げる判断です。仮に1回あたりの限界利益が600円に下がるとして、1人あたり700円の上限を保つには、1回あたり600円 − 固定費150円 ＝ 450円が何回必要かを考えます。700 ÷ 450 ＝ 約1.56回です。固定費を150円のまま据え置いた簡略化した計算です。</p>
+
+<p>逆に、平均購入回数が1.4回のまま600円にすると、(600円 − 150円) × 1.4回 ＝ 630円で、上限は700円から630円に下がります。値下げすれば転換率も購入者数も動くので、効果は<a href="/blog/urenai-naosu/">値下げの効果を価格差と転換率で見る方法</a>で確かめてください。</p>
+
+<h2 id="h2-5">LTVの上限とROASをつなぐ</h2>
+
+<h3>ROASの式と、筆者の見方</h3>
+
+<p>ROASは、一般に広告経由の売上を広告費で割った値で、広告費1円で売上がいくら出たかを表します。式にすると、ROAS ＝ 広告経由の売上 ÷ 広告費です。実際の値は、自分の商品の数字で出してください。</p>
+
+<p>筆者は、利益を何%残すかではなく、ROASを見て広告を続けるか、やめるかを判断しています。続ける・やめる・増やすの運用は、<a href="/blog/genkai-rieki/#h2-4">前回の記事の上限までは使わない節</a>に書いています。</p>
+
+<!-- TODO:数値 何を入れるか：各モール広告（楽天市場・Amazon・Yahoo!ショッピングなど）の管理画面でのROASの表示名、売上が税込か税抜か、どの期間の売上を含むか／出典：各広告の公式ヘルプ（URL未確認）／確認日：（入れた日） -->
+
+<p>効率が悪い商品は、広告を続けず、ページ改善か、セールで早めに現金に変える方に移ります。ページ改善は<a href="/blog/urenai-naosu/">売れない商品をどこから直すかを書いた記事</a>に、動かなくなった在庫を現金に戻す出口は<a href="/blog/zaiko-mochisugi/">動かなくなった在庫を現金に戻す出口を書いた記事</a>にまとめています。</p>
+
+<h3>LTVの上限とROASは、どうつなぐか</h3>
+
+<p class="ak-pull">LTVから出した上限は、1人を獲得するのにかけてよい広告費の天井です。</p>
+
+<p>ROASは、広告費に対して広告経由の売上がいくら出たかという、効率の数字です。天井と効率では、見ている単位が違います。</p>
+
+<p>広告管理画面のROASが税込か税抜か、また広告で獲得したお客様の2回目以降の注文が含まれるかどうかは、この記事では未確認です。含まれていないなら、ROASは1回目の注文の効率を見ていることになります。その場合は、LTVの計算を、ROASとは別に「ここを超えると利益がゼロを下回る」と確かめる天井として使うこともできます。</p>
+
+<!-- TODO:実体験 何を書くべきか：モールの広告管理画面のROASに、広告で獲得したお客様の2回目以降の注文が含まれているか（筆者が実際に見ている画面で）。含まれる場合は、どの期間までか -->
+
+<!-- TODO:実体験 何を書くべきか：LTV（リピート）を、広告費や値付けの判断に入れたことはあるか。あれば、何がどう変わったか（広告を増やした・値段を下げた・やめたなど）と、前後で見た数字は何か。入れたことがなければ、その旨 -->
+
+<h2 id="h2-6">この計算が使えない場面とリスク</h2>
+
+<p class="ak-lead">注意する場面は3つです。リピートが起きにくい商品、現金の戻りの遅れ、手数料や送料の変更です。</p>
+
+<h3>リピートが起きにくい商品には当てはめない</h3>
+
+<p>平均購入回数が1回に近い商品では、リピートを入れても1人あたりの限界利益はほとんど増えません。その場合の上限は、新規1回の計算のままです。リピートがあるはずだと期待して上限を高く見積もれば、広告費が回収できなくなります。</p>
+
+<!-- TODO:実体験 何を書くべきか：筆者の扱う商品で、リピートが出る商品と出ない商品はどう違うか。出なかった商品に、LTVの考え方を当てはめなかった（または当てはめて外した）経験があるか -->
+
+<h3>リピート分の利益は後から入り、広告費は先に出る</h3>
+
+<p>LTVで上限を高く見積もるほど、広告費は先に出ていき、回収はお客様が2回目を買ったあとになります。回収が遅れれば、その間の現金が減ります。</p>
+
+<p>次の4つを並べて記録します。</p>
+
+<ul>
+<li>広告費を使った月</li>
+<li>獲得したお客様の2回目の注文が入った月</li>
+<li>獲得1人あたりの広告費が、何か月で戻ったか</li>
+<li>仕入れの支払い時期</li>
+</ul>
+
+<p>広告費が戻るまでの月数と仕入れの支払い時期を並べれば、その間の現金を自分で払えるかが見えます。この記事は、借入で広告費を増やすことを勧めません。</p>
+
+<!-- TODO:実体験 何を書くべきか：広告で獲得したお客様の2回目の注文で、広告費が戻ったと感じた例はあるか。あれば何か月くらいか、その間の現金は問題なかったか -->
+
+<h3>手数料や送料が変われば、上限は動く</h3>
+
+<p>限界利益そのものが、手数料や送料の変更で動きます。限界利益が動けば、1人あたりの限界利益も、広告費の上限も動きます。手数料や送料が変わったときは、同じ手順で計算し直してください。</p>
+
+<p>FBAの保管手数料については、<a href="/blog/amazon-fba/">FBA保管手数料が上がる時期を書いた記事</a>で扱っています。</p>
+
+<h2 id="h2-7">まとめ：今日やること</h2>
+
+<p>商品を1つ選んで、次の順に進めてください。</p>
+
+<ul class="ak-check">
+<li>前回の計算で、その商品の限界利益と、固定費を引いた営業利益を出す</li>
+<li>期間・単位・同一人物の見分け方・返品の扱いを決めて購入者を数え、「何人が何回」の表にする</li>
+<li>平均購入回数をかけて、新規1回だけの上限と、リピート込みの上限を並べる</li>
+<li>いま出している広告のROASと獲得1人あたりの広告費を、変える前の数字として記録する</li>
+</ul>
+
+<p>リピート込みの上限は、平均購入回数が変われば動く数字です。この計算は広告費の天井を出すもので、売上や利益を約束するものではありません。</p>
+
+</article>
+
+<!-- AUTO:BELOW:START -->
+<div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+
+
+
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/kaikei-soft/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/kaikei-soft.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップ初心者の会計ソフトはどれ？EC運営20年の店長が教える選び方</span>
+  </div>
+</a>
+<a href="/blog/genkai-rieki/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/genkai-rieki.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">限界利益の計算方法と上限広告費の出し方</span>
+  </div>
+</a>
+<a href="/blog/toiawase-qa-template/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/toiawase-qa-template.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">業務効率化</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップの問い合わせをテンプレートとQ&amp;Aに変える手順</span>
+  </div>
+</a>
+<a href="/blog/fba-zaiko-shougou/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/fba-zaiko-shougou.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</span>
+  </div>
+</a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
+<div>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">1</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">4</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">4</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">3</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">1</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場 <span style="color:#656C76;">2</span></span>
+<a href="/tag/amazon/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">Amazon <span style="color:#656C76;">7</span></a>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング <span style="color:#656C76;">2</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト <span style="color:#656C76;">2</span></span>
+<a href="/tag/multi-channel/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">複数チャネル運用 <span style="color:#656C76;">3</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/toiawase-qa-template/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/toiawase-qa-template.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">業務効率化</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップの問い合わせをテンプレートとQ&amp;Aに変える手順</span>
+  </div>
+</a>
+<a href="/blog/kaikei-soft/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/kaikei-soft.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップ初心者の会計ソフトはどれ？EC運営20年の店長が教える選び方</span>
+  </div>
+</a>
+<a href="/blog/fba-zaiko-shougou/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/fba-zaiko-shougou.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</span>
+  </div>
+</a>
+<a href="/blog/shiire-lot/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/shiire-lot.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">仕入れ</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">仕入れロットを上げる判断：何を見て増やすか</span>
+  </div>
+</a>
+</div>
+<p style="margin:18px 0 0;"><a href="/blog/" style="color:#A4243B; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</section>
+</div></div>
+<footer style="background:#F4F5F6; color:#656C76; border-top:1px solid #E2E5E9;">
+  <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
+      <div style="flex:1 1 200px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin:0 0 12px;">
+          <img src="/assets/logo/logo-mark.svg" alt="" style="height:30px; width:auto; display:block; flex:0 0 auto;">
+          <strong style="font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em;">あかいうま</strong>
+        </div>
+        <p style="margin:0; font-size:0.84em; line-height:1.85; color:#656C76;">物販の現場で実際に手を動かしている運営者が、売上と効率化の実務を書いています。</p>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+<a href="/blog/#research" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">リサーチ</a>
+<a href="/blog/#sourcing" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">仕入れ</a>
+<a href="/blog/#sales" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">販路・集客</a>
+<a href="/blog/#inventory" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">在庫管理</a>
+<a href="/blog/#numbers" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">数字管理</a>
+<a href="/blog/#efficiency" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">業務効率化</a>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
+        <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
+        <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
+        
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;">
+<a href="https://x.com/ec_midd" target="_blank" rel="noopener" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">X</a>
+<a href="https://note.com/ecmid" target="_blank" rel="noopener" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">note</a>
+    </div>
+
+    <div style="border-top:1px solid #E2E5E9; padding-top:20px;">
+      <p style="margin:0 0 10px; color:#656C76; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
+      <p style="margin:0; color:#656C76; font-size:0.78em;">&copy; 2026 あかいうま</p>
+    </div>
+
+  </div>
+</footer>
+<!-- AUTO:BELOW:END -->
+
+</body>
+</html>

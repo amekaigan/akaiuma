@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-label="申告までの流れ。今、会計ソフトを入れて口座とカードを連携する。毎月、明細が自動で取り込まれる。翌年2〜3月、記録をもとに確定申告する">
+<rect width="720" height="640" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">申告シーズンまでの流れ</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <line x1="140" y1="180" x2="140" y2="540" stroke="#E4E7EB" stroke-width="6"/>
+  <rect x="40" y="130" width="200" height="72" rx="36" fill="#A4243B" stroke="#A4243B" stroke-width="4"/>
+  <text x="140" y="177" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">今</text>
+  <text x="272" y="160" font-size="28" font-weight="700" fill="#1F2328">会計ソフトを入れて</text>
+  <text x="272" y="200" font-size="28" font-weight="700" fill="#1F2328">口座・カードを連携する</text>
+  <rect x="40" y="300" width="200" height="72" rx="36" fill="#FFFFFF" stroke="#A4243B" stroke-width="4"/>
+  <text x="140" y="347" font-size="30" font-weight="700" fill="#A4243B" text-anchor="middle">毎月</text>
+  <text x="272" y="330" font-size="28" font-weight="700" fill="#1F2328">明細が自動で</text>
+  <text x="272" y="370" font-size="28" font-weight="700" fill="#1F2328">取り込まれる</text>
+  <rect x="40" y="470" width="200" height="72" rx="36" fill="#A4243B" stroke="#A4243B" stroke-width="4"/>
+  <text x="140" y="517" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">翌年2〜3月</text>
+  <text x="272" y="500" font-size="28" font-weight="700" fill="#1F2328">たまった記録をもとに</text>
+  <text x="272" y="540" font-size="28" font-weight="700" fill="#1F2328">確定申告する</text>
+  <text x="40" y="612" font-size="24" fill="#656C76">申告の時期に慌てて明細を集めずに済む</text>
+</g>
+</svg>

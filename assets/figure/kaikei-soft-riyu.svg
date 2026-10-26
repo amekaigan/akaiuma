@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="650" viewBox="0 0 720 650" role="img" aria-label="ネットショップの会計がややこしい4つの理由。手数料が引かれて入金される、売れた日と入金日がずれる、細かい経費が多い、在庫が残る">
+<rect width="720" height="650" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">会計がややこしい4つの理由</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="120" width="310" height="245" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="195" cy="198" r="50" fill="#FBF4F5"/>
+  <g transform="translate(195 198)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="0" r="30"/><line x1="-14" y1="0" x2="14" y2="0"/></g></g>
+  <circle cx="72" cy="152" r="20" fill="#A4243B"/>
+  <text x="72" y="160.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="195" y="290" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">手数料が</text>
+  <text x="195" y="332" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">引かれて入金</text>
+  <rect x="370" y="120" width="310" height="245" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="525" cy="198" r="50" fill="#FBF4F5"/>
+  <g transform="translate(525 198)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="-30" y="-26" width="60" height="54" rx="6"/><line x1="-30" y1="-8" x2="30" y2="-8"/><line x1="-14" y1="-36" x2="-14" y2="-18"/><line x1="14" y1="-36" x2="14" y2="-18"/></g></g>
+  <circle cx="402" cy="152" r="20" fill="#A4243B"/>
+  <text x="402" y="160.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="525" y="290" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">売れた日と</text>
+  <text x="525" y="332" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">入金日がずれる</text>
+  <rect x="40" y="385" width="310" height="245" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="195" cy="463" r="50" fill="#FBF4F5"/>
+  <g transform="translate(195 463)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M-24 -32h48v64l-8-6-8 6-8-6-8 6-8-6-8 6Z"/><line x1="-12" y1="-14" x2="12" y2="-14"/><line x1="-12" y1="2" x2="12" y2="2"/></g></g>
+  <circle cx="72" cy="417" r="20" fill="#A4243B"/>
+  <text x="72" y="425.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="195" y="555" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">細かい経費が</text>
+  <text x="195" y="597" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">多い</text>
+  <rect x="370" y="385" width="310" height="245" rx="12" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="2"/>
+  <circle cx="525" cy="463" r="50" fill="#FBF4F5"/>
+  <g transform="translate(525 463)"><g fill="none" stroke="#A4243B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M-32 -16 0 -32 32 -16 32 18 0 34 -32 18Z"/><path d="M-32 -16 0 0 32 -16"/><line x1="0" y1="0" x2="0" y2="34"/></g></g>
+  <circle cx="402" cy="417" r="20" fill="#A4243B"/>
+  <text x="402" y="425.64" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="525" y="555" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">売れ残った</text>
+  <text x="525" y="597" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">在庫が残る</text>
+</g>
+</svg>

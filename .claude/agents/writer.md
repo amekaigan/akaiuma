@@ -9,7 +9,7 @@ model: sonnet
 
 ## 最初に必ず読むもの
 
-1. `CLAUDE.md`（全ルール）
+1. `.claude/CLAUDE.md`（全ルール）
 2. 該当テーマの `research/` ファイル
 3. SEO担当が出した構成案（あれば）
 

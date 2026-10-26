@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="774" viewBox="0 0 720 774" role="img" aria-label="FBAでかかる費用。売れたときの販売手数料はカテゴリーと販売金額で変わり、筆者の見立てでは15%程度で送料は含まない。1個動くたびのFBA配送代行手数料はサイズ・重量・価格帯で決まる。預けている間の在庫保管手数料は使ったスペースと日数で決まり、10〜12月は単価が上がる">
+<rect width="720" height="774" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">FBAでかかる費用</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="120" width="640" height="190" rx="12" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <rect x="40" y="120" width="200" height="48" rx="12" fill="#A4243B"/><rect x="40" y="144" width="200" height="24" fill="#A4243B"/>
+  <text x="140" y="154" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">売れたとき</text>
+  <text x="72" y="214" font-size="30" font-weight="700" fill="#1F2328">販売手数料</text>
+  <text x="72" y="254" font-size="26" font-weight="400" fill="#3D444D">カテゴリーと販売金額で変わる</text>
+  <text x="72" y="286" font-size="24" font-weight="400" fill="#656C76">筆者の見立てでは15%程度。送料は含まない</text>
+  <rect x="40" y="328" width="640" height="190" rx="12" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
+  <rect x="40" y="328" width="200" height="48" rx="12" fill="#3D444D"/><rect x="40" y="352" width="200" height="24" fill="#3D444D"/>
+  <text x="140" y="362" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">1個動くたび</text>
+  <text x="72" y="422" font-size="30" font-weight="700" fill="#1F2328">FBA配送代行手数料</text>
+  <text x="72" y="462" font-size="26" font-weight="400" fill="#3D444D">サイズ・重量・価格帯で決まる</text>
+  <text x="72" y="494" font-size="24" font-weight="400" fill="#656C76">ピッキング・梱包・配送などを含む</text>
+  <rect x="40" y="536" width="640" height="190" rx="12" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
+  <rect x="40" y="536" width="200" height="48" rx="12" fill="#3D444D"/><rect x="40" y="560" width="200" height="24" fill="#3D444D"/>
+  <text x="140" y="570" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">預けている間</text>
+  <text x="72" y="630" font-size="30" font-weight="700" fill="#1F2328">在庫保管手数料</text>
+  <text x="72" y="670" font-size="26" font-weight="400" fill="#3D444D">使ったスペースと日数で決まる</text>
+  <text x="72" y="702" font-size="24" font-weight="400" fill="#656C76">10〜12月は単価が上がる</text>
+</g>
+</svg>

@@ -2,15 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://akaiuma.com/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://akaiuma.com/about/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://akaiuma.com/blog/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://akaiuma.com/blog/nyukin-cycle/</loc>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://akaiuma.com/blog/toiawase-qa-template/</loc>
@@ -65,11 +69,19 @@
     <lastmod>2026-10-06</lastmod>
   </url>
   <url>
+    <loc>https://akaiuma.com/tag/rakuten/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
     <loc>https://akaiuma.com/tag/amazon/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://akaiuma.com/tag/yahoo/</loc>
+    <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://akaiuma.com/tag/multi-channel/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </url>
 </urlset>

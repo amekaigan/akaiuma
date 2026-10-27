@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="840" viewBox="0 0 720 840" role="img" aria-label="売上から入金額まで、1行ずつ書き写す。注文1件の売上から、入金明細の行を1行ずつ引き、口座に届いた額になる。項目名は入金明細に出ている名前をそのまま書き写す">
+<rect width="720" height="840" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">売上から入金額まで、1行ずつ書き写す</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+
+  <rect x="40" y="124" width="640" height="92" rx="10" fill="#F4F5F6" stroke="#C9CDD3" stroke-width="2"/>
+  <text x="360" y="184" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle">売上（注文1件）</text>
+
+  <text x="360" y="272" font-size="40" font-weight="700" fill="#656C76" text-anchor="middle">−</text>
+
+  <rect x="40" y="296" width="640" height="276" rx="10" fill="#FFFFFF" stroke="#656C76" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="64" y="344" font-size="28" font-weight="700" fill="#3D444D">引かれたもの</text>
+  <text x="64" y="406" font-size="26" fill="#3D444D">明細の行1</text>
+  <line x1="260" y1="410" x2="650" y2="410" stroke="#C9CDD3" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="466" font-size="26" fill="#3D444D">明細の行2</text>
+  <line x1="260" y1="470" x2="650" y2="470" stroke="#C9CDD3" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="526" font-size="26" fill="#3D444D">明細の行3</text>
+  <line x1="260" y1="530" x2="650" y2="530" stroke="#C9CDD3" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <text x="360" y="634" font-size="40" font-weight="700" fill="#656C76" text-anchor="middle">＝</text>
+
+  <rect x="40" y="656" width="640" height="92" rx="10" fill="#A4243B"/>
+  <text x="360" y="716" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">口座に届いた額</text>
+
+  <text x="360" y="790" font-size="24" fill="#3D444D" text-anchor="middle">項目名は、入金明細に出ている名前を</text>
+  <text x="360" y="822" font-size="24" fill="#3D444D" text-anchor="middle">そのまま書き写します。</text>
+</g>
+</svg>

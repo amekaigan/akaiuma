@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="920" viewBox="0 0 720 920" role="img" aria-label="1注文には日付がいくつもある。注文日、出荷日、確定・配達完了などモールが起点にする日、入金日。上の3つは売上が立つ側、入金日は現金が増える側。どの日が起点かはモールごとに公式で確認する">
+<rect width="720" height="920" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">1注文には日付がいくつもある</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+
+  <rect x="20" y="120" width="680" height="500" rx="12" fill="#F4F5F6"/>
+  <text x="40" y="162" font-size="26" font-weight="700" fill="#656C76">売上が立つ側</text>
+  <rect x="20" y="640" width="680" height="200" rx="12" fill="#FBF4F5"/>
+  <text x="40" y="682" font-size="26" font-weight="700" fill="#A4243B">現金が増える側</text>
+
+  <line x1="300" y1="250" x2="300" y2="760" stroke="#656C76" stroke-width="4"/>
+
+  <rect x="40" y="214" width="220" height="72" rx="8" fill="#FFFFFF" stroke="#656C76" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="150" y="258" font-size="24" fill="#656C76" text-anchor="middle">自店の日付を書く</text>
+  <circle cx="300" cy="250" r="16" fill="#3D444D"/>
+  <text x="340" y="246" font-size="30" font-weight="700" fill="#1F2328">注文日</text>
+  <text x="340" y="284" font-size="26" fill="#3D444D">お客様が注文した日</text>
+
+  <rect x="40" y="354" width="220" height="72" rx="8" fill="#FFFFFF" stroke="#656C76" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="150" y="398" font-size="24" fill="#656C76" text-anchor="middle">自店の日付を書く</text>
+  <circle cx="300" cy="390" r="16" fill="#3D444D"/>
+  <text x="340" y="386" font-size="30" font-weight="700" fill="#1F2328">出荷日</text>
+  <text x="340" y="424" font-size="26" fill="#3D444D">自分が出荷した日</text>
+
+  <rect x="40" y="494" width="220" height="72" rx="8" fill="#FFFFFF" stroke="#656C76" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="150" y="538" font-size="24" fill="#656C76" text-anchor="middle">自店の日付を書く</text>
+  <circle cx="300" cy="530" r="16" fill="#3D444D"/>
+  <text x="340" y="518" font-size="28" font-weight="700" fill="#1F2328">モールが起点にする日</text>
+  <text x="340" y="554" font-size="26" fill="#3D444D">確定・配達完了など。</text>
+  <text x="340" y="588" font-size="26" fill="#3D444D">モールごとに違います</text>
+
+  <rect x="40" y="724" width="220" height="72" rx="8" fill="#FFFFFF" stroke="#A4243B" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="150" y="768" font-size="24" fill="#A4243B" text-anchor="middle">自店の日付を書く</text>
+  <circle cx="300" cy="760" r="16" fill="#A4243B"/>
+  <text x="340" y="756" font-size="30" font-weight="700" fill="#A4243B">入金日</text>
+  <text x="340" y="794" font-size="26" fill="#3D444D">口座にお金が届く日</text>
+
+  <text x="360" y="884" font-size="24" fill="#3D444D" text-anchor="middle">どの日が起点かは、モールごとに公式で確認します。</text>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="860" viewBox="0 0 720 860" role="img" aria-label="出荷日が違う2件を並べて見る。注文Aと注文Bそれぞれの注文日・出荷日・入金日を書き込み、出荷日が違うとき入金日は動いたかを見る。動く場合も動かない場合もあるので、自店の記録で確かめる">
+<rect width="720" height="860" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">出荷日が違う2件を並べて見る</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+
+  <rect x="40" y="116" width="640" height="248" rx="10" fill="#F4F5F6" stroke="#C9CDD3" stroke-width="2"/>
+  <text x="64" y="162" font-size="30" font-weight="700" fill="#1F2328">注文A</text>
+  <text x="64" y="224" font-size="26" fill="#3D444D">注文日</text>
+  <line x1="200" y1="228" x2="650" y2="228" stroke="#656C76" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="282" font-size="26" fill="#3D444D">出荷日</text>
+  <line x1="200" y1="286" x2="650" y2="286" stroke="#656C76" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="340" font-size="26" font-weight="700" fill="#A4243B">入金日</text>
+  <line x1="200" y1="344" x2="650" y2="344" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <line x1="100" y1="380" x2="100" y2="452" stroke="#A4243B" stroke-width="4"/>
+  <polygon points="84,448 116,448 100,472" fill="#A4243B"/>
+  <text x="150" y="412" font-size="28" font-weight="700" fill="#1F2328">出荷日が違うとき、</text>
+  <text x="150" y="450" font-size="28" font-weight="700" fill="#1F2328">入金日は動いたか</text>
+
+  <rect x="40" y="488" width="640" height="248" rx="10" fill="#F4F5F6" stroke="#C9CDD3" stroke-width="2"/>
+  <text x="64" y="534" font-size="30" font-weight="700" fill="#1F2328">注文B</text>
+  <text x="64" y="596" font-size="26" fill="#3D444D">注文日</text>
+  <line x1="200" y1="600" x2="650" y2="600" stroke="#656C76" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="654" font-size="26" fill="#3D444D">出荷日</text>
+  <line x1="200" y1="658" x2="650" y2="658" stroke="#656C76" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="64" y="712" font-size="26" font-weight="700" fill="#A4243B">入金日</text>
+  <line x1="200" y1="716" x2="650" y2="716" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <text x="360" y="790" font-size="24" fill="#3D444D" text-anchor="middle">動く場合も動かない場合もあります。</text>
+  <text x="360" y="824" font-size="24" fill="#3D444D" text-anchor="middle">自店の記録で確かめます。</text>
+</g>
+</svg>

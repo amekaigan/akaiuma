@@ -49,15 +49,213 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 <body>
 
 <!-- AUTO:HEADER:START -->
+<header style="background:#FFFFFF; border-bottom:1px solid #E2E5E9; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(31,35,40,.06);">
+  <div style="max-width:860px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <a class="brand" href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px; min-width:0;"><img src="/assets/logo/logo-mark.svg" alt="" style="height:34px; width:auto; display:block; flex:0 0 auto;"><span class="brand-text"><strong>あかいうま</strong><span class="brand-tagline">物販の売上アップと業務効率化</span></span></a>
+    <input type="checkbox" id="navToggle">
+    <label for="navToggle" id="navBtn" aria-label="メニュー">
+      <svg class="ic-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="ic-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D444D" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </label>
+    <nav id="siteNav">
+      <div id="searchWrap">
+        <input id="siteSearch" type="search" placeholder="記事を検索" autocomplete="off">
+        <button id="searchClear" type="button" aria-label="検索をやめる">✕</button>
+        <div id="searchResults"></div>
+      </div>
+      <a href="/">ホーム</a>
+      <a href="/blog/">記事一覧</a>
+      <a href="/blog/#inventory">在庫管理</a>
+      <a href="/about/">このサイトについて</a>
+      
+      <label for="navToggle" class="nav-close">✕ 閉じる</label>
+    </nav>
+  </div>
+</header>
+<style>
+  body { margin:0; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .brand-text strong { font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em; }
+  .brand-tagline { font-size:0.68em; color:#656C76; white-space:nowrap; }
+  @media (max-width: 340px) { .brand-tagline { display:none; } }
+  #navToggle { display:none; }
+  #siteNav, #siteNav *, #searchWrap, #searchWrap * { box-sizing:border-box; }
+  #searchClear { display:none; position:absolute; top:50%; transform:translateY(-50%); right:10px; background:none; border:0; color:#656C76; font-size:0.9em; cursor:pointer; padding:4px 6px; line-height:1; }
+  #searchClear:hover { color:#1F2328; }
+  #navBtn .ic-close { display:none; }
+  #navToggle:checked ~ #navBtn .ic-open { display:none; }
+  #navToggle:checked ~ #navBtn .ic-close { display:block; }
+  .nav-close { display:none; }
+  #siteNav a { color:#3D444D; text-decoration:none; font-size:0.9em; }
+  #siteNav a.nav-cta { color:#fff; background:#A4243B; font-weight:bold; padding:7px 16px; border-radius:999px; font-size:0.85em; }
+  #searchWrap { position:relative; }
+  #siteSearch { box-sizing:border-box; max-width:100%; background:#F4F5F6; border:1px solid #E2E5E9; color:#1F2328; border-radius:999px; padding:7px 30px 7px 34px; font-size:0.85em; width:140px; outline:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23656C76' stroke-width='2'><circle cx='7' cy='7' r='5'/><line x1='11' y1='11' x2='15' y2='15' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:11px center; }
+  #siteSearch::placeholder { color:#656C76; }
+  #siteSearch:focus { border-color:#A4243B; }
+  #searchResults { display:none; position:absolute; top:42px; right:0; width:300px; max-height:320px; overflow-y:auto; background:#fff; border-radius:10px; box-shadow:0 10px 30px rgba(31,35,40,.18); z-index:200; text-align:left; }
+  @media (min-width: 681px) {
+    label[for="navToggle"] { display:none; }
+    #siteNav { display:flex; align-items:center; gap:22px; }
+    #siteSearch { width:210px; }
+    .nav-close { display:none !important; }
+    #siteNav a { position:relative; padding:6px 0; transition:color .15s; }
+    #siteNav a:not(.nav-cta):hover { color:#A4243B; }
+    #siteNav a:not(.nav-cta)::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:#A4243B; transform:scaleX(0); transition:transform .15s; }
+    #siteNav a:not(.nav-cta):hover::after { transform:scaleX(1); }
+    #siteNav a.nav-cta:hover { background:#82182E; }
+  }
+  @media (max-width: 680px) {
+    label[for="navToggle"] { display:block; cursor:pointer; padding:4px; }
+    #siteNav { display:none; order:3; width:100vw; max-width:100vw; flex:0 0 auto; box-sizing:border-box; flex-direction:column; align-items:stretch; gap:0; margin:6px -16px -4px; padding:6px 16px 14px; border-top:1px solid #E2E5E9; }
+    #navToggle:checked ~ #siteNav { display:flex; }
+    #siteNav a { display:flex; align-items:center; justify-content:space-between; padding:15px 2px; border-bottom:1px solid #E2E5E9; font-size:0.95em; }
+    #siteNav a::after { content:"›"; color:#656C76; font-size:1.2em; }
+    #siteNav a.nav-cta { justify-content:center; margin-top:16px; padding:14px; border-radius:8px; border-bottom:none; font-size:0.95em; }
+    #siteNav a.nav-cta::after { content:""; }
+    #searchWrap { margin:8px 0 10px; width:100%; }
+    #siteSearch { width:100%; font-size:16px; padding-top:11px; padding-bottom:11px; }
+    .nav-close { display:block; text-align:center; color:#656C76; font-size:0.85em; padding:16px 0 4px; cursor:pointer; }
+    #searchResults { width:100%; right:auto; left:0; top:50px; }
+  }
+  .ak-article h2, .ak-article h3 { scroll-margin-top: 84px; }
+  #toTop { position:fixed; right:16px; bottom:20px; width:46px; height:46px; border-radius:50%; background:#A4243B; border:1px solid #A4243B; color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; z-index:90; box-shadow:0 6px 18px rgba(31,35,40,.22); padding:0; }
+  #toTop:hover { background:#82182E; border-color:#82182E; }
+  #toTop.show { display:flex; }
+  @media (min-width: 681px) { #toTop { right:28px; bottom:28px; width:50px; height:50px; } }
+</style>
+<button id="toTop" type="button" aria-label="ページ上部へ戻る">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="5,13 12,6 19,13"/></svg>
+</button>
+<script>
+(function(){
+  var input=document.getElementById('siteSearch');
+  var box=document.getElementById('searchResults');
+  if(!input||!box)return;
+  var data=null,loading=false;
+  function load(){
+    if(data||loading)return;loading=true;
+    fetch('/search-index.json').then(function(r){return r.json();}).then(function(j){data=j;loading=false;render();}).catch(function(){loading=false;});
+  }
+  function closeRow(){
+    return '<button type="button" id="searchClose" style="display:block; width:100%; background:#F6F7F8; border:0; border-top:1px solid #E4E7EB; color:#656C76; font-size:0.8em; padding:11px; cursor:pointer;">閉じる</button>';
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    if(!q||!data){box.style.display='none';box.innerHTML='';return;}
+    var hits=data.filter(function(a){
+      return (a.t+' '+a.m+' '+a.c+' '+(a.g||'')).toLowerCase().indexOf(q)>-1;
+    }).slice(0,8);
+    if(hits.length===0){
+      box.innerHTML='<p style="margin:0; padding:16px; color:#656C76; font-size:0.85em;">該当する記事がありません</p>'+closeRow();
+    }else{
+      box.innerHTML=hits.map(function(a){
+        return '<a href="'+a.u+'" style="display:block; padding:12px 15px; border-bottom:1px solid #E4E7EB; text-decoration:none;">'+
+        '<span style="display:block; font-size:0.7em; color:#A4243B; font-weight:bold; margin-bottom:3px;">'+a.c+'</span>'+
+        '<span style="display:block; font-size:0.85em; color:#1F2328; line-height:1.45;">'+a.t+'</span></a>';
+      }).join('')+closeRow();
+    }
+    box.style.display='block';
+  }
+  var clr=document.getElementById('searchClear');
+  function close(){box.style.display='none';}
+  function toggleClear(){if(clr)clr.style.display=input.value?'block':'none';}
+  input.addEventListener('focus',load);
+  input.addEventListener('input',function(){load();render();toggleClear();});
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';close();toggleClear();input.blur();}});
+  if(clr)clr.addEventListener('click',function(){input.value='';close();toggleClear();input.focus();});
+  box.addEventListener('click',function(e){
+    if(e.target.id==='searchClose'){input.value='';close();toggleClear();}
+  });
+  document.addEventListener('click',function(e){
+    if(!document.getElementById('searchWrap').contains(e.target)){close();}
+  });
+})();
+(function(){
+  var btn=document.getElementById('toTop');
+  if(!btn)return;
+  function upd(){ if(window.scrollY>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
+  window.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  upd();
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ネットショップの自動返信メールを月1回見直す手順｜あかいうま",
+  "description": "ネットショップの購入者に届く自動返信メールを月1回確認する手順。届く文面の見方、直せる箇所の切り分け、直した後の記録まで。",
+  "datePublished": "2026-10-29",
+  "dateModified": "2026-10-29",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://akaiuma.com/blog/jidou-henshin-mail/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "あかいうま"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あかいうま",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://akaiuma.com/assets/logo/logo-mark.svg"
+    }
+  },
+  "image": "https://akaiuma.com/assets/thumb/auto/jidou-henshin-mail.svg"
+}
+</script>
 <!-- AUTO:HEADER:END -->
 
 <!-- AUTO:ARTICLEHEAD:START -->
+<div id="readBar" aria-hidden="true"></div>
+<style>
+  #readBar { position:fixed; top:0; left:0; height:3px; width:0; background:#A4243B; z-index:120; transition:width .08s linear; }
+  @media (prefers-reduced-motion: reduce) { #readBar { transition:none; } }
+</style>
+<script>
+(function(){
+  // このスクリプトは本文より前に置かれるので、本文が組み上がってから動かす
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+  function start(){
+  var bar=document.getElementById('readBar');
+  var art=document.querySelector('.ak-article');
+  if(!bar||!art)return;
+  var ticking=false;
+  function update(){
+    var top=art.offsetTop, h=art.offsetHeight-window.innerHeight;
+    var p=h>0?(window.scrollY-top)/h:0;
+    bar.style.width=Math.min(100,Math.max(0,p*100))+'%';
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  update();
+  }
+})();
+</script>
+<div class="article-header" data-level="beginner">
+  <div class="article-category">業務効率化<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
+  <h1>ネットショップの自動返信メールを月1回見直す手順</h1>
+  <div class="article-meta"><span>公開：2026年10月29日</span><span>読了：約5分</span></div>
+</div>
 
+<img class="article-thumb" src="/assets/thumb/auto/jidou-henshin-mail.svg" alt="" width="1200" height="630">
+<div class="ak-takeaways">
+  <p class="ak-takeaways-title">この記事で分かること</p>
+  <ul>
+    <li>購入者に届くメールを自分の目で確かめて一覧にする手順</li>
+    <li>購入者の目で文面を読むときの問い</li>
+    <li>直した前後を比べるために残す記録の項目</li>
+  </ul>
+</div>
 <!-- AUTO:ARTICLEHEAD:END -->
 
 <article class="ak-article">
 
-<p>ショップを開くときに自動返信メールを設定したきり、見ていない方は多いと思います。初期の文面のままで、購入者の受信箱に何が届いているのかを、一度も確かめたことがない場合もあります。商品ページの説明文や問い合わせへの返信には気を配っていても、購入の直後に届くメールは、設定した本人がいちばん読んでいないものになりがちです。</p>
+<p>自動返信メールは、購入の直後に購入者へ届く、店からの最初の文面です。商品ページの説明文や問い合わせへの返信には気を配っていても、このメールを購入者の受信箱で実際に見たことがあるかどうかは、店によって分かれるところです。</p>
 
 <p>筆者は、受注処理と入金確認の作業のなかで、月1回くらいの頻度で「ユーザーにどんな自動返信メールが届いているか、改善点はないか」を確認しています。毎日見るほどではなく、このくらいの間隔でよいと考えています。</p>
 
@@ -92,7 +290,7 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 <li>届いたメールをすべて開き、スマホのメールアプリでも1通ずつ開く。</li>
 </ol>
 
-<p>自分で注文すると、実際の受注として店に記録されます。だから在庫や決済、出荷の扱いは、店のルールに従って事前に決めておいてください。</p>
+<p>自分で注文する前に、モールの規約で自店の商品を自分で購入してよいかを、公式ヘルプで確認してください。この記事では確認していません。注文が実際の受注として記録される場合もあるため、在庫や決済、出荷の扱いも事前に決めておきます。</p>
 
 <!-- TODO:数値 何を入れるか：各モールの自動返信メールの種類・送信タイミング（モールごと）／出典：各モールの公式ヘルプ（URL未確認）／確認日：（入れた日） -->
 
@@ -105,7 +303,7 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 <figcaption>メール1通につき1つの枠を作り、届いた分だけ増やします。操作しても何も届かなかった場合も、その操作の行を作って「届かない」と書きます。</figcaption>
 </figure>
 
-<p>複数のモールで売っている場合は、モールごとに別の一覧を作ります。同じ商品を同じ手順で注文しても、届くメールが同じだとは限らないからです。どのモールから始めるかをまだ決めていない段階なら、<a href="/blog/mall-erabikata/">どの販路から始めるかを書いた記事</a>を先に読んでください。</p>
+<p>複数のモールで売っている場合は、モールごとに別の一覧を作ります。届くメールの種類や文面を、モールごとに確かめる必要があるからです。どのモールから始めるかをまだ決めていない段階なら、<a href="/blog/mall-erabikata/">どの販路から始めるかを書いた記事</a>を先に読んでください。</p>
 
 <!-- TODO:実体験 何を書くべきか：初めて自分の店の自動返信メールを購入者として受け取ったとき、何に気づきましたか（通数、件名、文面、届いたタイミングなど、そのとき目に入ったことをそのまま教えてください）。 -->
 
@@ -113,7 +311,7 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 
 <h3>「この1通だけで分かるか」で読む</h3>
 
-<p>一覧ができたら、1通ずつ、店の事情を知らない購入者として読み直します。店主は文面の意図を知っているため、読み飛ばしてしまう箇所が出ます。購入者が持っているのは、手元に届いたその1通だけです。</p>
+<p>一覧ができたら、1通ずつ、店の事情を知らない購入者として読み直します。購入者が持っているのは、手元に届いたその1通だけです。</p>
 
 <p class="ak-pull">この1通だけを受け取った人は、次に何が起きるのかを、自分で分かるでしょうか。</p>
 
@@ -123,11 +321,14 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 
 <!-- TODO:実体験 何を書くべきか：月1回の確認で、まず最初に見る項目は何ですか。その項目を最初に見る理由も教えてください。 -->
 
+<!-- AUTO:AD:START -->
+
+<!-- AUTO:AD:END -->
 <h2 id="h2-3">直せる箇所と、直せない箇所を分ける</h2>
 
 <h3>管理画面で編集できるかを確かめる</h3>
 
-<p>メールの文面や件名を店側で変えられる範囲は、モールや使っているカートによって違います。そのため、一覧に書いた「気になった点」ごとに、管理画面に編集できる場所があるかどうかを確かめます。</p>
+<p>メールの文面や件名を店側で変えられるかどうかは、公式ヘルプで確認します。一覧に書いた「気になった点」ごとに、管理画面に編集できる場所があるかどうかを確かめます。</p>
 
 <div class="ak-point">
 <span class="ak-point-label">気になった点の分け方</span>
@@ -183,11 +384,11 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 
 <h2 id="h2-6">向かないケース・注意点</h2>
 
-<p>自分で注文できない状況では、この手順は使えません。自分の店の商品を自分で買えるかどうかは、モールや店ごとの条件に左右される可能性がありますが、この記事では確認していません。注文できない場合の確かめ方も、ここでは扱いません。</p>
+<p>自分で注文できない状況では、この手順は使えません。自分の店の商品を自分で買えるか、買ってよいかは、この記事では確認していません。注文できない場合の確かめ方も、ここでは扱いません。</p>
 
-<p>自分で注文すると実際の受注として記録されるため、在庫や決済、出荷の扱いを先に決めておく必要があります。決めずに注文すると、あとで処理に迷います。</p>
+<p>自分で注文する場合は、モールの規約を確認したうえで、在庫や決済、出荷の扱いを先に決めておきます。</p>
 
-<p>注文がほとんど入らない店では、月1回の確認でも、毎回ほぼ同じ結果になります。その場合は、文面を変えたとき、または設定を変えたときだけ見る、という運用でも構いません。</p>
+<p>文面を変えたとき、または設定を変えたときだけ見る、という運用でも構いません。月1回はあくまで筆者のメモの範囲で、どの店にも当てはまる頻度ではありません。</p>
 
 <p>直したメールの効果は、問い合わせの件数に表れないこともあります。この記事で書いたのは、確かめて記録するところまでで、結果の約束ではありません。</p>
 
@@ -195,11 +396,153 @@ title_reason: 読者の問いは「何を、どうやって見直せばよいか
 
 <p>今月中に、自分の店で1件注文し、届いたメールを1通ずつ一覧に書き出してください。書き出すだけで構いません。直すかどうかは、一覧ができてから決めます。</p>
 
-<p>数字で店を見る段階に進んだら、次に読む記事として<a href="/blog/genkai-rieki/">限界利益から上限広告費を出す計算の手順を書いた記事</a>があります。ただし、この記事の内容との関係は、筆者が経験として確かめたものではありません。</p>
+<p>数字で店を見る段階に進んだら、次に読む記事として<a href="/blog/genkai-rieki/">限界利益から上限広告費を出す計算の手順を書いた記事</a>があります。</p>
 
 </article>
 
 <!-- AUTO:BELOW:START -->
+<div style="background:#F6F7F8; border-top:1px solid #E4E7EB;"><div style="max-width:860px; margin:0 auto; padding:36px 16px 24px;">
+
+<section style="margin:0 0 40px; background:#fff; border:1px solid #E4E7EB; border-left:4px solid #A4243B; border-radius:0; padding:20px 22px;">
+  <p style="margin:0 0 4px; color:#1F2328; font-weight:bold; font-size:0.98em;">次に読むと、もう一段先に進めます</p>
+  <p style="margin:0 0 14px; color:#656C76; font-size:0.83em; line-height:1.7;">基本ができたあと、実際に詰まりやすいところを扱っています。</p>
+  <ul style="margin:0; padding:0 0 0 18px;">
+<li style="margin:0 0 10px;"><a href="/blog/fba-zaiko-shougou/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</a></li>
+<li style="margin:0 0 10px;"><a href="/blog/ltv-koukokuhi/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">広告費はどこまで出せる？LTVで上限を考える手順</a></li>
+<li style="margin:0 0 10px;"><a href="/blog/shiire-lot/" style="color:#82182E; font-weight:bold; text-decoration:none; font-size:0.93em; line-height:1.6;">仕入れロットを上げる判断：何を見て増やすか</a></li>
+  </ul>
+</section>
+
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">関連記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/toiawase-qa-template/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/toiawase-qa-template.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">業務効率化</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップの問い合わせをテンプレートとQ&amp;Aに変える手順</span>
+  </div>
+</a>
+<a href="/blog/kaikei-soft/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/kaikei-soft.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップ初心者の会計ソフトはどれ？EC運営20年の店長が教える選び方</span>
+  </div>
+</a>
+<a href="/blog/fba-zaiko-shougou/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/fba-zaiko-shougou.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</span>
+  </div>
+</a>
+<a href="/blog/ltv-koukokuhi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/ltv-koukokuhi.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">広告費はどこまで出せる？LTVで上限を考える手順</span>
+  </div>
+</a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">カテゴリから探す</span></h2>
+<div>
+<a href="/blog/#research" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">リサーチ <span style="color:#656C76;">0</span></a>
+<a href="/blog/#sourcing" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">仕入れ <span style="color:#656C76;">1</span></a>
+<a href="/blog/#sales" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">販路・集客 <span style="color:#656C76;">4</span></a>
+<a href="/blog/#inventory" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">在庫管理 <span style="color:#656C76;">4</span></a>
+<a href="/blog/#numbers" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">数字管理 <span style="color:#656C76;">3</span></a>
+<a href="/blog/#efficiency" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">業務効率化 <span style="color:#656C76;">2</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">タグから探す</span></h2>
+<div>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">楽天市場 <span style="color:#656C76;">2</span></span>
+<a href="/tag/amazon/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">Amazon <span style="color:#656C76;">7</span></a>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">Yahoo!ショッピング <span style="color:#656C76;">2</span></span>
+<span style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#656C76;">自社サイト <span style="color:#656C76;">2</span></span>
+<a href="/tag/multi-channel/" style="display:inline-block; background:#F4F5F6; font-size:0.85em; padding:7px 15px; border-radius:999px; margin:0 8px 8px 0; color:#1F2328; text-decoration:none;">複数チャネル運用 <span style="color:#656C76;">3</span></a>
+</div>
+</section>
+<section style="margin:0 0 40px;">
+<h2 style="font-size:1.05em; color:#1F2328; font-weight:700; letter-spacing:.02em; margin:0 0 16px; padding:0 0 8px; border-bottom:2px solid #E4E7EB; position:relative;"><span style="border-bottom:2px solid #A4243B; padding-bottom:8px;">最新記事</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:12px;">
+<a href="/blog/toiawase-qa-template/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/toiawase-qa-template.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">業務効率化</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップの問い合わせをテンプレートとQ&amp;Aに変える手順</span>
+  </div>
+</a>
+<a href="/blog/kaikei-soft/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/kaikei-soft.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">ネットショップ初心者の会計ソフトはどれ？EC運営20年の店長が教える選び方</span>
+  </div>
+</a>
+<a href="/blog/fba-zaiko-shougou/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/fba-zaiko-shougou.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">在庫管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</span>
+  </div>
+</a>
+<a href="/blog/ltv-koukokuhi/" style="display:block; text-decoration:none; background:#fff; border:1px solid #E4E7EB; border-radius:8px; overflow:hidden;">
+  <div style="aspect-ratio:1200/630; background:#F4F5F6 url('/assets/thumb/auto/ltv-koukokuhi.svg') center/cover no-repeat; border-radius:6px;"></div>
+  <div style="padding:11px 13px;">
+    <span style="display:block; font-size:0.72em; color:#A4243B; font-weight:bold; margin-bottom:4px;">数字管理</span>
+    <span style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:0.86em; color:#1F2328; font-weight:bold; line-height:1.55;">広告費はどこまで出せる？LTVで上限を考える手順</span>
+  </div>
+</a>
+</div>
+<p style="margin:18px 0 0;"><a href="/blog/" style="color:#A4243B; font-weight:bold; text-decoration:none; font-size:0.92em;">記事一覧をすべて見る →</a></p>
+</section>
+</div></div>
+<footer style="background:#F4F5F6; color:#656C76; border-top:1px solid #E2E5E9;">
+  <div style="max-width:860px; margin:0 auto; padding:36px 16px 28px;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:28px 40px; margin:0 0 28px;">
+      <div style="flex:1 1 200px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin:0 0 12px;">
+          <img src="/assets/logo/logo-mark.svg" alt="" style="height:30px; width:auto; display:block; flex:0 0 auto;">
+          <strong style="font-size:1.05em; font-weight:700; color:#1F2328; letter-spacing:.04em;">あかいうま</strong>
+        </div>
+        <p style="margin:0; font-size:0.84em; line-height:1.85; color:#656C76;">物販の現場で実際に手を動かしている運営者が、売上と効率化の実務を書いています。</p>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">カテゴリ</p>
+<a href="/blog/#research" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">リサーチ</a>
+<a href="/blog/#sourcing" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">仕入れ</a>
+<a href="/blog/#sales" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">販路・集客</a>
+<a href="/blog/#inventory" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">在庫管理</a>
+<a href="/blog/#numbers" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">数字管理</a>
+<a href="/blog/#efficiency" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">業務効率化</a>
+      </div>
+      <div style="flex:0 1 130px;">
+        <p style="margin:0 0 8px; color:#1F2328; font-size:0.8em; font-weight:bold; letter-spacing:.06em;">サイト情報</p>
+        <a href="/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">ホーム</a>
+        <a href="/blog/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">記事一覧</a>
+        <a href="/about/" style="color:#656C76; text-decoration:none; font-size:0.86em; display:block; padding:5px 0;">このサイトについて</a>
+        
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;">
+<a href="https://x.com/ec_midd" target="_blank" rel="noopener" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">X</a>
+<a href="https://note.com/ecmid" target="_blank" rel="noopener" style="color:#3D444D; text-decoration:none; font-size:0.8em; border:1px solid #E2E5E9; border-radius:999px; padding:6px 16px;">note</a>
+    </div>
+
+    <div style="border-top:1px solid #E2E5E9; padding-top:20px;">
+      <p style="margin:0 0 10px; color:#656C76; font-size:0.78em; line-height:1.85;">本サイトの記事は情報提供を目的としたものです。掲載内容は執筆時点の公表資料にもとづきます。記載の手数料・料金・仕様は変更されることがあるため、実際の判断は各社の公式情報をご確認のうえ、ご自身の責任で行ってください。収益を保証するものではありません。</p>
+      <p style="margin:0; color:#656C76; font-size:0.78em;">&copy; 2026 あかいうま</p>
+    </div>
+
+  </div>
+</footer>
 <!-- AUTO:BELOW:END -->
 
 </body>

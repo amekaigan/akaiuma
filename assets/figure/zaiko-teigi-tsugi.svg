@@ -1,41 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="890" viewBox="0 0 720 890" role="img" aria-label="倉庫が1つなら数え方のルールでずれを防げる。楽天・Amazon・自社サイトで売り始めると、倉庫間を移動中の在庫や、注文は入ったがまだ出荷していない在庫が生まれ、数え方のルールだけでは越えられない壁になる">
-<rect width="720" height="890" fill="#FFFFFF"/>
-<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">チャネルが増えると、次の壁が来る</text>
-  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
-  <rect x="40" y="124" width="640" height="200" rx="12" fill="#F4F5F6"/>
-  <polygon points="72,204 135.0,170 198,204" fill="#3D444D"/>
-  <rect x="80" y="204" width="110" height="62" fill="#FFFFFF" stroke="#3D444D" stroke-width="5"/>
-  <rect x="110.80000000000001" y="222" width="48.4" height="44" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
-  <line x1="110.80000000000001" y1="232" x2="159.2" y2="232" stroke="#656C76" stroke-width="2"/>
-  <line x1="110.80000000000001" y1="242" x2="159.2" y2="242" stroke="#656C76" stroke-width="2"/>
-  <line x1="110.80000000000001" y1="252" x2="159.2" y2="252" stroke="#656C76" stroke-width="2"/>
-  <text x="240" y="214" font-size="30" font-weight="700" fill="#1F2328">倉庫が1つ</text>
-  <text x="240" y="256" font-size="24" font-weight="400" fill="#3D444D">数え方のルールで</text>
-  <text x="240" y="290" font-size="24" font-weight="400" fill="#3D444D">ずれを防げる</text>
-  <polygon points="344,340 376,340 376,360 396,360 360,394 324,360 344,360" fill="#A4243B"/>
-  <text x="360" y="430" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">楽天・Amazon・自社サイトで売り始めると</text>
-  <rect x="40" y="456" width="640" height="338" rx="12" fill="#FBF4F5"/>
-  <polygon points="60,522 118.0,488 176,522" fill="#3D444D"/>
-  <rect x="68" y="522" width="100" height="56" fill="#FFFFFF" stroke="#3D444D" stroke-width="5"/>
-  <rect x="96.0" y="540" width="44.0" height="38" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
-  <line x1="96.0" y1="550" x2="140.0" y2="550" stroke="#656C76" stroke-width="2"/>
-  <line x1="96.0" y1="560" x2="140.0" y2="560" stroke="#656C76" stroke-width="2"/>
-  <polygon points="544,522 602.0,488 660,522" fill="#3D444D"/>
-  <rect x="552" y="522" width="100" height="56" fill="#FFFFFF" stroke="#3D444D" stroke-width="5"/>
-  <rect x="580.0" y="540" width="44.0" height="38" fill="#F4F5F6" stroke="#3D444D" stroke-width="3"/>
-  <line x1="580.0" y1="550" x2="624.0" y2="550" stroke="#656C76" stroke-width="2"/>
-  <line x1="580.0" y1="560" x2="624.0" y2="560" stroke="#656C76" stroke-width="2"/>
-  <line x1="180" y1="556" x2="540" y2="556" stroke="#656C76" stroke-width="3" stroke-dasharray="10 8"/>
-  <rect x="268" y="508" width="112" height="64" rx="4" fill="#FFFFFF" stroke="#3D444D" stroke-width="4"/>
-  <path d="M380 524 h34 l20 22 v26 h-54 z" fill="#FFFFFF" stroke="#3D444D" stroke-width="4" stroke-linejoin="round"/>
-  <circle cx="298" cy="578" r="12" fill="#3D444D"/><circle cx="410" cy="578" r="12" fill="#3D444D"/>
-  <text x="350" y="632" font-size="26" font-weight="700" fill="#A4243B" text-anchor="middle">倉庫間を移動中</text>
-  <rect x="80" y="668" width="64" height="58" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
-  <line x1="112.0" y1="668" x2="112.0" y2="688" stroke="#A4243B" stroke-width="3"/>
-  <rect x="96" y="694" width="34" height="18" rx="3" fill="#A4243B"/>
-  <text x="166" y="694" font-size="24" font-weight="400" fill="#1F2328">注文は入ったが、</text>
-  <text x="166" y="728" font-size="24" font-weight="400" fill="#1F2328">まだ出荷していない</text>
-  <text x="40" y="850" font-size="28" font-weight="700" fill="#A4243B">数え方のルールだけでは越えられない壁</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="912" viewBox="0 0 720 912" role="img" aria-label="倉庫が1つなら数え方のルールでずれを防げるが、楽天・Amazon・自社サイトで売り始めると、倉庫間を移動中の在庫や、注文は入ったがまだ出荷していない在庫が生まれる">
+<rect width="720" height="912" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="512" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">チャネルが増えると、次の壁が来る</text>
+<rect fill="none" x="40" y="124" width="640" height="210" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="87,198 153.0,162 219,198" fill="#EDB7BF"/>
+<rect x="93" y="216" width="55.2" height="48" fill="#DCDFE3"/>
+<path fill="none" d="M78 202 L146.0 166 L214 202" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="86" y="202" width="120" height="68" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="118.4" y="220" width="55.2" height="48" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M118.4 232.0 h55.2" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M118.4 244.0 h55.2" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M118.4 256.0 h55.2" stroke="#1F2328" stroke-width="2"/>
+<text x="250" y="214" font-size="30" font-weight="700" fill="#1F2328">倉庫が1つ</text>
+<text x="250" y="256" font-size="24" font-weight="400" fill="#656C76">数え方のルールで</text>
+<text x="250" y="290" font-size="24" font-weight="400" fill="#656C76">ずれを防げる</text>
+<path fill="none" d="M360 350 V398 M340 380 L360 400 L380 380" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="440" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">楽天・Amazon・自社サイトで売り始めると</text>
+<rect fill="none" x="40" y="466" width="640" height="356" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="65,532 123.0,496 181,532" fill="#EDB7BF"/>
+<rect x="71" y="550" width="47.84" height="40" fill="#DCDFE3"/>
+<path fill="none" d="M56 536 L116.0 500 L176 536" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="64" y="536" width="104" height="60" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="92.08" y="554" width="47.84" height="40" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M92.08 564.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M92.08 574.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M92.08 584.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<polygon points="553,532 611.0,496 669,532" fill="#EDB7BF"/>
+<rect x="559" y="550" width="47.84" height="40" fill="#DCDFE3"/>
+<path fill="none" d="M544 536 L604.0 500 L664 536" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="552" y="536" width="104" height="60" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="580.08" y="554" width="47.84" height="40" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M580.08 564.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M580.08 574.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M580.08 584.0 h47.84" stroke="#1F2328" stroke-width="2"/>
+<path fill="none" d="M184 574 H254 M474 574 H536" stroke="#656C76" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+<rect x="277" y="515" width="112" height="62" fill="#DCDFE3"/>
+<path d="M388 530 h30 l18 22 v24 h-48 z" fill="#EDB7BF"/>
+<rect fill="none" x="270" y="520" width="112" height="62" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M382 534 h32 l20 24 v24 h-52" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M392 540 h18 l12 14 h-30 z" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="300" cy="588" r="13" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="410" cy="588" r="13" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="352" y="644" font-size="26" font-weight="700" fill="#A4243B" text-anchor="middle">倉庫間を移動中</text>
+<path fill="none" d="M100 676 H620" stroke="#DCDFE3" stroke-width="2" stroke-linecap="round"/>
+<path d="M104 704 h52 l6 6 v30.0 l-23.04 9.0 h-32.0 z" fill="#EDB7BF"/>
+<rect fill="none" x="96" y="708" width="64" height="60" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M128.0 708 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="110" y="742" width="36" height="18" rx="3" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="186" y="736" font-size="26" font-weight="400" fill="#1F2328">注文は入ったが、</text>
+<text x="186" y="772" font-size="26" font-weight="400" fill="#1F2328">まだ出荷していない</text>
+<text x="40" y="872" font-size="28" font-weight="700" fill="#A4243B">数え方のルールだけでは越えられない壁</text>
 </g>
 </svg>

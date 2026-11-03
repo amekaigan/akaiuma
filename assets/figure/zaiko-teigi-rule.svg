@@ -1,40 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="830" viewBox="0 0 720 830" role="img" aria-label="紙1枚の数え方のルール。セット商品は1セットで1個かパーツごとか、色違い・サイズ違いは合算するか分けて数えるか、検品前の入荷品は届いた時点か検品のあとか、預け先で紛失中の在庫はあると数えるかないと数えるか。正解はなく、自分の店の答えを1つ決める">
-<rect width="720" height="830" fill="#FFFFFF"/>
-<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
-  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">先に決めておく4つのこと</text>
-  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
-  <rect x="68" y="132" width="600" height="604" rx="6" fill="#F4F5F6"/>
-  <rect x="60" y="124" width="600" height="604" rx="6" fill="#FFFFFF" stroke="#3D444D" stroke-width="3"/>
-  <text x="90" y="180" font-size="30" font-weight="700" fill="#1F2328">数え方のルール</text>
-  <line x1="90" y1="200" x2="630" y2="200" stroke="#656C76" stroke-width="1.5"/>
-  <text x="90" y="252" font-size="26" font-weight="700" fill="#1F2328">セット商品</text>
-  <rect x="90" y="270" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="112" y="285" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="148" y="305" font-size="24" font-weight="400" fill="#1F2328">1セットで1個</text>
-  <rect x="376" y="270" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="398" y="285" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="434" y="305" font-size="24" font-weight="400" fill="#1F2328">パーツごと</text>
-  <text x="90" y="376" font-size="26" font-weight="700" fill="#1F2328">色違い・サイズ違い</text>
-  <rect x="90" y="394" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="112" y="409" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="148" y="429" font-size="24" font-weight="400" fill="#1F2328">合算する</text>
-  <rect x="376" y="394" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="398" y="409" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="434" y="429" font-size="24" font-weight="400" fill="#1F2328">分けて数える</text>
-  <text x="90" y="500" font-size="26" font-weight="700" fill="#1F2328">検品前の入荷品</text>
-  <rect x="90" y="518" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="112" y="533" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="148" y="553" font-size="24" font-weight="400" fill="#1F2328">届いた時点</text>
-  <rect x="376" y="518" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="398" y="533" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="434" y="553" font-size="24" font-weight="400" fill="#1F2328">検品のあと</text>
-  <text x="90" y="624" font-size="26" font-weight="700" fill="#1F2328">預け先で紛失中の在庫</text>
-  <rect x="90" y="642" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="112" y="657" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="148" y="677" font-size="24" font-weight="400" fill="#1F2328">あると数える</text>
-  <rect x="376" y="642" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#A4243B" stroke-width="2.5"/>
-  <rect x="398" y="657" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#3D444D" stroke-width="2.5"/>
-  <text x="434" y="677" font-size="24" font-weight="400" fill="#1F2328">ないと数える</text>
-  <text x="40" y="790" font-size="28" font-weight="700" fill="#A4243B">正解はない。自分の店の答えを1つ決める</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="864" viewBox="0 0 720 864" role="img" aria-label="紙1枚の数え方のルール。セット商品、色違い・サイズ違い、検品前の入荷品、預け先で紛失中の在庫について、それぞれどちらで数えるかに印を付ける">
+<rect width="720" height="864" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="372" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">先に決めておく4つのこと</text>
+<rect x="66" y="118" width="604" height="640" rx="16" fill="#DCDFE3"/>
+<rect x="58" y="124" width="604" height="640" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="295" y="104" width="140" height="40" rx="8" fill="#EDB7BF"/>
+<rect x="290" y="108" width="140" height="40" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle fill="none" cx="360" cy="122" r="6" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="204" font-size="30" font-weight="700" fill="#1F2328">数え方のルール</text>
+<text x="92" y="260" font-size="26" font-weight="700" fill="#1F2328">セット商品</text>
+<rect fill="none" x="92" y="278" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="114" y="294" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="314" font-size="24" font-weight="400" fill="#1F2328">1セットで1個</text>
+<rect fill="none" x="370" y="278" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="392" y="294" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="428" y="314" font-size="24" font-weight="400" fill="#1F2328">パーツごと</text>
+<text x="92" y="388" font-size="26" font-weight="700" fill="#1F2328">色違い・サイズ違い</text>
+<rect fill="none" x="92" y="406" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="114" y="422" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="442" font-size="24" font-weight="400" fill="#1F2328">合算する</text>
+<rect fill="none" x="370" y="406" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="392" y="422" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="428" y="442" font-size="24" font-weight="400" fill="#1F2328">分けて数える</text>
+<text x="92" y="516" font-size="26" font-weight="700" fill="#1F2328">検品前の入荷品</text>
+<rect fill="none" x="92" y="534" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="114" y="550" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="570" font-size="24" font-weight="400" fill="#1F2328">届いた時点</text>
+<rect fill="none" x="370" y="534" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="392" y="550" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="428" y="570" font-size="24" font-weight="400" fill="#1F2328">検品のあと</text>
+<text x="92" y="644" font-size="26" font-weight="700" fill="#1F2328">預け先で紛失中の在庫</text>
+<rect fill="none" x="92" y="662" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="114" y="678" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="698" font-size="24" font-weight="400" fill="#1F2328">あると数える</text>
+<rect fill="none" x="370" y="662" width="258" height="54" rx="27" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="392" y="678" width="22" height="22" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="428" y="698" font-size="24" font-weight="400" fill="#1F2328">ないと数える</text>
+<g transform="rotate(-10 590 744)"><rect x="535" y="727" width="110" height="26" fill="#EDB7BF"/><rect fill="none" x="530" y="731" width="110" height="26" rx="3" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M530 731 L502 744 L530 757" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" d="M640 731 v26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="40" y="824" font-size="28" font-weight="700" fill="#A4243B">正解はない。自分の店の答えを1つ決める</text>
 </g>
 </svg>

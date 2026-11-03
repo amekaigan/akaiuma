@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="788" viewBox="0 0 720 788" role="img" aria-label="税抜の販売価格から、仕入れ原価、モール手数料、送料・梱包費・倉庫手数料を引いて限界利益を出し、さらに固定費を引いて残るのが営業利益率。これが利益ゼロまで使える広告費の上限">
+<rect width="720" height="788" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="450" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">値付けの前に作る1枚のシート</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="40" y="130" width="640" height="62" rx="10"/>
+<rect fill="none" x="40" y="130" width="640" height="62" rx="10" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="60" y="171" font-size="24" font-weight="700" fill="#1F2328">税抜の販売価格</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="40" y="222" width="580" height="62" rx="10"/>
+<rect fill="none" x="40" y="222" width="580" height="62" rx="10" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="60" y="263" font-size="24" font-weight="700" fill="#1F2328">− 仕入れ原価 → 粗利</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="40" y="314" width="520" height="62" rx="10"/>
+<rect fill="none" x="40" y="314" width="520" height="62" rx="10" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="60" y="355" font-size="24" font-weight="700" fill="#1F2328">− モール手数料</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="40" y="406" width="460" height="62" rx="10"/>
+<rect fill="none" x="40" y="406" width="460" height="62" rx="10" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="60" y="447" font-size="24" font-weight="700" fill="#1F2328">− 送料・梱包費・倉庫手数料</text>
+<text x="680" y="512" font-size="24" font-weight="700" fill="#1F2328" text-anchor="end">→ 限界利益</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="40" y="526" width="380" height="62" rx="10"/>
+<rect fill="none" x="40" y="526" width="380" height="62" rx="10" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="60" y="567" font-size="24" font-weight="700" fill="#1F2328">− 固定費（モール・人件費）</text>
+<rect fill="#EDB7BF" transform="translate(7 -5)" x="40" y="638" width="640" height="110" rx="16"/>
+<rect x="40" y="638" width="640" height="110" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="684" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">残るのが営業利益率</text>
+<text x="360" y="724" font-size="24" font-weight="700" fill="#A4243B" text-anchor="middle">＝ 利益ゼロまで使える広告費の上限</text>
+</g>
+</svg>

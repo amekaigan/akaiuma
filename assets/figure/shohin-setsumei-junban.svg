@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="794" viewBox="0 0 720 794" role="img" aria-label="商品説明文を書く5つの順番。誰に向けて書くか、メリットとデメリット、使ったときの価値、当店で買う理由、検索エンジン向けのキーワード">
+<rect width="720" height="794" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="284" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">説明文を書く順番</text>
+<circle cx="90" cy="160" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="164" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="174" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">1</text>
+<text x="136" y="158" font-size="28" font-weight="700" fill="#1F2328">誰に向けて書くか</text>
+<text x="136" y="196" font-size="24" font-weight="400" fill="#656C76">ペルソナ</text>
+<path fill="none" d="M84 198 V228" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="272" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="276" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="286" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">2</text>
+<text x="136" y="270" font-size="28" font-weight="700" fill="#1F2328">メリットとデメリット</text>
+<text x="136" y="308" font-size="24" font-weight="400" fill="#656C76">デメリットは理由とセットで</text>
+<path fill="none" d="M84 310 V340" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="384" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="388" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="398" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">3</text>
+<text x="136" y="382" font-size="28" font-weight="700" fill="#1F2328">使ったときの価値</text>
+<text x="136" y="420" font-size="24" font-weight="400" fill="#656C76">スペックを使う場面に変える</text>
+<path fill="none" d="M84 422 V452" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="496" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="500" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="510" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">4</text>
+<text x="136" y="494" font-size="28" font-weight="700" fill="#1F2328">当店で買う理由</text>
+<text x="136" y="532" font-size="24" font-weight="400" fill="#656C76">扱ってきた経験とセットで</text>
+<path fill="none" d="M84 534 V564" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="608" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="612" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="622" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">5</text>
+<text x="136" y="606" font-size="28" font-weight="700" fill="#1F2328">検索エンジン向けのキーワード</text>
+<text x="136" y="644" font-size="24" font-weight="400" fill="#656C76">サジェストは最後に足す</text>
+<rect fill="none" x="40" y="690" width="640" height="70" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="736" font-size="26" font-weight="700" fill="#A4243B" text-anchor="middle">人に向けた文章を先に書き切る</text>
+</g>
+</svg>

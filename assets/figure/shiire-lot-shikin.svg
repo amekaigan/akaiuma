@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="708" viewBox="0 0 720 708" role="img" aria-label="発注して代金を払い、入荷し、販売し、モールから入金されるまでの流れ。ロットを上げると販売の期間が延び、その間お金は在庫として固定される">
+<rect width="720" height="708" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="340" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">仕入れたお金が戻るまで</text>
+<circle cx="98" cy="170" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="174" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="92" y="184" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">1</text>
+<text x="146" y="168" font-size="28" font-weight="700" fill="#1F2328">発注して代金を払う</text>
+<text x="146" y="206" font-size="24" font-weight="400" fill="#656C76">お金が出ていく</text>
+<path fill="none" d="M92 208 V240" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="98" cy="290" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="294" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="92" y="304" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">2</text>
+<text x="146" y="288" font-size="28" font-weight="700" fill="#1F2328">入荷する</text>
+<text x="146" y="326" font-size="24" font-weight="400" fill="#656C76">仕入先のリードタイム</text>
+<path fill="none" d="M92 328 V360" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<rect x="47" y="360" width="640" height="104" rx="16" fill="#EDB7BF"/>
+<rect x="40" y="364" width="640" height="104" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<circle cx="98" cy="410" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="414" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="92" y="424" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">3</text>
+<text x="146" y="408" font-size="28" font-weight="700" fill="#1F2328">販売する</text>
+<text x="146" y="446" font-size="24" font-weight="400" fill="#656C76">ロット数 ÷ 販売ペースの日数</text>
+<text x="660" y="408" font-size="22" font-weight="700" fill="#A4243B" text-anchor="end">ここが延びる</text>
+<path fill="none" d="M92 448 V480" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="98" cy="530" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="534" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="92" y="544" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">4</text>
+<text x="146" y="528" font-size="28" font-weight="700" fill="#1F2328">モールから入金される</text>
+<text x="146" y="566" font-size="24" font-weight="400" fill="#656C76">各モールの入金日</text>
+<text x="360" y="628" font-size="25" font-weight="700" fill="#A4243B" text-anchor="middle">ロットを上げると、最後の1個が売れるまで</text>
+<text x="360" y="666" font-size="25" font-weight="700" fill="#A4243B" text-anchor="middle">お金は在庫として固定されたまま</text>
+</g>
+</svg>

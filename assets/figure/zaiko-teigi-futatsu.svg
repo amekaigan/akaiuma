@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="644" viewBox="0 0 720 644" role="img" aria-label="倉庫の棚に実際にある数が実在庫、Excelやシステムに記録された数字が帳簿在庫。同じ商品でもこの2つは別の数字で、どこかで離れていく">
+<rect width="720" height="644" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">同じ商品なのに、数字が2つある</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="140" width="250" height="272" rx="6" fill="#FFFFFF" stroke="#3D444D" stroke-width="6"/>
+  <line x1="40" y1="230" x2="290" y2="230" stroke="#3D444D" stroke-width="6"/>
+  <line x1="40" y1="320" x2="290" y2="320" stroke="#3D444D" stroke-width="6"/>
+  <rect x="58" y="162" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="90.0" y1="162" x2="90.0" y2="182" stroke="#A4243B" stroke-width="3"/>
+  <rect x="132" y="162" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="164.0" y1="162" x2="164.0" y2="182" stroke="#A4243B" stroke-width="3"/>
+  <rect x="206" y="162" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="238.0" y1="162" x2="238.0" y2="182" stroke="#A4243B" stroke-width="3"/>
+  <rect x="58" y="252" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="90.0" y1="252" x2="90.0" y2="272" stroke="#A4243B" stroke-width="3"/>
+  <rect x="132" y="252" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="164.0" y1="252" x2="164.0" y2="272" stroke="#A4243B" stroke-width="3"/>
+  <rect x="58" y="342" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="90.0" y1="342" x2="90.0" y2="362" stroke="#A4243B" stroke-width="3"/>
+  <rect x="132" y="342" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="164.0" y1="342" x2="164.0" y2="362" stroke="#A4243B" stroke-width="3"/>
+  <rect x="206" y="342" width="64" height="62" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3"/>
+  <line x1="238.0" y1="342" x2="238.0" y2="362" stroke="#A4243B" stroke-width="3"/>
+  <rect x="206" y="252" width="64" height="62" rx="4" fill="none" stroke="#656C76" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="345" cy="276" r="30" fill="#A4243B"/>
+  <text x="345" y="290" font-size="38" font-weight="700" fill="#FFFFFF" text-anchor="middle">≠</text>
+  <rect x="414" y="160" width="252" height="184" rx="10" fill="#FFFFFF" stroke="#3D444D" stroke-width="6"/>
+  <rect x="426" y="172" width="228" height="28" fill="#F4F5F6"/>
+  <rect x="426" y="256" width="228" height="28" fill="#FBF4F5"/>
+  <line x1="426" y1="228" x2="654" y2="228" stroke="#656C76" stroke-width="1.5"/>
+  <line x1="426" y1="256" x2="654" y2="256" stroke="#656C76" stroke-width="1.5"/>
+  <line x1="426" y1="284" x2="654" y2="284" stroke="#656C76" stroke-width="1.5"/>
+  <line x1="426" y1="312" x2="654" y2="312" stroke="#656C76" stroke-width="1.5"/>
+  <line x1="540" y1="172" x2="540" y2="332" stroke="#656C76" stroke-width="1.5"/>
+  <polygon points="414,350 666,350 690,384 390,384" fill="#3D444D"/>
+  <text x="165" y="462" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">実在庫</text>
+  <text x="165" y="498" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">棚に実際にある数</text>
+  <text x="540" y="462" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">帳簿在庫</text>
+  <text x="540" y="498" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">Excelやシステムの数字</text>
+  <rect x="40" y="532" width="640" height="72" rx="12" fill="#FBF4F5"/>
+  <text x="360" y="578" font-size="28" font-weight="700" fill="#A4243B" text-anchor="middle">この2つが、どこかで離れていく</text>
+</g>
+</svg>

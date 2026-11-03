@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="834" viewBox="0 0 720 834" role="img" aria-label="棚卸しで数が合わなくなる5つの場面。入荷時の取り違え登録、メーカーの出荷数違い、誤発送、1点の注文で2点の発送、撮影で持ち出した商品の戻し忘れ。どれも動いた数と記録した数がどこか1点でずれている">
+<rect width="720" height="834" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="36" font-weight="700" fill="#1F2328">数が合わなくなる5つの場面</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <rect x="40" y="124" width="640" height="104" rx="12" fill="#F4F5F6"/>
+  <circle cx="92" cy="176" r="28" fill="#A4243B"/>
+  <text x="92" y="187" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="146" y="170" font-size="28" font-weight="700" fill="#1F2328">入荷時に似た商品と取り違えて登録</text>
+  <text x="146" y="206" font-size="24" font-weight="400" fill="#3D444D">記録した数がずれる</text>
+  <rect x="40" y="242" width="640" height="104" rx="12" fill="#F4F5F6"/>
+  <circle cx="92" cy="294" r="28" fill="#A4243B"/>
+  <text x="92" y="305" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="146" y="288" font-size="28" font-weight="700" fill="#1F2328">メーカーの出荷数が発注数と違った</text>
+  <text x="146" y="324" font-size="24" font-weight="400" fill="#3D444D">届いた数と記録がずれる</text>
+  <rect x="40" y="360" width="640" height="104" rx="12" fill="#F4F5F6"/>
+  <circle cx="92" cy="412" r="28" fill="#A4243B"/>
+  <text x="92" y="423" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="146" y="406" font-size="28" font-weight="700" fill="#1F2328">注文と違う商品を誤って発送した</text>
+  <text x="146" y="442" font-size="24" font-weight="400" fill="#3D444D">出ていった商品がずれる</text>
+  <rect x="40" y="478" width="640" height="104" rx="12" fill="#F4F5F6"/>
+  <circle cx="92" cy="530" r="28" fill="#A4243B"/>
+  <text x="92" y="541" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="146" y="524" font-size="28" font-weight="700" fill="#1F2328">1点の注文で2点送ってしまった</text>
+  <text x="146" y="560" font-size="24" font-weight="400" fill="#3D444D">出ていった数がずれる</text>
+  <rect x="40" y="596" width="640" height="104" rx="12" fill="#F4F5F6"/>
+  <circle cx="92" cy="648" r="28" fill="#A4243B"/>
+  <text x="92" y="659" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="146" y="642" font-size="28" font-weight="700" fill="#1F2328">撮影で持ち出し、棚に戻し忘れた</text>
+  <text x="146" y="678" font-size="24" font-weight="400" fill="#3D444D">棚にある数がずれる</text>
+  <text x="40" y="758" font-size="28" font-weight="700" fill="#A4243B">どれも「動いた数」と「記録した数」が</text>
+  <text x="40" y="798" font-size="28" font-weight="700" fill="#A4243B">どこか1点でずれている</text>
+</g>
+</svg>

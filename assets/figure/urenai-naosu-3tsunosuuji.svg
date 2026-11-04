@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="818" viewBox="0 0 720 818" role="img" aria-label="表示回数、アクセス数、転換率の順にお客さんが進む。表示が少なければ商品名と説明文のキーワード、クリックが少なければメイン画像と価格、買われなければ価格・サブ画像・説明文を先に疑う">
+<rect width="720" height="818" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="420" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">お客さんが止まる3つの場所</text>
+<rect fill="#EDB7BF" transform="translate(7 -5)" x="60.0" y="120" width="600" height="108" rx="16"/>
+<rect x="60.0" y="120" width="600" height="108" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="166" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">表示回数</text>
+<text x="360" y="204" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">検索結果や一覧に出た回数</text>
+<text x="360" y="270" font-size="24" font-weight="700" fill="#A4243B" text-anchor="middle">少ないなら → 商品名と説明文のキーワード</text>
+<path fill="none" d="M360 286 V316 M342 298 L360 316 L378 298" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<rect fill="#DCDFE3" transform="translate(7 -5)" x="110.0" y="336" width="500" height="108" rx="16"/>
+<rect x="110.0" y="336" width="500" height="108" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="382" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">アクセス数</text>
+<text x="360" y="420" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">ページが開かれた回数</text>
+<text x="360" y="486" font-size="24" font-weight="700" fill="#A4243B" text-anchor="middle">少ないなら → メイン画像と価格</text>
+<path fill="none" d="M360 502 V532 M342 514 L360 532 L378 514" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<rect fill="#DCDFE3" transform="translate(7 -5)" x="160.0" y="552" width="400" height="108" rx="16"/>
+<rect x="160.0" y="552" width="400" height="108" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="598" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">転換率</text>
+<text x="360" y="636" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">開いた人のうち買った割合</text>
+<text x="360" y="702" font-size="24" font-weight="700" fill="#A4243B" text-anchor="middle">少ないなら → 価格・サブ画像・説明文</text>
+<text x="360" y="778" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">売れている商品の数字と並べて、止まっている場所を探す</text>
+</g>
+</svg>

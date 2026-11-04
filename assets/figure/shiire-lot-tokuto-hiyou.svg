@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="600" viewBox="0 0 720 600" role="img" aria-label="ロット割引で下がる仕入れ単価と、ロットを上げると増える1個あたりの保管費、値引きで処分する分、資金が固定される期間を並べて比べる">
+<rect width="720" height="600" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="480" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">割引の得と、増える費用を並べる</text>
+<rect fill="none" x="40" y="120" width="270" height="330" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<rect fill="none" x="350" y="120" width="330" height="330" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="175" y="170" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">得られるもの</text>
+<text x="515" y="170" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">増えるもの</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="62" y="200" width="226" height="80" rx="12"/>
+<rect x="62" y="200" width="226" height="80" rx="12" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="175" y="234" font-size="22" font-weight="700" fill="#1F2328" text-anchor="middle">ロット割引で</text>
+<text x="175" y="264" font-size="22" font-weight="700" fill="#1F2328" text-anchor="middle">下がった仕入れ単価</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="372" y="200" width="286" height="60" rx="12"/>
+<rect x="372" y="200" width="286" height="60" rx="12" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="515" y="239" font-size="23" font-weight="700" fill="#1F2328" text-anchor="middle">1個あたりの保管費</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="372" y="276" width="286" height="60" rx="12"/>
+<rect x="372" y="276" width="286" height="60" rx="12" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="515" y="315" font-size="23" font-weight="700" fill="#1F2328" text-anchor="middle">値引きで処分する分</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="372" y="352" width="286" height="60" rx="12"/>
+<rect x="372" y="352" width="286" height="60" rx="12" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="515" y="391" font-size="23" font-weight="700" fill="#1F2328" text-anchor="middle">資金が固定される期間</text>
+<text x="330" y="300" font-size="34" font-weight="700" fill="#A4243B" text-anchor="middle">？</text>
+<text x="360" y="510" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">単価だけを比べると、割引が必ず得に見える。</text>
+<text x="360" y="548" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">上げる前と後で、限界利益を2回出して比べる</text>
+</g>
+</svg>

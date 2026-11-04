@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-label="直す前の数字を記録し、価格・画像・説明文のうち1つだけを変え、同じ長さの期間を待ってから同じ3つの数字を記録する手順">
+<rect width="720" height="640" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="520" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">1つずつ変えて、同じ長さで比べる</text>
+<circle cx="90" cy="166" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="170" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="180" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">1</text>
+<text x="136" y="164" font-size="28" font-weight="700" fill="#1F2328">直す前の数字を記録</text>
+<text x="136" y="202" font-size="24" font-weight="400" fill="#656C76">表示回数・アクセス数・転換率</text>
+<path fill="none" d="M84 204 V242" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="286" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="290" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="300" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">2</text>
+<text x="136" y="284" font-size="28" font-weight="700" fill="#1F2328">1つだけ変える</text>
+<text x="136" y="322" font-size="24" font-weight="400" fill="#656C76">価格・画像・説明文のどれか</text>
+<path fill="none" d="M84 324 V362" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="406" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="410" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="420" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">3</text>
+<text x="136" y="404" font-size="28" font-weight="700" fill="#1F2328">同じ長さの期間を待つ</text>
+<text x="136" y="442" font-size="24" font-weight="400" fill="#656C76">セールや季節の山は外す</text>
+<path fill="none" d="M84 444 V482" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" stroke-dasharray="2 9"/>
+<circle cx="90" cy="526" r="26" fill="#EDB7BF"/>
+<circle fill="none" cx="84" cy="530" r="26" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="84" y="540" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">4</text>
+<text x="136" y="524" font-size="28" font-weight="700" fill="#1F2328">同じ3つの数字を記録</text>
+<text x="136" y="562" font-size="24" font-weight="400" fill="#656C76">動かなければ戻すか、次へ</text>
+<g transform="translate(560 140)"><rect fill="#DCDFE3" transform="translate(7 -5)" x="0" y="0" width="110" height="140" rx="6"/>
+<rect x="0" y="0" width="110" height="140" rx="6" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 40.0 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 66.66666666666667 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 93.33333333333334 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 120.0 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+</g>
+<g transform="translate(560 380)"><rect fill="#EDB7BF" transform="translate(7 -5)" x="0" y="0" width="110" height="140" rx="6"/>
+<rect x="0" y="0" width="110" height="140" rx="6" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 40.0 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 66.66666666666667 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 93.33333333333334 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M18 120.0 h74" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+</g>
+<path fill="none" d="M615 296 V360 M597 342 L615 360 L633 342" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="615" y="560" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">前と後</text>
+</g>
+</svg>

@@ -3,7 +3,7 @@ title: FBAの月末在庫が合わない時の照合手順：在庫元帳で確�
 meta: FBAの月末在庫が自社の数字と合わないとき、在庫元帳とエクセルで差を照合する手順。紛失・発見・倉庫間移動中・顧客返品の扱いも整理。
 permalink: /blog/fba-zaiko-shougou/
 published: 2026-10-01
-updated:
+updated: 2026-11-03
 verified:
 category: 在庫管理
 level: intermediate
@@ -186,7 +186,7 @@ title_reason: 読者が検索窓に打つ時点で知りたいのは「自分の
   "headline": "FBAの月末在庫が合わない時の照合手順：在庫元帳で確認｜あかいうま",
   "description": "FBAの月末在庫が自社の数字と合わないとき、在庫元帳とエクセルで差を照合する手順。紛失・発見・倉庫間移動中・顧客返品の扱いも整理。",
   "datePublished": "2026-10-01",
-  "dateModified": "2026-10-01",
+  "dateModified": "2026-11-03",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://akaiuma.com/blog/fba-zaiko-shougou/"
@@ -239,7 +239,7 @@ title_reason: 読者が検索窓に打つ時点で知りたいのは「自分の
 <div class="article-header" data-level="intermediate">
   <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#82182E; background:#FBF4F5; border-radius:4px; padding:2px 8px; margin-left:8px;">中級者向け</span></div>
   <h1>FBAの月末在庫が合わない時の照合手順：在庫元帳で確認</h1>
-  <div class="article-meta"><span>公開：2026年10月1日</span><span>読了：約6分</span></div>
+  <div class="article-meta"><span>公開：2026年10月1日</span><span>更新：2026年11月3日</span><span>読了：約6分</span></div>
 </div>
 
 <img class="article-thumb" src="/assets/thumb/auto/fba-zaiko-shougou.svg" alt="" width="1200" height="630">
@@ -282,6 +282,11 @@ title_reason: 読者が検索窓に打つ時点で知りたいのは「自分の
 
 <p>照合の出発点は自社側の式で、先月末在庫に今月の納品数を足し、出荷数を引いた結果を、Amazonの月末在庫と同じSKUで並べます。</p>
 
+<figure class="ak-figure">
+  <img src="/assets/figure/fba-zaiko-shougou-narabe.svg" alt="自社の式で出した在庫と、Amazonの月末在庫を同じSKUで並べて、合わない行を見比べる人" width="720" height="580" loading="lazy">
+  <figcaption>数え間違いを潰しても差が残るなら、Amazon側の在庫の状態を疑います。</figcaption>
+</figure>
+
 <p>ここで毎月一致していれば、照合は要りません。困るのは、たまに合わない月があることです。</p>
 
 <h3>数え間違いの先にある原因</h3>
@@ -297,6 +302,11 @@ title_reason: 読者が検索窓に打つ時点で知りたいのは「自分の
 <p>筆者が今把握している差の原因は、紛失・発見・倉庫間移動中・顧客返品の4つです。この4つは筆者の経験の範囲で、Amazonの公式の分類ではありません。ほかにも原因がある可能性があり、この4つがすべてだとは言えません。</p>
 
 <!-- TODO:実体験 何を書くべきか：体験バンクの原文「紛失、発見倉庫間移動中、顧客返品」は、紛失・発見・倉庫間移動中・顧客返品の4つの意味でよいか（「発見倉庫間移動中」で1つの状態ではないか）。4つであれば本文はこのまま -->
+
+<figure class="ak-figure">
+  <img src="/assets/figure/fba-zaiko-shougou-4tsu.svg" alt="先月末在庫に今月の納品数を足し出荷数を引いた自社の式と、Amazonの月末在庫を同じSKUで並べ、差を紛失・発見・倉庫間移動中・顧客返品の4つに仕分ける" width="720" height="750" loading="lazy">
+  <figcaption>4つは筆者の経験の範囲で、ほかの原因がある可能性もあります。</figcaption>
+</figure>
 
 <h3>紛失</h3>
 
@@ -371,6 +381,11 @@ title_reason: 読者が検索窓に打つ時点で知りたいのは「自分の
   <p>在庫がどうしても合わない部分が、Amazonの在庫の状況にある「紛失」でした。つまり、Amazonが紛失してしまったということです。これは数か月後に商品代金が補填されるかもしれませんし、数か月後に発見されるかもしれません。</p>
   <p>このような場合、筆者の店ではその在庫が「ない」という扱いではなく、普通に「ある」という扱いをしています。そして、補填なりの処理がされたタイミングで「なし」の扱いにしています。一見理不尽に思える、不可抗力的な事象が、たまに発生します。</p>
 </div>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/fba-zaiko-shougou-funshitsu.svg" alt="筆者の店では、紛失が出ても在庫は「ある」のまま持ち、数か月後に補填などの処理が出た時点で「なし」にする。帳簿の数の話で、売れる在庫に含めると複数チャネルでは売り越しにつながりうる" width="720" height="620" loading="lazy">
+  <figcaption>会計上の扱いは、この記事では断定しません。</figcaption>
+</figure>
 
 <h3>紛失中は「ある」のまま持つ</h3>
 

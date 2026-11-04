@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="買う人はメリットとデメリットを天秤にかけて選ぶ。弱点だけを書くのではなく、多機能だが少し重いという弱点に、この重さを引き受けてでも機能を優先したという理由を続ける">
+<rect width="720" height="720" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="470" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">弱点を「選んだ理由」に変える</text>
+<path fill="none" d="M360 140 V330 M300 330 H420" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="none" d="M180 180 L540 150" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<circle cx="360" cy="164" r="8" fill="#1F2328"/>
+<path fill="none" d="M180 180 L140 250 M180 180 L220 250 M540 150 L500 220 M540 150 L580 220" stroke="#1F2328" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="#EDB7BF" transform="translate(6 -4)" d="M120 250 Q180 290 240 250 Z"/>
+<path d="M120 250 Q180 290 240 250 Z" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path fill="#DCDFE3" transform="translate(6 -4)" d="M480 220 Q540 260 600 220 Z"/>
+<path d="M480 220 Q540 260 600 220 Z" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="180" y="320" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">メリット</text>
+<text x="540" y="290" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">デメリット</text>
+<rect fill="none" x="40" y="380" width="640" height="96" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="70" y="420" font-size="24" font-weight="700" fill="#656C76">弱点だけ</text>
+<text x="70" y="458" font-size="26" font-weight="400" fill="#1F2328">多機能だが、他の商品より少し重い</text>
+<path fill="none" d="M360 488 V532 M342 514 L360 532 L378 514" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<rect fill="#EDB7BF" transform="translate(7 -5)" x="40" y="546" width="640" height="132" rx="18"/>
+<rect x="40" y="546" width="640" height="132" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="70" y="586" font-size="24" font-weight="700" fill="#A4243B">理由とセット</text>
+<text x="70" y="624" font-size="26" font-weight="400" fill="#1F2328">この重さを引き受けてでも、</text>
+<text x="70" y="662" font-size="26" font-weight="400" fill="#1F2328">この機能を優先した</text>
+</g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="750" viewBox="0 0 720 750" role="img" aria-label="先月末在庫に今月の納品数を足し出荷数を引いた自社の式と、Amazonの月末在庫を同じSKUで並べ、差を紛失・発見・倉庫間移動中・顧客返品の4つに仕分ける">
+<rect width="720" height="750" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="500" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">自社の式と、差を作る4つの状態</text>
+<rect fill="none" x="40" y="120" width="640" height="130" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="168" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">先月末在庫 ＋ 今月の納品数 − 出荷数</text>
+<text x="360" y="216" font-size="24" font-weight="400" fill="#656C76" text-anchor="middle">と Amazonの月末在庫を、同じSKUで並べる</text>
+<path fill="none" d="M360 262 V306 M342 288 L360 306 L378 288" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="346" font-size="24" font-weight="700" fill="#A4243B" text-anchor="middle">差が出たSKUの動きを、4つに仕分ける</text>
+<rect fill="#EDB7BF" transform="translate(7 -5)" x="40" y="376" width="310" height="130" rx="16"/>
+<rect x="40" y="376" width="310" height="130" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="195" y="432" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">紛失</text>
+<text x="195" y="474" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">Amazonが在庫を紛失した</text>
+<rect fill="#DCDFE3" transform="translate(7 -5)" x="370" y="376" width="310" height="130" rx="16"/>
+<rect x="370" y="376" width="310" height="130" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="525" y="432" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">発見</text>
+<text x="525" y="474" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">紛失中の在庫が見つかった</text>
+<rect fill="#DCDFE3" transform="translate(7 -5)" x="40" y="526" width="310" height="130" rx="16"/>
+<rect x="40" y="526" width="310" height="130" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="195" y="582" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">倉庫間移動中</text>
+<text x="195" y="624" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">どちらの数字にも入らず浮く</text>
+<rect fill="#EDB7BF" transform="translate(7 -5)" x="370" y="526" width="310" height="130" rx="16"/>
+<rect x="370" y="526" width="310" height="130" rx="16" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="525" y="582" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">顧客返品</text>
+<text x="525" y="624" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">お客様から返品された</text>
+<text x="360" y="710" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">筆者が把握している4つ。Amazonの公式の分類ではない</text>
+</g>
+</svg>

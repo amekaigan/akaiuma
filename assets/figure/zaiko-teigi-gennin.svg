@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="876" viewBox="0 0 720 876" role="img" aria-label="棚卸しで数が合わなくなる5つの場面。入荷時の取り違え登録、メーカーの出荷数違い、誤発送、1点の注文で2点の発送、撮影で持ち出した商品の戻し忘れ">
+<rect width="720" height="876" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="400" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">数が合わなくなる5つの場面</text>
+<circle cx="98" cy="172" r="28" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="176" r="28" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="187" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">1</text>
+<text x="146" y="170" font-size="28" font-weight="700" fill="#1F2328">入荷時に似た商品と取り違えて登録</text>
+<text x="146" y="206" font-size="24" font-weight="400" fill="#656C76">記録した数がずれる</text>
+<path fill="none" d="M146 234 H680" stroke="#DCDFE3" stroke-width="2" stroke-linecap="round"/>
+<circle cx="98" cy="292" r="28" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="296" r="28" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="307" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">2</text>
+<text x="146" y="290" font-size="28" font-weight="700" fill="#1F2328">メーカーの出荷数が発注数と違った</text>
+<text x="146" y="326" font-size="24" font-weight="400" fill="#656C76">届いた数と記録がずれる</text>
+<path fill="none" d="M146 354 H680" stroke="#DCDFE3" stroke-width="2" stroke-linecap="round"/>
+<circle cx="98" cy="412" r="28" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="416" r="28" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="427" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">3</text>
+<text x="146" y="410" font-size="28" font-weight="700" fill="#1F2328">注文と違う商品を誤って発送した</text>
+<text x="146" y="446" font-size="24" font-weight="400" fill="#656C76">出ていった商品がずれる</text>
+<path fill="none" d="M146 474 H680" stroke="#DCDFE3" stroke-width="2" stroke-linecap="round"/>
+<circle cx="98" cy="532" r="28" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="536" r="28" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="547" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">4</text>
+<text x="146" y="530" font-size="28" font-weight="700" fill="#1F2328">1点の注文で2点送ってしまった</text>
+<text x="146" y="566" font-size="24" font-weight="400" fill="#656C76">出ていった数がずれる</text>
+<path fill="none" d="M146 594 H680" stroke="#DCDFE3" stroke-width="2" stroke-linecap="round"/>
+<circle cx="98" cy="652" r="28" fill="#EDB7BF"/>
+<circle fill="none" cx="92" cy="656" r="28" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="92" y="667" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle">5</text>
+<text x="146" y="650" font-size="28" font-weight="700" fill="#1F2328">撮影で持ち出し、棚に戻し忘れた</text>
+<text x="146" y="686" font-size="24" font-weight="400" fill="#656C76">棚にある数がずれる</text>
+<rect fill="none" x="40" y="732" width="640" height="104" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="776" font-size="27" font-weight="700" fill="#A4243B" text-anchor="middle">どれも「動いた数」と「記録した数」が</text>
+<text x="360" y="814" font-size="27" font-weight="700" fill="#A4243B" text-anchor="middle">どこか1点でずれている</text>
+</g>
+</svg>

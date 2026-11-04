@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="560" viewBox="0 0 720 560" role="img" aria-label="倉庫の棚にある実在庫と、Excelやシステムの帳簿在庫を見比べて、首をかしげる人">
+<rect width="720" height="560" fill="#FFFFFF"/>
+<path d="M78 166 h44 l6 6 v26 l-20 8 h-30 z" fill="#EDB7BF"/>
+<rect x="148" y="188" width="50" height="34" fill="#DCDFE3"/>
+<path d="M222 168 h44 l6 6 v26 l-20 8 h-30 z" fill="#EDB7BF"/>
+<path d="M78 262 h44 l6 6 v26 l-20 8 h-30 z" fill="#EDB7BF"/>
+<rect x="148" y="282" width="50" height="34" fill="#DCDFE3"/>
+<path d="M78 356 h44 l6 6 v26 l-20 8 h-30 z" fill="#EDB7BF"/>
+<path d="M150 358 h44 l6 6 v26 l-20 8 h-30 z" fill="#EDB7BF"/>
+<rect x="220" y="378" width="50" height="34" fill="#DCDFE3"/>
+<rect fill="none" x="50" y="150" width="232" height="290" rx="6" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M50 246 H282 M50 342 H282" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="70" y="170" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M98 170 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="142" y="170" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M170 170 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="214" y="172" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M242 172 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="70" y="266" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M98 266 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="142" y="264" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M170 264 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="70" y="360" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M98 360 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="142" y="362" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M170 362 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect fill="none" x="214" y="360" width="56" height="54" rx="4" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M242 360 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="214" y="266" width="56" height="54" rx="4" fill="none" stroke="#1F2328" stroke-width="2.5" stroke-dasharray="6 7" stroke-linecap="round"/>
+<path d="M316 246 Q326 216 362 216 Q398 216 408 246 L414 380 H308 Z" fill="#DCDFE3" transform="translate(7 -4)"/>
+<path d="M328 162 Q324 122 362 118 Q398 118 398 152 Q390 160 384 156 Q380 140 356 140 Q340 150 328 162 Z" fill="#EDB7BF" transform="translate(6 -4)"/>
+<circle cx="362" cy="166" r="36" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M328 162 Q324 122 362 118 Q398 118 398 152 Q390 160 384 156 Q380 140 356 140 Q340 150 328 162 Z" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="349" cy="170" r="3" fill="#1F2328"/><circle cx="375" cy="170" r="3" fill="#1F2328"/>
+<path fill="none" d="M354 188 q8 -4 16 0" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M316 248 Q326 216 362 216 Q398 216 408 248 L414 380 H308 Z" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M352 202 V216 M372 202 V216 M350 216 L362 234 L374 216" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M402 262 Q430 236 412 200 L404 186" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="402" cy="182" r="9" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="rotate(-8 330 318)"><rect x="304" y="282" width="52" height="66" rx="4" fill="#EDB7BF" transform="translate(5 4)"/><rect x="304" y="282" width="52" height="66" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" d="M318 278 h24 v10 h-24 z M314 304 h32 M314 318 h32 M314 332 h20" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path fill="none" d="M322 262 Q300 300 318 318" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M340 378 L336 470 M384 378 L388 470" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M336 470 h-22 M388 470 h22" stroke="#1F2328" stroke-width="7" stroke-linecap="round"/>
+<path fill="none" d="M420 108 q2 -18 18 -16 q14 4 6 18 q-6 8 -6 16" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="438" cy="140" r="3.5" fill="#1F2328"/>
+<path d="M448 150 q1 -10 10 -9 q8 2 3 10 q-3 4 -3 9" fill="none" stroke="#1F2328" stroke-width="2.5" stroke-linecap="round"/><circle cx="458" cy="168" r="2.5" fill="#1F2328"/>
+<rect x="486" y="214" width="190" height="132" rx="8" fill="#DCDFE3" transform="translate(7 -5)"/>
+<rect x="482" y="218" width="190" height="132" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="498" y="276" width="158" height="20" fill="#EDB7BF" transform="translate(4 -3)"/>
+<path d="M498 244 H656 M498 270 H656 M498 296 H656 M498 322 H656 M570 234 V336" fill="none" stroke="#1F2328" stroke-width="2" stroke-linecap="round"/>
+<path d="M466 350 H688 L700 372 H454 Z" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M440 400 H700" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M444 282 H468 M444 294 H468 M462 274 L450 302" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="'Hiragino Maru Gothic ProN','Noto Sans JP','Meiryo',sans-serif" fill="#1F2328" text-anchor="middle"><text x="166" y="500" font-size="28" font-weight="700">実在庫</text><text x="166" y="534" font-size="24" fill="#656C76">棚に実際にある数</text><text x="580" y="500" font-size="28" font-weight="700">帳簿在庫</text><text x="580" y="534" font-size="24" fill="#656C76">Excelやシステムの数字</text></g>
+</svg>

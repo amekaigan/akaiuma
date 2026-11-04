@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="738" viewBox="0 0 720 738" role="img" aria-label="楽天市場は月額出店料と売上に応じた費用の二階建て。Amazonの大口出品は月額の固定料金だけで成約料はなし、小口出品は月額の固定費がなく1点ごとに成約料。自社サイトは軽い月額と決済手数料で、集客は自分で作る">
+<rect width="720" height="738" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="340" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">費用のかかり方の違い</text>
+<text x="40" y="168" font-size="26" font-weight="700" fill="#1F2328">楽天市場</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="250" y="134" width="200" height="56" rx="10"/>
+<rect x="250" y="134" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="350.0" y="171" font-size="22" font-weight="700" fill="#1F2328" text-anchor="middle">月額出店料</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="464" y="134" width="200" height="56" rx="10"/>
+<rect x="464" y="134" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="564.0" y="171" font-size="21" font-weight="700" fill="#1F2328" text-anchor="middle">売上に応じた費用</text>
+<text x="250" y="224" font-size="22" font-weight="400" fill="#656C76">固定費と変動費の二階建て</text>
+<text x="40" y="304" font-size="26" font-weight="700" fill="#1F2328">Amazon 大口</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="250" y="270" width="200" height="56" rx="10"/>
+<rect x="250" y="270" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="350.0" y="307" font-size="21" font-weight="700" fill="#1F2328" text-anchor="middle">月額の固定料金</text>
+<text x="250" y="360" font-size="22" font-weight="400" fill="#656C76">売れた個数の成約料はなし</text>
+<text x="40" y="440" font-size="26" font-weight="700" fill="#1F2328">Amazon 小口</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="250" y="406" width="200" height="56" rx="10"/>
+<rect x="250" y="406" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="350.0" y="443" font-size="21" font-weight="700" fill="#1F2328" text-anchor="middle">1点ごとの成約料</text>
+<text x="250" y="496" font-size="22" font-weight="400" fill="#656C76">月額の固定費はなし</text>
+<text x="40" y="576" font-size="26" font-weight="700" fill="#1F2328">自社サイト</text>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="250" y="542" width="120.0" height="56" rx="10"/>
+<rect x="250" y="542" width="120.0" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="310.0" y="579" font-size="22" font-weight="700" fill="#1F2328" text-anchor="middle">軽い月額</text>
+<rect fill="#EDB7BF" transform="translate(6 -4)" x="384.0" y="542" width="200" height="56" rx="10"/>
+<rect x="384.0" y="542" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="484.0" y="579" font-size="22" font-weight="700" fill="#1F2328" text-anchor="middle">決済手数料</text>
+<text x="250" y="632" font-size="22" font-weight="400" fill="#656C76">集客は自分で作る</text>
+<rect x="40" y="676" width="24" height="24" rx="5" fill="#DCDFE3"/><text x="74" y="698" font-size="22" font-weight="400" fill="#656C76">売れなくてもかかる</text>
+<rect x="300" y="676" width="24" height="24" rx="5" fill="#EDB7BF"/><text x="334" y="698" font-size="22" font-weight="400" fill="#656C76">売れたときにかかる</text>
+</g>
+</svg>

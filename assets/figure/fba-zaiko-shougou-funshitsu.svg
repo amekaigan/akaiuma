@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="620" viewBox="0 0 720 620" role="img" aria-label="筆者の店では、紛失が出ても在庫は「ある」のまま持ち、数か月後に補填などの処理が出た時点で「なし」にする。帳簿の数の話で、売れる在庫に含めると複数チャネルでは売り越しにつながりうる">
+<rect width="720" height="620" fill="#FFFFFF"/>
+<g font-family="'Hiragino Maru Gothic ProN','Hiragino Sans','Noto Sans JP','Meiryo',sans-serif">
+<rect x="44" y="52" width="540" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">筆者の店での、紛失中の在庫の扱い</text>
+<path fill="none" d="M80 250 H640" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<circle cx="115" cy="246" r="18" fill="#EDB7BF"/><circle cx="110" cy="250" r="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="110" y="210" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">紛失が出る</text>
+<circle cx="365" cy="246" r="18" fill="#DCDFE3"/><circle cx="360" cy="250" r="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="360" y="210" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">「ある」のまま持つ</text>
+<circle cx="615" cy="246" r="18" fill="#EDB7BF"/><circle cx="610" cy="250" r="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="610" y="210" font-size="24" font-weight="700" fill="#1F2328" text-anchor="middle">補填などの処理</text>
+<text x="360" y="300" font-size="22" font-weight="400" fill="#656C76" text-anchor="middle">数か月かかることがある</text>
+<path fill="none" d="M610 280 V340 M592 322 L610 340 L628 322" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<rect fill="#DCDFE3" transform="translate(6 -4)" x="470" y="356" width="210" height="80" rx="14"/>
+<rect x="470" y="356" width="210" height="80" rx="14" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="575" y="406" font-size="26" font-weight="700" fill="#1F2328" text-anchor="middle">「なし」にする</text>
+<rect fill="none" x="40" y="476" width="640" height="110" rx="18" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<text x="70" y="520" font-size="23" font-weight="400" fill="#1F2328">帳簿の数の話。売れる在庫に含めると、</text>
+<text x="70" y="556" font-size="23" font-weight="400" fill="#1F2328">複数チャネルでは売り越しにつながりうる</text>
+</g>
+</svg>

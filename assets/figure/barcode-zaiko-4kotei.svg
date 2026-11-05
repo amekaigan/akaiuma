@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" role="img" aria-label="在庫が動く4つの工程。入荷は目で数える、ピッキングは目で見比べる、出荷は記憶で確かめる、棚卸しは記憶で思い出す">
+<rect width="720" height="900" fill="#FFFFFF"/>
+<rect x="44" y="52" width="250" height="22" rx="11" fill="#EDB7BF"/>
+<text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328" text-anchor="start" font-family="sans-serif">4つの工程</text>
+<rect x="46" y="116" width="640" height="110" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="120" width="640" height="110" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="106" cy="171" r="26" fill="#EDB7BF"/>
+<circle cx="100" cy="175" r="26" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 175 L97 185 L113 165" stroke="#A4243B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="152" y="186" font-size="32" font-weight="700" fill="#1F2328" font-family="sans-serif">入荷：<tspan fill="#A4243B">目で数える</tspan></text>
+<path fill="none" d="M360 238 L360 266 M367 254 L360 266 L353 254" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="46" y="266" width="640" height="110" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="270" width="640" height="110" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="106" cy="321" r="26" fill="#EDB7BF"/>
+<circle cx="100" cy="325" r="26" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 325 L97 335 L113 315" stroke="#A4243B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="152" y="336" font-size="32" font-weight="700" fill="#1F2328" font-family="sans-serif">ピッキング：<tspan fill="#A4243B">目で見比べる</tspan></text>
+<path fill="none" d="M360 388 L360 416 M367 404 L360 416 L353 404" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="46" y="416" width="640" height="110" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="420" width="640" height="110" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="106" cy="471" r="26" fill="#EDB7BF"/>
+<circle cx="100" cy="475" r="26" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 475 L97 485 L113 465" stroke="#A4243B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="152" y="486" font-size="32" font-weight="700" fill="#1F2328" font-family="sans-serif">出荷：<tspan fill="#A4243B">記憶で確かめる</tspan></text>
+<path fill="none" d="M360 538 L360 566 M367 554 L360 566 L353 554" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="46" y="566" width="640" height="110" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="570" width="640" height="110" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="106" cy="621" r="26" fill="#EDB7BF"/>
+<circle cx="100" cy="625" r="26" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 625 L97 635 L113 615" stroke="#A4243B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="152" y="636" font-size="32" font-weight="700" fill="#1F2328" font-family="sans-serif">棚卸し：<tspan fill="#A4243B">記憶で思い出す</tspan></text>
+<rect x="40" y="740" width="640" height="104" rx="18" fill="none" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="110" cy="788" r="26" fill="#EDB7BF"/>
+<circle cx="104" cy="792" r="26" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M92 792 L101 802 L117 782" stroke="#A4243B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="158" y="802" font-size="30" font-weight="700" fill="#1F2328" text-anchor="start" font-family="sans-serif">人の判断が入る箇所に印</text>
+</svg>

@@ -89,6 +89,8 @@ const NO_AD_PATH = /(^|\/)(tool|about|privacy|law)\//;
 
 // Google Analytics 4 の測定ID（G-XXXXXXXXXX の形式）
 const GA4_ID = 'G-46K4RT2PMF';
+// Cloudflare Web Analytics の計測タグ（集計画面の「訪問（Cloudflare）」はこれで数えます）
+const CF_BEACON_TOKEN = '54df02186b654fd491f933d6056a3dba';
 
 // カテゴリ。左が表示名、右がURLのアンカーになるID
 const CATEGORY_TO_ID = {
@@ -590,7 +592,10 @@ const HEAD_END = '<!-- AUTO:HEAD:END -->';
 
 // level と category を GA4 に渡す。3ヶ月後の層別集計はこれを使います
 function headTagsHtml(info) {
-  const css = `<link rel="stylesheet" href="/assets/css/article.css">`;
+  const cf = CF_BEACON_TOKEN
+    ? `\n<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "${CF_BEACON_TOKEN}"}'></script><!-- End Cloudflare Web Analytics -->`
+    : '';
+  const css = `<link rel="stylesheet" href="/assets/css/article.css">${cf}`;
   if (!GA4_ID) return css;
   const dims =
     info && info.level

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="744" viewBox="0 0 720 744" role="img" aria-label="補充推奨が見ている期間と見ていない季節の波。水着を例にすると、7月と8月の売れ行きは見ているが、9月以降の落ち込みは入っていない">
+<rect width="720" height="744" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+  <text x="40" y="66" font-size="34" font-weight="700" fill="#1F2328">補充推奨が見ている期間</text>
+  <rect x="40" y="88" width="56" height="5" fill="#A4243B"/>
+  <text x="146" y="142" font-size="28" font-weight="700" fill="#3D444D" text-anchor="middle">見ている</text>
+  <text x="466" y="142" font-size="28" font-weight="700" fill="#A4243B" text-anchor="middle">見ていない</text>
+  <line x1="52" y1="166" x2="240" y2="166" stroke="#656C76" stroke-width="4"/>
+  <line x1="264" y1="166" x2="668" y2="166" stroke="#A4243B" stroke-width="4"/>
+  <rect x="58" y="210" width="70" height="230" rx="4" fill="#656C76"/>
+  <rect x="164" y="210" width="70" height="230" rx="4" fill="#656C76"/>
+  <rect x="270" y="384" width="70" height="56" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="376" y="384" width="70" height="56" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="482" y="384" width="70" height="56" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="588" y="384" width="70" height="56" rx="4" fill="#FBF4F5" stroke="#A4243B" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="40" y1="440" x2="680" y2="440" stroke="#3D444D" stroke-width="3"/>
+  <text x="93" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">7月</text>
+  <text x="199" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">8月</text>
+  <text x="305" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">9月</text>
+  <text x="411" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">10月</text>
+  <text x="517" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">11月</text>
+  <text x="623" y="478" font-size="24" font-weight="400" fill="#3D444D" text-anchor="middle">12月</text>
+  <rect x="40" y="520" width="640" height="112" rx="12" fill="#FBF4F5"/>
+  <text x="360" y="566" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle">7〜8月の売れ行きをもとにした数字</text>
+  <text x="360" y="606" font-size="28" font-weight="700" fill="#A4243B" text-anchor="middle">9月以降の落ち込みは入っていない</text>
+  <text x="40" y="680" font-size="24" font-weight="400" fill="#656C76">水着を例にしたイメージ図。高さは実数ではありません</text>
+  <text x="40" y="714" font-size="24" font-weight="400" fill="#656C76">表示名・算出方法は公式ヘルプで未確認（筆者の理解）</text>
+</g>
+</svg>

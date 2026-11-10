@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 800" role="img" aria-labelledby="t d">
+  <title id="t">届いたメールの一覧の書き方</title>
+  <desc id="d">メール1通につき、何をしたあとに届いたか、差出人、件名、気になった点の4項目を書き出す。届いた分だけ同じ形で増やし、何も届かなかった操作は届かないと書く。</desc>
+  <rect x="0" y="0" width="720" height="800" fill="#F4F5F6"/>
+  <text x="360" y="58" text-anchor="middle" font-size="36" font-weight="700" fill="#1F2328" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">届いたメールの一覧の書き方</text>
+  <text x="360" y="102" text-anchor="middle" font-size="26" fill="#3D444D" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">メール1通につき、4項目を書き出す</text>
+
+  <rect x="30" y="130" width="660" height="500" rx="12" fill="#FFFFFF" stroke="#A4243B" stroke-width="3"/>
+  <text x="56" y="178" font-size="30" font-weight="700" fill="#A4243B" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">メール1</text>
+
+  <text x="56" y="226" font-size="26" font-weight="700" fill="#1F2328" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">何をしたあとに届いたか</text>
+  <rect x="56" y="238" width="608" height="46" rx="6" fill="#FBF4F5"/>
+  <text x="72" y="271" font-size="24" fill="#656C76" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">自分がした操作を書く</text>
+
+  <text x="56" y="332" font-size="26" font-weight="700" fill="#1F2328" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">差出人</text>
+  <rect x="56" y="344" width="608" height="46" rx="6" fill="#FBF4F5"/>
+  <text x="72" y="377" font-size="24" fill="#656C76" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">受信箱に出た表示名のまま</text>
+
+  <text x="56" y="438" font-size="26" font-weight="700" fill="#1F2328" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">件名</text>
+  <rect x="56" y="450" width="608" height="46" rx="6" fill="#FBF4F5"/>
+  <text x="72" y="483" font-size="24" fill="#656C76" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">一字一句そのまま写す</text>
+
+  <text x="56" y="544" font-size="26" font-weight="700" fill="#1F2328" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">気になった点</text>
+  <rect x="56" y="556" width="608" height="46" rx="6" fill="#FBF4F5"/>
+  <text x="72" y="589" font-size="24" fill="#656C76" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">購入者の目で読んで引っかかった箇所</text>
+
+  <rect x="30" y="656" width="660" height="124" rx="12" fill="#FFFFFF" stroke="#656C76" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="360" y="702" text-anchor="middle" font-size="28" font-weight="700" fill="#3D444D" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">メール2、メール3… 届いた分だけ増やす</text>
+  <text x="360" y="746" text-anchor="middle" font-size="26" fill="#3D444D" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif">何も届かなければ「届かない」と書く</text>
+</svg>

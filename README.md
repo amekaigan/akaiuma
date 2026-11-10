@@ -12,7 +12,7 @@
 
 | 知りたいこと | 見るファイル |
 |---|---|
-| 今日の問い（1日1問） | `knowledge/今日の質問.md` |
+| 今週の問い（週1回・最大3問） | `knowledge/今日の質問.md` |
 | これまでに答えた実体験 | `knowledge/体験バンク.md` |
 | 次に書く記事 | `knowledge/記事の企画リスト.md` |
 | エージェントに守らせているルール | `.claude/CLAUDE.md` |
@@ -43,7 +43,7 @@
 | `research/` | エージェントが調べた公式情報と出典のメモ |
 | `keywords/` | 記事ごとのキーワード設計 |
 | `.claude/agents/` | 担当エージェント6体の定義（リサーチ・執筆・エディター・SEO・校正・SNS） |
-| `.claude/workflows/` | Routine（自動実行）の手順書。週次の記事生産と日次の質問 |
+| `.claude/workflows/` | Routine（自動実行）の手順書。週次の記事生産と週1回の質問 |
 | `.github/spec/` | 仕様書。2026-09-11 時点の内容で、その後の変更は `.claude/CLAUDE.md` のほうが新しい |
 | `.github/handoff/` | 引き継ぎ資料。いまの版が直下、古い版は `archive/` |
 | `.github/scripts/` | サイト生成スクリプト `generate-site.js` |

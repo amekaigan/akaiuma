@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="560" viewBox="0 0 720 560" role="img" aria-label="棚には箱が9個、パソコンの帳簿は10。差に首をかしげる人">
+<rect width="720" height="560" fill="#FFFFFF"/>
+<rect x="65" y="207" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="135" y="207" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="205" y="207" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="65" y="290" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="135" y="290" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="205" y="290" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="65" y="373" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="135" y="373" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="205" y="373" width="56" height="54" rx="4" fill="#EDB7BF"/>
+<rect x="40" y="190" width="230" height="250" rx="6" fill="none" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M40 273 H270 M40 356 H270" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="210" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 210 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="130" y="210" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M158 210 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="200" y="210" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M228 210 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="293" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 293 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="130" y="293" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M158 293 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="200" y="293" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M228 293 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="376" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M88 376 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="130" y="376" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M158 376 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="200" y="376" width="56" height="54" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M228 376 v14" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M316 246 Q326 216 362 216 Q398 216 408 246 L414 380 H308 Z" fill="#DCDFE3" transform="translate(7 -4)"/>
+<circle cx="362" cy="166" r="36" fill="#EDB7BF" transform="translate(6 -4)"/>
+<circle cx="362" cy="166" r="36" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M328 162 Q324 122 362 118 Q398 118 398 152 Q390 160 384 156 Q380 140 356 140 Q340 150 328 162 Z" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="349" cy="170" r="3" fill="#1F2328"/><circle cx="375" cy="170" r="3" fill="#1F2328"/>
+<path fill="none" d="M354 188 q8 -4 16 0" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M316 248 Q326 216 362 216 Q398 216 408 248 L414 380 H308 Z" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M402 262 Q430 236 412 200 L404 186" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="402" cy="182" r="9" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M340 380 L336 440 M384 380 L388 440" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M336 440 h-22 M388 440 h22" stroke="#1F2328" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="368" cy="62" rx="150" ry="36" fill="#DCDFE3"/>
+<ellipse cx="362" cy="66" rx="150" ry="36" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="356" cy="112" r="6" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="352" cy="130" r="3.5" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="362" y="76" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">記憶をたどる？</text>
+<rect x="488" y="196" width="190" height="136" rx="8" fill="#DCDFE3"/>
+<rect x="482" y="200" width="190" height="136" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="498" y="216" width="158" height="104" rx="4" fill="#EDB7BF" transform="translate(4 -3)"/>
+<rect x="498" y="216" width="158" height="104" rx="4" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="577" y="292" font-size="64" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">10</text>
+<path d="M550 336 v24 M610 336 v24 M520 362 H640" fill="none" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 440 H280" fill="none" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="155" y="500" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">棚 9</text>
+<text x="362" y="500" font-size="34" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">どこで？</text>
+<text x="577" y="500" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">帳簿 10</text>
+</svg>

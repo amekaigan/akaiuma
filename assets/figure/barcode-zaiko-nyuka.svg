@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="800" viewBox="0 0 720 800" role="img" aria-label="入荷の突き合わせ。発注の数、届いた現物、帳簿を突き合わせ、合えば帳簿に加え、合わなければ帳簿に入れず止めて差を記録する">
+<rect width="720" height="800" fill="#FFFFFF"/>
+<rect x="156" y="36" width="420" height="76" rx="14" fill="#DCDFE3"/>
+<rect x="150" y="40" width="420" height="76" rx="14" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="90" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">発注の数</text>
+<path fill="none" d="M360 124 L360 156 M367 144 L360 156 L353 144" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="386" y="146" font-size="26" font-weight="700" fill="#A4243B" text-anchor="start" font-family="sans-serif">突き合わせ</text>
+<rect x="156" y="156" width="420" height="76" rx="14" fill="#DCDFE3"/>
+<rect x="150" y="160" width="420" height="76" rx="14" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="210" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">届いた現物</text>
+<path fill="none" d="M360 244 L360 276 M367 264 L360 276 L353 264" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="386" y="266" font-size="26" font-weight="700" fill="#A4243B" text-anchor="start" font-family="sans-serif">突き合わせ</text>
+<rect x="156" y="276" width="420" height="76" rx="14" fill="#DCDFE3"/>
+<rect x="150" y="280" width="420" height="76" rx="14" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="330" font-size="34" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">帳簿</text>
+<path fill="none" d="M330 372 L215 500 M228 495 L215 500 L218 486" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M390 372 L505 500 M502 486 L505 500 L492 495" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="190" y="452" font-size="28" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">一致</text>
+<text x="530" y="452" font-size="28" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">不一致</text>
+<rect x="46" y="506" width="310" height="190" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="510" width="310" height="190" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="195" y="578" font-size="30" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">合えば加える</text>
+<text x="195" y="628" font-size="26" font-weight="400" fill="#1F2328" text-anchor="middle" font-family="sans-serif">帳簿に加える</text>
+<rect x="376" y="506" width="310" height="190" rx="18" fill="#DCDFE3"/>
+<rect x="370" y="510" width="310" height="190" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="525" y="578" font-size="30" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">合わなければ止める</text>
+<text x="525" y="626" font-size="26" font-weight="400" fill="#1F2328" text-anchor="middle" font-family="sans-serif">帳簿に入れず止め、</text>
+<text x="525" y="660" font-size="26" font-weight="400" fill="#1F2328" text-anchor="middle" font-family="sans-serif">差を記録</text>
+</svg>

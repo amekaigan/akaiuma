@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="860" viewBox="0 0 720 860" role="img" aria-label="記録が揃っていれば探す範囲はこの日・この工程だけ。記憶に頼ると探す範囲は全部">
+<rect width="720" height="860" fill="#FFFFFF"/>
+<rect x="46" y="36" width="640" height="360" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="40" width="640" height="360" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="104" font-size="32" font-weight="700" fill="#1F2328" text-anchor="start" font-family="sans-serif">記録が揃っている</text>
+<rect x="69" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="64" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M80 166 H124 M80 186 H124" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="156" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="151" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M167 166 H211 M167 186 H211" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="243" y="137" width="76" height="80" rx="8" fill="#EDB7BF"/>
+<rect x="238" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M254 166 H298 M254 186 H298" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="330" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="325" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M341 166 H385 M341 186 H385" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="417" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="412" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M428 166 H472 M428 186 H472" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="504" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="499" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M515 166 H559 M515 186 H559" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="591" y="137" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="586" y="140" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M602 166 H646 M602 186 H646" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="276" cy="180" rx="56" ry="62" fill="none" stroke="#A4243B" stroke-width="3.5" stroke-linecap="round"/>
+<path fill="none" d="M360 262 L360 300 M367 288 L360 300 L353 288" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="356" font-size="32" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">探す範囲：<tspan fill="#A4243B">この日・この工程</tspan></text>
+<rect x="46" y="446" width="640" height="370" rx="18" fill="#DCDFE3"/>
+<rect x="40" y="450" width="640" height="370" rx="18" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="514" font-size="32" font-weight="700" fill="#1F2328" text-anchor="start" font-family="sans-serif">記憶に頼る</text>
+<rect x="69" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="64" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="102" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="156" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="151" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="189" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="243" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="238" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="276" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="330" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="325" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="363" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="417" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="412" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="450" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="504" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="499" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="537" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<rect x="591" y="547" width="76" height="80" rx="8" fill="#DCDFE3"/>
+<rect x="586" y="550" width="76" height="80" rx="8" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="624" y="606" font-size="44" font-weight="700" fill="#A4243B" text-anchor="middle" font-family="sans-serif">?</text>
+<path fill="none" d="M64 660 V676 H656 V660" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill="none" d="M360 684 L360 712 M367 700 L360 712 L353 700" stroke="#1F2328" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="780" font-size="36" font-weight="700" fill="#1F2328" text-anchor="middle" font-family="sans-serif">探す範囲：<tspan fill="#A4243B">全部</tspan></text>
+</svg>

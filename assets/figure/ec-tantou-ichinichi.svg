@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 930" width="720" height="930" role="img" aria-labelledby="t d" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif">
+  <title id="t">少人数のEC担当者の1日の流れ</title>
+  <desc id="d">午前は問い合わせの確認と回答、受注処理と入金確認、出荷指示。午後は新商品の採寸と説明文づくりをしながら、午後の締切前に入金確認と受注処理を進める。</desc>
+  <rect width="720" height="930" fill="#FFFFFF"/>
+
+  <!-- 午前 -->
+  <rect x="40" y="20" width="640" height="56" rx="8" fill="#A4243B"/>
+  <text x="70" y="59" font-size="34" font-weight="700" fill="#FFFFFF">午前：受け付けて、出荷まで渡す</text>
+
+  <rect x="40" y="96" width="640" height="120" rx="10" fill="#FBF4F5" stroke="#A4243B" stroke-width="2"/>
+  <circle cx="86" cy="156" r="26" fill="#A4243B"/>
+  <text x="86" y="166" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="130" y="148" font-size="32" font-weight="700" fill="#1F2328">問い合わせの確認と回答</text>
+  <text x="130" y="190" font-size="26" fill="#3D444D">テンプレートやQ&amp;Aの種を拾う</text>
+
+  <line x1="360" y1="216" x2="360" y2="236" stroke="#656C76" stroke-width="4"/>
+  <polygon points="344,234 376,234 360,252" fill="#656C76"/>
+
+  <rect x="40" y="252" width="640" height="120" rx="10" fill="#FBF4F5" stroke="#A4243B" stroke-width="2"/>
+  <circle cx="86" cy="312" r="26" fill="#A4243B"/>
+  <text x="86" y="322" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="130" y="304" font-size="32" font-weight="700" fill="#1F2328">受注処理と入金確認</text>
+  <text x="130" y="346" font-size="26" fill="#3D444D">月1回は自動返信メールとお金の流れも</text>
+
+  <line x1="360" y1="372" x2="360" y2="392" stroke="#656C76" stroke-width="4"/>
+  <polygon points="344,390 376,390 360,408" fill="#656C76"/>
+
+  <rect x="40" y="408" width="640" height="120" rx="10" fill="#FBF4F5" stroke="#A4243B" stroke-width="2"/>
+  <circle cx="86" cy="468" r="26" fill="#A4243B"/>
+  <text x="86" y="478" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="130" y="460" font-size="32" font-weight="700" fill="#1F2328">出荷指示を出す</text>
+  <text x="130" y="502" font-size="26" fill="#3D444D">倉庫へ指示、または出荷ステータスへ</text>
+
+  <!-- 午後 -->
+  <rect x="40" y="568" width="640" height="56" rx="8" fill="#3D444D"/>
+  <text x="70" y="607" font-size="34" font-weight="700" fill="#FFFFFF">午後：商品ページを整える</text>
+
+  <rect x="40" y="644" width="640" height="120" rx="10" fill="#F4F5F6" stroke="#3D444D" stroke-width="2"/>
+  <circle cx="86" cy="704" r="26" fill="#3D444D"/>
+  <text x="86" y="714" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="130" y="696" font-size="32" font-weight="700" fill="#1F2328">採寸と説明文づくり</text>
+  <text x="130" y="738" font-size="26" fill="#3D444D">テンプレートは更新し続ける</text>
+
+  <line x1="360" y1="764" x2="360" y2="784" stroke="#656C76" stroke-width="4"/>
+  <polygon points="344,782 376,782 360,800" fill="#656C76"/>
+
+  <rect x="40" y="800" width="640" height="120" rx="10" fill="#F4F5F6" stroke="#3D444D" stroke-width="2"/>
+  <circle cx="86" cy="860" r="26" fill="#3D444D"/>
+  <text x="86" y="870" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="130" y="852" font-size="32" font-weight="700" fill="#1F2328">入金確認と受注処理</text>
+  <text x="130" y="894" font-size="26" fill="#3D444D">午後の締切前に、4と並行して進める</text>
+</svg>

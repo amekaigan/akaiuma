@@ -3,7 +3,7 @@ title: 在庫を持ちすぎるのに欠品する理由｜あかいうま
 meta: 在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。
 permalink: /blog/zaiko-mochisugi/
 published: 2026-09-14
-updated: 2026-09-27
+updated: 2026-11-26
 verified: 2026-09-14
 category: 在庫管理
 level: beginner
@@ -187,7 +187,7 @@ title_reason: 「持ちすぎ」と「欠品」を別々の問題として検索
   "headline": "在庫を持ちすぎるのに欠品する理由｜あかいうま",
   "description": "在庫の持ちすぎと欠品は同じ原因から起きる。SKU単位で見る発想と、発注量を逆算する考え方を解説。",
   "datePublished": "2026-09-14",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-26",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://akaiuma.com/blog/zaiko-mochisugi/"
@@ -240,7 +240,7 @@ title_reason: 「持ちすぎ」と「欠品」を別々の問題として検索
 <div class="article-header" data-level="beginner">
   <div class="article-category">在庫管理<span style="display:inline-block; font-size:0.72em; font-weight:bold; color:#3730A3; background:#EEF2FF; border-radius:4px; padding:2px 8px; margin-left:8px;">初心者向け</span></div>
   <h1>在庫を持ちすぎるのに欠品する理由</h1>
-  <div class="article-meta"><span>公開：2026年9月14日</span><span>更新：2026年9月27日</span><span>料金・仕様の確認：2026年9月14日</span><span>読了：約9分</span></div>
+  <div class="article-meta"><span>公開：2026年9月14日</span><span>更新：2026年11月26日</span><span>料金・仕様の確認：2026年9月14日</span><span>読了：約10分</span></div>
 </div>
 
 <img class="article-thumb" src="/assets/thumb/auto/zaiko-mochisugi.svg" alt="" width="1200" height="630">
@@ -269,6 +269,7 @@ title_reason: 「持ちすぎ」と「欠品」を別々の問題として検索
     <li><a href="#h2-3">持ちすぎと欠品、原因は同じ</a></li>
     <li><a href="#h2-4">適正在庫の目安をどう決めるか</a></li>
     <li><a href="#h2-5">今日からできる在庫の見直し方</a></li>
+    <li><a href="#h2-5b">欠品を防ぐ手順：いつ発注するかを数字で決める</a></li>
     <li><a href="#h2-6">在庫の見直しが効きにくいケース</a></li>
     <li><a href="#h2-7">数字を数えられるようになった先にある問題</a></li>
   </ol>
@@ -408,6 +409,30 @@ title_reason: 「持ちすぎ」と「欠品」を別々の問題として検索
 </ul>
 
 <p>これは在庫に限った話ではありません。小さく試して、数字を見てから広げていきます。思いつきで見切り発車はしません。<strong>この判断の仕方を続けられるかどうかが、つぶれないEC運営をつくります。</strong></p>
+
+<h2 id="h2-5b">欠品を防ぐ手順：いつ発注するかを数字で決める</h2>
+
+<p class="ak-lead">欠品は「発注量」より先に「発注する日」で起きます。見る数字は3つだけです。</p>
+
+<p>ここまでは、発注量をどう決めるかを書いてきました。欠品を防ぐには、もう一つ「いつ発注するか」を決める必要があります。量が合っていても、発注の日が遅ければ棚は空になります。</p>
+
+<figure class="ak-figure">
+  <img src="/assets/figure/zaiko-mochisugi-hacchuten.svg" alt="手持ちの在庫と発注済みで未着の数を足した数が、リードタイムの間に売れる見込み数と余裕分を下回った日が、発注する日になることを示した図" width="720" height="900" loading="lazy">
+  <figcaption>見るのは「手持ち」「発注済みでまだ届いていない数」「リードタイム中に売れる見込み」の3つ。</figcaption>
+</figure>
+
+<ol class="ak-steps">
+<li><strong>SKUごとに、1日あたりの販売数を出す。</strong>期間は商品の動きに合わせて自分で選び、どの期間で出したかも一緒に記録します。期間を変えると数字が変わるため、記録がないと次回に比べられません。</li>
+<li><strong>発注から棚に入るまでの日数を、実績で控える。</strong>納期の約束ではなく、実際に入荷した日を記録します。約束より遅れた回があれば、その日数を使います。</li>
+<li><strong>「手持ち＋発注済みで未着」を毎回見る。</strong>手持ちだけを見ると、すでに発注した分を忘れて二重に発注するか、逆に届くと思い込んで見送ります。</li>
+<li><strong>この合計が「リードタイム中の販売見込み＋余裕分」を下回った日を、発注する日にする。</strong>確認する曜日を決めておけば、見る人が変わっても同じ材料で判断できます。</li>
+</ol>
+
+<p>欠品が起きたときは、次の3つを残しておきます。欠品していた日数、その間のアクセス数（表示回数）、再入荷後に販売数が戻るまでにかかった日数です。余裕分をいくつにするかは、この記録を見て商品ごとに決めます。一律の数字を置かないのは、売れ方がショップ・モール・商品・時期で違うためです。</p>
+
+<!-- TODO:実体験 何を書くべきか：欠品を出して困った商品は何で、そのあと発注の決め方を具体的にどう変えたか -->
+
+<!-- TODO:実体験 何を書くべきか：「そろそろ欠品しそうだ」と気づくきっかけにしている数字や画面は何か -->
 
 <h2 id="h2-6">在庫の見直しが効きにくいケース</h2>
 

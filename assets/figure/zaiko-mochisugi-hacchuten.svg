@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" role="img" aria-label="手持ちと発注済みで未着の数の合計が、リードタイム中の販売見込みと余裕分を下回った日が発注する日になる図" stroke-linecap="round" stroke-linejoin="round">
+<rect width="720" height="900" fill="#FFFFFF"/>
+<g font-family="'Hiragino Sans','Yu Gothic UI','Noto Sans JP','Meiryo',sans-serif">
+<rect x="40" y="44" width="470" height="44" rx="22" fill="#EDB7BF"/>
+<text x="60" y="78" font-size="36" font-weight="700" fill="#1F2328">発注する日の決め方</text>
+<rect x="46" y="126" width="640" height="130" rx="22" fill="#DCDFE3"/>
+<rect x="40" y="120" width="640" height="130" rx="22" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5"/>
+<text x="70" y="172" font-size="34" font-weight="700" fill="#1F2328">① 手持ち＋発注済みで未着</text>
+<text x="70" y="218" font-size="26" fill="#3D444D">棚にある数と、まだ届いていない数</text>
+<text x="360" y="296" font-size="40" font-weight="700" fill="#1F2328" text-anchor="middle">と、比べる</text>
+<rect x="46" y="336" width="640" height="130" rx="22" fill="#DCDFE3"/>
+<rect x="40" y="330" width="640" height="130" rx="22" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5"/>
+<text x="70" y="382" font-size="34" font-weight="700" fill="#1F2328">② リードタイム中の販売見込み</text>
+<text x="70" y="428" font-size="26" fill="#3D444D">1日の販売数 × 入荷までの日数</text>
+<text x="360" y="506" font-size="40" font-weight="700" fill="#1F2328" text-anchor="middle">＋</text>
+<rect x="46" y="536" width="640" height="130" rx="22" fill="#DCDFE3"/>
+<rect x="40" y="530" width="640" height="130" rx="22" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5"/>
+<text x="70" y="582" font-size="34" font-weight="700" fill="#1F2328">③ 余裕分</text>
+<text x="70" y="628" font-size="26" fill="#3D444D">商品ごとに、欠品の記録を見て決める</text>
+<path d="M360 690 L360 730" stroke="#1F2328" stroke-width="3.5" fill="none"/>
+<path d="M342 714 L360 734 L378 714" stroke="#1F2328" stroke-width="3.5" fill="none"/>
+<rect x="46" y="752" width="640" height="116" rx="22" fill="#EDB7BF"/>
+<rect x="40" y="746" width="640" height="116" rx="22" fill="#FFFFFF" stroke="#1F2328" stroke-width="3.5"/>
+<text x="360" y="796" font-size="30" font-weight="700" fill="#A4243B" text-anchor="middle">①が②＋③を下回った日が</text>
+<text x="360" y="838" font-size="30" font-weight="700" fill="#A4243B" text-anchor="middle">発注する日</text>
+</g>
+</svg>
